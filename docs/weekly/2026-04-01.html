@@ -59,8 +59,10 @@
     .item-avg-table{width:100%;border-collapse:collapse;font-size:.8rem;margin:.5rem 0;table-layout:fixed}
     .item-avg-table th{background:#edf2f7;padding:.3rem .5rem;text-align:left;font-weight:500}
     .item-avg-table th:nth-child(1){width:140px} .item-avg-table th:nth-child(2){width:50px} .item-avg-table th:nth-child(3),.item-avg-table th:nth-child(4){width:calc((100% - 190px)/2)}
-    .item-avg-table td{padding:.3rem .5rem;border-bottom:1px solid var(--border)}
+    .item-avg-table td{padding:.3rem .5rem;border-bottom:1px solid var(--border);vertical-align:top}
     .item-avg-table .sc{text-align:center;font-weight:700;width:50px}
+    .item-avg-table tr{height:4rem}
+    .item-avg-table .comment-cell{font-size:.78rem;height:3.2rem;overflow:hidden;line-height:1.4;max-width:280px}
 
     .comment-block{margin:.6rem 0}
     .comment-item{background:#f7fafc;border-left:3px solid var(--border);padding:.4rem .65rem;margin:.3rem 0;border-radius:0 5px 5px 0;font-size:.82rem}
@@ -175,13 +177,13 @@
         <table class="item-avg-table">
           <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
           <tbody>
-            <tr><td>講義の進め方</td><td class="sc s1">1</td><td style="font-size:.78rem">前後の繋がりを最初に説明。まとめで考えさせるのが良い</td><td style="font-size:.78rem">前置きをもう少し簡潔に。まとめは一言で伝えたい</td></tr>
-            <tr><td>信頼</td><td class="sc s2">2</td><td style="font-size:.78rem">落ち着いた雰囲気で安心感。ハキハキと聞きやすい</td><td style="font-size:.78rem"></td></tr>
-            <tr><td>インタラクティブ</td><td class="sc s1">1</td><td style="font-size:.78rem">発問をすでにしっかり入れられている。チャット活用も◎</td><td style="font-size:.78rem">リアクションはどのスタンプを押すか伝えてから聞く</td></tr>
-            <tr><td>思いやり</td><td class="sc s2">2</td><td style="font-size:.78rem">ノート準備チェック、板書速度・文字の見やすさGood</td><td style="font-size:.78rem">板書途中のリアクション確認は不要。ポインター機能の活用を</td></tr>
-            <tr><td>質問対応（伝え方）</td><td class="sc s1">1</td><td style="font-size:.78rem"></td><td style="font-size:.78rem">感謝→復唱→結論の型を意識する</td></tr>
-            <tr><td>知識（講義内）</td><td class="sc s2">2</td><td style="font-size:.78rem">短期間でカンペなしで説明できるのがすごい。間違いなし</td><td style="font-size:.78rem"></td></tr>
-            <tr><td>知識（質問対応）</td><td class="sc s2">2</td><td style="font-size:.78rem"></td><td style="font-size:.78rem"></td></tr>
+            <tr><td>講義の進め方</td><td class="sc s1">1</td><td class="comment-cell">前後の繋がりを最初に説明。まとめで考えさせるのが良い</td><td class="comment-cell">前置きをもう少し簡潔に。まとめは一言で伝えたい</td></tr>
+            <tr><td>信頼</td><td class="sc s2">2</td><td class="comment-cell">落ち着いた雰囲気で安心感。ハキハキと聞きやすい</td><td class="comment-cell"></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s1">1</td><td class="comment-cell">発問をすでにしっかり入れられている。チャット活用も◎</td><td class="comment-cell">リアクションはどのスタンプを押すか伝えてから聞く</td></tr>
+            <tr><td>思いやり</td><td class="sc s2">2</td><td class="comment-cell">ノート準備チェック、板書速度・文字の見やすさGood</td><td class="comment-cell">板書途中のリアクション確認は不要。ポインター機能の活用を</td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s1">1</td><td class="comment-cell"></td><td class="comment-cell">感謝→復唱→結論の型を意識する</td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s2">2</td><td class="comment-cell">短期間でカンペなしで説明できるのがすごい。間違いなし</td><td class="comment-cell"></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s2">2</td><td class="comment-cell"></td><td class="comment-cell"></td></tr>
           </tbody>
         </table>
       </div>
@@ -193,13 +195,13 @@
         <table class="item-avg-table">
           <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
           <tbody>
-            <tr><td>講義の進め方</td><td class="sc s1">1</td><td style="font-size:.78rem">休憩前の振り返りができている。実装の流れも整理しながら進められている</td><td style="font-size:.78rem">なぜデータセットの準備が必要か？のモチベを示せると良い。実装でも最初のWholeが欲しい</td></tr>
-            <tr><td>信頼</td><td class="sc s2">2</td><td style="font-size:.78rem">ハキハキとしたトーン。エラーのデバッグも落ち着いて対応</td><td style="font-size:.78rem">実装の解説で少し手間取っている印象。Fuwari等ツール操作に慣れていく</td></tr>
-            <tr><td>インタラクティブ</td><td class="sc s1">1</td><td style="font-size:.78rem">「ここで考えていただきたいことが1点あります」のアナウンスが良い</td><td style="font-size:.78rem">かなりかっちりした講義なので受講生を巻き込む意識を。問いかけを全体的に入れる</td></tr>
-            <tr><td>思いやり</td><td class="sc s2">2</td><td style="font-size:.78rem">共有画面の確認、ノートの使い方提示、チャットでリンク送信</td><td style="font-size:.78rem">手書きノート準備できたかはリアクションで確認。ノートブックの構成説明も</td></tr>
-            <tr><td>質問対応（伝え方）</td><td class="sc s1">1</td><td style="font-size:.78rem">—</td><td style="font-size:.78rem">感謝→復唱→結論の型を徹底。わからない質問の意図は対話しながら探る</td></tr>
-            <tr><td>知識（講義内）</td><td class="sc s2">2</td><td style="font-size:.78rem">講義内の知識は問題なし</td><td style="font-size:.78rem">実装で丁寧すぎて冗長な部分あり。【補足】は駆け足でもOK</td></tr>
-            <tr><td>知識（質問対応）</td><td class="sc s2">2</td><td style="font-size:.78rem">—</td><td style="font-size:.78rem">—</td></tr>
+            <tr><td>講義の進め方</td><td class="sc s1">1</td><td class="comment-cell">休憩前の振り返りができている。実装の流れも整理しながら進められている</td><td class="comment-cell">なぜデータセットの準備が必要か？のモチベを示せると良い。実装でも最初のWholeが欲しい</td></tr>
+            <tr><td>信頼</td><td class="sc s2">2</td><td class="comment-cell">ハキハキとしたトーン。エラーのデバッグも落ち着いて対応</td><td class="comment-cell">実装の解説で少し手間取っている印象。Fuwari等ツール操作に慣れていく</td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s1">1</td><td class="comment-cell">「ここで考えていただきたいことが1点あります」のアナウンスが良い</td><td class="comment-cell">かなりかっちりした講義なので受講生を巻き込む意識を。問いかけを全体的に入れる</td></tr>
+            <tr><td>思いやり</td><td class="sc s2">2</td><td class="comment-cell">共有画面の確認、ノートの使い方提示、チャットでリンク送信</td><td class="comment-cell">手書きノート準備できたかはリアクションで確認。ノートブックの構成説明も</td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s1">1</td><td class="comment-cell">—</td><td class="comment-cell">感謝→復唱→結論の型を徹底。わからない質問の意図は対話しながら探る</td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s2">2</td><td class="comment-cell">講義内の知識は問題なし</td><td class="comment-cell">実装で丁寧すぎて冗長な部分あり。【補足】は駆け足でもOK</td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s2">2</td><td class="comment-cell">—</td><td class="comment-cell">—</td></tr>
           </tbody>
         </table>
       </div>
@@ -211,13 +213,13 @@
         <table class="item-avg-table">
           <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
           <tbody>
-            <tr><td>講義の進め方</td><td class="sc s1">1.75</td><td style="font-size:.78rem">WPWの構成が良い。ラストホールも端的にまとめられている</td><td style="font-size:.78rem">受講生をモチベートさせる声掛けがあれば更に良い</td></tr>
-            <tr><td>信頼</td><td class="sc s2">2.25</td><td style="font-size:.78rem">安定して自信を持った進め方。Fuwari活用◎</td><td style="font-size:.78rem">進度が早い。受講生が噛み砕く時間が欲しい。PythonのAIサポートは消す</td></tr>
-            <tr><td>インタラクティブ</td><td class="sc s1">1.25</td><td style="font-size:.78rem">いい発問「外れ値ってなに？」</td><td style="font-size:.78rem">もっと巻き込んで大丈夫。受講生側が考えない一方向の情報伝達になっている</td></tr>
-            <tr><td>思いやり</td><td class="sc s1">1.25</td><td style="font-size:.78rem">準備ゆっくりでOKの伝え方◎。チャットのコード送付が丁寧</td><td style="font-size:.78rem">書く時間が欲しい。書いている途中に大切な説明がある</td></tr>
-            <tr><td>質問対応（伝え方）</td><td class="sc s1">1.75</td><td style="font-size:.78rem">認識をすり合わせしながら回答できている。たとえがぱっと出る</td><td style="font-size:.78rem">チャット質問もコミュニケーション取りながら進めると良い</td></tr>
-            <tr><td>知識（講義内）</td><td class="sc s2">2.25</td><td style="font-size:.78rem"></td><td style="font-size:.78rem"></td></tr>
-            <tr><td>知識（質問対応）</td><td class="sc s2">2.0</td><td style="font-size:.78rem"></td><td style="font-size:.78rem"></td></tr>
+            <tr><td>講義の進め方</td><td class="sc s1">1.75</td><td class="comment-cell">WPWの構成が良い。ラストホールも端的にまとめられている</td><td class="comment-cell">受講生をモチベートさせる声掛けがあれば更に良い</td></tr>
+            <tr><td>信頼</td><td class="sc s2">2.25</td><td class="comment-cell">安定して自信を持った進め方。Fuwari活用◎</td><td class="comment-cell">進度が早い。受講生が噛み砕く時間が欲しい。PythonのAIサポートは消す</td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s1">1.25</td><td class="comment-cell">いい発問「外れ値ってなに？」</td><td class="comment-cell">もっと巻き込んで大丈夫。受講生側が考えない一方向の情報伝達になっている</td></tr>
+            <tr><td>思いやり</td><td class="sc s1">1.25</td><td class="comment-cell">準備ゆっくりでOKの伝え方◎。チャットのコード送付が丁寧</td><td class="comment-cell">書く時間が欲しい。書いている途中に大切な説明がある</td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s1">1.75</td><td class="comment-cell">認識をすり合わせしながら回答できている。たとえがぱっと出る</td><td class="comment-cell">チャット質問もコミュニケーション取りながら進めると良い</td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s2">2.25</td><td class="comment-cell"></td><td class="comment-cell"></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s2">2.0</td><td class="comment-cell"></td><td class="comment-cell"></td></tr>
           </tbody>
         </table>
       </div>
@@ -229,13 +231,13 @@
         <table class="item-avg-table">
           <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
           <tbody>
-            <tr><td>講義の進め方</td><td class="sc s1">1.5</td><td style="font-size:.78rem">前半ホールで端的に復習と次のステップを示せている</td><td style="font-size:.78rem">受講生のモチベーションが上がるような流れにしたい</td></tr>
-            <tr><td>信頼</td><td class="sc s2">2.33</td><td style="font-size:.78rem">ハキハキしている</td><td style="font-size:.78rem"></td></tr>
-            <tr><td>インタラクティブ</td><td class="sc s1">1.17</td><td style="font-size:.78rem">自身の体験を交えて話せている。曖昧な受講生にもFBできている</td><td style="font-size:.78rem">質問のバリエーションを持たせたい。拍手の促し等</td></tr>
-            <tr><td>思いやり</td><td class="sc s2">2.5</td><td style="font-size:.78rem">手書きの様子を注意深く見れている。画面サイズ・実装スピードOK</td><td style="font-size:.78rem"></td></tr>
-            <tr><td>質問対応（伝え方）</td><td class="sc s2">2.33</td><td style="font-size:.78rem"></td><td style="font-size:.78rem">やや冗長な印象</td></tr>
-            <tr><td>知識（講義内）</td><td class="sc s3">2.83</td><td style="font-size:.78rem"></td><td style="font-size:.78rem"></td></tr>
-            <tr><td>知識（質問対応）</td><td class="sc s3">2.83</td><td style="font-size:.78rem"></td><td style="font-size:.78rem"></td></tr>
+            <tr><td>講義の進め方</td><td class="sc s1">1.5</td><td class="comment-cell">前半ホールで端的に復習と次のステップを示せている</td><td class="comment-cell">受講生のモチベーションが上がるような流れにしたい</td></tr>
+            <tr><td>信頼</td><td class="sc s2">2.33</td><td class="comment-cell">ハキハキしている</td><td class="comment-cell"></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s1">1.17</td><td class="comment-cell">自身の体験を交えて話せている。曖昧な受講生にもFBできている</td><td class="comment-cell">質問のバリエーションを持たせたい。拍手の促し等</td></tr>
+            <tr><td>思いやり</td><td class="sc s2">2.5</td><td class="comment-cell">手書きの様子を注意深く見れている。画面サイズ・実装スピードOK</td><td class="comment-cell"></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s2">2.33</td><td class="comment-cell"></td><td class="comment-cell">やや冗長な印象</td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s3">2.83</td><td class="comment-cell"></td><td class="comment-cell"></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s3">2.83</td><td class="comment-cell"></td><td class="comment-cell"></td></tr>
           </tbody>
         </table>
       </div>
@@ -247,13 +249,13 @@
         <table class="item-avg-table">
           <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
           <tbody>
-            <tr><td>講義の進め方</td><td class="sc s1">1.6</td><td style="font-size:.78rem">前回の復習からの導入◎</td><td style="font-size:.78rem">丁寧すぎてタイムスケジュール通りに終わらない可能性。数学の研修になりがち</td></tr>
-            <tr><td>信頼</td><td class="sc s3">3.0</td><td style="font-size:.78rem">ハキハキしていて自信に満ち溢れている</td><td style="font-size:.78rem">不安な時が分かりやすい。フィラーを飲み込む</td></tr>
-            <tr><td>インタラクティブ</td><td class="sc s1">1.6</td><td style="font-size:.78rem">チャットを他の受講生にも共有するのvery good</td><td style="font-size:.78rem">実装になるとインタラクティブが減る</td></tr>
-            <tr><td>思いやり</td><td class="sc s2">2.0</td><td style="font-size:.78rem">細かな配慮。書くのを待ってくれる。心理的ハードル下げてくれる</td><td style="font-size:.78rem">他の方がいる想定でのリアクションを意識</td></tr>
-            <tr><td>質問対応（伝え方）</td><td class="sc s2">2.0</td><td style="font-size:.78rem">型の流れ◎</td><td style="font-size:.78rem">冗長になりがち。理論好きな方には嬉しいが、そうでない人には長い</td></tr>
-            <tr><td>知識（講義内）</td><td class="sc s3">3.0</td><td style="font-size:.78rem">よく学習されている</td><td style="font-size:.78rem"></td></tr>
-            <tr><td>知識（質問対応）</td><td class="sc s2">2.4</td><td style="font-size:.78rem"></td><td style="font-size:.78rem"></td></tr>
+            <tr><td>講義の進め方</td><td class="sc s1">1.6</td><td class="comment-cell">前回の復習からの導入◎</td><td class="comment-cell">丁寧すぎてタイムスケジュール通りに終わらない可能性。数学の研修になりがち</td></tr>
+            <tr><td>信頼</td><td class="sc s3">3.0</td><td class="comment-cell">ハキハキしていて自信に満ち溢れている</td><td class="comment-cell">不安な時が分かりやすい。フィラーを飲み込む</td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s1">1.6</td><td class="comment-cell">チャットを他の受講生にも共有するのvery good</td><td class="comment-cell">実装になるとインタラクティブが減る</td></tr>
+            <tr><td>思いやり</td><td class="sc s2">2.0</td><td class="comment-cell">細かな配慮。書くのを待ってくれる。心理的ハードル下げてくれる</td><td class="comment-cell">他の方がいる想定でのリアクションを意識</td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s2">2.0</td><td class="comment-cell">型の流れ◎</td><td class="comment-cell">冗長になりがち。理論好きな方には嬉しいが、そうでない人には長い</td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s3">3.0</td><td class="comment-cell">よく学習されている</td><td class="comment-cell"></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s2">2.4</td><td class="comment-cell"></td><td class="comment-cell"></td></tr>
           </tbody>
         </table>
       </div>
@@ -265,13 +267,13 @@
         <table class="item-avg-table">
           <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
           <tbody>
-            <tr><td>講義の進め方</td><td class="sc s2">2.0</td><td style="font-size:.78rem">前回の振り返りを可視化しながら進行。大事な観点を強調</td><td style="font-size:.78rem">講義冒頭にインタラクションを持ち関心を引き出したい。動機づけが必要</td></tr>
-            <tr><td>信頼</td><td class="sc s3">3.0</td><td style="font-size:.78rem">カメラ目線・ボディランゲージ活用。フィラーワードが少ない。自信ある講義進行</td><td style="font-size:.78rem">OFFを意図的に作る。緊張感を崩すことも強みになる</td></tr>
-            <tr><td>インタラクティブ</td><td class="sc s2">2.0</td><td style="font-size:.78rem">リアクションを通してイメージを持たせている。間を作っている。指名後に質問の復唱も</td><td style="font-size:.78rem">収束発問のみ。冒頭での動機づけ・発散的な問いが確認できていない</td></tr>
-            <tr><td>思いやり</td><td class="sc s2">2.71</td><td style="font-size:.78rem">体調気遣いOK。リアクションで進捗把握。画面切り替えのインシデント防止◎</td><td style="font-size:.78rem">手書き・実装ともに若干早い</td></tr>
-            <tr><td>質問対応（伝え方）</td><td class="sc s2">2.14</td><td style="font-size:.78rem">感謝OK、復唱OK、結論OK。可視化での説明OK</td><td style="font-size:.78rem">質問意図の把握ができていない箇所あり。「良い質問ですね」等のコメントを</td></tr>
-            <tr><td>知識（講義内）</td><td class="sc s2">2.71</td><td style="font-size:.78rem">講義内の内容理解については問題なし</td><td style="font-size:.78rem"></td></tr>
-            <tr><td>知識（質問対応）</td><td class="sc s2">2.57</td><td style="font-size:.78rem"></td><td style="font-size:.78rem"></td></tr>
+            <tr><td>講義の進め方</td><td class="sc s2">2.0</td><td class="comment-cell">前回の振り返りを可視化しながら進行。大事な観点を強調</td><td class="comment-cell">講義冒頭にインタラクションを持ち関心を引き出したい。動機づけが必要</td></tr>
+            <tr><td>信頼</td><td class="sc s3">3.0</td><td class="comment-cell">カメラ目線・ボディランゲージ活用。フィラーワードが少ない。自信ある講義進行</td><td class="comment-cell">OFFを意図的に作る。緊張感を崩すことも強みになる</td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s2">2.0</td><td class="comment-cell">リアクションを通してイメージを持たせている。間を作っている。指名後に質問の復唱も</td><td class="comment-cell">収束発問のみ。冒頭での動機づけ・発散的な問いが確認できていない</td></tr>
+            <tr><td>思いやり</td><td class="sc s2">2.71</td><td class="comment-cell">体調気遣いOK。リアクションで進捗把握。画面切り替えのインシデント防止◎</td><td class="comment-cell">手書き・実装ともに若干早い</td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s2">2.14</td><td class="comment-cell">感謝OK、復唱OK、結論OK。可視化での説明OK</td><td class="comment-cell">質問意図の把握ができていない箇所あり。「良い質問ですね」等のコメントを</td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s2">2.71</td><td class="comment-cell">講義内の内容理解については問題なし</td><td class="comment-cell"></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s2">2.57</td><td class="comment-cell"></td><td class="comment-cell"></td></tr>
           </tbody>
         </table>
       </div>
@@ -283,13 +285,13 @@
         <table class="item-avg-table">
           <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
           <tbody>
-            <tr><td>講義の進め方</td><td class="sc s3">3.0</td><td style="font-size:.78rem">復習からの導入が良い。実務活用イメージを冒頭で出せている</td><td style="font-size:.78rem">全体の中での現在地（Whole）提示。まとめは短くても良い</td></tr>
-            <tr><td>信頼</td><td class="sc s3">3.0</td><td style="font-size:.78rem">自信を持って講義。笑顔で柔らかい雰囲気。字が丁寧で読みやすい</td><td style="font-size:.78rem">—</td></tr>
-            <tr><td>インタラクティブ</td><td class="sc s1">1.5</td><td style="font-size:.78rem">効果的な考えさせができている。適宜受講生に問いかけ</td><td style="font-size:.78rem">発問の内容・方法を整理。「重みとは？」等の聞き方が広く回答しづらい。発散と収束の使い分け</td></tr>
-            <tr><td>思いやり</td><td class="sc s2">2.5</td><td style="font-size:.78rem">回答の心理的安全性が高い。手書きをしっかり待てている。範囲指定◎</td><td style="font-size:.78rem">—</td></tr>
-            <tr><td>質問対応（伝え方）</td><td class="sc s2">2.0</td><td style="font-size:.78rem">型は定着。意図確認の聞き返しも適切</td><td style="font-size:.78rem">補足情報が少し冗長。サクッと伝えて良い</td></tr>
-            <tr><td>知識（講義内）</td><td class="sc s3">3.0</td><td style="font-size:.78rem">—</td><td style="font-size:.78rem">—</td></tr>
-            <tr><td>知識（質問対応）</td><td class="sc s3">3.0</td><td style="font-size:.78rem">—</td><td style="font-size:.78rem">—</td></tr>
+            <tr><td>講義の進め方</td><td class="sc s3">3.0</td><td class="comment-cell">復習からの導入が良い。実務活用イメージを冒頭で出せている</td><td class="comment-cell">全体の中での現在地（Whole）提示。まとめは短くても良い</td></tr>
+            <tr><td>信頼</td><td class="sc s3">3.0</td><td class="comment-cell">自信を持って講義。笑顔で柔らかい雰囲気。字が丁寧で読みやすい</td><td class="comment-cell">—</td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s1">1.5</td><td class="comment-cell">効果的な考えさせができている。適宜受講生に問いかけ</td><td class="comment-cell">発問の内容・方法を整理。「重みとは？」等の聞き方が広く回答しづらい。発散と収束の使い分け</td></tr>
+            <tr><td>思いやり</td><td class="sc s2">2.5</td><td class="comment-cell">回答の心理的安全性が高い。手書きをしっかり待てている。範囲指定◎</td><td class="comment-cell">—</td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s2">2.0</td><td class="comment-cell">型は定着。意図確認の聞き返しも適切</td><td class="comment-cell">補足情報が少し冗長。サクッと伝えて良い</td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s3">3.0</td><td class="comment-cell">—</td><td class="comment-cell">—</td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s3">3.0</td><td class="comment-cell">—</td><td class="comment-cell">—</td></tr>
           </tbody>
         </table>
       </div>
@@ -301,13 +303,13 @@
         <table class="item-avg-table">
           <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
           <tbody>
-            <tr><td>講義の進め方</td><td class="sc s3">3.0</td><td style="font-size:.78rem">冒頭で振り返り実施。受講者へ目的伝達ができ重要箇所のイメージが湧く。次章へのモチベイト◎</td><td style="font-size:.78rem"></td></tr>
-            <tr><td>信頼</td><td class="sc s3">3.0</td><td style="font-size:.78rem">ハキハキと安心感。インシデント場面でも画面表示をコントロールできている</td><td style="font-size:.78rem"></td></tr>
-            <tr><td>インタラクティブ</td><td class="sc s3">3.0</td><td style="font-size:.78rem">「外れ値と聞いてどんなものが思い浮かぶ？」「学習結果問題あるなし」等の発問◎</td><td style="font-size:.78rem">収束的な問いは使いこなせている。冒頭でのモチベートや発散的な問いを設けたい</td></tr>
-            <tr><td>思いやり</td><td class="sc s2">2.5</td><td style="font-size:.78rem">受講者の記入時間を考慮。進捗把握にリアクション活用。実装の思いやり項目一通り達成</td><td style="font-size:.78rem">手書きの横軸スケールが揃っていない。Geminiの欄が邪魔（設定で消す）</td></tr>
-            <tr><td>質問対応（伝え方）</td><td class="sc s2">2.0</td><td style="font-size:.78rem">感謝OK、復唱OK、結論OK。基本可視化して説明できている</td><td style="font-size:.78rem">質問意図の把握ができていない箇所あり。持ち帰り時の一次回答の出し方</td></tr>
-            <tr><td>知識（講義内）</td><td class="sc s3">3.0</td><td style="font-size:.78rem">講義内の説明に必要な理解は問題なし</td><td style="font-size:.78rem"></td></tr>
-            <tr><td>知識（質問対応）</td><td class="sc s2">2.0</td><td style="font-size:.78rem"></td><td style="font-size:.78rem">SHAP/LIMEなどの解釈性手法、標準誤差の説明を見直し</td></tr>
+            <tr><td>講義の進め方</td><td class="sc s3">3.0</td><td class="comment-cell">冒頭で振り返り実施。受講者へ目的伝達ができ重要箇所のイメージが湧く。次章へのモチベイト◎</td><td class="comment-cell"></td></tr>
+            <tr><td>信頼</td><td class="sc s3">3.0</td><td class="comment-cell">ハキハキと安心感。インシデント場面でも画面表示をコントロールできている</td><td class="comment-cell"></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s3">3.0</td><td class="comment-cell">「外れ値と聞いてどんなものが思い浮かぶ？」「学習結果問題あるなし」等の発問◎</td><td class="comment-cell">収束的な問いは使いこなせている。冒頭でのモチベートや発散的な問いを設けたい</td></tr>
+            <tr><td>思いやり</td><td class="sc s2">2.5</td><td class="comment-cell">受講者の記入時間を考慮。進捗把握にリアクション活用。実装の思いやり項目一通り達成</td><td class="comment-cell">手書きの横軸スケールが揃っていない。Geminiの欄が邪魔（設定で消す）</td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s2">2.0</td><td class="comment-cell">感謝OK、復唱OK、結論OK。基本可視化して説明できている</td><td class="comment-cell">質問意図の把握ができていない箇所あり。持ち帰り時の一次回答の出し方</td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s3">3.0</td><td class="comment-cell">講義内の説明に必要な理解は問題なし</td><td class="comment-cell"></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s2">2.0</td><td class="comment-cell"></td><td class="comment-cell">SHAP/LIMEなどの解釈性手法、標準誤差の説明を見直し</td></tr>
           </tbody>
         </table>
       </div>
@@ -315,49 +317,67 @@
 
     <!-- 範囲別スコア -->
     <div id="yoshihara-range" class="sub-tab-content">
-      <h3>全28セッション 範囲・合計点一覧</h3>
-      <table class="eval-table">
-        <thead><tr><th>#</th><th>日付</th><th>採点者</th><th>手書き範囲</th><th>実装範囲</th><th>合計</th></tr></thead>
+      <h3>範囲別スコア（模擬講義マラソン）</h3>
+      <div style="overflow-x:auto">
+      <table class="eval-table" style="font-size:.75rem;min-width:700px">
+        <thead>
+          <tr>
+            <th rowspan="2" style="width:120px">章</th>
+            <th rowspan="2" style="width:160px">節</th>
+            <th colspan="3" style="text-align:center;background:var(--accent);color:#fff">手書き</th>
+            <th colspan="3" style="text-align:center;background:#805ad5;color:#fff">実装</th>
+          </tr>
+          <tr>
+            <th style="text-align:center;width:50px">録画</th>
+            <th style="text-align:center;width:55px">模擬1</th>
+            <th style="text-align:center;width:55px">模擬2</th>
+            <th style="text-align:center;width:50px">録画</th>
+            <th style="text-align:center;width:55px">模擬1</th>
+            <th style="text-align:center;width:55px">模擬2</th>
+          </tr>
+        </thead>
         <tbody>
-          <tr style="background:#f7fafc;font-weight:600"><td colspan="6">Week 1（1/6-1/12）</td></tr>
-          <tr><td>1</td><td>1/8</td><td>江口</td><td>データセットの準備〜実装</td><td>データセットの準備〜実装</td><td class="sc s1">11</td></tr>
-          <tr style="background:#f7fafc;font-weight:600"><td colspan="6">Week 2（1/13-1/17）</td></tr>
-          <tr><td>2</td><td>1/15</td><td>江口</td><td>なし</td><td>データの前処理（〜欠損値の処理）</td><td class="sc s1">13</td></tr>
-          <tr style="background:#f7fafc;font-weight:600"><td colspan="6">Week 3（1/19-1/24）</td></tr>
-          <tr><td>3</td><td>1/19</td><td>江口</td><td>Label Encoding、One-hot Encoding</td><td>Label Encoding、One-hot Encoding</td><td class="sc s1">11</td></tr>
-          <tr><td>4</td><td>1/20</td><td>相田</td><td>過学習、Ridge回帰・Lasso回帰</td><td>過学習、Ridge回帰・Lasso回帰</td><td class="sc s1">13</td></tr>
-          <tr><td>5</td><td>1/21</td><td>篠原</td><td>外れ値</td><td>外れ値</td><td class="sc s1">12</td></tr>
-          <tr><td>6</td><td>1/22</td><td>沖廣</td><td>ロジスティック回帰</td><td>ロジスティック回帰</td><td class="sc s1">14</td></tr>
-          <tr style="background:#f7fafc;font-weight:600"><td colspan="6">Week 4（1/27-1/31）平均: 15.5</td></tr>
-          <tr><td>7</td><td>1/27</td><td>江口</td><td>決定木</td><td>決定木</td><td class="sc s1">13</td></tr>
-          <tr><td>8</td><td>1/28</td><td>江口(1)</td><td>アンサンブル学習</td><td>アンサンブル学習</td><td class="sc s2">15</td></tr>
-          <tr><td>9</td><td>1/28</td><td>江口(2)</td><td>グリッドサーチ等</td><td>グリッドサーチ等</td><td class="sc s2">16</td></tr>
-          <tr><td>10</td><td>1/29</td><td>戸巻</td><td>グリッドサーチ等</td><td>グリッドサーチ等</td><td class="sc s2">17</td></tr>
-          <tr><td>11</td><td>1/29</td><td>江口</td><td>評価指標</td><td>評価指標</td><td class="sc s2">15</td></tr>
-          <tr><td>12</td><td>1/29</td><td>沖廣</td><td>主成分分析</td><td>主成分分析</td><td class="sc s2">17</td></tr>
-          <tr style="background:#f7fafc;font-weight:600"><td colspan="6">Week 5（2/2-2/7）平均: 15.6</td></tr>
-          <tr><td>13</td><td>2/2</td><td>江口</td><td>クラスタリング</td><td>クラスタリング</td><td class="sc s3">18</td></tr>
-          <tr><td>14</td><td>2/3</td><td>沖廣</td><td>アンサンブル学習</td><td>特徴量エンジニアリング</td><td class="sc s1">13</td></tr>
-          <tr><td>15</td><td>2/4</td><td>吉田</td><td>過学習</td><td>過学習</td><td class="sc s2">16</td></tr>
-          <tr><td>16</td><td>2/5</td><td>歳森</td><td>外れ値除去</td><td>ランダムサーチ</td><td class="sc s2">16</td></tr>
-          <tr><td>17</td><td>2/6</td><td>森井</td><td>評価指標</td><td>決定木</td><td class="sc s2">15</td></tr>
-          <tr style="background:#f7fafc;font-weight:600"><td colspan="6">Week 6（2/9-2/14）平均: 17.1　※リーダー模擬講義含む</td></tr>
-          <tr><td>18</td><td>2/9</td><td>重本</td><td>ロジスティック回帰</td><td>データの前処理</td><td class="sc s2">17</td></tr>
-          <tr><td>19</td><td>2/10</td><td>四方田</td><td>アンサンブル学習</td><td>評価指標</td><td class="sc s2">17</td></tr>
-          <tr><td>20</td><td>2/10</td><td>村上</td><td>カテゴリカル変数</td><td>グリッドサーチ等</td><td class="sc s2">16</td></tr>
-          <tr><td>21</td><td>2/10</td><td>木下</td><td>グリッドサーチ等</td><td>特徴量エンジニアリング</td><td class="sc s2">17</td></tr>
-          <tr><td>22</td><td>2/10</td><td>有吉</td><td>Accuracy等</td><td>主成分分析</td><td class="sc s2">17</td></tr>
-          <tr><td>23</td><td>2/12</td><td>小林</td><td>Ridge・Lasso</td><td>過学習</td><td class="sc s3">18</td></tr>
-          <tr><td>24</td><td>2/12</td><td>竹内</td><td>重回帰分析</td><td>分類 決定木</td><td class="sc s3">18</td></tr>
-          <tr style="background:#f7fafc;font-weight:600"><td colspan="6">Week 7（2/17-2/21）平均: 18.0</td></tr>
-          <tr><td>25</td><td>2/19</td><td>村上</td><td>アンサンブル</td><td>クラスタリング</td><td class="sc s3">19</td></tr>
-          <tr><td>26</td><td>2/20</td><td>重本</td><td>決定木</td><td>クラスタリング</td><td class="sc s2">17</td></tr>
-          <tr style="background:#f7fafc;font-weight:600"><td colspan="6">Week 8（2/24-2/28）平均: 18.5</td></tr>
-          <tr><td>27</td><td>2/24</td><td>四方田</td><td>外れ値</td><td>アンサンブル</td><td class="sc s3">18</td></tr>
-          <tr><td>28</td><td>2/24</td><td>小林</td><td>評価指標</td><td>特徴量エンジニアリング</td><td class="sc s3">19</td></tr>
+          <tr><td></td><td>自己紹介</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+          <tr style="background:#f7fafc;font-weight:600"><td colspan="8">教師あり学習 回帰1</td></tr>
+          <tr><td></td><td>重回帰分析</td><td class="sc s0">—</td><td class="sc s3">3</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+          <tr><td></td><td>データセットの準備〜実装</td><td class="sc s0">—</td><td class="sc s1">1</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s2">2</td><td class="sc s0">—</td></tr>
+          <tr><td></td><td>過学習</td><td class="sc s0">—</td><td class="sc s2">2</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s2">2</td><td class="sc s0">—</td></tr>
+          <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+          <tr style="background:#f7fafc;font-weight:600"><td colspan="8">前処理 基礎</td></tr>
+          <tr><td></td><td>標準化</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+          <tr><td></td><td>欠損値</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s1">1</td><td class="sc s0">—</td></tr>
+          <tr><td></td><td>Label Encoding</td><td class="sc s0">—</td><td class="sc s1">1</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s1">1</td><td class="sc s0">—</td></tr>
+          <tr><td></td><td>One-hot Encoding</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s1">1</td><td class="sc s0">—</td></tr>
+          <tr><td></td><td>再実装</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+          <tr style="background:#f7fafc;font-weight:600"><td colspan="8">教師あり学習 回帰2</td></tr>
+          <tr><td></td><td>PLS回帰</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+          <tr style="background:#f7fafc;font-weight:600"><td colspan="8">演習1</td></tr>
+          <tr style="background:#f7fafc;font-weight:600"><td colspan="8">データの前処理（応用）</td></tr>
+          <tr><td></td><td>特徴量エンジニアリング</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s1">1</td><td class="sc s0">—</td></tr>
+          <tr><td></td><td>外れ値除去</td><td class="sc s0">—</td><td class="sc s2">2</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s1">1</td><td class="sc s0">—</td></tr>
+          <tr style="background:#f7fafc;font-weight:600"><td colspan="8">教師あり学習 分類</td></tr>
+          <tr><td></td><td>ロジスティック回帰</td><td class="sc s0">—</td><td class="sc s3">3</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s1">1</td><td class="sc s0">—</td></tr>
+          <tr><td></td><td>決定木</td><td class="sc s0">—</td><td class="sc s3">4</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+          <tr><td></td><td>SVM（ForBiz）</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+          <tr><td></td><td>ランダムフォレスト</td><td class="sc s0">—</td><td class="sc s1">1</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s3">3</td><td class="sc s0">—</td></tr>
+          <tr><td></td><td>XGBoost</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+          <tr style="background:#f7fafc;font-weight:600"><td colspan="8">評価指標</td></tr>
+          <tr><td></td><td>Accuracy・Precision・Recall・F1score</td><td class="sc s0">—</td><td class="sc s3">3</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s1">1</td><td class="sc s0">—</td></tr>
+          <tr><td></td><td>不均衡データへのアプローチ</td><td class="sc s0">—</td><td class="sc s1">1</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+          <tr style="background:#f7fafc;font-weight:600"><td colspan="8">性能改善</td></tr>
+          <tr><td></td><td>データの分割（ForBiz）</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+          <tr><td></td><td>ハイパーパラメータのチューニング方法</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+          <tr><td></td><td>グリッドサーチ</td><td class="sc s0">—</td><td class="sc s1">1</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s1">1</td><td class="sc s0">—</td></tr>
+          <tr><td></td><td>ランダムサーチ</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+          <tr><td></td><td>ベイズ最適化</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s3">3</td><td class="sc s0">—</td></tr>
+          <tr style="background:#f7fafc;font-weight:600"><td colspan="8">演習2</td></tr>
+          <tr style="background:#f7fafc;font-weight:600"><td colspan="8">教師なし学習</td></tr>
+          <tr><td></td><td>主成分分析（スライド）</td><td class="sc s0">—</td><td class="sc s1">1</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s2">2</td><td class="sc s0">—</td></tr>
+          <tr><td></td><td>クラスタリング（スライド）</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s3">3</td><td class="sc s0">—</td></tr>
         </tbody>
       </table>
-      <p style="font-size:.78rem;color:var(--sub);margin-top:.5rem">※ Summary CSVの28セッション分のデータ。同一日に複数セッションの場合あり。合計は7項目の合算（満点21）。</p>
+      </div>
+      <p style="font-size:.75rem;color:var(--sub);margin-top:.5rem">※ 対策CSVより。数字は模擬講義での点数。「—」は未実施。</p>
     </div>
 
     <!-- 所感・アクション -->
