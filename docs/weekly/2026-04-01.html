@@ -104,18 +104,160 @@
     <h3>全員の点数推移</h3>
     <div class="chart-wrap wide"><canvas id="chartAll" height="85"></canvas></div>
 
-    <h3>ステータス一覧</h3>
-    <table class="summary-table">
-      <thead><tr><th>名前</th><th>最新点</th><th>前回比</th><th>ステータス</th><th>要点</th></tr></thead>
-      <tbody>
-        <tr><td>吉原 拓也（テスト）</td><td><strong>18.5</strong>/21</td><td style="color:var(--good)">+0.5</td><td><span class="status-card status-good">合格圏</span></td><td>W8で18.5到達。インタラクティブ3.0達成。質問対応（伝え方）・知識（質問対応）の安定化が最終課題</td></tr>
-        <tr><td>山本 和樹</td><td>—</td><td>—</td><td><span class="status-card status-ok">入社初日</span></td><td>PC問題の解消要確認</td></tr>
-        <tr><td>上田 正和</td><td>—</td><td>—</td><td><span class="status-card status-good">立ち上がり良好</span></td><td>模擬講義11回分スケジュール確定済</td></tr>
-        <tr><td>丹下 知彦</td><td>—</td><td>—</td><td><span class="status-card status-warn">要フォロー</span></td><td>メンター/エルダーのスレッド投稿ゼロ</td></tr>
-        <tr><td>杉中 綾子</td><td>—</td><td>—</td><td><span class="status-card status-warn">要フォロー</span></td><td>入社前テスト未完了</td></tr>
-        <tr><td>紙谷 航希</td><td>—</td><td>—</td><td><span class="status-card status-ok">入社初日</span></td><td>荻野が予定仮組み済。持病配慮要</td></tr>
-      </tbody>
-    </table>
+    <div class="week-tabs">
+      <button class="week-tab-btn" onclick="switchSummaryWeek(1)">W1</button>
+      <button class="week-tab-btn" onclick="switchSummaryWeek(2)">W2</button>
+      <button class="week-tab-btn" onclick="switchSummaryWeek(3)">W3</button>
+      <button class="week-tab-btn" onclick="switchSummaryWeek(4)">W4</button>
+      <button class="week-tab-btn" onclick="switchSummaryWeek(5)">W5</button>
+      <button class="week-tab-btn" onclick="switchSummaryWeek(6)">W6</button>
+      <button class="week-tab-btn" onclick="switchSummaryWeek(7)">W7</button>
+      <button class="week-tab-btn active" onclick="switchSummaryWeek(8)">W8</button>
+    </div>
+
+    <!-- Summary W1 -->
+    <div id="summary-w1" class="week-panel">
+      <h3>ステータス一覧（W1）</h3>
+      <table class="summary-table">
+        <thead><tr><th>名前</th><th>点数</th><th>前回比</th><th>ステータス</th><th>要点</th></tr></thead>
+        <tbody>
+          <tr><td>吉原 拓也（テスト）</td><td><strong>11.0</strong>/21</td><td>—</td><td><span class="status-card status-warn">立ち上がり</span></td><td>初回模擬講義完走。WPW・質問対応の型が未定着</td></tr>
+          <tr><td>山本 和樹</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+          <tr><td>上田 正和</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+          <tr><td>丹下 知彦</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+          <tr><td>杉中 綾子</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+          <tr><td>紙谷 航希</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+        </tbody>
+      </table>
+      <h4>W1 キーポイント</h4>
+      <div class="note-box"><ul style="padding-left:1.25rem"><li>吉原：初回模擬講義。声量・ハキハキさは良好。型の定着が課題。</li></ul></div>
+    </div>
+
+    <!-- Summary W2 -->
+    <div id="summary-w2" class="week-panel">
+      <h3>ステータス一覧（W2）</h3>
+      <table class="summary-table">
+        <thead><tr><th>名前</th><th>点数</th><th>前回比</th><th>ステータス</th><th>要点</th></tr></thead>
+        <tbody>
+          <tr><td>吉原 拓也（テスト）</td><td><strong>13.0</strong>/21</td><td style="color:var(--good)">+2.0</td><td><span class="status-card status-ok">改善傾向</span></td><td>WPW構成を意識し始めた。インタラクティブ2.0に改善</td></tr>
+          <tr><td>山本 和樹</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+          <tr><td>上田 正和</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+          <tr><td>丹下 知彦</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+          <tr><td>杉中 綾子</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+          <tr><td>紙谷 航希</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+        </tbody>
+      </table>
+      <h4>W2 キーポイント</h4>
+      <div class="note-box"><ul style="padding-left:1.25rem"><li>吉原：+2.0の改善。講義態度は安定。欠損値の実装を初実施。</li></ul></div>
+    </div>
+
+    <!-- Summary W3 -->
+    <div id="summary-w3" class="week-panel">
+      <h3>ステータス一覧（W3）</h3>
+      <table class="summary-table">
+        <thead><tr><th>名前</th><th>点数</th><th>前回比</th><th>ステータス</th><th>要点</th></tr></thead>
+        <tbody>
+          <tr><td>吉原 拓也（テスト）</td><td><strong>12.5</strong>/21</td><td style="color:var(--bad)">-0.5</td><td><span class="status-card status-ok">成長痛</span></td><td>4回実施で量は確保。質のバラつきが出ている</td></tr>
+          <tr><td>山本 和樹</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+          <tr><td>上田 正和</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+          <tr><td>丹下 知彦</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+          <tr><td>杉中 綾子</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+          <tr><td>紙谷 航希</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+        </tbody>
+      </table>
+      <h4>W3 キーポイント</h4>
+      <div class="note-box"><ul style="padding-left:1.25rem"><li>吉原：模擬講義4回（過去最多）。量を増やした影響でスコア微減。想定内。</li></ul></div>
+    </div>
+
+    <!-- Summary W4 -->
+    <div id="summary-w4" class="week-panel">
+      <h3>ステータス一覧（W4）</h3>
+      <table class="summary-table">
+        <thead><tr><th>名前</th><th>点数</th><th>前回比</th><th>ステータス</th><th>要点</th></tr></thead>
+        <tbody>
+          <tr><td>吉原 拓也（テスト）</td><td><strong>15.5</strong>/21</td><td style="color:var(--good)">+3.0</td><td><span class="status-card status-good">1ヶ月目標達成</span></td><td>15点到達。6回実施。知識面安定。インタラクティブがボトルネック</td></tr>
+          <tr><td>山本 和樹</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+          <tr><td>上田 正和</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+          <tr><td>丹下 知彦</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+          <tr><td>杉中 綾子</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+          <tr><td>紙谷 航希</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+        </tbody>
+      </table>
+      <h4>W4 キーポイント</h4>
+      <div class="note-box"><ul style="padding-left:1.25rem"><li>吉原：+3.0の大幅改善。1ヶ月目標(15点)達成。合格ライン(18点)が視野に。</li></ul></div>
+    </div>
+
+    <!-- Summary W5 -->
+    <div id="summary-w5" class="week-panel">
+      <h3>ステータス一覧（W5）</h3>
+      <table class="summary-table">
+        <thead><tr><th>名前</th><th>点数</th><th>前回比</th><th>ステータス</th><th>要点</th></tr></thead>
+        <tbody>
+          <tr><td>吉原 拓也（テスト）</td><td><strong>15.6</strong>/21</td><td style="color:var(--good)">+0.1</td><td><span class="status-card status-ok">プラトー</span></td><td>信頼・知識が3.0到達。インタラクティブ・思いやりが伸び悩み</td></tr>
+          <tr><td>山本 和樹</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+          <tr><td>上田 正和</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+          <tr><td>丹下 知彦</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+          <tr><td>杉中 綾子</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+          <tr><td>紙谷 航希</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+        </tbody>
+      </table>
+      <h4>W5 キーポイント</h4>
+      <div class="note-box"><ul style="padding-left:1.25rem"><li>吉原：横ばい。得意項目は天井到達、苦手項目の改善がカギ。</li></ul></div>
+    </div>
+
+    <!-- Summary W6 -->
+    <div id="summary-w6" class="week-panel">
+      <h3>ステータス一覧（W6）</h3>
+      <table class="summary-table">
+        <thead><tr><th>名前</th><th>点数</th><th>前回比</th><th>ステータス</th><th>要点</th></tr></thead>
+        <tbody>
+          <tr><td>吉原 拓也（テスト）</td><td><strong>17.1</strong>/21</td><td style="color:var(--good)">+1.5</td><td><span class="status-card status-ok">合格圏目前</span></td><td>7回実施で全体底上げ。合格ライン(18点)まであと0.9点</td></tr>
+          <tr><td>山本 和樹</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+          <tr><td>上田 正和</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+          <tr><td>丹下 知彦</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+          <tr><td>杉中 綾子</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+          <tr><td>紙谷 航希</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+        </tbody>
+      </table>
+      <h4>W6 キーポイント</h4>
+      <div class="note-box"><ul style="padding-left:1.25rem"><li>吉原：+1.5の着実な成長。7回の模擬講義で範囲カバーも拡大。</li></ul></div>
+    </div>
+
+    <!-- Summary W7 -->
+    <div id="summary-w7" class="week-panel">
+      <h3>ステータス一覧（W7）</h3>
+      <table class="summary-table">
+        <thead><tr><th>名前</th><th>点数</th><th>前回比</th><th>ステータス</th><th>要点</th></tr></thead>
+        <tbody>
+          <tr><td>吉原 拓也（テスト）</td><td><strong>18.0</strong>/21</td><td style="color:var(--good)">+0.9</td><td><span class="status-card status-good">合格圏</span></td><td>合格ライン到達。4項目が3.0。安定感が課題</td></tr>
+          <tr><td>山本 和樹</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+          <tr><td>上田 正和</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+          <tr><td>丹下 知彦</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+          <tr><td>杉中 綾子</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+          <tr><td>紙谷 航希</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
+        </tbody>
+      </table>
+      <h4>W7 キーポイント</h4>
+      <div class="note-box"><ul style="padding-left:1.25rem"><li>吉原：合格ライン(18点)初到達。テスト日程検討開始。</li></ul></div>
+    </div>
+
+    <!-- Summary W8 (active) -->
+    <div id="summary-w8" class="week-panel active">
+      <h3>ステータス一覧（W8）</h3>
+      <table class="summary-table">
+        <thead><tr><th>名前</th><th>最新点</th><th>前回比</th><th>ステータス</th><th>要点</th></tr></thead>
+        <tbody>
+          <tr><td>吉原 拓也（テスト）</td><td><strong>18.5</strong>/21</td><td style="color:var(--good)">+0.5</td><td><span class="status-card status-good">合格圏</span></td><td>W8で18.5到達。インタラクティブ3.0達成。質問対応（伝え方）・知識（質問対応）の安定化が最終課題</td></tr>
+          <tr><td>山本 和樹</td><td>—</td><td>—</td><td><span class="status-card status-ok">入社初日</span></td><td>PC問題の解消要確認</td></tr>
+          <tr><td>上田 正和</td><td>—</td><td>—</td><td><span class="status-card status-good">立ち上がり良好</span></td><td>模擬講義11回分スケジュール確定済</td></tr>
+          <tr><td>丹下 知彦</td><td>—</td><td>—</td><td><span class="status-card status-warn">要フォロー</span></td><td>メンター/エルダーのスレッド投稿ゼロ</td></tr>
+          <tr><td>杉中 綾子</td><td>—</td><td>—</td><td><span class="status-card status-warn">要フォロー</span></td><td>入社前テスト未完了</td></tr>
+          <tr><td>紙谷 航希</td><td>—</td><td>—</td><td><span class="status-card status-ok">入社初日</span></td><td>荻野が予定仮組み済。持病配慮要</td></tr>
+        </tbody>
+      </table>
+      <h4>W8 キーポイント</h4>
+      <div class="note-box"><ul style="padding-left:1.25rem"><li>吉原：合格圏2週連続キープ(18.5点)。テスト実施推奨。</li><li>新入社員5名は4/1入社。全社オンボーディング開始。</li></ul></div>
+    </div>
 
     <h3>全員が把握すべき事項</h3>
     <div class="note-box">
@@ -204,7 +346,7 @@
             <tr><td>思いやり</td><td class="sc s2">2</td><td class="comment-cell"><div class="cm">・共有画面の確認ができている<br>・ノートの使い方を示せている<br>・チャットでリンク送信・コード送信Good</div></td><td class="comment-cell"><div class="cm">・手書きノート準備はリアクションで確認を<br>・ノートブックの構成・進め方を最初に伝える<br>・tabキー補完は受講生にも便利機能として伝える</div></td></tr>
             <tr><td>質問対応（伝え方）</td><td class="sc s1">1</td><td class="comment-cell"><div class="cm">・—<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・感謝→復唱→結論の型を徹底<br>・質問の意図は受講生と対話しながら探る<br>・—</div></td></tr>
             <tr><td>知識（講義内）</td><td class="sc s2">2</td><td class="comment-cell"><div class="cm">・講義内の知識は問題なし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・実装で丁寧すぎて冗長に感じる部分あり<br>・【補足】は駆け足でもOK<br>・—</div></td></tr>
-            <tr><td>知識（質問対応）</td><td class="sc s2">2</td><td class="comment-cell"><div class="cm">・—<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・—<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s2">2</td><td class="comment-cell"><div class="cm">・質問8問中6問正答(○)<br>・df命名・random_state・データ分割等の基礎知識OK<br>・—</div></td><td class="comment-cell"><div class="cm">・「未知データとは？」に回答できず(☓)<br>・バイアスの説明がやや不正確(△)<br>・print()有無の違いの説明が不十分(△)</div></td></tr>
           </tbody>
         </table>
       </div>
@@ -240,7 +382,7 @@
             <tr><td>思いやり</td><td class="sc s2">2.5</td><td class="comment-cell"><div class="cm">・<span style="color:var(--good);font-weight:600">板書・実装の画面サイズ・コード送信等の配慮◎（複数名指摘）</span><br>・手書きの様子を注意深く見れている<br>・書く場面と聞く場面がしっかり分かれている</div></td><td class="comment-cell"><div class="cm">・復習で思い出す時間はもっと長めに<br>・チャットは早めに拾えるよう意識する<br>・ミュートに戻していいよの案内を忘れずに</div></td></tr>
             <tr><td>質問対応（伝え方）</td><td class="sc s2">2.33</td><td class="comment-cell"><div class="cm">・<span style="color:var(--good);font-weight:600">感謝→復唱→結論の型OK（複数名指摘）</span><br>・回答を簡潔にできている<br>・質問の意図の確認ができている</div></td><td class="comment-cell"><div class="cm">・<span style="color:var(--bad);font-weight:600">自信がないところで冗長になりがち（複数名指摘）</span><br>・結論ファーストが抜けないよう注意<br>・—</div></td></tr>
             <tr><td>知識（講義内）</td><td class="sc s3">2.83</td><td class="comment-cell"><div class="cm">・過学習ではない場合の説明もできている<br>・コードの説明わかりやすい<br>・—</div></td><td class="comment-cell"><div class="cm">・「シグモイド関数」「ひきすう」等の発音注意<br>・決定係数の説明は正解率と混同しない表現で<br>・—</div></td></tr>
-            <tr><td>知識（質問対応）</td><td class="sc s3">2.83</td><td class="comment-cell"><div class="cm">・—<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・—<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s3">2.83</td><td class="comment-cell"><div class="cm">・質問10問中8問正答(○)（戸巻採点分）<br>・グリッド/ランダム/ベイズの使い分け説明OK<br>・CV属性の命名規則など深い知識も回答可</div></td><td class="comment-cell"><div class="cm">・計算コストの具体的な説明がやや不足(△)<br>・探索範囲の指定方法の説明で「上げていく」のみ(△)<br>・—</div></td></tr>
           </tbody>
         </table>
       </div>
@@ -276,7 +418,7 @@
             <tr><td>思いやり</td><td class="sc s2">2.71</td><td class="comment-cell"><div class="cm">・<span style="color:var(--good);font-weight:600">体調気遣い・リアクションで進捗把握（複数名指摘）</span><br>・画面切り替えのインシデント防止◎<br>・基礎基本がしっかりできている</div></td><td class="comment-cell"><div class="cm">・<span style="color:var(--bad);font-weight:600">手書き・実装ともに若干早い（複数名指摘）</span><br>・「○○さんは持ち合わせていないと思いますが」等の表現注意<br>・理解度チェックを合間に挟みたい</div></td></tr>
             <tr><td>質問対応（伝え方）</td><td class="sc s2">2.14</td><td class="comment-cell"><div class="cm">・<span style="color:var(--good);font-weight:600">感謝→復唱→結論の型は完璧（複数名指摘）</span><br>・可視化での説明OK<br>・長引いたときにまとめることができている</div></td><td class="comment-cell"><div class="cm">・質問意図の把握ができていない箇所あり<br>・「良い質問ですね」等のコメントを添える<br>・回答後に「この回答でいかがでしょうか？」と確認</div></td></tr>
             <tr><td>知識（講義内）</td><td class="sc s2">2.71</td><td class="comment-cell"><div class="cm">・講義内の内容理解は問題なし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・専門用語の使用に注意（指標をモデルと表現等）<br>・—<br>・—</div></td></tr>
-            <tr><td>知識（質問対応）</td><td class="sc s2">2.57</td><td class="comment-cell"><div class="cm">・しっかりと深掘りができている<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・—<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s2">2.57</td><td class="comment-cell"><div class="cm">・質問10問中6問正答(○)（木下採点分）<br>・バギング/ブースティング使い分けを具体例で説明<br>・スタッキング・弱学習器の理解OK</div></td><td class="comment-cell"><div class="cm">・評価指標の設定タイミングを回答できず(☓)<br>・バギングのデータ採用率・正解率の使用場面が不正確(△)<br>・評価指標とビジネスKPIの紐づけ説明がやや不足(△)</div></td></tr>
           </tbody>
         </table>
       </div>
@@ -312,7 +454,7 @@
             <tr><td>思いやり</td><td class="sc s2">2.5</td><td class="comment-cell"><div class="cm">・<span style="color:var(--good);font-weight:600">受講者の記入時間・進捗把握のリアクション活用（複数名指摘）</span><br>・実装の思いやり項目一通り達成<br>・テンポ良くツールでの見るべき場所の指定も◎</div></td><td class="comment-cell"><div class="cm">・手書きの横軸スケールが揃っていない<br>・Geminiの欄が邪魔（設定で消す）<br>・研修内でまだ取り扱っていない用語の使用に注意</div></td></tr>
             <tr><td>質問対応（伝え方）</td><td class="sc s2">2.0</td><td class="comment-cell"><div class="cm">・感謝OK、復唱OK、結論OK<br>・基本可視化して説明できている<br>・型ができておりわかりやすく回答できている</div></td><td class="comment-cell"><div class="cm">・<span style="color:var(--bad);font-weight:600">質問意図の把握ができていない箇所あり（複数名指摘）</span><br>・持ち帰り時の一次回答の出し方を整理<br>・受講生の不安を解消できたか確認する</div></td></tr>
             <tr><td>知識（講義内）</td><td class="sc s3">3.0</td><td class="comment-cell"><div class="cm">・講義内の説明に必要な理解は問題なし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・σの書き方注意（6に見える）<br>・—<br>・—</div></td></tr>
-            <tr><td>知識（質問対応）</td><td class="sc s2">2.0</td><td class="comment-cell"><div class="cm">・—<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・意図確認ができず回答がずれるケースあり<br>・不明な箇所は受講生と対話しながら進める<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s2">2.0</td><td class="comment-cell"><div class="cm">・質問10問中8問正答(○)（木下採点分）<br>・k-meansの距離指標・GMM/DBSCAN等の発展知識あり<br>・基本可視化して説明できている</div></td><td class="comment-cell"><div class="cm">・XGBoostの解釈性向上手法(SHAP/LIME)を回答できず(☓)<br>・XGB/LightGBM/CatBoostの使い分けで意図と違う回答(△)<br>・質問意図の把握不足で回答がずれるケースあり</div></td></tr>
           </tbody>
         </table>
       </div>
@@ -320,7 +462,7 @@
 
     <!-- 範囲別スコア -->
     <div id="yoshihara-range" class="sub-tab-content">
-      <h3>範囲別スコア（模擬講義マラソン）</h3>
+      <h3>範囲別 練習回数（模擬講義マラソン）</h3>
       <div class="week-tabs">
         <button class="week-tab-btn" onclick="switchRangeWeek(1)">W1</button>
         <button class="week-tab-btn" onclick="switchRangeWeek(2)">W2</button>
@@ -336,11 +478,11 @@
       <div id="range-w1" class="week-panel">
         <div style="overflow-x:auto">
         <table class="eval-table" style="font-size:.75rem;min-width:500px">
-          <thead><tr><th style="width:120px">章</th><th style="width:160px">節</th><th style="text-align:center;width:55px">手書き</th><th style="text-align:center;width:55px">実装</th></tr></thead>
+          <thead><tr><th style="width:120px">章</th><th style="width:160px">節</th><th style="text-align:center;width:55px">手書き（回数）</th><th style="text-align:center;width:55px">実装（回数）</th></tr></thead>
           <tbody>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
-            <tr><td></td><td>重回帰分析</td><td class="sc s3 new-score">3</td><td class="sc s0">—</td></tr>
-            <tr><td></td><td>データセットの準備〜実装</td><td class="sc s1 new-score">1</td><td class="sc s2 new-score">2</td></tr>
+            <tr><td></td><td>重回帰分析</td><td class="sc new-score">3</td><td class="sc s0">—</td></tr>
+            <tr><td></td><td>データセットの準備〜実装</td><td class="sc new-score">1</td><td class="sc new-score">2</td></tr>
             <tr><td></td><td>過学習</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
             <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
@@ -373,16 +515,16 @@
       <div id="range-w2" class="week-panel">
         <div style="overflow-x:auto">
         <table class="eval-table" style="font-size:.75rem;min-width:500px">
-          <thead><tr><th style="width:120px">章</th><th style="width:160px">節</th><th style="text-align:center;width:55px">手書き</th><th style="text-align:center;width:55px">実装</th></tr></thead>
+          <thead><tr><th style="width:120px">章</th><th style="width:160px">節</th><th style="text-align:center;width:55px">手書き（回数）</th><th style="text-align:center;width:55px">実装（回数）</th></tr></thead>
           <tbody>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
-            <tr><td></td><td>重回帰分析</td><td class="sc s3">3</td><td class="sc s0">—</td></tr>
-            <tr><td></td><td>データセットの準備〜実装</td><td class="sc s1">1</td><td class="sc s2">2</td></tr>
+            <tr><td></td><td>重回帰分析</td><td class="sc">3</td><td class="sc s0">—</td></tr>
+            <tr><td></td><td>データセットの準備〜実装</td><td class="sc">1</td><td class="sc">2</td></tr>
             <tr><td></td><td>過学習</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
             <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
             <tr><td></td><td>標準化</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc s0">—</td></tr>
-            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc s1 new-score">1</td></tr>
+            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc new-score">1</td></tr>
             <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">データの前処理（応用）</td></tr>
             <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc s0">—</td></tr>
@@ -410,22 +552,22 @@
       <div id="range-w3" class="week-panel">
         <div style="overflow-x:auto">
         <table class="eval-table" style="font-size:.75rem;min-width:500px">
-          <thead><tr><th style="width:120px">章</th><th style="width:160px">節</th><th style="text-align:center;width:55px">手書き</th><th style="text-align:center;width:55px">実装</th></tr></thead>
+          <thead><tr><th style="width:120px">章</th><th style="width:160px">節</th><th style="text-align:center;width:55px">手書き（回数）</th><th style="text-align:center;width:55px">実装（回数）</th></tr></thead>
           <tbody>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
-            <tr><td></td><td>重回帰分析</td><td class="sc s3">3</td><td class="sc s0">—</td></tr>
-            <tr><td></td><td>データセットの準備〜実装</td><td class="sc s1">1</td><td class="sc s2">2</td></tr>
-            <tr><td></td><td>過学習</td><td class="sc s2 new-score">2</td><td class="sc s2 new-score">2</td></tr>
+            <tr><td></td><td>重回帰分析</td><td class="sc">3</td><td class="sc s0">—</td></tr>
+            <tr><td></td><td>データセットの準備〜実装</td><td class="sc">1</td><td class="sc">2</td></tr>
+            <tr><td></td><td>過学習</td><td class="sc new-score">2</td><td class="sc new-score">2</td></tr>
             <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
             <tr><td></td><td>標準化</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc s0">—</td></tr>
-            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc s1">1</td></tr>
-            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc s1 new-score">1</td><td class="sc s1 new-score">1</td></tr>
+            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc">1</td></tr>
+            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc new-score">1</td><td class="sc new-score">1</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">データの前処理（応用）</td></tr>
             <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc s0">—</td></tr>
-            <tr><td></td><td>外れ値除去</td><td class="sc s2 new-score">2</td><td class="sc s1 new-score">1</td></tr>
+            <tr><td></td><td>外れ値除去</td><td class="sc new-score">2</td><td class="sc new-score">1</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 分類</td></tr>
-            <tr><td></td><td>ロジスティック回帰</td><td class="sc s0">—</td><td class="sc s1 new-score">1</td></tr>
+            <tr><td></td><td>ロジスティック回帰</td><td class="sc s0">—</td><td class="sc new-score">1</td></tr>
             <tr><td></td><td>決定木</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
             <tr><td></td><td>SVM（ForBiz）</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
             <tr><td></td><td>ランダムフォレスト</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
@@ -447,33 +589,33 @@
       <div id="range-w4" class="week-panel">
         <div style="overflow-x:auto">
         <table class="eval-table" style="font-size:.75rem;min-width:500px">
-          <thead><tr><th style="width:120px">章</th><th style="width:160px">節</th><th style="text-align:center;width:55px">手書き</th><th style="text-align:center;width:55px">実装</th></tr></thead>
+          <thead><tr><th style="width:120px">章</th><th style="width:160px">節</th><th style="text-align:center;width:55px">手書き（回数）</th><th style="text-align:center;width:55px">実装（回数）</th></tr></thead>
           <tbody>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
-            <tr><td></td><td>重回帰分析</td><td class="sc s3">3</td><td class="sc s0">—</td></tr>
-            <tr><td></td><td>データセットの準備〜実装</td><td class="sc s1">1</td><td class="sc s2">2</td></tr>
-            <tr><td></td><td>過学習</td><td class="sc s2">2</td><td class="sc s2">2</td></tr>
+            <tr><td></td><td>重回帰分析</td><td class="sc">3</td><td class="sc s0">—</td></tr>
+            <tr><td></td><td>データセットの準備〜実装</td><td class="sc">1</td><td class="sc">2</td></tr>
+            <tr><td></td><td>過学習</td><td class="sc">2</td><td class="sc">2</td></tr>
             <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
             <tr><td></td><td>標準化</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc s0">—</td></tr>
-            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc s1">1</td></tr>
-            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc s1">1</td><td class="sc s1">1</td></tr>
+            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc">1</td></tr>
+            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc">1</td><td class="sc">1</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">データの前処理（応用）</td></tr>
             <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc s0">—</td></tr>
-            <tr><td></td><td>外れ値除去</td><td class="sc s2">2</td><td class="sc s1">1</td></tr>
+            <tr><td></td><td>外れ値除去</td><td class="sc">2</td><td class="sc">1</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 分類</td></tr>
-            <tr><td></td><td>ロジスティック回帰</td><td class="sc s0">—</td><td class="sc s1">1</td></tr>
-            <tr><td></td><td>決定木</td><td class="sc s3 new-score">4</td><td class="sc s0">—</td></tr>
+            <tr><td></td><td>ロジスティック回帰</td><td class="sc s0">—</td><td class="sc">1</td></tr>
+            <tr><td></td><td>決定木</td><td class="sc new-score">4</td><td class="sc s0">—</td></tr>
             <tr><td></td><td>SVM（ForBiz）</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
-            <tr><td></td><td>ランダムフォレスト</td><td class="sc s1 new-score">1</td><td class="sc s0">—</td></tr>
+            <tr><td></td><td>ランダムフォレスト</td><td class="sc new-score">1</td><td class="sc s0">—</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">評価指標</td></tr>
-            <tr><td></td><td>Accuracy等</td><td class="sc s3 new-score">3</td><td class="sc s1 new-score">1</td></tr>
-            <tr><td></td><td>不均衡データ</td><td class="sc s1 new-score">1</td><td class="sc s0">—</td></tr>
+            <tr><td></td><td>Accuracy等</td><td class="sc new-score">3</td><td class="sc new-score">1</td></tr>
+            <tr><td></td><td>不均衡データ</td><td class="sc new-score">1</td><td class="sc s0">—</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">性能改善</td></tr>
             <tr><td></td><td>データの分割</td><td class="sc s0">—</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td></tr>
-            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc s1 new-score">1</td><td class="sc s1 new-score">1</td></tr>
+            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc new-score">1</td><td class="sc new-score">1</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師なし学習</td></tr>
-            <tr><td></td><td>主成分分析</td><td class="sc s1 new-score">1</td><td class="sc s2 new-score">2</td></tr>
+            <tr><td></td><td>主成分分析</td><td class="sc new-score">1</td><td class="sc new-score">2</td></tr>
             <tr><td></td><td>クラスタリング</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
           </tbody>
         </table>
@@ -484,34 +626,34 @@
       <div id="range-w5" class="week-panel">
         <div style="overflow-x:auto">
         <table class="eval-table" style="font-size:.75rem;min-width:500px">
-          <thead><tr><th style="width:120px">章</th><th style="width:160px">節</th><th style="text-align:center;width:55px">手書き</th><th style="text-align:center;width:55px">実装</th></tr></thead>
+          <thead><tr><th style="width:120px">章</th><th style="width:160px">節</th><th style="text-align:center;width:55px">手書き（回数）</th><th style="text-align:center;width:55px">実装（回数）</th></tr></thead>
           <tbody>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
-            <tr><td></td><td>重回帰分析</td><td class="sc s3">3</td><td class="sc s0">—</td></tr>
-            <tr><td></td><td>データセットの準備〜実装</td><td class="sc s1">1</td><td class="sc s2">2</td></tr>
-            <tr><td></td><td>過学習</td><td class="sc s2">2</td><td class="sc s2">2</td></tr>
+            <tr><td></td><td>重回帰分析</td><td class="sc">3</td><td class="sc s0">—</td></tr>
+            <tr><td></td><td>データセットの準備〜実装</td><td class="sc">1</td><td class="sc">2</td></tr>
+            <tr><td></td><td>過学習</td><td class="sc">2</td><td class="sc">2</td></tr>
             <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
             <tr><td></td><td>標準化</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc s0">—</td></tr>
-            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc s1">1</td></tr>
-            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc s1">1</td><td class="sc s1">1</td></tr>
+            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc">1</td></tr>
+            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc">1</td><td class="sc">1</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">データの前処理（応用）</td></tr>
-            <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc s1 new-score">1</td></tr>
-            <tr><td></td><td>外れ値除去</td><td class="sc s2">2</td><td class="sc s1">1</td></tr>
+            <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc new-score">1</td></tr>
+            <tr><td></td><td>外れ値除去</td><td class="sc">2</td><td class="sc">1</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 分類</td></tr>
-            <tr><td></td><td>ロジスティック回帰</td><td class="sc s0">—</td><td class="sc s1">1</td></tr>
-            <tr><td></td><td>決定木</td><td class="sc s3">4</td><td class="sc s0">—</td></tr>
+            <tr><td></td><td>ロジスティック回帰</td><td class="sc s0">—</td><td class="sc">1</td></tr>
+            <tr><td></td><td>決定木</td><td class="sc">4</td><td class="sc s0">—</td></tr>
             <tr><td></td><td>SVM（ForBiz）</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
-            <tr><td></td><td>ランダムフォレスト</td><td class="sc s1">1</td><td class="sc s3 new-score">3</td></tr>
+            <tr><td></td><td>ランダムフォレスト</td><td class="sc">1</td><td class="sc new-score">3</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">評価指標</td></tr>
-            <tr><td></td><td>Accuracy等</td><td class="sc s3">3</td><td class="sc s1">1</td></tr>
-            <tr><td></td><td>不均衡データ</td><td class="sc s1">1</td><td class="sc s0">—</td></tr>
+            <tr><td></td><td>Accuracy等</td><td class="sc">3</td><td class="sc">1</td></tr>
+            <tr><td></td><td>不均衡データ</td><td class="sc">1</td><td class="sc s0">—</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">性能改善</td></tr>
             <tr><td></td><td>データの分割</td><td class="sc s0">—</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td></tr>
-            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc s1">1</td><td class="sc s1">1</td></tr>
+            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc">1</td><td class="sc">1</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師なし学習</td></tr>
-            <tr><td></td><td>主成分分析</td><td class="sc s1">1</td><td class="sc s2">2</td></tr>
-            <tr><td></td><td>クラスタリング</td><td class="sc s0">—</td><td class="sc s3 new-score">3</td></tr>
+            <tr><td></td><td>主成分分析</td><td class="sc">1</td><td class="sc">2</td></tr>
+            <tr><td></td><td>クラスタリング</td><td class="sc s0">—</td><td class="sc new-score">3</td></tr>
           </tbody>
         </table>
         </div>
@@ -521,34 +663,34 @@
       <div id="range-w6" class="week-panel">
         <div style="overflow-x:auto">
         <table class="eval-table" style="font-size:.75rem;min-width:500px">
-          <thead><tr><th style="width:120px">章</th><th style="width:160px">節</th><th style="text-align:center;width:55px">手書き</th><th style="text-align:center;width:55px">実装</th></tr></thead>
+          <thead><tr><th style="width:120px">章</th><th style="width:160px">節</th><th style="text-align:center;width:55px">手書き（回数）</th><th style="text-align:center;width:55px">実装（回数）</th></tr></thead>
           <tbody>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
-            <tr><td></td><td>重回帰分析</td><td class="sc s3">3</td><td class="sc s0">—</td></tr>
-            <tr><td></td><td>データセットの準備〜実装</td><td class="sc s1">1</td><td class="sc s2">2</td></tr>
-            <tr><td></td><td>過学習</td><td class="sc s2">2</td><td class="sc s2">2</td></tr>
+            <tr><td></td><td>重回帰分析</td><td class="sc">3</td><td class="sc s0">—</td></tr>
+            <tr><td></td><td>データセットの準備〜実装</td><td class="sc">1</td><td class="sc">2</td></tr>
+            <tr><td></td><td>過学習</td><td class="sc">2</td><td class="sc">2</td></tr>
             <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
             <tr><td></td><td>標準化</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc s0">—</td></tr>
-            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc s1">1</td></tr>
-            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc s1">1</td><td class="sc s1">1</td></tr>
+            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc">1</td></tr>
+            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc">1</td><td class="sc">1</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">データの前処理（応用）</td></tr>
-            <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc s1">1</td></tr>
-            <tr><td></td><td>外れ値除去</td><td class="sc s2">2</td><td class="sc s1">1</td></tr>
+            <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc">1</td></tr>
+            <tr><td></td><td>外れ値除去</td><td class="sc">2</td><td class="sc">1</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 分類</td></tr>
-            <tr><td></td><td>ロジスティック回帰</td><td class="sc s3 new-score">3</td><td class="sc s1">1</td></tr>
-            <tr><td></td><td>決定木</td><td class="sc s3">4</td><td class="sc s0">—</td></tr>
+            <tr><td></td><td>ロジスティック回帰</td><td class="sc new-score">3</td><td class="sc">1</td></tr>
+            <tr><td></td><td>決定木</td><td class="sc">4</td><td class="sc s0">—</td></tr>
             <tr><td></td><td>SVM（ForBiz）</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
-            <tr><td></td><td>ランダムフォレスト</td><td class="sc s1">1</td><td class="sc s3">3</td></tr>
+            <tr><td></td><td>ランダムフォレスト</td><td class="sc">1</td><td class="sc">3</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">評価指標</td></tr>
-            <tr><td></td><td>Accuracy等</td><td class="sc s3">3</td><td class="sc s1">1</td></tr>
-            <tr><td></td><td>不均衡データ</td><td class="sc s1">1</td><td class="sc s0">—</td></tr>
+            <tr><td></td><td>Accuracy等</td><td class="sc">3</td><td class="sc">1</td></tr>
+            <tr><td></td><td>不均衡データ</td><td class="sc">1</td><td class="sc s0">—</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">性能改善</td></tr>
             <tr><td></td><td>データの分割</td><td class="sc s0">—</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td></tr>
-            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc s1">1</td><td class="sc s3 new-score">3</td></tr>
+            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc">1</td><td class="sc new-score">3</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師なし学習</td></tr>
-            <tr><td></td><td>主成分分析</td><td class="sc s1">1</td><td class="sc s2">2</td></tr>
-            <tr><td></td><td>クラスタリング</td><td class="sc s0">—</td><td class="sc s3">3</td></tr>
+            <tr><td></td><td>主成分分析</td><td class="sc">1</td><td class="sc">2</td></tr>
+            <tr><td></td><td>クラスタリング</td><td class="sc s0">—</td><td class="sc">3</td></tr>
           </tbody>
         </table>
         </div>
@@ -558,34 +700,34 @@
       <div id="range-w7" class="week-panel">
         <div style="overflow-x:auto">
         <table class="eval-table" style="font-size:.75rem;min-width:500px">
-          <thead><tr><th style="width:120px">章</th><th style="width:160px">節</th><th style="text-align:center;width:55px">手書き</th><th style="text-align:center;width:55px">実装</th></tr></thead>
+          <thead><tr><th style="width:120px">章</th><th style="width:160px">節</th><th style="text-align:center;width:55px">手書き（回数）</th><th style="text-align:center;width:55px">実装（回数）</th></tr></thead>
           <tbody>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
-            <tr><td></td><td>重回帰分析</td><td class="sc s3">3</td><td class="sc s0">—</td></tr>
-            <tr><td></td><td>データセットの準備〜実装</td><td class="sc s1">1</td><td class="sc s2">2</td></tr>
-            <tr><td></td><td>過学習</td><td class="sc s2">2</td><td class="sc s2">2</td></tr>
+            <tr><td></td><td>重回帰分析</td><td class="sc">3</td><td class="sc s0">—</td></tr>
+            <tr><td></td><td>データセットの準備〜実装</td><td class="sc">1</td><td class="sc">2</td></tr>
+            <tr><td></td><td>過学習</td><td class="sc">2</td><td class="sc">2</td></tr>
             <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
             <tr><td></td><td>標準化</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc s0">—</td></tr>
-            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc s1">1</td></tr>
-            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc s1">1</td><td class="sc s1">1</td></tr>
+            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc">1</td></tr>
+            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc">1</td><td class="sc">1</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">データの前処理（応用）</td></tr>
-            <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc s1">1</td></tr>
-            <tr><td></td><td>外れ値除去</td><td class="sc s2">2</td><td class="sc s1">1</td></tr>
+            <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc">1</td></tr>
+            <tr><td></td><td>外れ値除去</td><td class="sc">2</td><td class="sc">1</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 分類</td></tr>
-            <tr><td></td><td>ロジスティック回帰</td><td class="sc s3">3</td><td class="sc s1">1</td></tr>
-            <tr><td></td><td>決定木</td><td class="sc s3">4</td><td class="sc s0">—</td></tr>
+            <tr><td></td><td>ロジスティック回帰</td><td class="sc">3</td><td class="sc">1</td></tr>
+            <tr><td></td><td>決定木</td><td class="sc">4</td><td class="sc s0">—</td></tr>
             <tr><td></td><td>SVM（ForBiz）</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
-            <tr><td></td><td>ランダムフォレスト</td><td class="sc s1">1</td><td class="sc s3">3</td></tr>
+            <tr><td></td><td>ランダムフォレスト</td><td class="sc">1</td><td class="sc">3</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">評価指標</td></tr>
-            <tr><td></td><td>Accuracy等</td><td class="sc s3">3</td><td class="sc s1">1</td></tr>
-            <tr><td></td><td>不均衡データ</td><td class="sc s1">1</td><td class="sc s0">—</td></tr>
+            <tr><td></td><td>Accuracy等</td><td class="sc">3</td><td class="sc">1</td></tr>
+            <tr><td></td><td>不均衡データ</td><td class="sc">1</td><td class="sc s0">—</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">性能改善</td></tr>
             <tr><td></td><td>データの分割</td><td class="sc s0">—</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td></tr>
-            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc s1">1</td><td class="sc s3">3</td></tr>
+            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc">1</td><td class="sc">3</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師なし学習</td></tr>
-            <tr><td></td><td>主成分分析</td><td class="sc s1">1</td><td class="sc s2">2</td></tr>
-            <tr><td></td><td>クラスタリング</td><td class="sc s0">—</td><td class="sc s3">3</td></tr>
+            <tr><td></td><td>主成分分析</td><td class="sc">1</td><td class="sc">2</td></tr>
+            <tr><td></td><td>クラスタリング</td><td class="sc s0">—</td><td class="sc">3</td></tr>
           </tbody>
         </table>
         </div>
@@ -595,40 +737,40 @@
       <div id="range-w8" class="week-panel active">
         <div style="overflow-x:auto">
         <table class="eval-table" style="font-size:.75rem;min-width:500px">
-          <thead><tr><th style="width:120px">章</th><th style="width:160px">節</th><th style="text-align:center;width:55px">手書き</th><th style="text-align:center;width:55px">実装</th></tr></thead>
+          <thead><tr><th style="width:120px">章</th><th style="width:160px">節</th><th style="text-align:center;width:55px">手書き（回数）</th><th style="text-align:center;width:55px">実装（回数）</th></tr></thead>
           <tbody>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
-            <tr><td></td><td>重回帰分析</td><td class="sc s3">3</td><td class="sc s0">—</td></tr>
-            <tr><td></td><td>データセットの準備〜実装</td><td class="sc s1">1</td><td class="sc s2">2</td></tr>
-            <tr><td></td><td>過学習</td><td class="sc s2">2</td><td class="sc s2">2</td></tr>
+            <tr><td></td><td>重回帰分析</td><td class="sc">3</td><td class="sc s0">—</td></tr>
+            <tr><td></td><td>データセットの準備〜実装</td><td class="sc">1</td><td class="sc">2</td></tr>
+            <tr><td></td><td>過学習</td><td class="sc">2</td><td class="sc">2</td></tr>
             <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
             <tr><td></td><td>標準化</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc s0">—</td></tr>
-            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc s1">1</td></tr>
-            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc s1">1</td><td class="sc s1">1</td></tr>
+            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc">1</td></tr>
+            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc">1</td><td class="sc">1</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">データの前処理（応用）</td></tr>
-            <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc s1">1</td></tr>
-            <tr><td></td><td>外れ値除去</td><td class="sc s2">2</td><td class="sc s1">1</td></tr>
+            <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc">1</td></tr>
+            <tr><td></td><td>外れ値除去</td><td class="sc">2</td><td class="sc">1</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 分類</td></tr>
-            <tr><td></td><td>ロジスティック回帰</td><td class="sc s3">3</td><td class="sc s1">1</td></tr>
-            <tr><td></td><td>決定木</td><td class="sc s3">4</td><td class="sc s0">—</td></tr>
+            <tr><td></td><td>ロジスティック回帰</td><td class="sc">3</td><td class="sc">1</td></tr>
+            <tr><td></td><td>決定木</td><td class="sc">4</td><td class="sc s0">—</td></tr>
             <tr><td></td><td>SVM（ForBiz）</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
-            <tr><td></td><td>ランダムフォレスト</td><td class="sc s1">1</td><td class="sc s3">3</td></tr>
+            <tr><td></td><td>ランダムフォレスト</td><td class="sc">1</td><td class="sc">3</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">評価指標</td></tr>
-            <tr><td></td><td>Accuracy等</td><td class="sc s3">3</td><td class="sc s1">1</td></tr>
-            <tr><td></td><td>不均衡データ</td><td class="sc s1">1</td><td class="sc s0">—</td></tr>
+            <tr><td></td><td>Accuracy等</td><td class="sc">3</td><td class="sc">1</td></tr>
+            <tr><td></td><td>不均衡データ</td><td class="sc">1</td><td class="sc s0">—</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">性能改善</td></tr>
             <tr><td></td><td>データの分割</td><td class="sc s0">—</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td></tr>
-            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc s1">1</td><td class="sc s3">3</td></tr>
+            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc">1</td><td class="sc">3</td></tr>
             <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師なし学習</td></tr>
-            <tr><td></td><td>主成分分析</td><td class="sc s1">1</td><td class="sc s2">2</td></tr>
-            <tr><td></td><td>クラスタリング</td><td class="sc s0">—</td><td class="sc s3">3</td></tr>
+            <tr><td></td><td>主成分分析</td><td class="sc">1</td><td class="sc">2</td></tr>
+            <tr><td></td><td>クラスタリング</td><td class="sc s0">—</td><td class="sc">3</td></tr>
           </tbody>
         </table>
         </div>
       </div>
 
-      <p style="font-size:.75rem;color:var(--sub);margin-top:.5rem">※ 対策CSVより。数字は模擬講義での最高点。「—」は未実施。グレーは該当バージョン（手書き/実装）が存在しない範囲。ハイライト行はその週に新たに追加されたスコア。</p>
+      <p style="font-size:.75rem;color:var(--sub);margin-top:.5rem">※ 対策CSVより。数字は模擬講義の累計練習回数。「—」は未実施。グレーは該当バージョン（手書き/実装）が存在しない範囲。ハイライト行はその週に新たに追加された練習。</p>
     </div>
 
 
@@ -647,202 +789,219 @@
       </div>
 
       <div id="actions-w1" class="week-panel">
-        <h4>今週の所感</h4>
+        <h4>育成進捗</h4>
         <div class="scorers">
-          <span><strong>エルダー：</strong>初回の模擬講義。WPW構成が未定着で、導入部分で何を話すか迷っている印象。ただし声量・ハキハキさは良い。知識面は重回帰の手書きが3点と高く、理解度自体は問題ない。</span>
-          <span><strong>メンター：</strong>緊張が見られたが、最後まで講義をやりきった姿勢は評価できる。「感謝→復唱→結論」の型がまだ身についておらず、質問対応で詰まる場面あり。</span>
+          <span><strong>全体感：</strong>11.0/21点。初回模擬講義を完走。合格ライン(18点)まで距離があるが、知識面(重回帰3点)は高く、ポテンシャルは十分。スタートラインとしては標準的。</span>
+          <span><strong>登壇テスト見通し：</strong>現時点では未知数。まずは基本型（WPW・質問対応の型）の定着が最優先。</span>
         </div>
 
-        <h4>改善すべき箇所</h4>
-        <div class="issue-box">WPW構成（Why→What→Why）を意識した講義設計ができていない。特に冒頭のWhyが弱い。</div>
-        <div class="issue-box">質問対応で「感謝→復唱→結論」の型が未定着。回答が冗長になりがち。</div>
-        <div class="issue-box">インタラクティブ要素がほぼゼロ。受講者への問いかけがない。</div>
+        <h4>メンタル・モチベーション</h4>
+        <div class="scorers">
+          <span>初回は緊張が見られたが、最後までやりきる姿勢あり。真面目で準備をしっかりするタイプ。模擬講義への抵抗感は低そう。</span>
+        </div>
 
         <h4>ネクストアクション</h4>
         <dl class="next-actions">
-          <dt>メンティー</dt><dd>WPWテンプレートを使って次回講義の構成を事前に書き出す。質問対応の型を3回練習。</dd>
-          <dt>メンター</dt><dd>WPW構成のお手本を見せる。質問対応の型をロールプレイで練習。</dd>
-          <dt>エルダー</dt><dd>模擬講義の頻度を週2回以上に設定。WPW定着を最優先に。</dd>
+          <dt>育成方針</dt><dd>まずは量をこなして講義の「型」を身につけるフェーズ。週2回以上の模擬講義を定着させる。</dd>
+          <dt>メンター/エルダー</dt><dd>WPW構成と質問対応の型を最優先で指導。お手本を見せてから実践させる流れで。</dd>
         </dl>
       </div>
 
       <div id="actions-w2" class="week-panel">
-        <h4>前週からの課題フォロー</h4>
+        <h4>前週課題フォロー</h4>
         <div style="margin:.4rem 0">
-          <span class="status-card status-ok">一部改善</span> WPW構成 — Whyの導入を試みたが、まだ「なぜこれを学ぶのか」の動機づけが弱い<br>
-          <span class="status-card status-warn">継続</span> 質問対応の型 — 「感謝→復唱→結論」の流れは意識し始めたが、復唱が不十分<br>
-          <span class="status-card status-warn">継続</span> インタラクティブ — 問いかけを1回入れたが、発散的な問いではなく確認のみ
+          <span class="status-card status-ok">一部改善</span> 講義の型（WPW）定着<br>
+          <span class="status-card status-warn">継続</span> 質問対応の型 定着
         </div>
 
-        <h4>今週の所感</h4>
+        <h4>育成進捗</h4>
         <div class="scorers">
-          <span><strong>エルダー：</strong>講義の進め方が1.0→2.0に改善。WPW構成を意識し始めている。信頼は2.0で安定しており、基本的な講義態度は問題ない。欠損値の実装を初めて実施（1点）。</span>
-          <span><strong>メンター：</strong>インタラクティブが2.0に上がったが、まだ「聞いていますか？」レベルの確認にとどまる。考えさせる問いを設計する必要あり。</span>
+          <span><strong>全体感：</strong>13.0/21点(+2.0)。W1から改善傾向。講義の型を意識し始めている段階。順調な立ち上がり。</span>
+          <span><strong>登壇テスト見通し：</strong>1ヶ月目標(15点)まであと2点。W3-4で量を増やせば到達可能なペース。</span>
         </div>
 
-        <h4>改善すべき箇所</h4>
-        <div class="issue-box">WPWの「最初のWhy」をもっと具体的に。受講者の業務に紐づけた動機づけが必要。</div>
-        <div class="issue-box">インタラクティブ：確認型の問いから脱却し、考えさせる発散型の問いを設計する。</div>
+        <h4>メンタル・モチベーション</h4>
+        <div class="scorers">
+          <span>前向きに取り組めている。フィードバックを素直に受け止め、次回に反映しようとする姿勢あり。模擬講義の頻度を上げることへの抵抗感はなさそう。</span>
+        </div>
 
         <h4>ネクストアクション</h4>
         <dl class="next-actions">
-          <dt>メンティー</dt><dd>次回講義で冒頭に「なぜこのアルゴリズムを学ぶのか」を受講者の業務例で説明する。発散型の問いを最低2つ準備。</dd>
-          <dt>メンター</dt><dd>発散型の問いの例を共有。質問対応の型の復唱部分を重点的にフィードバック。</dd>
-          <dt>エルダー</dt><dd>模擬講義回数を増やす（W3目標: 4回）。インタラクティブの改善を重点観察。</dd>
+          <dt>育成方針</dt><dd>量の確保フェーズ。W3で4回以上の模擬講義を目指す。型の定着を優先。</dd>
+          <dt>メンター/エルダー</dt><dd>発散型の問いの例を共有し、インタラクティブの引き出しを増やす。</dd>
         </dl>
       </div>
 
       <div id="actions-w3" class="week-panel">
-        <h4>前週からの課題フォロー</h4>
+        <h4>前週課題フォロー</h4>
         <div style="margin:.4rem 0">
-          <span class="status-card status-ok">一部改善</span> WPWの動機づけ — 業務例を出す試みあり。ただし具体性がまだ不足<br>
-          <span class="status-card status-warn">継続</span> 発散型の問い — 準備はしているが、実際の講義で自然に出せていない
+          <span class="status-card status-ok">一部改善</span> 講義の型（WPW）定着<br>
+          <span class="status-card status-warn">継続</span> インタラクティブの自然な組み込み
         </div>
 
-        <h4>今週の所感</h4>
+        <h4>育成進捗</h4>
         <div class="scorers">
-          <span><strong>エルダー：</strong>模擬講義4回実施（過去最多）。量をこなしたことで講義の型が少しずつ身についてきている。ただし合計12.5点とW2(13.0)から微減。回数が増えた分、講義の質にバラつきが出ている。</span>
-          <span><strong>メンター：</strong>インタラクティブが1.25に下がった。回数が増えると基本に立ち返れなくなる傾向。思いやりも1.25と低く、進行速度が早すぎて受講者が追いつけない場面あり。</span>
+          <span><strong>全体感：</strong>12.5/21点(-0.5)。模擬講義4回と量は確保できたが、スコアは微減。量を増やした分バラつきが出ている「成長痛」のフェーズ。想定内の推移。</span>
+          <span><strong>登壇テスト見通し：</strong>1ヶ月目標(15点)まであと2.5点。量は確保できているので、W4で質の安定化ができれば十分到達可能。</span>
         </div>
 
-        <h4>改善すべき箇所</h4>
-        <div class="issue-box">進行速度の意識。手書き中の説明タイミングを考える（書き終わってから説明 or 書きながら説明を使い分ける）。</div>
-        <div class="issue-box">インタラクティブ：量をこなす中でも冒頭の問いかけを必ず入れるルーティン化。</div>
-        <div class="issue-box">受講者に考える時間を与える。問いかけ後の「間」を3秒以上取る。</div>
+        <h4>メンタル・モチベーション</h4>
+        <div class="scorers">
+          <span>スコアが微減したが、モチベーションは維持されている。4回こなす体力と意欲がある。ただし、量に追われて基本を忘れる傾向あり。チェックリストで「毎回やること」を可視化する仕掛けが必要。</span>
+        </div>
 
         <h4>ネクストアクション</h4>
         <dl class="next-actions">
-          <dt>メンティー</dt><dd>講義冒頭チェックリスト作成（Why導入・問いかけ・間の確保）。進行速度を意識して手書きの説明タイミングを事前に決める。</dd>
-          <dt>メンター</dt><dd>進行速度のフィードバックを重点的に。思いやりスコアの改善ポイントを具体的に伝える。</dd>
-          <dt>エルダー</dt><dd>W4も4回以上を維持。質の安定を重視し、毎回チェックリストで自己評価させる。</dd>
+          <dt>育成方針</dt><dd>量の維持＋質の安定化。講義冒頭チェックリストで基本行動をルーティン化する。</dd>
+          <dt>メンター/エルダー</dt><dd>進行速度と思いやりのフィードバックを重点的に。W4も4回以上維持。</dd>
         </dl>
       </div>
 
       <div id="actions-w4" class="week-panel">
-        <h4>前週からの課題フォロー</h4>
+        <h4>前週課題フォロー</h4>
         <div style="margin:.4rem 0">
-          <span class="status-card status-ok">一部改善</span> 進行速度 — 意識的にペースを落とす場面が増えた。思いやり2.5に改善<br>
-          <span class="status-card status-warn">継続</span> インタラクティブの冒頭問いかけ — 1.17とさらに低下。ルーティン化できていない<br>
-          <span class="status-card status-good">クリア</span> 考える時間の確保 — 問いかけ後に間を取る意識が見られるようになった
+          <span class="status-card status-good">クリア</span> 量の維持（6回実施）<br>
+          <span class="status-card status-ok">一部改善</span> 質の安定化（思いやり2.5に改善）<br>
+          <span class="status-card status-warn">継続</span> インタラクティブのルーティン化
         </div>
 
-        <h4>今週の所感</h4>
+        <h4>育成進捗</h4>
         <div class="scorers">
-          <span><strong>エルダー：</strong>模擬講義6回実施。合計15.5点と大幅改善（+3.0）。1ヶ月目標の15点を達成。知識（講義内）が2.83、知識（質問対応）も2.83と安定してきた。範囲が広がり、決定木(4点)・Accuracy(3点)など高得点の範囲も出てきた。</span>
-          <span><strong>メンター：</strong>知識面の安定は素晴らしい。一方でインタラクティブ1.17が最大の課題。冒頭の動機づけ発問を「習慣」にする仕掛けが必要。質問対応の伝え方は2.33に改善し、型が定着しつつある。</span>
+          <span><strong>全体感：</strong>15.5/21点(+3.0)。1ヶ月目標(15点)を達成。大幅な成長を見せた。知識面は安定し、講義の範囲も広がっている。<strong>on track</strong>。</span>
+          <span><strong>登壇テスト見通し：</strong>合格ライン(18点)まであと2.5点。インタラクティブ(1.17)が最大のボトルネック。ここを2.0以上に持っていければ合格圏が見える。</span>
         </div>
 
-        <h4>改善すべき箇所</h4>
-        <div class="issue-box">インタラクティブ：冒頭の動機づけ発問が入っていない講義が多い。「講義開始30秒以内に問いかけ」をルール化。</div>
-        <div class="issue-box">思いやり：2.5まで改善したが、手書き中の説明タイミングにまだムラがある。</div>
+        <h4>メンタル・モチベーション</h4>
+        <div class="scorers">
+          <span>15点達成で自信がついている様子。6回の模擬講義をこなす体力・意欲は申し分ない。ただしインタラクティブが伸び悩んでおり、本人も課題を認識している。「わかっているけどできない」状態なので、仕掛け（スクリプト化）が有効。</span>
+        </div>
+
+        <h4>キャリア方向性</h4>
+        <div class="scorers">
+          <span>技術が好きで、情報量の多いわかりやすい講義を理想としている（W6 CSV感想より）。DS寄りの講師像。</span>
+        </div>
 
         <h4>ネクストアクション</h4>
         <dl class="next-actions">
-          <dt>メンティー</dt><dd>講義冒頭30秒スクリプトを全範囲分作成（Why + 問いかけ）。手書き中は「今○○を書いています」と実況する練習。</dd>
-          <dt>メンター</dt><dd>冒頭30秒スクリプトのレビュー。インタラクティブに特化したフィードバック。</dd>
-          <dt>エルダー</dt><dd>模擬講義回数を維持しつつ、インタラクティブの改善に焦点。W5で合計16点以上を目指す。</dd>
+          <dt>育成方針</dt><dd>量から質への転換期。インタラクティブの改善に集中。冒頭30秒スクリプトで行動をルーティン化。</dd>
+          <dt>メンター/エルダー</dt><dd>インタラクティブに特化したフィードバック。W5で16点以上を目指す。</dd>
         </dl>
       </div>
 
       <div id="actions-w5" class="week-panel">
-        <h4>前週からの課題フォロー</h4>
+        <h4>前週課題フォロー</h4>
         <div style="margin:.4rem 0">
-          <span class="status-card status-ok">一部改善</span> インタラクティブ冒頭発問 — 1.6に微改善。一部の講義で問いかけを入れられるようになった<br>
-          <span class="status-card status-ok">一部改善</span> 手書き中の実況 — 意識している場面が増えたが、忘れる場面もまだある
+          <span class="status-card status-ok">一部改善</span> インタラクティブ（1.17→1.6）<br>
+          <span class="status-card status-warn">継続</span> 質の安定化（講義の進め方が伸び悩み）
         </div>
 
-        <h4>今週の所感</h4>
+        <h4>育成進捗</h4>
         <div class="scorers">
-          <span><strong>エルダー：</strong>信頼が3.0に到達し安定。知識（講義内）も3.0。この2項目は合格水準に達した。合計15.6点で前週とほぼ同等。インタラクティブ1.6、思いやり2.0がボトルネック。</span>
-          <span><strong>メンター：</strong>自信を持って話せるようになり、信頼の3.0は納得。一方で講義の進め方が1.6と伸び悩み。WPW構成の最後のWhyが弱い（学んだことを何に活かせるか、の締めくくり）。</span>
+          <span><strong>全体感：</strong>15.6/21点(+0.1)。横ばい。信頼・知識（講義内）が3.0で合格水準に到達した一方、インタラクティブ・思いやりが伸び悩み。「得意な項目は天井、苦手な項目が停滞」という典型的なプラトー。</span>
+          <span><strong>登壇テスト見通し：</strong>合格ライン(18点)まであと2.4点。講義の進め方(1.6)とインタラクティブ(1.6)の2項目を各+0.4すれば到達圏。残り3週で十分可能。</span>
         </div>
 
-        <h4>改善すべき箇所</h4>
-        <div class="issue-box">WPW構成の「最後のWhy」（学びの活用先・次への橋渡し）を意識。締めくくりで「今日学んだ○○は、△△の場面で使えます」を必ず入れる。</div>
-        <div class="issue-box">思いやり：進行速度はやや改善したが、受講者の表情を見て調整する余裕がまだない。</div>
+        <h4>メンタル・モチベーション</h4>
+        <div class="scorers">
+          <span>スコア横ばいだが、信頼3.0到達は本人の自信につながっている。5回の模擬講義を着実にこなしており、意欲は高い。停滞感を感じさせないよう「伸びた項目」を明示的にフィードバックすることが重要。</span>
+        </div>
 
         <h4>ネクストアクション</h4>
         <dl class="next-actions">
-          <dt>メンティー</dt><dd>各範囲の「最後のWhy」フレーズを準備。講義中に受講者の顔を見るタイミングを意識的に作る（手書きを止めて顔を上げる）。</dd>
-          <dt>メンター</dt><dd>WPW構成の締めくくりフレーズをレビュー。思いやりのスコアアップに向けた具体的行動を整理。</dd>
-          <dt>エルダー</dt><dd>W6で合計17点以上を目指す。講義の進め方の改善が合計点アップの鍵。</dd>
+          <dt>育成方針</dt><dd>講義の進め方（特に締めくくりのWhy）とインタラクティブの集中改善。W6で17点以上を目指す。</dd>
+          <dt>メンター/エルダー</dt><dd>WPW締めくくりフレーズのレビュー。思いやりの具体的改善行動を整理。</dd>
         </dl>
       </div>
 
       <div id="actions-w6" class="week-panel">
-        <h4>前週からの課題フォロー</h4>
+        <h4>前週課題フォロー</h4>
         <div style="margin:.4rem 0">
-          <span class="status-card status-good">クリア</span> WPW「最後のWhy」 — 締めくくりで活用先を述べる習慣が定着。講義の進め方が2.0に改善<br>
-          <span class="status-card status-ok">一部改善</span> 受講者の表情確認 — 意識している場面あり。思いやり2.71に改善
+          <span class="status-card status-good">クリア</span> 講義の進め方の改善（1.6→2.0）<br>
+          <span class="status-card status-ok">一部改善</span> インタラクティブ（1.6→2.0）<br>
+          <span class="status-card status-ok">一部改善</span> 思いやり（2.0→2.71）
         </div>
 
-        <h4>今週の所感</h4>
+        <h4>育成進捗</h4>
         <div class="scorers">
-          <span><strong>エルダー：</strong>模擬講義7回（過去最多）。合計17.1点で着実に伸びている。講義の進め方2.0、インタラクティブ2.0と両方改善。ロジスティック回帰の手書きが3点に到達。範囲別スコアも広がりを見せている。</span>
-          <span><strong>メンター：</strong>全体的に底上げされている印象。インタラクティブ2.0は冒頭の問いかけを入れられるようになった成果。ただしまだ「確認型」が多く、「考えさせる問い」への進化が必要。質問対応の伝え方2.14は横ばい。</span>
+          <span><strong>全体感：</strong>17.1/21点(+1.5)。合格ライン(18点)まであと0.9点。7回の模擬講義で全体的に底上げ。<strong>ほぼ on track</strong>。リーダー模擬講義も含め多様な採点者からFBを受けている。</span>
+          <span><strong>登壇テスト見通し：</strong>W7-8で18点到達は十分射程圏内。インタラクティブを2.5以上に安定させれば合格は堅い。</span>
         </div>
 
-        <h4>改善すべき箇所</h4>
-        <div class="issue-box">インタラクティブ：「考えさせる問い」の設計。「○○はなぜだと思いますか？」「どんな場面で使えそうですか？」など。</div>
-        <div class="issue-box">質問対応（伝え方）：2.14で停滞。意図確認（「○○ということでしょうか？」）を確実に入れる。</div>
+        <h4>メンタル・モチベーション</h4>
+        <div class="scorers">
+          <span>7回の模擬講義を自ら設定してこなしており、非常に高いモチベーション。合格が見えてきたことで前向きな姿勢が強まっている。講師像について「技術が好きで情報量の多いわかりやすい講義をしたい」と自己認識あり（DS寄り講師志向）。</span>
+        </div>
+
+        <h4>同期との関係性</h4>
+        <div class="scorers">
+          <span>先行テスト生として同期はいないが、リーダー模擬講義で多くの採点者と接点を持てている。孤立感なし。</span>
+        </div>
 
         <h4>ネクストアクション</h4>
         <dl class="next-actions">
-          <dt>メンティー</dt><dd>各範囲に「考えさせる問い」を最低1つ準備。質問対応で意図確認フレーズを必ず入れる練習。</dd>
-          <dt>メンター</dt><dd>「考えさせる問い」のバリエーションを共有。質問対応のロールプレイで意図確認を重点練習。</dd>
-          <dt>エルダー</dt><dd>合格ライン18点まであと0.9点。W7で到達を目指す。インタラクティブ・質問対応の集中改善。</dd>
+          <dt>育成方針</dt><dd>合格圏突入を目指す仕上げフェーズ。インタラクティブと質問対応の集中改善。</dd>
+          <dt>メンター/エルダー</dt><dd>「考えさせる問い」のバリエーション共有。質問対応ロールプレイで意図確認を重点練習。</dd>
         </dl>
       </div>
 
       <div id="actions-w7" class="week-panel">
-        <h4>前週からの課題フォロー</h4>
+        <h4>前週課題フォロー</h4>
         <div style="margin:.4rem 0">
-          <span class="status-card status-ok">一部改善</span> 「考えさせる問い」 — 1回の講義で試みたが、インタラクティブは1.5に低下。もう1回は問いかけが少なかった<br>
-          <span class="status-card status-warn">継続</span> 質問対応の意図確認 — 2.0で横ばい。意図確認フレーズの使用頻度がまだ低い
+          <span class="status-card status-good">クリア</span> 合格ライン到達（18.0点）<br>
+          <span class="status-card status-ok">一部改善</span> インタラクティブ（回によるムラあり 1.5）<br>
+          <span class="status-card status-warn">継続</span> 質問対応の安定化
         </div>
 
-        <h4>今週の所感</h4>
+        <h4>育成進捗</h4>
         <div class="scorers">
-          <span><strong>エルダー：</strong>合計18.0点で合格ラインに到達。講義の進め方3.0、信頼3.0、知識（講義内）3.0、知識（質問対応）3.0と4項目が満点圏。模擬講義2回と少なめだったが、質が高かった。</span>
-          <span><strong>メンター：</strong>合格ライン到達は大きな成果。ただしインタラクティブ1.5と思いやり2.5が足を引っ張っている。2回のうち1回は非常に良かったが、もう1回でインタラクティブが落ちた。安定感が課題。</span>
+          <span><strong>全体感：</strong>18.0/21点(+0.9)。合格ライン到達。講義の進め方・信頼・知識2項目が全て3.0。<strong>ahead of schedule</strong>。ただし回による安定感に課題あり。</span>
+          <span><strong>登壇テスト見通し：</strong>テスト実施の準備が整いつつある。W8で安定して18点以上をキープできれば、テスト日程の確定を推奨。</span>
         </div>
 
-        <h4>改善すべき箇所</h4>
-        <div class="issue-box">インタラクティブの安定化：良い回と悪い回の差が大きい。毎回同じクオリティを出す再現性が必要。</div>
-        <div class="issue-box">思いやり2.5：合格圏だが3.0に届かない。受講者ペースの微調整が残る。</div>
+        <h4>メンタル・モチベーション</h4>
+        <div class="scorers">
+          <span>合格ライン到達で自信が高まっている。模擬講義2回と量は少なめだったが、質を意識した取り組みにシフトしている。テストに向けた前向きな姿勢。</span>
+        </div>
 
         <h4>ネクストアクション</h4>
         <dl class="next-actions">
-          <dt>メンティー</dt><dd>インタラクティブのチェックリスト（冒頭問いかけ・途中の考えさせる問い・間の確保）を毎回実施。講義前に声に出してリハーサル。</dd>
-          <dt>メンター</dt><dd>W8で安定して18点以上を出すための仕上げ。インタラクティブの再現性を高める具体的アドバイス。</dd>
-          <dt>エルダー</dt><dd>登壇テストに向けた模擬テスト形式の練習を検討。弱点範囲の集中対策。</dd>
+          <dt>育成方針</dt><dd>安定化フェーズ。インタラクティブの再現性を高め、W8で18点以上をキープ。テスト日程検討開始。</dd>
+          <dt>メンター/エルダー</dt><dd>模擬テスト形式の練習を検討。弱点範囲の集中対策。</dd>
         </dl>
       </div>
 
       <div id="actions-w8" class="week-panel active">
-        <h4>前週からの課題フォロー</h4>
+        <h4>前週課題フォロー</h4>
         <div style="margin:.4rem 0">
-          <span class="status-card status-good">クリア</span> インタラクティブの安定化 — 3.0に到達。冒頭の問いかけ・考えさせる問いを自然に入れられた<br>
-          <span class="status-card status-warn">継続</span> 思いやり — 2.5で変わらず。3.0にはあと一歩<br>
-          <span class="status-card status-warn">継続</span> 質問対応（伝え方） — 2.0で横ばい。意図確認の精度向上が必要
+          <span class="status-card status-good">クリア</span> インタラクティブ安定化（3.0到達）<br>
+          <span class="status-card status-good">クリア</span> 合格圏キープ（18.5点、2週連続）<br>
+          <span class="status-card status-warn">継続</span> 質問対応・思いやりの安定化
         </div>
 
-        <h4>今週の所感</h4>
+        <h4>育成進捗</h4>
         <div class="scorers">
-          <span><strong>エルダー：</strong>合計18.5点。インタラクティブが初めて3.0に到達した。8週間で11点→18.5点の成長は順調。合格圏を2週連続でキープしており、登壇テストに向けた準備は整いつつある。</span>
-          <span><strong>メンター：</strong>インタラクティブ3.0は大きなブレイクスルー。一方で知識（質問対応）が3.0→2.0に低下。範囲によるムラが残る。質問対応（伝え方）も2.0で停滞しており、ここが最終的な伸びしろ。</span>
+          <span><strong>全体感：</strong>18.5/21点(+0.5)。8週間で11点→18.5点。合格圏を2週連続キープ。<strong>ahead of schedule</strong>。登壇テスト実施の準備が整った。</span>
+          <span><strong>登壇テスト見通し：</strong>テスト実施を推奨。28回の模擬講義実績があり、合格圏を安定してキープできている。ただし知識（質問対応）のムラ（W7:3.0→W8:2.0）が唯一のリスク要因。弱点範囲の補強をテスト前に実施。</span>
         </div>
 
-        <h4>改善すべき箇所</h4>
-        <div class="issue-box">知識（質問対応）：W7で3.0だったがW8で2.0に低下。範囲による知識のムラを解消する必要あり（特に外れ値・評価指標周辺）。</div>
-        <div class="issue-box">質問対応（伝え方）：8週間通して2.0前後で推移。意図確認・冗長さの改善が3.0到達の壁。</div>
-        <div class="issue-box">思いやり：2.5で安定しているが3.0に届かない。進行速度の微調整が残る課題。</div>
+        <h4>メンタル・モチベーション</h4>
+        <div class="scorers">
+          <span>インタラクティブ3.0到達は本人にとって大きなブレイクスルー。自信を持ってテストに臨める状態。8週間で28回の模擬講義をこなした実績も自信の根拠になっている。</span>
+        </div>
+
+        <h4>キャリア方向性</h4>
+        <div class="scorers">
+          <span>DS寄りの講師志向。技術知識の深さが強み。Biz向けの講義でも知識面で高評価を維持できているため、将来的にはDS講義の登壇も視野に入る。</span>
+        </div>
+
+        <h4>残課題（テスト前に対策）</h4>
+        <div class="issue-box">知識（質問対応）のムラ：SHAP/LIME・評価指標の設定タイミング等、弱点範囲の知識補強。</div>
+        <div class="issue-box">質問対応（伝え方）：意図確認の精度と冗長さの排除が最後の壁。</div>
 
         <h4>ネクストアクション</h4>
         <dl class="next-actions">
-          <dt>メンティー</dt><dd>弱点範囲（外れ値、評価指標、SHAP/LIME等）の知識補強。質問対応で意図確認を徹底し冗長さを排除。</dd>
-          <dt>メンター</dt><dd>登壇テストに向けた模擬テスト形式の練習。質問対応のロールプレイで実践的なフィードバック。</dd>
-          <dt>エルダー</dt><dd>テスト日程の確定に向けた準備。28回の模擬講義実績を踏まえ、テスト実施を推奨。</dd>
+          <dt>育成方針</dt><dd>テスト日程の確定。弱点範囲の知識補強と質問対応のロールプレイで仕上げ。</dd>
+          <dt>メンター/エルダー</dt><dd>模擬テスト形式の最終練習。テスト日程を設定し本人に伝達。</dd>
         </dl>
       </div>
 
@@ -898,6 +1057,7 @@ function switchSubTab(m,s){var p=document.getElementById('tab-'+m);p.querySelect
 function switchWeek(m,w){var p=document.getElementById(m+'-detail');p.querySelectorAll('.week-panel').forEach(e=>e.classList.remove('active'));p.querySelectorAll('.week-tab-btn').forEach(e=>e.classList.remove('active'));document.getElementById(m+'-w'+w).classList.add('active');event.target.classList.add('active')}
 function switchRangeWeek(w){var p=document.getElementById('yoshihara-range');p.querySelectorAll('.week-panel').forEach(e=>e.classList.remove('active'));p.querySelectorAll('.week-tab-btn').forEach(e=>e.classList.remove('active'));document.getElementById('range-w'+w).classList.add('active');event.target.classList.add('active')}
 function switchActionsWeek(w){var p=document.getElementById('yoshihara-actions');p.querySelectorAll('.week-panel').forEach(e=>e.classList.remove('active'));p.querySelectorAll('.week-tab-btn').forEach(e=>e.classList.remove('active'));document.getElementById('actions-w'+w).classList.add('active');event.target.classList.add('active')}
+function switchSummaryWeek(w){var p=document.getElementById('tab-summary');p.querySelectorAll('.week-panel').forEach(e=>e.classList.remove('active'));p.querySelectorAll('.week-tab-btn').forEach(e=>e.classList.remove('active'));document.getElementById('summary-w'+w).classList.add('active');event.target.classList.add('active')}
 
 window.addEventListener('DOMContentLoaded',function(){
   var weeks=['W1','W2','W3','W4','W5','W6','W7','W8'];
