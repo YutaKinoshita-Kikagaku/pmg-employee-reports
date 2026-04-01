@@ -52,8 +52,9 @@
     .status-warn{background:#fff5f5;color:var(--bad);border:1px solid #fed7d7}
     .status-ok{background:#fffff0;color:var(--warn);border:1px solid #fefcbf}
 
-    .scorers{color:var(--sub);font-size:.8rem;margin:.4rem 0}
+    .scorers{color:var(--sub);font-size:.8rem;margin:.4rem 0;min-height:3.2rem}
     .scorers strong{color:var(--text)}
+    .scorers span{display:block;line-height:1.5}
 
     .item-avg-table{width:100%;border-collapse:collapse;font-size:.8rem;margin:.5rem 0;table-layout:fixed}
     .item-avg-table th{background:#edf2f7;padding:.3rem .5rem;text-align:left;font-weight:500}
@@ -170,7 +171,7 @@
       <!-- W1 (1/6-1/12, session 1: 1/8 江口) -->
       <div id="yoshihara-w1" class="week-panel">
         <div class="score-bar"><span class="label">Week1 合計:</span><span class="value" style="color:var(--bad)">11.0 / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">1回</span></div>
-        <p class="scorers">採点者: <strong>江口</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: データセットの準備〜実装　|　実装: データセットの準備〜実装</span></p>
+        <p class="scorers">採点者: <strong>江口</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: データセットの準備〜実装<br>実装: データセットの準備〜実装</span></p>
         <table class="item-avg-table">
           <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
           <tbody>
@@ -188,7 +189,7 @@
       <!-- W2 (1/13-1/17, session 2: 1/15 江口) -->
       <div id="yoshihara-w2" class="week-panel">
         <div class="score-bar"><span class="label">Week2 合計:</span><span class="value" style="color:var(--warn)">13.0 / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">1回</span></div>
-        <p class="scorers">採点者: <strong>江口</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: なし　|　実装: データの前処理（〜欠損値の処理）</span></p>
+        <p class="scorers">採点者: <strong>江口</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: なし<br>実装: データの前処理（〜欠損値の処理）</span></p>
         <table class="item-avg-table">
           <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
           <tbody>
@@ -206,7 +207,7 @@
       <!-- W3 (1/19-1/24, sessions 3-6) -->
       <div id="yoshihara-w3" class="week-panel">
         <div class="score-bar"><span class="label">Week3 平均:</span><span class="value" style="color:var(--warn)">12.5 / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">4回</span></div>
-        <p class="scorers">採点者: <strong>江口、相田、篠原、沖廣</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: Label/One-hot Encoding、過学習、外れ値　|　実装: 過学習、Ridge/Lasso、外れ値、ロジスティック回帰</span></p>
+        <p class="scorers">採点者: <strong>江口、相田、篠原、沖廣</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: Label/One-hot Encoding、過学習、外れ値<br>実装: 過学習、Ridge/Lasso、外れ値、ロジスティック回帰</span></p>
         <table class="item-avg-table">
           <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
           <tbody>
@@ -224,7 +225,7 @@
       <!-- W4 (1/27-1/31, sessions 7-12) -->
       <div id="yoshihara-w4" class="week-panel">
         <div class="score-bar"><span class="label">Week4 平均:</span><span class="value" style="color:var(--good)">15.5 / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">6回</span></div>
-        <p class="scorers">採点者: <strong>江口(x3)、戸巻、沖廣</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: 決定木、アンサンブル学習、グリッドサーチ等、評価指標、主成分分析　|　実装: 同範囲</span></p>
+        <p class="scorers">採点者: <strong>江口(x3)、戸巻、沖廣</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: 決定木、アンサンブル学習、グリッドサーチ等、評価指標、主成分分析<br>実装: 同範囲</span></p>
         <table class="item-avg-table">
           <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
           <tbody>
@@ -242,7 +243,7 @@
       <!-- W5 (2/2-2/7, sessions 13-17) -->
       <div id="yoshihara-w5" class="week-panel">
         <div class="score-bar"><span class="label">Week5 平均:</span><span class="value" style="color:var(--good)">15.6 / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">5回</span></div>
-        <p class="scorers">採点者: <strong>江口、沖廣、吉田、歳森、森井</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: クラスタリング、アンサンブル学習、過学習、外れ値除去、評価指標　|　実装: 同範囲+特徴量エンジニアリング、ランダムサーチ</span></p>
+        <p class="scorers">採点者: <strong>江口、沖廣、吉田、歳森、森井</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: クラスタリング、アンサンブル学習、過学習、外れ値除去、評価指標<br>実装: 同範囲+特徴量エンジニアリング、ランダムサーチ</span></p>
         <table class="item-avg-table">
           <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
           <tbody>
@@ -260,7 +261,7 @@
       <!-- W6 (2/9-2/14, sessions 18-24) -->
       <div id="yoshihara-w6" class="week-panel">
         <div class="score-bar"><span class="label">Week6 平均:</span><span class="value" style="color:var(--good)">17.1 / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">7回（リーダー模擬講義含む）</span></div>
-        <p class="scorers">採点者: <strong>重本、四方田、村上、木下、有吉、小林、竹内</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: ロジスティック回帰、アンサンブル学習、カテゴリカル変数、グリッドサーチ等、評価指標、Ridge/Lasso、重回帰分析　|　実装: 決定木、評価指標、データ前処理、グリッドサーチ等、特徴量、主成分分析、過学習</span></p>
+        <p class="scorers">採点者: <strong>重本、四方田、村上、木下、有吉、小林、竹内</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: ロジスティック回帰、アンサンブル等、カテゴリカル変数、グリッドサーチ等、評価指標、Ridge/Lasso、重回帰分析<br>実装: 決定木、評価指標、データ前処理、グリッドサーチ等、特徴量、主成分分析、過学習</span></p>
         <table class="item-avg-table">
           <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
           <tbody>
@@ -278,7 +279,7 @@
       <!-- W7 (2/17-2/21, sessions 25-26) -->
       <div id="yoshihara-w7" class="week-panel">
         <div class="score-bar"><span class="label">Week7 平均:</span><span class="value" style="color:var(--good)">18.0 / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">2回</span></div>
-        <p class="scorers">採点者: <strong>村上、重本</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: アンサンブル、決定木　|　実装: クラスタリング</span></p>
+        <p class="scorers">採点者: <strong>村上、重本</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: アンサンブル、決定木<br>実装: クラスタリング</span></p>
         <table class="item-avg-table">
           <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
           <tbody>
@@ -296,7 +297,7 @@
       <!-- W8 (2/24-2/28, sessions 27-28) -->
       <div id="yoshihara-w8" class="week-panel active">
         <div class="score-bar"><span class="label">Week8 平均:</span><span class="value" style="color:var(--good)">18.5 / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">2回</span></div>
-        <p class="scorers">採点者: <strong>四方田、小林、木下、有吉</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: 外れ値、評価指標、アンサンブル　|　実装: アンサンブル、特徴量エンジニアリング、クラスタリング</span></p>
+        <p class="scorers">採点者: <strong>四方田、小林、木下、有吉</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: 外れ値、評価指標、アンサンブル<br>実装: アンサンブル、特徴量エンジニアリング、クラスタリング</span></p>
         <table class="item-avg-table">
           <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
           <tbody>
