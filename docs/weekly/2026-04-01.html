@@ -91,6 +91,7 @@
   <div class="tabs">
     <button class="tab-btn active" onclick="switchTab('summary')">サマリ</button>
     <button class="tab-btn" onclick="switchTab('yoshihara')">吉原（テスト）</button>
+    <button class="tab-btn" onclick="switchTab('noda')">野田（テスト）</button>
     <button class="tab-btn" onclick="switchTab('yamamoto')">山本</button>
     <button class="tab-btn" onclick="switchTab('ueda')">上田</button>
     <button class="tab-btn" onclick="switchTab('tange')">丹下</button>
@@ -122,6 +123,7 @@
         <thead><tr><th>名前</th><th>点数</th><th>前回比</th><th>ステータス</th><th>要点</th></tr></thead>
         <tbody>
           <tr><td>吉原 拓也（テスト）</td><td><strong>11.0</strong>/21</td><td>—</td><td><span class="status-card status-warn">立ち上がり</span></td><td>初回模擬講義完走。WPW・質問対応の型が未定着</td></tr>
+          <tr><td>野田 基喜（テスト）</td><td>—</td><td>—</td><td><span class="status-card status-warn">立ち上がり</span></td><td>初回模擬講義（スコア未記入）。Q&A 5問全問正答</td></tr>
           <tr><td>山本 和樹</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
           <tr><td>上田 正和</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
           <tr><td>丹下 知彦</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
@@ -130,7 +132,7 @@
         </tbody>
       </table>
       <h4>W1 キーポイント</h4>
-      <div class="note-box"><ul style="padding-left:1.25rem"><li>吉原：初回模擬講義。声量・ハキハキさは良好。型の定着が課題。</li></ul></div>
+      <div class="note-box"><ul style="padding-left:1.25rem"><li>吉原：初回模擬講義。声量・ハキハキさは良好。型の定着が課題。</li><li>野田：初回模擬講義（重回帰）。講師力に懸念なしの高評価コメント。</li></ul></div>
     </div>
 
     <!-- Summary W2 -->
@@ -140,6 +142,7 @@
         <thead><tr><th>名前</th><th>点数</th><th>前回比</th><th>ステータス</th><th>要点</th></tr></thead>
         <tbody>
           <tr><td>吉原 拓也（テスト）</td><td><strong>13.0</strong>/21</td><td style="color:var(--good)">+2.0</td><td><span class="status-card status-ok">改善傾向</span></td><td>WPW構成を意識し始めた。インタラクティブ2.0に改善</td></tr>
+          <tr><td>野田 基喜（テスト）</td><td><strong>10.7</strong>/21</td><td>—</td><td><span class="status-card status-warn">立ち上がり</span></td><td>3回実施。説明力は高いがペース・寄り添いに課題</td></tr>
           <tr><td>山本 和樹</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
           <tr><td>上田 正和</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
           <tr><td>丹下 知彦</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
@@ -148,7 +151,7 @@
         </tbody>
       </table>
       <h4>W2 キーポイント</h4>
-      <div class="note-box"><ul style="padding-left:1.25rem"><li>吉原：+2.0の改善。講義態度は安定。欠損値の実装を初実施。</li></ul></div>
+      <div class="note-box"><ul style="padding-left:1.25rem"><li>吉原：+2.0の改善。講義態度は安定。欠損値の実装を初実施。</li><li>野田：3回の模擬講義で始動。早口・ペース配分が共通課題。</li></ul></div>
     </div>
 
     <!-- Summary W3 -->
@@ -158,6 +161,7 @@
         <thead><tr><th>名前</th><th>点数</th><th>前回比</th><th>ステータス</th><th>要点</th></tr></thead>
         <tbody>
           <tr><td>吉原 拓也（テスト）</td><td><strong>12.5</strong>/21</td><td style="color:var(--bad)">-0.5</td><td><span class="status-card status-ok">成長痛</span></td><td>4回実施で量は確保。質のバラつきが出ている</td></tr>
+          <tr><td>野田 基喜（テスト）</td><td><strong>11.2</strong>/21</td><td style="color:var(--good)">+0.5</td><td><span class="status-card status-ok">改善傾向</span></td><td>3回実施。ロジスティック回帰で通し初挑戦。ペースに課題継続</td></tr>
           <tr><td>山本 和樹</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
           <tr><td>上田 正和</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
           <tr><td>丹下 知彦</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
@@ -166,7 +170,7 @@
         </tbody>
       </table>
       <h4>W3 キーポイント</h4>
-      <div class="note-box"><ul style="padding-left:1.25rem"><li>吉原：模擬講義4回（過去最多）。量を増やした影響でスコア微減。想定内。</li></ul></div>
+      <div class="note-box"><ul style="padding-left:1.25rem"><li>吉原：模擬講義4回（過去最多）。量を増やした影響でスコア微減。想定内。</li><li>野田：微増。インタラクティブの質問設計が課題浮上。</li></ul></div>
     </div>
 
     <!-- Summary W4 -->
@@ -176,6 +180,7 @@
         <thead><tr><th>名前</th><th>点数</th><th>前回比</th><th>ステータス</th><th>要点</th></tr></thead>
         <tbody>
           <tr><td>吉原 拓也（テスト）</td><td><strong>15.5</strong>/21</td><td style="color:var(--good)">+3.0</td><td><span class="status-card status-good">1ヶ月目標達成</span></td><td>15点到達。6回実施。知識面安定。インタラクティブがボトルネック</td></tr>
+          <tr><td>野田 基喜（テスト）</td><td><strong>12.3</strong>/21</td><td style="color:var(--good)">+1.1</td><td><span class="status-card status-ok">改善傾向</span></td><td>3回実施。信頼2.0に改善。知識（質問対応）が課題</td></tr>
           <tr><td>山本 和樹</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
           <tr><td>上田 正和</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
           <tr><td>丹下 知彦</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
@@ -184,7 +189,7 @@
         </tbody>
       </table>
       <h4>W4 キーポイント</h4>
-      <div class="note-box"><ul style="padding-left:1.25rem"><li>吉原：+3.0の大幅改善。1ヶ月目標(15点)達成。合格ライン(18点)が視野に。</li></ul></div>
+      <div class="note-box"><ul style="padding-left:1.25rem"><li>吉原：+3.0の大幅改善。1ヶ月目標(15点)達成。合格ライン(18点)が視野に。</li><li>野田：着実に成長。年末最終週で知識（質問対応）1.0が懸念。</li></ul></div>
     </div>
 
     <!-- Summary W5 -->
@@ -194,6 +199,7 @@
         <thead><tr><th>名前</th><th>点数</th><th>前回比</th><th>ステータス</th><th>要点</th></tr></thead>
         <tbody>
           <tr><td>吉原 拓也（テスト）</td><td><strong>15.6</strong>/21</td><td style="color:var(--good)">+0.1</td><td><span class="status-card status-ok">プラトー</span></td><td>信頼・知識が3.0到達。インタラクティブ・思いやりが伸び悩み</td></tr>
+          <tr><td>野田 基喜（テスト）</td><td><strong>13.9</strong>/21</td><td style="color:var(--good)">+1.6</td><td><span class="status-card status-ok">1ヶ月テスト</span></td><td>7回実施（1ヶ月模擬講義含む）。信頼2.36に改善。1ヶ月目標にあと1.1点</td></tr>
           <tr><td>山本 和樹</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
           <tr><td>上田 正和</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
           <tr><td>丹下 知彦</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
@@ -202,7 +208,7 @@
         </tbody>
       </table>
       <h4>W5 キーポイント</h4>
-      <div class="note-box"><ul style="padding-left:1.25rem"><li>吉原：横ばい。得意項目は天井到達、苦手項目の改善がカギ。</li></ul></div>
+      <div class="note-box"><ul style="padding-left:1.25rem"><li>吉原：横ばい。得意項目は天井到達、苦手項目の改善がカギ。</li><li>野田：1ヶ月模擬講義(3名採点)含む7回実施。信頼が安定。インタラクティブが課題。</li></ul></div>
     </div>
 
     <!-- Summary W6 -->
@@ -212,6 +218,7 @@
         <thead><tr><th>名前</th><th>点数</th><th>前回比</th><th>ステータス</th><th>要点</th></tr></thead>
         <tbody>
           <tr><td>吉原 拓也（テスト）</td><td><strong>17.1</strong>/21</td><td style="color:var(--good)">+1.5</td><td><span class="status-card status-ok">合格圏目前</span></td><td>7回実施で全体底上げ。合格ライン(18点)まであと0.9点</td></tr>
+          <tr><td>野田 基喜（テスト）</td><td><strong>16.2</strong>/21</td><td style="color:var(--good)">+2.3</td><td><span class="status-card status-good">1ヶ月目標達成</span></td><td>9回実施。質問対応3.0到達。ランダム模擬講義開始。15点超え</td></tr>
           <tr><td>山本 和樹</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
           <tr><td>上田 正和</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
           <tr><td>丹下 知彦</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
@@ -220,7 +227,7 @@
         </tbody>
       </table>
       <h4>W6 キーポイント</h4>
-      <div class="note-box"><ul style="padding-left:1.25rem"><li>吉原：+1.5の着実な成長。7回の模擬講義で範囲カバーも拡大。</li></ul></div>
+      <div class="note-box"><ul style="padding-left:1.25rem"><li>吉原：+1.5の着実な成長。7回の模擬講義で範囲カバーも拡大。</li><li>野田：+2.3の大幅成長。1ヶ月目標(15点)達成。質問対応(伝え方)が3.0に。</li></ul></div>
     </div>
 
     <!-- Summary W7 -->
@@ -230,6 +237,7 @@
         <thead><tr><th>名前</th><th>点数</th><th>前回比</th><th>ステータス</th><th>要点</th></tr></thead>
         <tbody>
           <tr><td>吉原 拓也（テスト）</td><td><strong>18.0</strong>/21</td><td style="color:var(--good)">+0.9</td><td><span class="status-card status-good">合格圏</span></td><td>合格ライン到達。4項目が3.0。安定感が課題</td></tr>
+          <tr><td>野田 基喜（テスト）</td><td><strong>17.3</strong>/21</td><td style="color:var(--good)">+1.1</td><td><span class="status-card status-ok">合格圏目前</span></td><td>7回実施。信頼2.86、思いやり2.71。合格ラインまであと0.7点</td></tr>
           <tr><td>山本 和樹</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
           <tr><td>上田 正和</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
           <tr><td>丹下 知彦</td><td>—</td><td>—</td><td><span class="status-card status-ok">未開始</span></td><td>—</td></tr>
@@ -238,7 +246,7 @@
         </tbody>
       </table>
       <h4>W7 キーポイント</h4>
-      <div class="note-box"><ul style="padding-left:1.25rem"><li>吉原：合格ライン(18点)初到達。テスト日程検討開始。</li></ul></div>
+      <div class="note-box"><ul style="padding-left:1.25rem"><li>吉原：合格ライン(18点)初到達。テスト日程検討開始。</li><li>野田：17.3点で合格目前。18点3回達成。講義の進め方2.0で安定。</li></ul></div>
     </div>
 
     <!-- Summary W8 (active) -->
@@ -248,6 +256,7 @@
         <thead><tr><th>名前</th><th>最新点</th><th>前回比</th><th>ステータス</th><th>要点</th></tr></thead>
         <tbody>
           <tr><td>吉原 拓也（テスト）</td><td><strong>18.5</strong>/21</td><td style="color:var(--good)">+0.5</td><td><span class="status-card status-good">合格圏</span></td><td>W8で18.5到達。インタラクティブ3.0達成。質問対応（伝え方）・知識（質問対応）の安定化が最終課題</td></tr>
+          <tr><td>野田 基喜（テスト）</td><td><strong>17.3</strong>/21</td><td>—</td><td><span class="status-card status-ok">合格圏目前</span></td><td>W8は定性FBのみ（2回）。W7時点で17.3点。仕上げフェーズ</td></tr>
           <tr><td>山本 和樹</td><td>—</td><td>—</td><td><span class="status-card status-ok">入社初日</span></td><td>PC問題の解消要確認</td></tr>
           <tr><td>上田 正和</td><td>—</td><td>—</td><td><span class="status-card status-good">立ち上がり良好</span></td><td>模擬講義11回分スケジュール確定済</td></tr>
           <tr><td>丹下 知彦</td><td>—</td><td>—</td><td><span class="status-card status-warn">要フォロー</span></td><td>メンター/エルダーのスレッド投稿ゼロ</td></tr>
@@ -256,7 +265,7 @@
         </tbody>
       </table>
       <h4>W8 キーポイント</h4>
-      <div class="note-box"><ul style="padding-left:1.25rem"><li>吉原：合格圏2週連続キープ(18.5点)。テスト実施推奨。</li><li>新入社員5名は4/1入社。全社オンボーディング開始。</li></ul></div>
+      <div class="note-box"><ul style="padding-left:1.25rem"><li>吉原：合格圏2週連続キープ(18.5点)。テスト実施推奨。</li><li>野田：W8は定性FBのみ2回。直近W7で17.3点。合格ラインまであと0.7点。</li><li>新入社員5名は4/1入社。全社オンボーディング開始。</li></ul></div>
     </div>
 
     <h3>全員が把握すべき事項</h3>
@@ -1010,6 +1019,357 @@
 
   </div>
 
+  <!-- ===== 野田（テスト） ===== -->
+  <div id="tab-noda" class="tab-content">
+    <div class="sub-tabs">
+      <button class="sub-tab-btn active" onclick="switchSubTab('noda','score')">点数推移</button>
+      <button class="sub-tab-btn" onclick="switchSubTab('noda','detail')">採点詳細</button>
+      <button class="sub-tab-btn" onclick="switchSubTab('noda','range')">範囲別スコア</button>
+      <button class="sub-tab-btn" onclick="switchSubTab('noda','actions')">所感・アクション</button>
+    </div>
+
+    <!-- 点数推移 -->
+    <div id="noda-score" class="sub-tab-content active">
+      <h3>合計点推移（21点満点 合格：18点）</h3>
+      <div class="chart-wrap"><canvas id="chartNoda" height="70"></canvas></div>
+
+      <h3>項目別 週平均推移</h3>
+      <table class="eval-table">
+        <thead><tr><th>評価項目（平均）</th><th>W1</th><th>W2</th><th>W3</th><th>W4</th><th>W5</th><th>W6</th><th>W7</th><th>W8</th><th>判定</th><th>コメント抽出</th></tr></thead>
+        <tbody>
+          <tr style="background:#edf2f7"><td style="font-weight:600">模擬講義回数</td><td class="sc">1</td><td class="sc">3</td><td class="sc">3</td><td class="sc">3</td><td class="sc">7</td><td class="sc">9</td><td class="sc">7</td><td class="sc">2</td><td></td><td></td></tr>
+          <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="sc s1">1.0</td><td class="sc s1">1.17</td><td class="sc s1">1.83</td><td class="sc s1">1.36</td><td class="sc s1">1.67</td><td class="sc s2">2.0</td><td class="sc s0">—</td><td class="alert-flat">緩やかに改善</td><td style="font-size:.78rem;color:var(--sub)">W7で2.0到達。WPW構成は定着しつつあるが、モチベート・メリハリが課題</td></tr>
+          <tr><td>信頼</td><td class="sc s0">—</td><td class="sc s1">1.0</td><td class="sc s1">1.5</td><td class="sc s2">2.0</td><td class="sc s2">2.36</td><td class="sc s2">2.33</td><td class="sc s3">2.86</td><td class="sc s0">—</td><td class="alert-good">順調</td><td style="font-size:.78rem;color:var(--sub)">初回から安定。落ち着いた話し方と自信ある態度が高評価</td></tr>
+          <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="sc s1">1.67</td><td class="sc s1">1.5</td><td class="sc s1">1.5</td><td class="sc s1">1.79</td><td class="sc s1">1.56</td><td class="sc s1">1.86</td><td class="sc s0">—</td><td class="alert-warn">最大課題</td><td style="font-size:.78rem;color:var(--warn)">W2-W7で1.5-1.86。発問の質・考えさせる時間確保が継続課題</td></tr>
+          <tr><td>思いやり</td><td class="sc s0">—</td><td class="sc s1">1.0</td><td class="sc s1">1.33</td><td class="sc s1">1.83</td><td class="sc s2">2.14</td><td class="sc s2">2.22</td><td class="sc s2">2.71</td><td class="sc s0">—</td><td class="alert-good">順調</td><td style="font-size:.78rem;color:var(--sub)">W2の1.0からW7で2.71へ着実に改善。ペース配慮が向上</td></tr>
+          <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="sc s1">1.33</td><td class="sc s1">1.67</td><td class="sc s2">2.0</td><td class="sc s1">1.79</td><td class="sc s3">3.0</td><td class="sc s2">2.43</td><td class="sc s0">—</td><td class="alert-flat">波あり</td><td style="font-size:.78rem;color:var(--warn)">W6で3.0到達もW7で2.43に。結論ファーストの型は定着</td></tr>
+          <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="sc s2">2.33</td><td class="sc s2">2.0</td><td class="sc s2">2.17</td><td class="sc s2">2.36</td><td class="sc s3">2.89</td><td class="sc s3">2.86</td><td class="sc s0">—</td><td class="alert-good">安定</td><td style="font-size:.78rem;color:var(--sub)">W6以降ほぼ3.0圏。講義内容の理解は問題なし</td></tr>
+          <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="sc s2">2.33</td><td class="sc s2">2.0</td><td class="sc s1">1.0</td><td class="sc s2">2.07</td><td class="sc s2">2.56</td><td class="sc s2">2.57</td><td class="sc s0">—</td><td class="alert-flat">波あり</td><td style="font-size:.78rem;color:var(--warn)">W4で1.0に落ちた後、W6-7で2.5台に回復。範囲による差あり</td></tr>
+          <tr style="font-weight:700;background:#f7fafc"><td>合計（平均）</td><td class="sc">—</td><td class="sc">10.7</td><td class="sc">11.2</td><td class="sc">12.3</td><td class="sc">13.9</td><td class="sc">16.2</td><td class="sc">17.3</td><td class="sc">—</td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 採点詳細 -->
+    <div id="noda-detail" class="sub-tab-content">
+      <h3>週別 採点詳細</h3>
+      <div class="week-tabs">
+        <button class="week-tab-btn" onclick="switchNodaWeek(1)">W1</button>
+        <button class="week-tab-btn" onclick="switchNodaWeek(2)">W2</button>
+        <button class="week-tab-btn" onclick="switchNodaWeek(3)">W3</button>
+        <button class="week-tab-btn" onclick="switchNodaWeek(4)">W4</button>
+        <button class="week-tab-btn" onclick="switchNodaWeek(5)">W5</button>
+        <button class="week-tab-btn" onclick="switchNodaWeek(6)">W6</button>
+        <button class="week-tab-btn active" onclick="switchNodaWeek(7)">W7</button>
+        <button class="week-tab-btn" onclick="switchNodaWeek(8)">W8</button>
+      </div>
+
+      <!-- Noda W1 -->
+      <div id="noda-w1" class="week-panel">
+        <div class="score-bar"><span class="label">Week1 合計:</span><span class="value" style="color:var(--sub)">スコア未記入</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">1回</span></div>
+        <p class="scorers">採点者: <strong>沖廣</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: 重回帰分析<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・全体像をしっかり伝えられてイメージできて安心<br>・Partで書く理由を前もって伝えられている<br>・—</div></td><td class="comment-cell"><div class="cm">・—<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・<span style="color:var(--good);font-weight:600">テンション感・声色・安定感が抜群</span><br>・説明や言葉遣いが単純明快で丁寧<br>・自信を持って伝えている姿勢が理想的</div></td><td class="comment-cell"><div class="cm">・GoodNoteツール確認<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・「回帰」の意味を考えさせる発問が素敵<br>・チャット活用や考えさせる発問が随所にある<br>・—</div></td><td class="comment-cell"><div class="cm">・リアクションの求め方はキカガク流を使う<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・ノートを書き写す時間やない方への配慮が素敵<br>・カメラ目線で安心感がある。表情が良い<br>・字が美しく読みやすい。共感の姿勢が随所に</div></td><td class="comment-cell"><div class="cm">・—<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・感謝と共感、たとえも受講生に合わせて説明<br>・結論ファーストでわかりやすい<br>・背景のヒアリングが嬉しい</div></td><td class="comment-cell"><div class="cm">・感謝→復唱→結論→補足の型を意識<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・全く違和感なし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・—<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・Q&A: ○5 △0 ×0（5問全問正答）<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・—<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Noda W2 -->
+      <div id="noda-w2" class="week-panel">
+        <div class="score-bar"><span class="label">Week2 平均:</span><span class="value" style="color:var(--bad)">10.7 / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">3回</span></div>
+        <p class="scorers">採点者: <strong>沖廣、杉崎、篠原</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: データ準備〜実装、正則化、Label/One-hot Encoding<br>実装: 同範囲</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s1">1.0</td><td class="comment-cell"><div class="cm">・スマートな入り方で今から何をやるか明確<br>・前回範囲からの開始がGood<br>・最後のポイントまとめ良い</div></td><td class="comment-cell"><div class="cm">・<span style="color:var(--bad);font-weight:600">モチベートが足りない（複数名指摘）</span><br>・全体像からの位置づけでイメージさせたい<br>・まとめで持ち帰りポイントを明確に</div></td></tr>
+            <tr><td>信頼</td><td class="sc s1">1.0</td><td class="comment-cell"><div class="cm">・<span style="color:var(--good);font-weight:600">安定した講義の進め方、落ち着いた喋り方（複数名指摘）</span><br>・明るく活気のある講義で元気が出る<br>・たとえ話がわかりやすい</div></td><td class="comment-cell"><div class="cm">・<span style="color:var(--bad);font-weight:600">説明が早い・早口（複数名指摘）</span><br>・画面を全画面表示でノイズ減少を<br>・質問時に不安を感じる場面あり</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s1">1.67</td><td class="comment-cell"><div class="cm">・発問のインタラクティブは申し分なし<br>・過学習のA/B比較の発問Good<br>・—</div></td><td class="comment-cell"><div class="cm">・<span style="color:var(--bad);font-weight:600">受講生に考えさせる投げかけが少ない（複数名指摘）</span><br>・インタラクティブ前後に準備の間を設ける<br>・回数より注目のさせ方を考える</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s1">1.0</td><td class="comment-cell"><div class="cm">・ScreenBrushで明示されておりわかりやすい<br>・「ゆっくりで大丈夫です」の一言が素敵<br>・ノートに変えますの声掛けGood</div></td><td class="comment-cell"><div class="cm">・<span style="color:var(--bad);font-weight:600">書く時間が欲しい・ペースが早い（複数名指摘）</span><br>・画面遷移時に枕詞があるとよい<br>・初学者への寄り添い・共感をもう少し</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s1">1.33</td><td class="comment-cell"><div class="cm">・受講生に合わせた伝え方がスムーズ<br>・「ありがとうございます」から始めてGood<br>・—</div></td><td class="comment-cell"><div class="cm">・<span style="color:var(--bad);font-weight:600">結論からの説明を意識（複数名指摘）</span><br>・説明も少し早口。ゆっくり目に<br>・キカガク流の型の背景確認</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s2">2.33</td><td class="comment-cell"><div class="cm">・内容理解について申し分なし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・「これ」「あれ」の表現が多く信頼がやや低下<br>・エラー対応に慣れが必要<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s2">2.33</td><td class="comment-cell"><div class="cm">・Q&A合計: ○19 △4 ×6<br>・問題なし<br>・—</div></td><td class="comment-cell"><div class="cm">・Ridge/Lassoの使い分け・特徴説明で不正確(×)<br>・検証データの説明が小出しに<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Noda W3 -->
+      <div id="noda-w3" class="week-panel">
+        <div class="score-bar"><span class="label">Week3 平均:</span><span class="value" style="color:var(--bad)">11.2 / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">3回</span></div>
+        <p class="scorers">採点者: <strong>杉崎(x2)、沖廣</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: 標準化・欠損値、外れ値除去、ロジスティック回帰<br>実装: 同範囲</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s1">1.17</td><td class="comment-cell"><div class="cm">・全体像を見せてくれるのがいい<br>・スムーズな入りで決定木のつなげ方Good<br>・—</div></td><td class="comment-cell"><div class="cm">・分類ができるとどうなるかのモチベート不足<br>・実装の方も全体の流れを先に確認したい<br>・たくさん内容があるが一言でまとめられると良い</div></td></tr>
+            <tr><td>信頼</td><td class="sc s1">1.5</td><td class="comment-cell"><div class="cm">・いつも通りの安定感<br>・画面が大きくなった。基本的なマスタ動画内容OK<br>・—</div></td><td class="comment-cell"><div class="cm">・<span style="color:var(--bad);font-weight:600">もっと遅く話してほしい（複数名指摘）</span><br>・手書き後に質問対応の場を設けてほしい<br>・受講生が不安を感じる進行あり</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s1">1.5</td><td class="comment-cell"><div class="cm">・リアクション求める雰囲気がいい<br>・質問を投げかける働きかけがいい<br>・復習の指名Good</div></td><td class="comment-cell"><div class="cm">・<span style="color:var(--bad);font-weight:600">実装時のインタラクティブがゼロ（沖廣指摘）</span><br>・初期の発問がチャットハードル高い<br>・理解度チェックは軽めのリアクションで</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s1">1.33</td><td class="comment-cell"><div class="cm">・受講生の様子を見ていて安心<br>・「当てるわけではないので」の枕詞が流石<br>・言葉知らなくても大丈夫ですよの一言</div></td><td class="comment-cell"><div class="cm">・個人指名のとき拍手求めてもいいかも<br>・「いかがでしょうか」で気にしてる感を出す<br>・実装は特にゆっくり。こまめなコミュニケーション</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s1">1.67</td><td class="comment-cell"><div class="cm">・—<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・回りくどい言い回しが多い印象<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s2">2.0</td><td class="comment-cell"><div class="cm">・基本的な内容は問題なし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・「ロッソ」の表現が気になる（リッジ、Lasso）<br>・理論のところの「あれなんですけど」の表現<br>・理論を避けている感。避けるなら割り切りと理由を</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s2">2.0</td><td class="comment-cell"><div class="cm">・Q&A合計: ○17 △5 ×8<br>・基本的な内容は問題なし<br>・—</div></td><td class="comment-cell"><div class="cm">・log/expの説明不足(×)<br>・[0]の説明が回りくどい(△)<br>・0.5の閾値判定で不正確(×)</div></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Noda W4 -->
+      <div id="noda-w4" class="week-panel">
+        <div class="score-bar"><span class="label">Week4 平均:</span><span class="value" style="color:var(--warn)">12.3 / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">3回</span></div>
+        <p class="scorers">採点者: <strong>杉崎、相田、沖廣</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: 決定木・SVM、アンサンブル学習、不均衡・データの分割<br>実装: 同範囲</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s1">1.83</td><td class="comment-cell"><div class="cm">・沖廣：不均衡のWhole含め全体像◎<br>・相田：良い構成<br>・—</div></td><td class="comment-cell"><div class="cm">・導入のモチベートが課題継続<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s2">2.0</td><td class="comment-cell"><div class="cm">・沖廣：信頼性バッチリ<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・相田：質問時の不安感<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s1">1.5</td><td class="comment-cell"><div class="cm">・相田：考えさせる発問あり<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・受講生を巻き込む仕掛けが足りない<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s1">1.83</td><td class="comment-cell"><div class="cm">・受講生の様子を見ている安心感<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・ペース配分に課題継続<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s2">2.0</td><td class="comment-cell"><div class="cm">・型は定着しつつある<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・冗長な回答に注意<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s2">2.17</td><td class="comment-cell"><div class="cm">・沖廣：問題なし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・—<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s1">1.0</td><td class="comment-cell"><div class="cm">・Q&A合計: ○11 △11 ×5<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・△が多い。知識の深さに課題（決定木・SVM範囲）<br>・不均衡データの質問で△5件<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Noda W5 -->
+      <div id="noda-w5" class="week-panel">
+        <div class="score-bar"><span class="label">Week5 平均:</span><span class="value" style="color:var(--warn)">13.9 / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">7回（1ヶ月模擬講義含む）</span></div>
+        <p class="scorers">採点者: <strong>戸巻、沖廣、篠原、杉崎(x2)、荻野</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: 評価指標、グリッド/ランダム/ベイズ、主成分分析、クラスタリング<br>実装: 同範囲</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s1">1.36</td><td class="comment-cell"><div class="cm">・ここまでの整理を端的にできている<br>・モデルの種類と精度の棲み分けが良い<br>・—</div></td><td class="comment-cell"><div class="cm">・<span style="color:var(--bad);font-weight:600">全体的に冗長（複数名指摘）</span><br>・話の抑揚をつけ大事なポイントを強調<br>・後半Wholeもより端的に</div></td></tr>
+            <tr><td>信頼</td><td class="sc s2">2.36</td><td class="comment-cell"><div class="cm">・<span style="color:var(--good);font-weight:600">話し方が落ち着いており講師としての安心感（複数名指摘）</span><br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・—<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s1">1.79</td><td class="comment-cell"><div class="cm">・受講生への回答に適切にFBできている<br>・発問タイミング・聞き方・意図がうまく散りばめられている<br>・曖昧な答えにもフォロー◎</div></td><td class="comment-cell"><div class="cm">・<span style="color:var(--bad);font-weight:600">発問が目的化している場面あり（複数名指摘）</span><br>・効果的なインタラクティブ設計を<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s2">2.14</td><td class="comment-cell"><div class="cm">・<span style="color:var(--good);font-weight:600">実装スピード・チャット送付・画面サイズOK（複数名指摘）</span><br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・手書きがもう少し丁寧だとよりGood<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s1">1.79</td><td class="comment-cell"><div class="cm">・基本的に結論から伝えられている<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・結論後がやや冗長な印象<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s2">2.36</td><td class="comment-cell"><div class="cm">・知識面は問題なし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・—<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s2">2.07</td><td class="comment-cell"><div class="cm">・Q&A合計: ○41 △13 ×16<br>・1ヶ月テスト: ○7/△2/×1、○7/△1/×2、○6/△0/×3<br>・—</div></td><td class="comment-cell"><div class="cm">・AUCの解釈で回答不足(×)<br>・RecallとPrecisionのトレードオフ説明が不十分(△)<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Noda W6 -->
+      <div id="noda-w6" class="week-panel">
+        <div class="score-bar"><span class="label">Week6 平均:</span><span class="value" style="color:var(--good)">16.2 / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">9回（ランダム模擬講義）</span></div>
+        <p class="scorers">採点者: <strong>歳森(x2)、荻野(x3)、小林俊、篠原、江口、竹内</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: 決定木、外れ値、重回帰、ロジスティック、アンサンブル、過学習、性能改善、重回帰分析<br>実装: ラベルエンコ、外れ値、分類、ベイズ最適化、データセット準備、過学習、教師なし、RF/XGB</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s1">1.67</td><td class="comment-cell"><div class="cm">・<span style="color:var(--good);font-weight:600">WPW構成が定着しつつある（複数名指摘）</span><br>・手書きの方のインタラクティブ量が適切<br>・—</div></td><td class="comment-cell"><div class="cm">・<span style="color:var(--bad);font-weight:600">伏線を張る・動機づけのWholeが弱い（複数名指摘）</span><br>・まとめへの入りをスムーズにしたい<br>・発問後の間合いがもう少し欲しい</div></td></tr>
+            <tr><td>信頼</td><td class="sc s2">2.33</td><td class="comment-cell"><div class="cm">・<span style="color:var(--good);font-weight:600">安定したトーンで信頼感（複数名指摘）</span><br>・ミュート促しGood<br>・—</div></td><td class="comment-cell"><div class="cm">・進捗確認のリアクションを緑チェックで<br>・手書きの字が少し見づらい<br>・実装準備をスムーズに</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s1">1.56</td><td class="comment-cell"><div class="cm">・会社の方針→深堀り→決定木に落とし込むのがうまい<br>・手書きのインタラクティブ量が適切<br>・—</div></td><td class="comment-cell"><div class="cm">・<span style="color:var(--bad);font-weight:600">実装でインタラクティブが大幅に減る（複数名指摘）</span><br>・発問後の間合いがもっと欲しい<br>・指示出しを明確に</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s2">2.22</td><td class="comment-cell"><div class="cm">・（出社か在宅か）具体例をあげるのが良い<br>・ミニワーク指示が明確。時間明示<br>・—</div></td><td class="comment-cell"><div class="cm">・指示出しは明確にしたい<br>・質疑応答時のリアクション改善<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s3">3.0</td><td class="comment-cell"><div class="cm">・<span style="color:var(--good);font-weight:600">曖昧な質問への深堀りすり合わせが優秀（複数名指摘）</span><br>・結論ファーストが定着<br>・—</div></td><td class="comment-cell"><div class="cm">・—<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s3">2.89</td><td class="comment-cell"><div class="cm">・ほぼ問題なし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・—<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s2">2.56</td><td class="comment-cell"><div class="cm">・Q&A合計: ○58 △11 ×13<br>・8/10正答が2セッション<br>・—</div></td><td class="comment-cell"><div class="cm">・ロジスティック回帰の決定木との違い(×)<br>・カテゴリカル変数の例外対応(×)<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Noda W7 -->
+      <div id="noda-w7" class="week-panel active">
+        <div class="score-bar"><span class="label">Week7 平均:</span><span class="value" style="color:var(--good)">17.3 / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">7回（ランダム模擬講義）</span></div>
+        <p class="scorers">採点者: <strong>木下(x2)、村上、小林、四方田、有吉、重本</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: 教師なし学習、評価指標、データセット準備、カテゴリカル変数、外れ値、決定木<br>実装: グリッドサーチ、決定木、前処理、評価指標、特徴量エンジ、アンサンブル、クラスタリング</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s2">2.0</td><td class="comment-cell"><div class="cm">・<span style="color:var(--good);font-weight:600">学習の動機・順序の説明があり理解しやすい（複数名指摘）</span><br>・抑えるべきポイントを明確にできている<br>・実装も丁寧に進行。初学者にもわかりやすい</div></td><td class="comment-cell"><div class="cm">・<span style="color:var(--bad);font-weight:600">わかりやすいが聞いてくれなくなるリスク（木下指摘）</span><br>・ワクワク感・期待感が持ちづらい<br>・Wholeのあとはできるだけ早くPartへ</div></td></tr>
+            <tr><td>信頼</td><td class="sc s3">2.86</td><td class="comment-cell"><div class="cm">・<span style="color:var(--good);font-weight:600">ハキハキと適切な敬語で安心感（複数名指摘）</span><br>・カメラ目線を意識し中央にて講義進行<br>・声量・言葉遣い・目線含め安心感あり</div></td><td class="comment-cell"><div class="cm">・<span style="color:var(--bad);font-weight:600">楽しそうな雰囲気が出ていない（木下指摘）</span><br>・講師がその単元に面白そうでない印象<br>・笑顔や表情をもう少し出す</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s1">1.86</td><td class="comment-cell"><div class="cm">・<span style="color:var(--good);font-weight:600">受講者の集中力を保つ発問を実施（複数名指摘）</span><br>・能動的に考える時間を設けている<br>・復習のための収束発問を使用</div></td><td class="comment-cell"><div class="cm">・<span style="color:var(--bad);font-weight:600">関心・興味・モチベートのためのインタラクティブが不足（複数名指摘）</span><br>・発問意図が読めないものがある<br>・問いたい意図を大事にして問いを設計</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s2">2.71</td><td class="comment-cell"><div class="cm">・<span style="color:var(--good);font-weight:600">ScreenBrush・チャット送付・不要タブなし（複数名指摘）</span><br>・基本的なことができており確認頻度も適切<br>・画面指示、見てほしい場所の指示が適切</div></td><td class="comment-cell"><div class="cm">・ScreenBrushのショートカットを抑える<br>・GoodNote横移動の方がいいかも<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s2">2.43</td><td class="comment-cell"><div class="cm">・基本的な型は問題なし<br>・発問意図の再確認ができている<br>・—</div></td><td class="comment-cell"><div class="cm">・<span style="color:var(--bad);font-weight:600">初学者への回答はより具体的な例を（複数名指摘）</span><br>・可視化して回答を心がける<br>・持ち帰り判断タイミングに違和感</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s3">2.86</td><td class="comment-cell"><div class="cm">・講義内の知識は問題なし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・—<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s2">2.57</td><td class="comment-cell"><div class="cm">・Q&A合計: ○51 △9 ×3<br>・9/10正答が1セッション、8/10正答が3セッション<br>・ほぼ3に近い（木下評価）</div></td><td class="comment-cell"><div class="cm">・持ち帰り3件あり（正規化、教師なし手法、評価指標設定）<br>・相関と主成分の関係で不十分(△)<br>・ML後の学習誘導がやや弱い(△)</div></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Noda W8 -->
+      <div id="noda-w8" class="week-panel">
+        <div class="score-bar"><span class="label">Week8:</span><span class="value" style="color:var(--sub)">定性FBのみ（スコア0記入）</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">2回</span></div>
+        <p class="scorers">採点者: <strong>沖廣、江口</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: ロジスティック、過学習<br>実装: データセット準備〜実装、クラスタリング</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・<span style="color:var(--good);font-weight:600">説明がめっちゃわかりやすい（江口）</span><br>・入りに実装画面で伏線回収の説明ができている<br>・まとめWhole簡潔にポイント強調できている</div></td><td class="comment-cell"><div class="cm">・—<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・<span style="color:var(--good);font-weight:600">雰囲気最高！ぱっと明るくなる（沖廣）</span><br>・テンション高めでメリハリがついている<br>・明るい雰囲気で心理的安全性あり</div></td><td class="comment-cell"><div class="cm">・—<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・<span style="color:var(--good);font-weight:600">発問設計が秀逸（江口）</span><br>・ABどっちがいいモデル？→なぜBを選んだ？の流れ◎<br>・達成感ありませんか？等の共感発問Good</div></td><td class="comment-cell"><div class="cm">・実装の問いかけベースを意識するとさらに良い<br>・学ぶ意義の実感につなげる問いを<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・<span style="color:var(--good);font-weight:600">指示が明確・考える時間確保・フォロー完璧（江口）</span><br>・ミニワーク指示明確。時間明示。早い人向け指示も<br>・共感と初学者目線Good</div></td><td class="comment-cell"><div class="cm">・GoodNoteで「ML実践」→正式名称に変更<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・—<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・—<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・—<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・—<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・Q&Aなし（定性FBのみ）<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・—<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 範囲別スコア -->
+    <div id="noda-range" class="sub-tab-content">
+      <h3>範囲別 練習回数（模擬講義マラソン）</h3>
+      <div class="week-tabs">
+        <button class="week-tab-btn active" onclick="switchNodaRangeWeek(7)">W7（最新）</button>
+      </div>
+
+      <div id="noda-range-w7" class="week-panel active">
+        <div style="overflow-x:auto">
+        <table class="eval-table" style="font-size:.75rem;min-width:500px">
+          <thead><tr><th style="width:120px">章</th><th style="width:160px">節</th><th style="text-align:center;width:55px">手書き（回数）</th><th style="text-align:center;width:55px">実装（回数）</th></tr></thead>
+          <tbody>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
+            <tr><td></td><td>重回帰分析</td><td class="sc">3</td><td class="sc s0">—</td></tr>
+            <tr><td></td><td>データセットの準備〜実装</td><td class="sc">3</td><td class="sc">4</td></tr>
+            <tr><td></td><td>過学習</td><td class="sc">3</td><td class="sc">2</td></tr>
+            <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc">1</td><td class="sc">1</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
+            <tr><td></td><td>標準化</td><td class="sc">1</td><td class="sc s0">—</td></tr>
+            <tr><td></td><td>欠損値</td><td class="sc">1</td><td class="sc">2</td></tr>
+            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc">2</td><td class="sc">2</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">データの前処理（応用）</td></tr>
+            <tr><td></td><td>特徴量エンジニアリング</td><td class="sc">1</td><td class="sc">2</td></tr>
+            <tr><td></td><td>外れ値除去</td><td class="sc">3</td><td class="sc">2</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 分類</td></tr>
+            <tr><td></td><td>ロジスティック回帰</td><td class="sc">3</td><td class="sc">2</td></tr>
+            <tr><td></td><td>決定木</td><td class="sc">3</td><td class="sc">1</td></tr>
+            <tr><td></td><td>SVM（ForBiz）</td><td class="sc">1</td><td class="sc s0">—</td></tr>
+            <tr><td></td><td>ランダムフォレスト</td><td class="sc s0">—</td><td class="sc">2</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">評価指標</td></tr>
+            <tr><td></td><td>Accuracy等</td><td class="sc">3</td><td class="sc">3</td></tr>
+            <tr><td></td><td>不均衡データ</td><td class="sc">1</td><td class="sc">1</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">性能改善</td></tr>
+            <tr><td></td><td>データの分割</td><td class="sc">1</td><td class="sc s0">—</td></tr>
+            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc">1</td><td class="sc">2</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師なし学習</td></tr>
+            <tr><td></td><td>主成分分析</td><td class="sc">1</td><td class="sc">1</td></tr>
+            <tr><td></td><td>クラスタリング</td><td class="sc s0">—</td><td class="sc">4</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+      <p style="font-size:.75rem;color:var(--sub);margin-top:.5rem">※ 対策CSVより。数字は模擬講義の累計練習回数。W7時点。35回の模擬講義で広い範囲をカバー。</p>
+    </div>
+
+    <!-- 所感・アクション -->
+    <div id="noda-actions" class="sub-tab-content">
+      <h3>所感・アクション</h3>
+      <div class="week-tabs">
+        <button class="week-tab-btn" onclick="switchNodaActionsWeek(2)">W2</button>
+        <button class="week-tab-btn" onclick="switchNodaActionsWeek(4)">W4</button>
+        <button class="week-tab-btn" onclick="switchNodaActionsWeek(5)">W5</button>
+        <button class="week-tab-btn" onclick="switchNodaActionsWeek(6)">W6</button>
+        <button class="week-tab-btn active" onclick="switchNodaActionsWeek(7)">W7</button>
+      </div>
+
+      <div id="noda-actions-w2" class="week-panel">
+        <h4>育成進捗</h4>
+        <div class="scorers">
+          <span><strong>全体感：</strong>10.7/21点。3回の模擬講義で始動。説明力は高く評価されているが、ペース配分・受講生への寄り添いが初期課題。知識面は初回から安定。</span>
+          <span><strong>登壇テスト見通し：</strong>1ヶ月目標(15点)まで距離があるが、講師力の素地は十分。ペースと型の定着が課題。</span>
+        </div>
+        <h4>ネクストアクション</h4>
+        <dl class="next-actions">
+          <dt>育成方針</dt><dd>ペース配分の改善と基本型（WPW・質問対応）の定着が最優先。量を維持しつつ質の改善を図る。</dd>
+          <dt>メンター/エルダー</dt><dd>早口・ペース配分のフィードバックを重点的に。ツール周りの改善もサポート。</dd>
+        </dl>
+      </div>
+
+      <div id="noda-actions-w4" class="week-panel">
+        <h4>前週課題フォロー</h4>
+        <div style="margin:.4rem 0">
+          <span class="status-card status-ok">一部改善</span> ペース配分（思いやり1.0→1.83）<br>
+          <span class="status-card status-ok">一部改善</span> 信頼（1.0→2.0に改善）<br>
+          <span class="status-card status-warn">継続</span> インタラクティブの質向上
+        </div>
+        <h4>育成進捗</h4>
+        <div class="scorers">
+          <span><strong>全体感：</strong>12.3/21点。信頼・思いやりは着実に改善。知識（質問対応）がW4で1.0に落ちた点が懸念。△が多く深い知識の定着が必要。</span>
+          <span><strong>登壇テスト見通し：</strong>1ヶ月目標(15点)まであと2.7点。年明けの模擬講義で挽回可能。</span>
+        </div>
+        <h4>ネクストアクション</h4>
+        <dl class="next-actions">
+          <dt>育成方針</dt><dd>知識（質問対応）の補強。△回答を○に変える知識インプットが必要。インタラクティブの改善も並行。</dd>
+          <dt>メンター/エルダー</dt><dd>質問回答のロールプレイで知識の深さを強化。</dd>
+        </dl>
+      </div>
+
+      <div id="noda-actions-w5" class="week-panel">
+        <h4>前週課題フォロー</h4>
+        <div style="margin:.4rem 0">
+          <span class="status-card status-good">クリア</span> 知識（質問対応）回復（1.0→2.07）<br>
+          <span class="status-card status-ok">一部改善</span> 信頼安定化（2.36）<br>
+          <span class="status-card status-warn">継続</span> インタラクティブ（1.79、発問の質が課題）
+        </div>
+        <h4>育成進捗</h4>
+        <div class="scorers">
+          <span><strong>全体感：</strong>13.9/21点(+1.6)。1ヶ月模擬講義(3名採点)を含む7回実施。1ヶ月目標(15点)にあと1.1点。信頼は安定しているが、インタラクティブが最大のボトルネック。</span>
+          <span><strong>登壇テスト見通し：</strong>W6-7でランダム模擬講義に入れば加速が見込める。15点は次週到達可能。</span>
+        </div>
+        <h4>ネクストアクション</h4>
+        <dl class="next-actions">
+          <dt>育成方針</dt><dd>インタラクティブの改善に集中。「考えさせる問い」のバリエーション共有。ランダム模擬講義への移行。</dd>
+          <dt>メンター/エルダー</dt><dd>発問設計のレビュー。効果的なインタラクティブの型を共有。</dd>
+        </dl>
+      </div>
+
+      <div id="noda-actions-w6" class="week-panel">
+        <h4>前週課題フォロー</h4>
+        <div style="margin:.4rem 0">
+          <span class="status-card status-good">クリア</span> 1ヶ月目標達成（16.2点）<br>
+          <span class="status-card status-good">クリア</span> 質問対応（伝え方）3.0到達<br>
+          <span class="status-card status-warn">継続</span> インタラクティブ（1.56、実装時にゼロ）
+        </div>
+        <h4>育成進捗</h4>
+        <div class="scorers">
+          <span><strong>全体感：</strong>16.2/21点(+2.3)。1ヶ月目標を大幅に超え、合格ライン(18点)が視野に。9回の模擬講義（ランダム含む）で質問対応が3.0に到達。<strong>on track</strong>。</span>
+          <span><strong>登壇テスト見通し：</strong>合格ライン(18点)まであと1.8点。インタラクティブと講義の進め方を改善すれば十分到達可能。</span>
+        </div>
+        <h4>ネクストアクション</h4>
+        <dl class="next-actions">
+          <dt>育成方針</dt><dd>合格圏突入を目指す仕上げフェーズ。講義の進め方のメリハリとインタラクティブ（特に実装時）の改善。</dd>
+          <dt>メンター/エルダー</dt><dd>実装時のインタラクティブの具体例共有。動機づけWholeの強化。</dd>
+        </dl>
+      </div>
+
+      <div id="noda-actions-w7" class="week-panel active">
+        <h4>前週課題フォロー</h4>
+        <div style="margin:.4rem 0">
+          <span class="status-card status-ok">一部改善</span> 講義の進め方（1.67→2.0）<br>
+          <span class="status-card status-ok">一部改善</span> インタラクティブ（1.56→1.86）<br>
+          <span class="status-card status-good">クリア</span> 信頼2.86で合格水準目前
+        </div>
+
+        <h4>育成進捗</h4>
+        <div class="scorers">
+          <span><strong>全体感：</strong>17.3/21点(+1.1)。合格ライン(18点)まであと0.7点。18点を3セッション（小林・木下x2・四方田）で達成済。<strong>ほぼ on track</strong>。35回の模擬講義実績。</span>
+          <span><strong>登壇テスト見通し：</strong>W8で安定して18点以上をキープできればテスト準備OK。インタラクティブ(1.86)が唯一の2.0未満項目。</span>
+        </div>
+
+        <h4>メンタル・モチベーション</h4>
+        <div class="scorers">
+          <span>W8の定性FB（沖廣・江口）で「ほぼ100点」「説明がめっちゃわかりやすい」等の高評価。自信を持ってテストに臨める状態。初回から講師力の素地が高く、着実に成長。</span>
+        </div>
+
+        <h4>残課題（テスト前に対策）</h4>
+        <div class="issue-box">インタラクティブ：実装時のインタラクティブが弱い。問いかけベースの進行を意識。</div>
+        <div class="issue-box">講義の進め方：メリハリ・モチベート・楽しそうな雰囲気づくりが最後の壁。</div>
+
+        <h4>ネクストアクション</h4>
+        <dl class="next-actions">
+          <dt>育成方針</dt><dd>テスト準備フェーズ。インタラクティブの2.0安定化と講義のメリハリ改善が最終課題。</dd>
+          <dt>メンター/エルダー</dt><dd>模擬テスト形式の最終練習。弱点範囲の集中対策。テスト日程検討。</dd>
+        </dl>
+      </div>
+
+      <p style="font-size:.75rem;color:var(--sub);margin-top:.5rem">※ エルダー・メンターの所感とスコアパターンに基づく週次フィードバック。</p>
+    </div>
+
+  </div>
+
   <!-- ===== 山本〜紙谷 (same as before) ===== -->
   <div id="tab-yamamoto" class="tab-content">
     <div class="score-bar"><span class="label">PCS:</span><span class="value">未着手（入社初日）</span></div>
@@ -1058,6 +1418,9 @@ function switchWeek(m,w){var p=document.getElementById(m+'-detail');p.querySelec
 function switchRangeWeek(w){var p=document.getElementById('yoshihara-range');p.querySelectorAll('.week-panel').forEach(e=>e.classList.remove('active'));p.querySelectorAll('.week-tab-btn').forEach(e=>e.classList.remove('active'));document.getElementById('range-w'+w).classList.add('active');event.target.classList.add('active')}
 function switchActionsWeek(w){var p=document.getElementById('yoshihara-actions');p.querySelectorAll('.week-panel').forEach(e=>e.classList.remove('active'));p.querySelectorAll('.week-tab-btn').forEach(e=>e.classList.remove('active'));document.getElementById('actions-w'+w).classList.add('active');event.target.classList.add('active')}
 function switchSummaryWeek(w){var p=document.getElementById('tab-summary');p.querySelectorAll('.week-panel').forEach(e=>e.classList.remove('active'));p.querySelectorAll('.week-tab-btn').forEach(e=>e.classList.remove('active'));document.getElementById('summary-w'+w).classList.add('active');event.target.classList.add('active')}
+function switchNodaWeek(w){var p=document.getElementById('noda-detail');p.querySelectorAll('.week-panel').forEach(e=>e.classList.remove('active'));p.querySelectorAll('.week-tab-btn').forEach(e=>e.classList.remove('active'));document.getElementById('noda-w'+w).classList.add('active');event.target.classList.add('active')}
+function switchNodaRangeWeek(w){var p=document.getElementById('noda-range');p.querySelectorAll('.week-panel').forEach(e=>e.classList.remove('active'));p.querySelectorAll('.week-tab-btn').forEach(e=>e.classList.remove('active'));document.getElementById('noda-range-w'+w).classList.add('active');event.target.classList.add('active')}
+function switchNodaActionsWeek(w){var p=document.getElementById('noda-actions');p.querySelectorAll('.week-panel').forEach(e=>e.classList.remove('active'));p.querySelectorAll('.week-tab-btn').forEach(e=>e.classList.remove('active'));document.getElementById('noda-actions-w'+w).classList.add('active');event.target.classList.add('active')}
 
 window.addEventListener('DOMContentLoaded',function(){
   var weeks=['W1','W2','W3','W4','W5','W6','W7','W8'];
@@ -1068,8 +1431,19 @@ window.addEventListener('DOMContentLoaded',function(){
     type:'line',
     data:{labels:weeks,datasets:[
       {label:'吉原（テスト）',data:[11,13,12.5,15.5,15.6,17.1,18,18.5],borderColor:'#3182ce',backgroundColor:'rgba(49,130,206,.08)',tension:.3,pointRadius:4,fill:true},
+      {label:'野田（テスト）',data:[null,10.7,11.2,12.3,13.9,16.2,17.3,null],borderColor:'#805ad5',backgroundColor:'rgba(128,90,213,.08)',tension:.3,pointRadius:4,fill:true},
       {label:'合格ライン(18)',data:pass,borderColor:'#e53e3e',borderDash:[6,3],pointRadius:0,borderWidth:1.5},
       {label:'1ヶ月目標(15)',data:target,borderColor:'#d69e2e',borderDash:[4,4],pointRadius:0,borderWidth:1}
+    ]},
+    options:{responsive:true,plugins:{legend:{position:'bottom',labels:{font:{size:11}}}},scales:{y:{min:0,max:21,ticks:{stepSize:3}},x:{grid:{display:false}}}}
+  });
+
+  new Chart(document.getElementById('chartNoda'),{
+    type:'line',
+    data:{labels:weeks,datasets:[
+      {label:'合計点',data:[null,10.7,11.2,12.3,13.9,16.2,17.3,null],borderColor:'#805ad5',backgroundColor:'rgba(128,90,213,.12)',fill:true,tension:.3,pointRadius:5,pointBackgroundColor:'#805ad5'},
+      {label:'1ヶ月目標(15)',data:target,borderColor:'#d69e2e',borderDash:[4,4],pointRadius:0,borderWidth:1},
+      {label:'合格ライン(18)',data:pass,borderColor:'#e53e3e',borderDash:[6,3],pointRadius:0,borderWidth:1.5}
     ]},
     options:{responsive:true,plugins:{legend:{position:'bottom',labels:{font:{size:11}}}},scales:{y:{min:0,max:21,ticks:{stepSize:3}},x:{grid:{display:false}}}}
   });
