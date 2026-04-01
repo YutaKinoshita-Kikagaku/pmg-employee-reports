@@ -55,8 +55,9 @@
     .scorers{color:var(--sub);font-size:.8rem;margin:.4rem 0}
     .scorers strong{color:var(--text)}
 
-    .item-avg-table{width:100%;border-collapse:collapse;font-size:.8rem;margin:.5rem 0}
+    .item-avg-table{width:100%;border-collapse:collapse;font-size:.8rem;margin:.5rem 0;table-layout:fixed}
     .item-avg-table th{background:#edf2f7;padding:.3rem .5rem;text-align:left;font-weight:500}
+    .item-avg-table th:nth-child(1){width:140px} .item-avg-table th:nth-child(2){width:50px} .item-avg-table th:nth-child(3),.item-avg-table th:nth-child(4){width:calc((100% - 190px)/2)}
     .item-avg-table td{padding:.3rem .5rem;border-bottom:1px solid var(--border)}
     .item-avg-table .sc{text-align:center;font-weight:700;width:50px}
 
@@ -171,7 +172,7 @@
         <div class="score-bar"><span class="label">Week1 合計:</span><span class="value" style="color:var(--bad)">11.0 / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">1回</span></div>
         <p class="scorers">採点者: <strong>江口</strong>　|　範囲: データセットの準備〜実装</p>
         <table class="item-avg-table">
-          <thead><tr><th>項目</th><th>点数</th><th>Good</th><th>More</th></tr></thead>
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
           <tbody>
             <tr><td>講義の進め方</td><td class="sc s1">1</td><td style="font-size:.78rem">前後の繋がりを最初に説明。まとめで考えさせるのが良い</td><td style="font-size:.78rem">前置きをもう少し簡潔に。まとめは一言で伝えたい</td></tr>
             <tr><td>信頼</td><td class="sc s2">2</td><td style="font-size:.78rem">落ち着いた雰囲気で安心感。ハキハキと聞きやすい</td><td style="font-size:.78rem"></td></tr>
@@ -187,9 +188,9 @@
       <!-- W2 (1/13-1/17, session 2: 1/15 江口) -->
       <div id="yoshihara-w2" class="week-panel">
         <div class="score-bar"><span class="label">Week2 合計:</span><span class="value" style="color:var(--warn)">13.0 / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">1回</span></div>
-        <p class="scorers">採点者: <strong>江口</strong>　|　範囲: データセットの準備〜実装</p>
+        <p class="scorers">採点者: <strong>江口</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: なし　|　実装: データの前処理（〜欠損値の処理）</span></p>
         <table class="item-avg-table">
-          <thead><tr><th>項目</th><th>点数</th><th>Good（代表コメント）</th><th>More（代表コメント）</th></tr></thead>
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
           <tbody>
             <tr><td>講義の進め方</td><td class="sc s1">1</td><td style="font-size:.78rem">休憩前の振り返りができている。実装の流れも整理しながら進められている</td><td style="font-size:.78rem">なぜデータセットの準備が必要か？のモチベを示せると良い。実装でも最初のWholeが欲しい</td></tr>
             <tr><td>信頼</td><td class="sc s2">2</td><td style="font-size:.78rem">ハキハキとしたトーン。エラーのデバッグも落ち着いて対応</td><td style="font-size:.78rem">実装の解説で少し手間取っている印象。Fuwari等ツール操作に慣れていく</td></tr>
@@ -205,9 +206,9 @@
       <!-- W3 (1/19-1/24, sessions 3-6) -->
       <div id="yoshihara-w3" class="week-panel">
         <div class="score-bar"><span class="label">Week3 平均:</span><span class="value" style="color:var(--warn)">12.5 / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">4回</span></div>
-        <p class="scorers">採点者: <strong>江口、相田、篠原、沖廣</strong>　|　範囲: Label/One-hot Encoding、過学習、外れ値、ロジスティック回帰</p>
+        <p class="scorers">採点者: <strong>江口、相田、篠原、沖廣</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: Label/One-hot Encoding、過学習、外れ値　|　実装: 過学習、Ridge/Lasso、外れ値、ロジスティック回帰</span></p>
         <table class="item-avg-table">
-          <thead><tr><th>項目</th><th>平均</th><th>Good（代表コメント）</th><th>More（代表コメント）</th></tr></thead>
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
           <tbody>
             <tr><td>講義の進め方</td><td class="sc s1">1.75</td><td style="font-size:.78rem">WPWの構成が良い。ラストホールも端的にまとめられている</td><td style="font-size:.78rem">受講生をモチベートさせる声掛けがあれば更に良い</td></tr>
             <tr><td>信頼</td><td class="sc s2">2.25</td><td style="font-size:.78rem">安定して自信を持った進め方。Fuwari活用◎</td><td style="font-size:.78rem">進度が早い。受講生が噛み砕く時間が欲しい。PythonのAIサポートは消す</td></tr>
@@ -223,9 +224,9 @@
       <!-- W4 (1/27-1/31, sessions 7-12) -->
       <div id="yoshihara-w4" class="week-panel">
         <div class="score-bar"><span class="label">Week4 平均:</span><span class="value" style="color:var(--good)">15.5 / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">6回</span></div>
-        <p class="scorers">採点者: <strong>江口(x3)、戸巻、沖廣</strong>　|　範囲: 決定木、アンサンブル学習、グリッドサーチ・ランダムサーチ・ベイズ最適化、評価指標、主成分分析</p>
+        <p class="scorers">採点者: <strong>江口(x3)、戸巻、沖廣</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: 決定木、アンサンブル学習、グリッドサーチ等、評価指標、主成分分析　|　実装: 同範囲</span></p>
         <table class="item-avg-table">
-          <thead><tr><th>項目</th><th>平均</th><th>Good（代表コメント）</th><th>More（代表コメント）</th></tr></thead>
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
           <tbody>
             <tr><td>講義の進め方</td><td class="sc s1">1.5</td><td style="font-size:.78rem">前半ホールで端的に復習と次のステップを示せている</td><td style="font-size:.78rem">受講生のモチベーションが上がるような流れにしたい</td></tr>
             <tr><td>信頼</td><td class="sc s2">2.33</td><td style="font-size:.78rem">ハキハキしている</td><td style="font-size:.78rem"></td></tr>
@@ -241,9 +242,9 @@
       <!-- W5 (2/2-2/7, sessions 13-17) -->
       <div id="yoshihara-w5" class="week-panel">
         <div class="score-bar"><span class="label">Week5 平均:</span><span class="value" style="color:var(--good)">15.6 / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">5回</span></div>
-        <p class="scorers">採点者: <strong>江口、沖廣、吉田、歳森、森井</strong>　|　範囲: クラスタリング、アンサンブル学習、過学習、外れ値除去、評価指標</p>
+        <p class="scorers">採点者: <strong>江口、沖廣、吉田、歳森、森井</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: クラスタリング、アンサンブル学習、過学習、外れ値除去、評価指標　|　実装: 同範囲+特徴量エンジニアリング、ランダムサーチ</span></p>
         <table class="item-avg-table">
-          <thead><tr><th>項目</th><th>平均</th><th>Good（代表コメント）</th><th>More（代表コメント）</th></tr></thead>
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
           <tbody>
             <tr><td>講義の進め方</td><td class="sc s1">1.6</td><td style="font-size:.78rem">前回の復習からの導入◎</td><td style="font-size:.78rem">丁寧すぎてタイムスケジュール通りに終わらない可能性。数学の研修になりがち</td></tr>
             <tr><td>信頼</td><td class="sc s3">3.0</td><td style="font-size:.78rem">ハキハキしていて自信に満ち溢れている</td><td style="font-size:.78rem">不安な時が分かりやすい。フィラーを飲み込む</td></tr>
@@ -259,9 +260,9 @@
       <!-- W6 (2/9-2/14, sessions 18-24) -->
       <div id="yoshihara-w6" class="week-panel">
         <div class="score-bar"><span class="label">Week6 平均:</span><span class="value" style="color:var(--good)">17.1 / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">7回（リーダー模擬講義含む）</span></div>
-        <p class="scorers">採点者: <strong>重本、四方田、村上、木下、有吉、小林、竹内</strong>　|　範囲: ロジスティック回帰、アンサンブル学習、カテゴリカル変数、グリッドサーチ、評価指標、Ridge/Lasso、重回帰分析</p>
+        <p class="scorers">採点者: <strong>重本、四方田、村上、木下、有吉、小林、竹内</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: ロジスティック回帰、アンサンブル学習、カテゴリカル変数、グリッドサーチ等、評価指標、Ridge/Lasso、重回帰分析　|　実装: 決定木、評価指標、データ前処理、グリッドサーチ等、特徴量、主成分分析、過学習</span></p>
         <table class="item-avg-table">
-          <thead><tr><th>項目</th><th>平均</th><th>Good（代表コメント）</th><th>More（代表コメント）</th></tr></thead>
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
           <tbody>
             <tr><td>講義の進め方</td><td class="sc s2">2.0</td><td style="font-size:.78rem">前回の振り返りを可視化しながら進行。大事な観点を強調</td><td style="font-size:.78rem">講義冒頭にインタラクションを持ち関心を引き出したい。動機づけが必要</td></tr>
             <tr><td>信頼</td><td class="sc s3">3.0</td><td style="font-size:.78rem">カメラ目線・ボディランゲージ活用。フィラーワードが少ない。自信ある講義進行</td><td style="font-size:.78rem">OFFを意図的に作る。緊張感を崩すことも強みになる</td></tr>
@@ -277,9 +278,9 @@
       <!-- W7 (2/17-2/21, sessions 25-26) -->
       <div id="yoshihara-w7" class="week-panel">
         <div class="score-bar"><span class="label">Week7 平均:</span><span class="value" style="color:var(--good)">18.0 / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">2回</span></div>
-        <p class="scorers">採点者: <strong>村上、重本</strong>　|　範囲: アンサンブル、決定木、クラスタリング</p>
+        <p class="scorers">採点者: <strong>村上、重本</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: アンサンブル、決定木　|　実装: クラスタリング</span></p>
         <table class="item-avg-table">
-          <thead><tr><th>項目</th><th>平均</th><th>Good（代表コメント）</th><th>More（代表コメント）</th></tr></thead>
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
           <tbody>
             <tr><td>講義の進め方</td><td class="sc s3">3.0</td><td style="font-size:.78rem">復習からの導入が良い。実務活用イメージを冒頭で出せている</td><td style="font-size:.78rem">全体の中での現在地（Whole）提示。まとめは短くても良い</td></tr>
             <tr><td>信頼</td><td class="sc s3">3.0</td><td style="font-size:.78rem">自信を持って講義。笑顔で柔らかい雰囲気。字が丁寧で読みやすい</td><td style="font-size:.78rem">—</td></tr>
@@ -295,9 +296,9 @@
       <!-- W8 (2/24-2/28, sessions 27-28) -->
       <div id="yoshihara-w8" class="week-panel active">
         <div class="score-bar"><span class="label">Week8 平均:</span><span class="value" style="color:var(--good)">18.5 / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">2回</span></div>
-        <p class="scorers">採点者: <strong>四方田、小林、木下、有吉</strong>　|　範囲: 外れ値、評価指標、アンサンブル、特徴量エンジニアリング</p>
+        <p class="scorers">採点者: <strong>四方田、小林、木下、有吉</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: 外れ値、評価指標、アンサンブル　|　実装: アンサンブル、特徴量エンジニアリング、クラスタリング</span></p>
         <table class="item-avg-table">
-          <thead><tr><th>項目</th><th>平均</th><th>Good（代表コメント）</th><th>More（代表コメント）</th></tr></thead>
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
           <tbody>
             <tr><td>講義の進め方</td><td class="sc s3">3.0</td><td style="font-size:.78rem">冒頭で振り返り実施。受講者へ目的伝達ができ重要箇所のイメージが湧く。次章へのモチベイト◎</td><td style="font-size:.78rem"></td></tr>
             <tr><td>信頼</td><td class="sc s3">3.0</td><td style="font-size:.78rem">ハキハキと安心感。インシデント場面でも画面表示をコントロールできている</td><td style="font-size:.78rem"></td></tr>
