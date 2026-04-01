@@ -1413,6 +1413,7 @@
         <button class="week-tab-btn" onclick="switchWeek('yamamoto',7)">W7</button>
         <button class="week-tab-btn" onclick="switchWeek('yamamoto',8)">W8</button>
         <button class="week-tab-btn" onclick="switchWeek('yamamoto',9)">W9</button>
+        <button class="week-tab-btn" onclick="switchWeek('yamamoto',10)">W10</button>
       </div>
       <div id="yamamoto-w1" class="week-panel active">
         <div class="score-bar"><span class="label">Week1 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
@@ -1443,13 +1444,134 @@
           <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
         </tbody></table>
       </div>
-      <div id="yamamoto-w3" class="week-panel"><div class="score-bar"><span class="label">Week3 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="yamamoto-w4" class="week-panel"><div class="score-bar"><span class="label">Week4 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="yamamoto-w5" class="week-panel"><div class="score-bar"><span class="label">Week5 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="yamamoto-w6" class="week-panel"><div class="score-bar"><span class="label">Week6 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="yamamoto-w7" class="week-panel"><div class="score-bar"><span class="label">Week7 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="yamamoto-w8" class="week-panel"><div class="score-bar"><span class="label">Week8 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="yamamoto-w9" class="week-panel"><div class="score-bar"><span class="label">Week9 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="yamamoto-w3" class="week-panel">
+        <div class="score-bar"><span class="label">Week3 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="yamamoto-w4" class="week-panel">
+        <div class="score-bar"><span class="label">Week4 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="yamamoto-w5" class="week-panel">
+        <div class="score-bar"><span class="label">Week5 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="yamamoto-w6" class="week-panel">
+        <div class="score-bar"><span class="label">Week6 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="yamamoto-w7" class="week-panel">
+        <div class="score-bar"><span class="label">Week7 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="yamamoto-w8" class="week-panel">
+        <div class="score-bar"><span class="label">Week8 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="yamamoto-w9" class="week-panel">
+        <div class="score-bar"><span class="label">Week9 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="yamamoto-w10" class="week-panel">
+        <div class="score-bar"><span class="label">Week10 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
     </div>
 
     <!-- 範囲別スコア -->
@@ -2042,6 +2164,7 @@
         <button class="week-tab-btn" onclick="switchWeek('ueda',7)">W7</button>
         <button class="week-tab-btn" onclick="switchWeek('ueda',8)">W8</button>
         <button class="week-tab-btn" onclick="switchWeek('ueda',9)">W9</button>
+        <button class="week-tab-btn" onclick="switchWeek('ueda',10)">W10</button>
       </div>
       <div id="ueda-w1" class="week-panel active">
         <div class="score-bar"><span class="label">Week1 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
@@ -2060,13 +2183,134 @@
         </table>
       </div>
       <div id="ueda-w2" class="week-panel"><div class="score-bar"><span class="label">Week2 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="ueda-w3" class="week-panel"><div class="score-bar"><span class="label">Week3 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="ueda-w4" class="week-panel"><div class="score-bar"><span class="label">Week4 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="ueda-w5" class="week-panel"><div class="score-bar"><span class="label">Week5 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="ueda-w6" class="week-panel"><div class="score-bar"><span class="label">Week6 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="ueda-w7" class="week-panel"><div class="score-bar"><span class="label">Week7 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="ueda-w8" class="week-panel"><div class="score-bar"><span class="label">Week8 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="ueda-w9" class="week-panel"><div class="score-bar"><span class="label">Week9 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="ueda-w3" class="week-panel">
+        <div class="score-bar"><span class="label">Week3 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="ueda-w4" class="week-panel">
+        <div class="score-bar"><span class="label">Week4 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="ueda-w5" class="week-panel">
+        <div class="score-bar"><span class="label">Week5 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="ueda-w6" class="week-panel">
+        <div class="score-bar"><span class="label">Week6 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="ueda-w7" class="week-panel">
+        <div class="score-bar"><span class="label">Week7 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="ueda-w8" class="week-panel">
+        <div class="score-bar"><span class="label">Week8 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="ueda-w9" class="week-panel">
+        <div class="score-bar"><span class="label">Week9 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="ueda-w10" class="week-panel">
+        <div class="score-bar"><span class="label">Week10 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
     </div>
 
     <!-- 範囲別スコア -->
@@ -2659,6 +2903,7 @@
         <button class="week-tab-btn" onclick="switchWeek('tange',7)">W7</button>
         <button class="week-tab-btn" onclick="switchWeek('tange',8)">W8</button>
         <button class="week-tab-btn" onclick="switchWeek('tange',9)">W9</button>
+        <button class="week-tab-btn" onclick="switchWeek('tange',10)">W10</button>
       </div>
       <div id="tange-w1" class="week-panel active">
         <div class="score-bar"><span class="label">Week1 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
@@ -2677,13 +2922,134 @@
         </table>
       </div>
       <div id="tange-w2" class="week-panel"><div class="score-bar"><span class="label">Week2 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="tange-w3" class="week-panel"><div class="score-bar"><span class="label">Week3 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="tange-w4" class="week-panel"><div class="score-bar"><span class="label">Week4 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="tange-w5" class="week-panel"><div class="score-bar"><span class="label">Week5 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="tange-w6" class="week-panel"><div class="score-bar"><span class="label">Week6 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="tange-w7" class="week-panel"><div class="score-bar"><span class="label">Week7 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="tange-w8" class="week-panel"><div class="score-bar"><span class="label">Week8 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="tange-w9" class="week-panel"><div class="score-bar"><span class="label">Week9 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="tange-w3" class="week-panel">
+        <div class="score-bar"><span class="label">Week3 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="tange-w4" class="week-panel">
+        <div class="score-bar"><span class="label">Week4 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="tange-w5" class="week-panel">
+        <div class="score-bar"><span class="label">Week5 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="tange-w6" class="week-panel">
+        <div class="score-bar"><span class="label">Week6 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="tange-w7" class="week-panel">
+        <div class="score-bar"><span class="label">Week7 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="tange-w8" class="week-panel">
+        <div class="score-bar"><span class="label">Week8 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="tange-w9" class="week-panel">
+        <div class="score-bar"><span class="label">Week9 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="tange-w10" class="week-panel">
+        <div class="score-bar"><span class="label">Week10 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
     </div>
 
     <!-- 範囲別スコア -->
@@ -3276,6 +3642,7 @@
         <button class="week-tab-btn" onclick="switchWeek('suginaka',7)">W7</button>
         <button class="week-tab-btn" onclick="switchWeek('suginaka',8)">W8</button>
         <button class="week-tab-btn" onclick="switchWeek('suginaka',9)">W9</button>
+        <button class="week-tab-btn" onclick="switchWeek('suginaka',10)">W10</button>
       </div>
       <div id="suginaka-w1" class="week-panel active">
         <div class="score-bar"><span class="label">Week1 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
@@ -3294,13 +3661,134 @@
         </table>
       </div>
       <div id="suginaka-w2" class="week-panel"><div class="score-bar"><span class="label">Week2 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="suginaka-w3" class="week-panel"><div class="score-bar"><span class="label">Week3 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="suginaka-w4" class="week-panel"><div class="score-bar"><span class="label">Week4 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="suginaka-w5" class="week-panel"><div class="score-bar"><span class="label">Week5 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="suginaka-w6" class="week-panel"><div class="score-bar"><span class="label">Week6 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="suginaka-w7" class="week-panel"><div class="score-bar"><span class="label">Week7 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="suginaka-w8" class="week-panel"><div class="score-bar"><span class="label">Week8 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="suginaka-w9" class="week-panel"><div class="score-bar"><span class="label">Week9 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="suginaka-w3" class="week-panel">
+        <div class="score-bar"><span class="label">Week3 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="suginaka-w4" class="week-panel">
+        <div class="score-bar"><span class="label">Week4 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="suginaka-w5" class="week-panel">
+        <div class="score-bar"><span class="label">Week5 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="suginaka-w6" class="week-panel">
+        <div class="score-bar"><span class="label">Week6 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="suginaka-w7" class="week-panel">
+        <div class="score-bar"><span class="label">Week7 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="suginaka-w8" class="week-panel">
+        <div class="score-bar"><span class="label">Week8 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="suginaka-w9" class="week-panel">
+        <div class="score-bar"><span class="label">Week9 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="suginaka-w10" class="week-panel">
+        <div class="score-bar"><span class="label">Week10 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
     </div>
 
     <!-- 範囲別スコア -->
@@ -3903,6 +4391,7 @@
         <button class="week-tab-btn" onclick="switchWeek('kamiya',7)">W7</button>
         <button class="week-tab-btn" onclick="switchWeek('kamiya',8)">W8</button>
         <button class="week-tab-btn" onclick="switchWeek('kamiya',9)">W9</button>
+        <button class="week-tab-btn" onclick="switchWeek('kamiya',10)">W10</button>
       </div>
       <div id="kamiya-w1" class="week-panel active">
         <div class="score-bar"><span class="label">Week1 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
@@ -3921,13 +4410,134 @@
         </table>
       </div>
       <div id="kamiya-w2" class="week-panel"><div class="score-bar"><span class="label">Week2 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="kamiya-w3" class="week-panel"><div class="score-bar"><span class="label">Week3 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="kamiya-w4" class="week-panel"><div class="score-bar"><span class="label">Week4 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="kamiya-w5" class="week-panel"><div class="score-bar"><span class="label">Week5 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="kamiya-w6" class="week-panel"><div class="score-bar"><span class="label">Week6 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="kamiya-w7" class="week-panel"><div class="score-bar"><span class="label">Week7 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="kamiya-w8" class="week-panel"><div class="score-bar"><span class="label">Week8 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
-      <div id="kamiya-w9" class="week-panel"><div class="score-bar"><span class="label">Week9 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="kamiya-w3" class="week-panel">
+        <div class="score-bar"><span class="label">Week3 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="kamiya-w4" class="week-panel">
+        <div class="score-bar"><span class="label">Week4 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="kamiya-w5" class="week-panel">
+        <div class="score-bar"><span class="label">Week5 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="kamiya-w6" class="week-panel">
+        <div class="score-bar"><span class="label">Week6 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="kamiya-w7" class="week-panel">
+        <div class="score-bar"><span class="label">Week7 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="kamiya-w8" class="week-panel">
+        <div class="score-bar"><span class="label">Week8 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
+            <div id="kamiya-w9" class="week-panel">
+        <div class="score-bar"><span class="label">Week9 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="kamiya-w10" class="week-panel">
+        <div class="score-bar"><span class="label">Week10 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
+        <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
+        <table class="item-avg-table">
+          <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>信頼</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>思いやり</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・データなし<br>・—<br>・—</div></td></tr>
+          </tbody>
+        </table>
+      </div><p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p></div>
     </div>
 
     <!-- 範囲別スコア -->
