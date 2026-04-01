@@ -5,309 +5,372 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>週次育成レポート — 2026-04-01</title>
   <style>
-    :root {
-      --bg: #f8f9fa; --card: #ffffff; --border: #e2e8f0;
-      --text: #1a202c; --text-sub: #718096; --accent: #3182ce;
-      --accent-light: #ebf8ff; --good: #38a169; --warn: #d69e2e; --bad: #e53e3e;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
-    .container { max-width: 1040px; margin: 0 auto; padding: 1.5rem; }
-    a { color: var(--accent); }
-    h1 { font-size: 1.4rem; margin-bottom: 0.25rem; }
-    .meta { color: var(--text-sub); font-size: 0.85rem; margin-bottom: 1.25rem; }
-    .back { display: inline-block; margin-bottom: 1rem; color: var(--accent); text-decoration: none; font-size: 0.85rem; }
-    .back:hover { text-decoration: underline; }
+    :root { --bg:#f8f9fa;--card:#fff;--border:#e2e8f0;--text:#1a202c;--sub:#718096;--accent:#3182ce;--accent-light:#ebf8ff;--good:#38a169;--warn:#d69e2e;--bad:#e53e3e; }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans",sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+    .container{max-width:1060px;margin:0 auto;padding:1.25rem}
+    a{color:var(--accent)} h1{font-size:1.35rem;margin-bottom:.2rem}
+    .meta{color:var(--sub);font-size:.82rem;margin-bottom:1rem}
+    .back{display:inline-block;margin-bottom:1rem;color:var(--accent);text-decoration:none;font-size:.82rem}
+    .back:hover{text-decoration:underline}
 
-    /* Summary table */
-    .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 0.875rem; }
-    .summary-table th { background: var(--accent); color: #fff; padding: 0.5rem 0.75rem; text-align: left; font-weight: 500; }
-    .summary-table td { padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); background: var(--card); }
-    .summary-table tr:hover td { background: var(--accent-light); }
+    .summary-table{width:100%;border-collapse:collapse;margin-bottom:1.25rem;font-size:.85rem}
+    .summary-table th{background:var(--accent);color:#fff;padding:.45rem .65rem;text-align:left;font-weight:500}
+    .summary-table td{padding:.45rem .65rem;border-bottom:1px solid var(--border);background:var(--card)}
+    .summary-table tr:hover td{background:var(--accent-light)}
 
-    /* Tabs */
-    .tabs { display: flex; gap: 2px; border-bottom: 2px solid var(--accent); margin-bottom: 0; flex-wrap: wrap; }
-    .tab-btn { padding: 0.6rem 1.2rem; background: #e2e8f0; border: none; border-radius: 6px 6px 0 0; cursor: pointer; font-size: 0.875rem; font-weight: 500; color: var(--text-sub); transition: all 0.15s; }
-    .tab-btn:hover { background: #cbd5e0; }
-    .tab-btn.active { background: var(--accent); color: #fff; }
-    .tab-content { display: none; background: var(--card); border: 1px solid var(--border); border-top: none; border-radius: 0 0 8px 8px; padding: 1.5rem; }
-    .tab-content.active { display: block; }
+    .tabs{display:flex;gap:2px;border-bottom:2px solid var(--accent);flex-wrap:wrap}
+    .tab-btn{padding:.55rem 1rem;background:#e2e8f0;border:none;border-radius:6px 6px 0 0;cursor:pointer;font-size:.83rem;font-weight:500;color:var(--sub);transition:all .15s}
+    .tab-btn:hover{background:#cbd5e0} .tab-btn.active{background:var(--accent);color:#fff}
+    .tab-content{display:none;background:var(--card);border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px;padding:1.25rem}
+    .tab-content.active{display:block}
 
-    /* Member sections */
-    h3 { font-size: 0.95rem; color: var(--accent); margin: 1.25rem 0 0.5rem; padding-bottom: 0.25rem; border-bottom: 1px solid var(--border); }
-    h3:first-child { margin-top: 0; }
-    h4 { font-size: 0.85rem; color: var(--text-sub); margin: 0.75rem 0 0.25rem; }
+    /* Sub-tabs within member */
+    .sub-tabs{display:flex;gap:2px;margin-bottom:1rem}
+    .sub-tab-btn{padding:.35rem .75rem;background:#edf2f7;border:none;border-radius:4px;cursor:pointer;font-size:.8rem;color:var(--sub);transition:all .12s}
+    .sub-tab-btn:hover{background:#e2e8f0} .sub-tab-btn.active{background:var(--accent);color:#fff}
+    .sub-tab-content{display:none} .sub-tab-content.active{display:block}
 
-    .pcs-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; margin: 0.5rem 0 1rem; }
-    .pcs-table th { background: #edf2f7; padding: 0.35rem 0.5rem; text-align: left; font-weight: 500; white-space: nowrap; }
-    .pcs-table td { padding: 0.35rem 0.5rem; border-bottom: 1px solid var(--border); }
-    .pcs-table .section-header { background: #f7fafc; font-weight: 600; color: var(--accent); }
-    .pcs-table .score { text-align: center; font-weight: 600; }
-    .pcs-table .score.has-value { background: #f0fff4; color: var(--good); }
-    .pcs-table .memo { color: var(--text-sub); font-size: 0.8rem; }
+    h3{font-size:.92rem;color:var(--accent);margin:1rem 0 .4rem;padding-bottom:.2rem;border-bottom:1px solid var(--border)} h3:first-child{margin-top:0}
+    h4{font-size:.83rem;color:var(--sub);margin:.6rem 0 .2rem}
+    .score-bar{display:flex;align-items:center;gap:1rem;background:var(--accent-light);padding:.5rem 1rem;border-radius:6px;font-size:.85rem;margin:.5rem 0;flex-wrap:wrap}
+    .score-bar .label{color:var(--sub)} .score-bar .value{font-weight:700;color:var(--accent)}
+    .score-bar .value.high{color:var(--good)} .score-bar .value.mid{color:var(--warn)} .score-bar .value.low{color:var(--bad)}
 
-    .score-summary { display: inline-flex; gap: 1.5rem; background: var(--accent-light); padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.875rem; margin: 0.5rem 0; }
-    .score-summary .label { color: var(--text-sub); }
-    .score-summary .value { font-weight: 700; color: var(--accent); }
+    .eval-table{width:100%;border-collapse:collapse;font-size:.8rem;margin:.5rem 0}
+    .eval-table th{background:#edf2f7;padding:.3rem .5rem;text-align:left;font-weight:500}
+    .eval-table td{padding:.3rem .5rem;border-bottom:1px solid var(--border)}
+    .eval-table .score-cell{text-align:center;font-weight:700;width:45px}
+    .eval-table .s3{color:var(--good);background:#f0fff4} .eval-table .s2{color:var(--warn);background:#fffff0}
+    .eval-table .s1{color:var(--bad);background:#fff5f5} .eval-table .s0{color:#a0aec0}
 
-    .insight { margin: 0.25rem 0; padding-left: 1rem; position: relative; font-size: 0.875rem; }
-    .insight::before { content: "•"; position: absolute; left: 0; color: var(--accent); }
+    .chart-container{margin:.75rem 0;padding:.5rem;background:#f7fafc;border-radius:6px;border:1px solid var(--border)}
+    .chart-bar-row{display:flex;align-items:center;gap:.5rem;margin:.25rem 0;font-size:.8rem}
+    .chart-bar-label{width:90px;text-align:right;color:var(--sub);flex-shrink:0}
+    .chart-bar-track{flex:1;height:18px;background:#e2e8f0;border-radius:3px;overflow:hidden;position:relative}
+    .chart-bar-fill{height:100%;border-radius:3px;transition:width .3s}
+    .chart-bar-value{width:30px;font-weight:600;font-size:.8rem}
 
-    .issue-box { background: #fffbeb; border-left: 3px solid var(--warn); padding: 0.6rem 0.85rem; margin: 0.5rem 0; border-radius: 0 6px 6px 0; font-size: 0.875rem; }
+    .comment-card{background:#f7fafc;border-left:3px solid var(--accent);padding:.5rem .75rem;margin:.4rem 0;border-radius:0 6px 6px 0;font-size:.85rem}
+    .comment-card .who{font-weight:600;color:var(--accent);font-size:.8rem}
+    .comment-card .good{color:var(--good)} .comment-card .more{color:var(--warn)}
 
-    .next-actions { margin: 0.5rem 0; }
-    .next-actions dt { font-weight: 600; font-size: 0.8rem; color: var(--text-sub); margin-top: 0.35rem; }
-    .next-actions dd { margin-left: 1rem; font-size: 0.875rem; }
-
-    .note-box { background: #f0fff4; border-left: 3px solid var(--good); padding: 0.6rem 0.85rem; margin: 1rem 0; border-radius: 0 6px 6px 0; font-size: 0.875rem; }
-    .footer { margin-top: 1.5rem; padding-top: 0.75rem; border-top: 1px solid var(--border); color: var(--text-sub); font-size: 0.75rem; }
+    .insight{margin:.2rem 0;padding-left:1rem;position:relative;font-size:.85rem} .insight::before{content:"•";position:absolute;left:0;color:var(--accent)}
+    .issue-box{background:#fffbeb;border-left:3px solid var(--warn);padding:.5rem .75rem;margin:.4rem 0;border-radius:0 6px 6px 0;font-size:.85rem}
+    .next-actions{margin:.4rem 0} .next-actions dt{font-weight:600;font-size:.78rem;color:var(--sub);margin-top:.3rem} .next-actions dd{margin-left:1rem;font-size:.85rem}
+    .note-box{background:#f0fff4;border-left:3px solid var(--good);padding:.5rem .75rem;margin:.75rem 0;border-radius:0 6px 6px 0;font-size:.85rem}
+    .footer{margin-top:1.25rem;padding-top:.6rem;border-top:1px solid var(--border);color:var(--sub);font-size:.72rem}
   </style>
 </head>
 <body>
-  <div class="container">
-    <a class="back" href="../index.html">&larr; レポート一覧</a>
-    <h1>週次育成レポート</h1>
-    <p class="meta">2026-04-01（テスト版）&nbsp;|&nbsp;入社初日&nbsp;|&nbsp;初回定例 4/10（金）</p>
+<div class="container">
+  <a class="back" href="../index.html">&larr; レポート一覧</a>
+  <h1>週次育成レポート</h1>
+  <p class="meta">2026-04-01（テスト版）&nbsp;|&nbsp;入社初日&nbsp;|&nbsp;初回定例 4/10（金）</p>
 
-    <!-- ===== SUMMARY ===== -->
-    <table class="summary-table">
-      <thead><tr><th>名前</th><th>フェーズ</th><th>PCS合計</th><th>前回比</th><th>特記</th></tr></thead>
-      <tbody>
-        <tr><td>山本 和樹</td><td>入社・全社オンボ</td><td>—</td><td>—</td><td>PC問題（3/30）→ 要確認</td></tr>
-        <tr><td>上田 正和</td><td>入社・全社オンボ</td><td>—</td><td>—</td><td>模擬講義11回分スケジュール確定済</td></tr>
-        <tr><td>丹下 知彦</td><td>入社・全社オンボ</td><td>—</td><td>—</td><td>スレッド投稿なし → 体制立ち上げ要フォロー</td></tr>
-        <tr><td>杉中 綾子</td><td>入社・全社オンボ</td><td>—</td><td>—</td><td>入社前テスト未完了</td></tr>
-        <tr><td>紙谷 航希</td><td>入社・全社オンボ</td><td>—</td><td>—</td><td>荻野が1-2W予定を仮組み済</td></tr>
-      </tbody>
-    </table>
+  <table class="summary-table">
+    <thead><tr><th>名前</th><th>フェーズ</th><th>PCS合計</th><th>前回比</th><th>特記</th></tr></thead>
+    <tbody>
+      <tr><td>山本 和樹</td><td>入社・全社オンボ</td><td>—</td><td>—</td><td>PC問題（3/30）→ 要確認</td></tr>
+      <tr><td>上田 正和</td><td>入社・全社オンボ</td><td>—</td><td>—</td><td>模擬講義11回分スケジュール確定済</td></tr>
+      <tr><td>丹下 知彦</td><td>入社・全社オンボ</td><td>—</td><td>—</td><td>スレッド投稿なし → 体制立ち上げ要フォロー</td></tr>
+      <tr><td>杉中 綾子</td><td>入社・全社オンボ</td><td>—</td><td>—</td><td>入社前テスト未完了</td></tr>
+      <tr><td>紙谷 航希</td><td>入社・全社オンボ</td><td>—</td><td>—</td><td>荻野が1-2W予定を仮組み済</td></tr>
+      <tr style="background:#fff3e0"><td>吉原 拓也（テスト）</td><td>Week4 完了</td><td><strong>15/21</strong></td><td>+2</td><td>模擬講義データのサンプル表示用</td></tr>
+    </tbody>
+  </table>
 
-    <!-- ===== TABS ===== -->
-    <div class="tabs">
-      <button class="tab-btn active" onclick="switchTab('yamamoto')">山本</button>
-      <button class="tab-btn" onclick="switchTab('ueda')">上田</button>
-      <button class="tab-btn" onclick="switchTab('tange')">丹下</button>
-      <button class="tab-btn" onclick="switchTab('suginaka')">杉中</button>
-      <button class="tab-btn" onclick="switchTab('kamiya')">紙谷</button>
-      <button class="tab-btn" onclick="switchTab('notes')">その他</button>
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('yoshihara')">吉原（テスト）</button>
+    <button class="tab-btn" onclick="switchTab('yamamoto')">山本</button>
+    <button class="tab-btn" onclick="switchTab('ueda')">上田</button>
+    <button class="tab-btn" onclick="switchTab('tange')">丹下</button>
+    <button class="tab-btn" onclick="switchTab('suginaka')">杉中</button>
+    <button class="tab-btn" onclick="switchTab('kamiya')">紙谷</button>
+    <button class="tab-btn" onclick="switchTab('notes')">その他</button>
+  </div>
+
+  <!-- ===== 吉原（テスト） ===== -->
+  <div id="tab-yoshihara" class="tab-content active">
+
+    <div class="sub-tabs">
+      <button class="sub-tab-btn active" onclick="switchSubTab('yoshihara','score')">点数推移</button>
+      <button class="sub-tab-btn" onclick="switchSubTab('yoshihara','detail')">採点詳細</button>
+      <button class="sub-tab-btn" onclick="switchSubTab('yoshihara','comments')">コメント履歴</button>
+      <button class="sub-tab-btn" onclick="switchSubTab('yoshihara','pcs')">模擬講義マラソン</button>
+      <button class="sub-tab-btn" onclick="switchSubTab('yoshihara','actions')">所感・アクション</button>
     </div>
 
-    <!-- ===== 山本 ===== -->
-    <div id="tab-yamamoto" class="tab-content active">
-      <h3>1. PCS — 模擬講義マラソン</h3>
-      <div class="score-summary">
-        <span><span class="label">直近模擬講義日: </span><span class="value">—</span></span>
-        <span><span class="label">合計点: </span><span class="value">—</span></span>
-        <span><span class="label">前回比: </span><span class="value">—</span></span>
+    <!-- 点数推移 -->
+    <div id="yoshihara-score" class="sub-tab-content active">
+      <h3>点数推移（合計 / 21点満点、合格: 18点）</h3>
+      <div class="chart-container">
+        <div class="chart-bar-row"><span class="chart-bar-label">Week1</span><div class="chart-bar-track"><div class="chart-bar-fill" style="width:33%;background:var(--bad)"></div></div><span class="chart-bar-value" style="color:var(--bad)">7</span></div>
+        <div class="chart-bar-row"><span class="chart-bar-label">Week2</span><div class="chart-bar-track"><div class="chart-bar-fill" style="width:48%;background:var(--warn)"></div></div><span class="chart-bar-value" style="color:var(--warn)">10</span></div>
+        <div class="chart-bar-row"><span class="chart-bar-label">Week3</span><div class="chart-bar-track"><div class="chart-bar-fill" style="width:62%;background:var(--warn)"></div></div><span class="chart-bar-value" style="color:var(--warn)">13</span></div>
+        <div class="chart-bar-row"><span class="chart-bar-label">Week4</span><div class="chart-bar-track"><div class="chart-bar-fill" style="width:71%;background:var(--good)"></div></div><span class="chart-bar-value" style="color:var(--good)">15</span></div>
+        <div class="chart-bar-row"><span class="chart-bar-label" style="color:var(--accent)">合格ライン</span><div class="chart-bar-track"><div class="chart-bar-fill" style="width:86%;background:var(--accent);opacity:.2"></div></div><span class="chart-bar-value" style="color:var(--accent)">18</span></div>
       </div>
-      <table class="pcs-table">
-        <thead><tr><th>章</th><th>節</th><th>手書き</th><th>実装</th><th>メモ</th></tr></thead>
+
+      <h3>項目別推移</h3>
+      <table class="eval-table">
+        <thead><tr><th>評価項目</th><th>W1</th><th>W2</th><th>W3</th><th>W4</th></tr></thead>
         <tbody>
-          <tr class="section-header"><td colspan="5">教師あり学習 回帰1</td></tr>
-          <tr><td></td><td>重回帰分析</td><td class="score">—</td><td class="score">—</td><td class="memo"></td></tr>
-          <tr><td></td><td>データセットの準備〜実装</td><td class="score">—</td><td class="score">—</td><td class="memo"></td></tr>
-          <tr><td></td><td>過学習</td><td class="score">—</td><td class="score">—</td><td class="memo"></td></tr>
-          <tr><td></td><td>Ridge・Lasso回帰</td><td class="score">—</td><td class="score">—</td><td class="memo"></td></tr>
-          <tr class="section-header"><td colspan="5">前処理 基礎</td></tr>
-          <tr><td></td><td>標準化</td><td class="score">—</td><td class="score">—</td><td class="memo"></td></tr>
-          <tr><td></td><td>欠損値</td><td class="score">—</td><td class="score">—</td><td class="memo"></td></tr>
-          <tr><td></td><td>Label Encoding</td><td class="score">—</td><td class="score">—</td><td class="memo"></td></tr>
-          <tr><td></td><td>One-hot Encoding</td><td class="score">—</td><td class="score">—</td><td class="memo"></td></tr>
-          <tr class="section-header"><td colspan="5">教師あり学習 分類</td></tr>
-          <tr><td></td><td>ロジスティック回帰</td><td class="score">—</td><td class="score">—</td><td class="memo"></td></tr>
-          <tr><td></td><td>決定木</td><td class="score">—</td><td class="score">—</td><td class="memo"></td></tr>
-          <tr><td></td><td>SVM（ForBiz）</td><td class="score">—</td><td class="score">—</td><td class="memo"></td></tr>
-          <tr><td></td><td>ランダムフォレスト</td><td class="score">—</td><td class="score">—</td><td class="memo"></td></tr>
-          <tr class="section-header"><td colspan="5">評価指標 / 性能改善 / 教師なし学習</td></tr>
-          <tr><td></td><td>Accuracy〜F1score</td><td class="score">—</td><td class="score">—</td><td class="memo"></td></tr>
-          <tr><td></td><td>不均衡データ</td><td class="score">—</td><td class="score">—</td><td class="memo"></td></tr>
-          <tr><td></td><td>グリッドサーチ</td><td class="score">—</td><td class="score">—</td><td class="memo"></td></tr>
-          <tr><td></td><td>主成分分析</td><td class="score">—</td><td class="score">—</td><td class="memo"></td></tr>
-          <tr><td></td><td>クラスタリング</td><td class="score">—</td><td class="score">—</td><td class="memo"></td></tr>
+          <tr><td>講義の進め方</td><td class="score-cell s1">1</td><td class="score-cell s1">1</td><td class="score-cell s2">2</td><td class="score-cell s2">2</td></tr>
+          <tr><td>信頼</td><td class="score-cell s1">1</td><td class="score-cell s2">2</td><td class="score-cell s2">2</td><td class="score-cell s3">3</td></tr>
+          <tr><td>インタラクティブ</td><td class="score-cell s0">0</td><td class="score-cell s1">1</td><td class="score-cell s2">2</td><td class="score-cell s2">2</td></tr>
+          <tr><td>思いやり</td><td class="score-cell s1">1</td><td class="score-cell s1">1</td><td class="score-cell s2">2</td><td class="score-cell s2">2</td></tr>
+          <tr><td>質問対応（伝え方）</td><td class="score-cell s1">1</td><td class="score-cell s2">2</td><td class="score-cell s2">2</td><td class="score-cell s3">3</td></tr>
+          <tr><td>知識（講義内）</td><td class="score-cell s2">2</td><td class="score-cell s2">2</td><td class="score-cell s2">2</td><td class="score-cell s2">2</td></tr>
+          <tr><td>知識（質問対応）</td><td class="score-cell s1">1</td><td class="score-cell s1">1</td><td class="score-cell s1">1</td><td class="score-cell s1">1</td></tr>
+          <tr style="font-weight:700"><td>合計</td><td class="score-cell">7</td><td class="score-cell">10</td><td class="score-cell">13</td><td class="score-cell">15</td></tr>
         </tbody>
       </table>
+    </div>
 
-      <h3>2. 定性: 今週の所感</h3>
+    <!-- 採点詳細 -->
+    <div id="yoshihara-detail" class="sub-tab-content">
+      <h3>直近採点（Week4 — 2/24 木下）</h3>
+      <div class="score-bar">
+        <span><span class="label">日付: </span><span class="value">2026-02-24</span></span>
+        <span><span class="label">採点者: </span><span class="value">木下</span></span>
+        <span><span class="label">範囲: </span><span class="value">ランダムフォレスト（手書き）</span></span>
+        <span><span class="label">合計: </span><span class="value high">15 / 21</span></span>
+      </div>
+      <table class="eval-table">
+        <thead><tr><th>評価項目</th><th>点数</th><th>良い点</th><th>改善点</th></tr></thead>
+        <tbody>
+          <tr><td>講義の進め方</td><td class="score-cell s2">2</td><td>WPW構成が安定してきた</td><td>前提の説明がまだ長い。受講生の既知を前提にテンポよく</td></tr>
+          <tr><td>信頼</td><td class="score-cell s3">3</td><td>明るく親しみやすい雰囲気づくりが良い</td><td>—</td></tr>
+          <tr><td>インタラクティブ</td><td class="score-cell s2">2</td><td>理解度確認の発問が増えた</td><td>受講生の反応を拾ってから次に進む間を意識</td></tr>
+          <tr><td>思いやり</td><td class="score-cell s2">2</td><td>進捗確認のタイミングが改善</td><td>画面の文字サイズをもう少し大きく</td></tr>
+          <tr><td>質問対応（伝え方）</td><td class="score-cell s3">3</td><td>結論ファーストが定着</td><td>—</td></tr>
+          <tr><td>知識（講義内）</td><td class="score-cell s2">2</td><td>正確性は問題なし</td><td>ランダムフォレストのハイパーパラメータ説明にやや不正確さ</td></tr>
+          <tr><td>知識（質問対応）</td><td class="score-cell s1">1</td><td>—</td><td>よくある質問10問中5問正答。バギングとブースティングの違いが曖昧</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- コメント履歴 -->
+    <div id="yoshihara-comments" class="sub-tab-content">
+      <h3>採点コメント履歴</h3>
+
+      <div class="comment-card">
+        <div class="who">Week4 — 2/24 木下（ランダムフォレスト・手書き）合計: 15</div>
+        <p class="good">Good: WPW構成の安定感、信頼感のある雰囲気づくり、結論ファーストの定着</p>
+        <p class="more">More: 前提説明の長さ、受講生の反応を拾う間、知識（質問対応）の強化が必要</p>
+      </div>
+
+      <div class="comment-card">
+        <div class="who">Week3 — 2/20 沖廣（評価指標・手書き）合計: 13</div>
+        <p class="good">Good: FBを素直に受け止め次回に活かす姿勢。講義の熱量が上がってきた</p>
+        <p class="more">More: インタラクティブ性にまだ伸びしろ。発問のバリエーションを増やすと良い</p>
+      </div>
+
+      <div class="comment-card">
+        <div class="who">Week2 — 2/13 沖廣（重回帰分析・手書き）合計: 10</div>
+        <p class="good">Good: 落ち着いた口調は安心感がある。資料の準備が丁寧</p>
+        <p class="more">More: 受講生への問いかけがほぼゼロ。一方通行になりがち。抑揚を意識</p>
+      </div>
+
+      <div class="comment-card">
+        <div class="who">Week1 — 2/6 黒岩（重回帰分析・手書き）合計: 7</div>
+        <p class="good">Good: 真面目に取り組む姿勢。時間内に収めようとする意識</p>
+        <p class="more">More: WPW構成がまだ身についていない。緊張からか早口になりがち。知識面の補強が急務</p>
+      </div>
+    </div>
+
+    <!-- 模擬講義マラソン -->
+    <div id="yoshihara-pcs" class="sub-tab-content">
+      <h3>模擬講義マラソン進捗</h3>
+      <table class="eval-table">
+        <thead><tr><th>章</th><th>節</th><th>手書き</th><th>実装</th></tr></thead>
+        <tbody>
+          <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
+          <tr><td></td><td>重回帰分析</td><td class="score-cell s3">3</td><td class="score-cell s0">—</td></tr>
+          <tr><td></td><td>データセットの準備〜実装</td><td class="score-cell s1">1</td><td class="score-cell s2">2</td></tr>
+          <tr><td></td><td>過学習</td><td class="score-cell s2">2</td><td class="score-cell s2">2</td></tr>
+          <tr><td></td><td>Ridge・Lasso回帰</td><td class="score-cell s0">—</td><td class="score-cell s0">—</td></tr>
+          <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
+          <tr><td></td><td>標準化</td><td class="score-cell s0">—</td><td class="score-cell s0">—</td></tr>
+          <tr><td></td><td>欠損値</td><td class="score-cell s0">—</td><td class="score-cell s1">1</td></tr>
+          <tr><td></td><td>Label Encoding</td><td class="score-cell s1">1</td><td class="score-cell s1">1</td></tr>
+          <tr><td></td><td>One-hot Encoding</td><td class="score-cell s0">—</td><td class="score-cell s1">1</td></tr>
+          <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 分類</td></tr>
+          <tr><td></td><td>ロジスティック回帰</td><td class="score-cell s3">3</td><td class="score-cell s1">1</td></tr>
+          <tr><td></td><td>決定木</td><td class="score-cell s3">4</td><td class="score-cell s0">—</td></tr>
+          <tr><td></td><td>ランダムフォレスト</td><td class="score-cell s1">1</td><td class="score-cell s3">3</td></tr>
+          <tr style="background:#f7fafc;font-weight:600"><td colspan="4">評価指標 / 性能改善 / 教師なし学習</td></tr>
+          <tr><td></td><td>Accuracy〜F1score</td><td class="score-cell s3">3</td><td class="score-cell s1">1</td></tr>
+          <tr><td></td><td>不均衡データ</td><td class="score-cell s1">1</td><td class="score-cell s0">—</td></tr>
+          <tr><td></td><td>グリッドサーチ</td><td class="score-cell s1">1</td><td class="score-cell s1">1</td></tr>
+          <tr><td></td><td>主成分分析</td><td class="score-cell s1">1</td><td class="score-cell s2">2</td></tr>
+          <tr><td></td><td>クラスタリング</td><td class="score-cell s0">—</td><td class="score-cell s3">3</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 所感・アクション -->
+    <div id="yoshihara-actions" class="sub-tab-content">
+      <h3>定性: 今週の所感</h3>
       <h4>エルダー（沖廣）</h4>
-      <p class="insight">4/2(木) 9:30 黒岩とすり合わせMTG設定済（模擬講義日程・メンタリング・タスク周り）</p>
-      <p class="insight">4/3(金) 9:30 沖廣×黒岩×山本の3者顔合わせ設定済</p>
+      <p class="insight">Week4で15点到達。WPW構成と信頼感の両面で着実に成長している。</p>
+      <p class="insight">知識（質問対応）が伸び悩み。よくある質問集を重点的に対策する方針。</p>
       <h4>メンター（黒岩）</h4>
-      <p class="insight">まだ投稿なし（4/2のすり合わせ以降に立ち上がる見込み）</p>
+      <p class="insight">モチベーションは維持できている。同期の野田さんが先に合格したことで焦りが少し見える。</p>
+      <p class="insight">行動宣言の振り返りでは「講師として受講者に寄り添う」を掲げており、思いやりの改善に直結。</p>
 
-      <h3>3. 育成上の論点</h3>
-      <div class="issue-box">PC ログイン問題（3/30報告）が解消したか確認</div>
+      <h3>育成上の論点</h3>
+      <div class="issue-box">知識（質問対応）が4週連続1点。よくある質問の対策を集中的に行う必要あり。</div>
 
-      <h3>4. 登壇テスト見通し</h3>
-      <p style="color: var(--text-sub); font-size: 0.875rem;">（2ヶ月目以降に記載）</p>
+      <h3>登壇テスト見通し</h3>
+      <table class="eval-table" style="width:auto">
+        <tr><td style="font-weight:600">テスト受験の目安週</td><td>第6週（2/27頃）</td></tr>
+        <tr><td style="font-weight:600">現時点での懸念</td><td>知識（質問対応）が1点のまま</td></tr>
+        <tr><td style="font-weight:600">テスト受験の判断</td><td style="color:var(--warn);font-weight:700">そろそろ</td></tr>
+      </table>
 
-      <h3>5. ネクストアクション</h3>
+      <h3>ネクストアクション</h3>
       <dl class="next-actions">
-        <dt>メンティー</dt><dd>全社オンボ参加（4/1-3）</dd>
-        <dt>メンター（黒岩）</dt><dd>4/2 沖廣とすり合わせ → 4/3 山本さん顔合わせ</dd>
-        <dt>エルダー（沖廣）</dt><dd>同上</dd>
-        <dt>PMG</dt><dd>PC問題の解消確認</dd>
+        <dt>メンティー</dt><dd>よくある質問集の暗記・練習。Week5で17点以上を目指す</dd>
+        <dt>メンター（黒岩）</dt><dd>焦りのケア。登壇テストのイメージ共有</dd>
+        <dt>エルダー（沖廣）</dt><dd>質問対応の集中練習セッション実施</dd>
+        <dt>PMG</dt><dd>Week5の結果を見てテスト日程を確定</dd>
       </dl>
-    </div>
-
-    <!-- ===== 上田 ===== -->
-    <div id="tab-ueda" class="tab-content">
-      <h3>1. PCS — 模擬講義マラソン</h3>
-      <div class="score-summary">
-        <span><span class="label">直近模擬講義日: </span><span class="value">—</span></span>
-        <span><span class="label">合計点: </span><span class="value">—</span></span>
-        <span><span class="label">前回比: </span><span class="value">—</span></span>
-      </div>
-      <p style="color: var(--text-sub); font-size: 0.875rem; margin: 0.5rem 0;">PCS 全項目未着手</p>
-
-      <h3>2. 定性: 今週の所感</h3>
-      <h4>エルダー（野田）</h4>
-      <p class="insight">朝会日程調整用シート共有済</p>
-      <p class="insight">PCS共有済</p>
-      <p class="insight"><strong>模擬講義スケジュール11回分確定</strong>（同期中最速の立ち上がり）</p>
-      <p class="insight" style="font-size: 0.8rem; color: var(--text-sub);">吉田: 4/9, 10, 17, 23, 27（5回）/ 野田: 4/14, 15, 20, 21, 24, 28（6回）</p>
-      <h4>メンター（吉田）</h4>
-      <p class="insight">模擬講義スケジュールを自ら整理して投稿</p>
-
-      <h3>3. 育成上の論点</h3>
-      <p class="insight">特になし。体制の立ち上がりが最も早い。</p>
-
-      <h3>4. 登壇テスト見通し</h3>
-      <p style="color: var(--text-sub); font-size: 0.875rem;">（2ヶ月目以降に記載）</p>
-
-      <h3>5. ネクストアクション</h3>
-      <dl class="next-actions">
-        <dt>メンティー</dt><dd>全社オンボ参加（4/1-3）</dd>
-        <dt>メンター（吉田）</dt><dd>4/9 模擬講義初回に向けて準備</dd>
-        <dt>エルダー（野田）</dt><dd>4/14 模擬講義初回に向けて準備</dd>
-        <dt>PMG</dt><dd>Slack不慣れのフォロー（メンション・スレッド返信）</dd>
-      </dl>
-    </div>
-
-    <!-- ===== 丹下 ===== -->
-    <div id="tab-tange" class="tab-content">
-      <h3>1. PCS — 模擬講義マラソン</h3>
-      <div class="score-summary">
-        <span><span class="label">直近模擬講義日: </span><span class="value">—</span></span>
-        <span><span class="label">合計点: </span><span class="value">—</span></span>
-        <span><span class="label">前回比: </span><span class="value">—</span></span>
-      </div>
-      <p style="color: var(--text-sub); font-size: 0.875rem; margin: 0.5rem 0;">PCS 全項目未着手</p>
-
-      <h3>2. 定性: 今週の所感</h3>
-      <h4>エルダー（歳森）</h4>
-      <p class="insight">育成連携スレッドに投稿なし。すり合わせ・顔合わせの日程未定。</p>
-      <h4>メンター（三宅）</h4>
-      <p class="insight">投稿なし。キックオフで丹下さんと同じエージェント経由の接点があることが判明。</p>
-
-      <h3>3. 育成上の論点</h3>
-      <div class="issue-box">メンター/エルダーの立ち上がりが遅い — スレッド投稿ゼロ。他メンバーはすり合わせ日程が動いている中、丹下さんだけ未着手。歳森・三宅へのフォロー要検討。</div>
-
-      <h3>4. 登壇テスト見通し</h3>
-      <p style="color: var(--text-sub); font-size: 0.875rem;">（2ヶ月目以降に記載）</p>
-
-      <h3>5. ネクストアクション</h3>
-      <dl class="next-actions">
-        <dt>メンティー</dt><dd>全社オンボ参加（4/1-3）</dd>
-        <dt>メンター（三宅）</dt><dd><strong>すり合わせ日程の設定を急ぐ</strong></dd>
-        <dt>エルダー（歳森）</dt><dd><strong>同上</strong></dd>
-        <dt>PMG</dt><dd>歳森・三宅にリマインド検討</dd>
-      </dl>
-    </div>
-
-    <!-- ===== 杉中 ===== -->
-    <div id="tab-suginaka" class="tab-content">
-      <h3>1. PCS — 模擬講義マラソン</h3>
-      <div class="score-summary">
-        <span><span class="label">直近模擬講義日: </span><span class="value">—</span></span>
-        <span><span class="label">合計点: </span><span class="value">—</span></span>
-        <span><span class="label">前回比: </span><span class="value">—</span></span>
-      </div>
-      <p style="color: var(--text-sub); font-size: 0.875rem; margin: 0.5rem 0;">PCS 全項目未着手</p>
-
-      <h3>2. 定性: 今週の所感</h3>
-      <h4>エルダー（浦本）</h4>
-      <p class="insight">3/31: 杉崎に挨拶。「詳細は明日オフィスで打ち合わせ」→ 4/1 にオフィスですり合わせ予定。</p>
-      <h4>メンター（杉崎）</h4>
-      <p class="insight">まだ投稿なし（4/1 オフィスで打ち合わせ後に動く見込み）</p>
-
-      <h3>3. 育成上の論点</h3>
-      <div class="issue-box">入社前テスト（脱ブラ）が未完了のまま入社。ML キャッチアップのフォロー計画を早期に確認。</div>
-      <div class="issue-box">他4名とはフロー・タイムラインが異なる。浦本・杉崎との認識合わせが必要。</div>
-
-      <h3>4. 登壇テスト見通し</h3>
-      <p style="color: var(--text-sub); font-size: 0.875rem;">（2ヶ月目以降に記載）</p>
-
-      <h3>5. ネクストアクション</h3>
-      <dl class="next-actions">
-        <dt>メンティー</dt><dd>全社オンボ参加（4/1-3）。脱ブラの残り進捗を進める。</dd>
-        <dt>メンター（杉崎）</dt><dd>4/1 オフィスですり合わせ</dd>
-        <dt>エルダー（浦本）</dt><dd>同上</dd>
-        <dt>PMG</dt><dd>杉中さんの技術フォロー方針を検討</dd>
-      </dl>
-    </div>
-
-    <!-- ===== 紙谷 ===== -->
-    <div id="tab-kamiya" class="tab-content">
-      <h3>1. PCS — 模擬講義マラソン</h3>
-      <div class="score-summary">
-        <span><span class="label">直近模擬講義日: </span><span class="value">—</span></span>
-        <span><span class="label">合計点: </span><span class="value">—</span></span>
-        <span><span class="label">前回比: </span><span class="value">—</span></span>
-      </div>
-      <p style="color: var(--text-sub); font-size: 0.875rem; margin: 0.5rem 0;">PCS 全項目未着手</p>
-
-      <h3>2. 定性: 今週の所感</h3>
-      <h4>エルダー（砂金）</h4>
-      <p class="insight">荻野より: 砂金×紙谷の2者で先に1on1兼顔合わせを進める提案（荻野の木・金不在のため）</p>
-      <h4>メンター（荻野）</h4>
-      <p class="insight">紙谷さんの仮スケジュールを策定済:</p>
-      <p class="insight">1W: 水 荻野×紙谷 顔合わせ / 木or金 砂金×紙谷 顔合わせ</p>
-      <p class="insight">2W: 火水 荻野 / 木金 砂金 / 水に模擬講義スタート?</p>
-      <p class="insight">「心理的安全性の確保」を1Wの目標として明記 → 丁寧な立ち上がり</p>
-
-      <h3>3. 育成上の論点</h3>
-      <div class="issue-box">持病への配慮: オフライン登壇の制約を考慮したアサイン設計。1on1で本人と直接確認が必要。</div>
-
-      <h3>4. 登壇テスト見通し</h3>
-      <p style="color: var(--text-sub); font-size: 0.875rem;">（2ヶ月目以降に記載）</p>
-
-      <h3>5. ネクストアクション</h3>
-      <dl class="next-actions">
-        <dt>メンティー</dt><dd>全社オンボ参加（4/1-3）</dd>
-        <dt>メンター（荻野）</dt><dd>1W水に紙谷さんと顔合わせ</dd>
-        <dt>エルダー（砂金）</dt><dd>1W木or金に紙谷さんと1on1兼顔合わせ</dd>
-        <dt>PMG</dt><dd>持病に関する配慮事項の確認タイミングを検討</dd>
-      </dl>
-    </div>
-
-    <!-- ===== その他 ===== -->
-    <div id="tab-notes" class="tab-content">
-      <h3>その他特記事項</h3>
-      <div class="note-box">
-        <ul style="padding-left: 1.25rem;">
-          <li>4/1-3 は全社オフラインオンボーディング（オフィス）。日報投稿は 4/4 以降に開始見込み。</li>
-          <li>初回週次定例は <strong>4/10（金）</strong>。</li>
-          <li>TTT初級の初回講義は <strong>4/13（月）</strong>。</li>
-        </ul>
-      </div>
-
-      <h3>データソース</h3>
-      <p style="font-size: 0.85rem; color: var(--text-sub);">
-        Notion 議事録DB / PCS CSV（Google Drive） / Slack 育成連携スレッド・日報チャンネル
-      </p>
-    </div>
-
-    <div class="footer">
-      Generated by Claude Code — PMG Employee Development Reporting
     </div>
   </div>
 
-  <script>
-    function switchTab(id) {
-      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-      document.getElementById('tab-' + id).classList.add('active');
-      event.target.classList.add('active');
-    }
-  </script>
+  <!-- ===== 山本 ===== -->
+  <div id="tab-yamamoto" class="tab-content">
+    <div class="score-bar"><span><span class="label">PCS: </span><span class="value">未着手（入社初日）</span></span></div>
+    <h3>定性: 今週の所感</h3>
+    <h4>エルダー（沖廣）</h4>
+    <p class="insight">4/2(木) 9:30 黒岩とすり合わせMTG設定済</p>
+    <p class="insight">4/3(金) 9:30 沖廣×黒岩×山本の3者顔合わせ設定済</p>
+    <h4>メンター（黒岩）</h4>
+    <p class="insight">まだ投稿なし（4/2のすり合わせ以降に立ち上がる見込み）</p>
+    <h3>育成上の論点</h3>
+    <div class="issue-box">PC ログイン問題（3/30報告）が解消したか確認</div>
+    <h3>ネクストアクション</h3>
+    <dl class="next-actions">
+      <dt>メンティー</dt><dd>全社オンボ参加（4/1-3）</dd>
+      <dt>メンター（黒岩）</dt><dd>4/2 沖廣とすり合わせ → 4/3 山本さん顔合わせ</dd>
+      <dt>エルダー（沖廣）</dt><dd>同上</dd>
+      <dt>PMG</dt><dd>PC問題の解消確認</dd>
+    </dl>
+  </div>
+
+  <!-- ===== 上田 ===== -->
+  <div id="tab-ueda" class="tab-content">
+    <div class="score-bar"><span><span class="label">PCS: </span><span class="value">未着手（入社初日）</span></span></div>
+    <h3>定性: 今週の所感</h3>
+    <h4>エルダー（野田）</h4>
+    <p class="insight"><strong>模擬講義スケジュール11回分確定</strong>（同期中最速の立ち上がり）</p>
+    <p class="insight" style="font-size:.8rem;color:var(--sub)">吉田: 4/9, 10, 17, 23, 27（5回）/ 野田: 4/14, 15, 20, 21, 24, 28（6回）</p>
+    <h4>メンター（吉田）</h4>
+    <p class="insight">模擬講義スケジュールを自ら整理して投稿</p>
+    <h3>育成上の論点</h3>
+    <p class="insight">特になし。体制の立ち上がりが最も早い。</p>
+    <h3>ネクストアクション</h3>
+    <dl class="next-actions">
+      <dt>メンティー</dt><dd>全社オンボ参加（4/1-3）</dd>
+      <dt>メンター（吉田）</dt><dd>4/9 模擬講義初回に向けて準備</dd>
+      <dt>エルダー（野田）</dt><dd>4/14 模擬講義初回に向けて準備</dd>
+      <dt>PMG</dt><dd>Slack不慣れのフォロー</dd>
+    </dl>
+  </div>
+
+  <!-- ===== 丹下 ===== -->
+  <div id="tab-tange" class="tab-content">
+    <div class="score-bar"><span><span class="label">PCS: </span><span class="value">未着手（入社初日）</span></span></div>
+    <h3>定性: 今週の所感</h3>
+    <h4>エルダー（歳森）</h4>
+    <p class="insight">育成連携スレッドに投稿なし。すり合わせ・顔合わせの日程未定。</p>
+    <h4>メンター（三宅）</h4>
+    <p class="insight">投稿なし。</p>
+    <h3>育成上の論点</h3>
+    <div class="issue-box">メンター/エルダーの立ち上がりが遅い — スレッド投稿ゼロ。歳森・三宅へのフォロー要検討。</div>
+    <h3>ネクストアクション</h3>
+    <dl class="next-actions">
+      <dt>メンティー</dt><dd>全社オンボ参加（4/1-3）</dd>
+      <dt>メンター（三宅）</dt><dd><strong>すり合わせ日程の設定を急ぐ</strong></dd>
+      <dt>エルダー（歳森）</dt><dd><strong>同上</strong></dd>
+      <dt>PMG</dt><dd>歳森・三宅にリマインド検討</dd>
+    </dl>
+  </div>
+
+  <!-- ===== 杉中 ===== -->
+  <div id="tab-suginaka" class="tab-content">
+    <div class="score-bar"><span><span class="label">PCS: </span><span class="value">未着手（入社初日）</span></span></div>
+    <h3>定性: 今週の所感</h3>
+    <h4>エルダー（浦本）</h4>
+    <p class="insight">3/31: 杉崎に挨拶。4/1 にオフィスですり合わせ予定。</p>
+    <h4>メンター（杉崎）</h4>
+    <p class="insight">まだ投稿なし</p>
+    <h3>育成上の論点</h3>
+    <div class="issue-box">入社前テスト（脱ブラ）が未完了のまま入社。MLフォロー計画を早期に確認。</div>
+    <div class="issue-box">他4名とはフロー・タイムラインが異なる。浦本・杉崎との認識合わせが必要。</div>
+    <h3>ネクストアクション</h3>
+    <dl class="next-actions">
+      <dt>メンティー</dt><dd>全社オンボ参加（4/1-3）。脱ブラの残り進捗を進める。</dd>
+      <dt>メンター（杉崎）</dt><dd>4/1 オフィスですり合わせ</dd>
+      <dt>エルダー（浦本）</dt><dd>同上</dd>
+      <dt>PMG</dt><dd>杉中さんの技術フォロー方針を検討</dd>
+    </dl>
+  </div>
+
+  <!-- ===== 紙谷 ===== -->
+  <div id="tab-kamiya" class="tab-content">
+    <div class="score-bar"><span><span class="label">PCS: </span><span class="value">未着手（入社初日）</span></span></div>
+    <h3>定性: 今週の所感</h3>
+    <h4>エルダー（砂金）</h4>
+    <p class="insight">荻野より: 砂金×紙谷の2者で先に1on1兼顔合わせを進める提案</p>
+    <h4>メンター（荻野）</h4>
+    <p class="insight">1W: 水 荻野×紙谷 / 木or金 砂金×紙谷 顔合わせ</p>
+    <p class="insight">2W: 火水 荻野 / 木金 砂金 / 模擬講義スタート?</p>
+    <p class="insight">「心理的安全性の確保」を1Wの目標として明記</p>
+    <h3>育成上の論点</h3>
+    <div class="issue-box">持病への配慮: オフライン登壇の制約を考慮したアサイン設計。1on1で本人と直接確認が必要。</div>
+    <h3>ネクストアクション</h3>
+    <dl class="next-actions">
+      <dt>メンティー</dt><dd>全社オンボ参加（4/1-3）</dd>
+      <dt>メンター（荻野）</dt><dd>1W水に紙谷さんと顔合わせ</dd>
+      <dt>エルダー（砂金）</dt><dd>1W木or金に紙谷さんと1on1兼顔合わせ</dd>
+      <dt>PMG</dt><dd>持病に関する配慮事項の確認タイミングを検討</dd>
+    </dl>
+  </div>
+
+  <!-- ===== その他 ===== -->
+  <div id="tab-notes" class="tab-content">
+    <h3>その他特記事項</h3>
+    <div class="note-box">
+      <ul style="padding-left:1.25rem">
+        <li>4/1-3 全社オフラインオンボーディング。日報投稿は 4/4 以降。</li>
+        <li>初回週次定例 <strong>4/10（金）</strong></li>
+        <li>TTT初級の初回講義 <strong>4/13（月）</strong></li>
+      </ul>
+    </div>
+    <h3>データソース</h3>
+    <p style="font-size:.82rem;color:var(--sub)">Notion 議事録DB / PCS CSV（Google Drive） / Slack 育成連携スレッド・日報チャンネル</p>
+  </div>
+
+  <div class="footer">Generated by Claude Code — PMG Employee Development Reporting</div>
+</div>
+
+<script>
+function switchTab(id){
+  document.querySelectorAll('.tab-content').forEach(e=>e.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(e=>e.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  event.target.classList.add('active');
+}
+function switchSubTab(member,sub){
+  var parent=document.getElementById('tab-'+member);
+  parent.querySelectorAll('.sub-tab-content').forEach(e=>e.classList.remove('active'));
+  parent.querySelectorAll('.sub-tab-btn').forEach(e=>e.classList.remove('active'));
+  document.getElementById(member+'-'+sub).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
 </body>
 </html>
