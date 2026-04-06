@@ -4709,9 +4709,9 @@ function switchMemberRangeWeek(m,w){var p=document.getElementById(m+'-range');p.
 function switchMemberActionsWeek(m,w){var p=document.getElementById(m+'-actions');p.querySelectorAll('.week-panel').forEach(function(e){e.classList.remove('active')});p.querySelectorAll('.week-tab-btn').forEach(function(e){e.classList.remove('active')});document.getElementById(m+'-actions-w'+w).classList.add('active');event.target.classList.add('active')}
 
 window.addEventListener('DOMContentLoaded',function(){
-  var weeks=['W1','W2','W3','W4','W5','W6','W7','W8'];
-  var pass=Array(8).fill(18);
-  var target=Array(8).fill(15);
+  var weeks=['W1','W2','W3','W4','W5','W6','W7','W8','W9','W10'];
+  var pass=Array(10).fill(18);
+  var target=Array(10).fill(15);
 
   new Chart(document.getElementById('chartAll'),{
     type:'line',
