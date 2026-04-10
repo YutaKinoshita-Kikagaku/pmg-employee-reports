@@ -93,7 +93,7 @@
     <button class="tab-btn" onclick="switchTab('ueda')">上田</button>
     <button class="tab-btn" onclick="switchTab('tange')">丹下</button>
     <button class="tab-btn" onclick="switchTab('suginaka')">杉中</button>
-    <button class="tab-btn" onclick="switchTab('kamiya')">紙谷</button>
+    <button class="tab-btn" onclick="switchTab('kamitani')">紙谷</button>
     <button class="tab-btn" onclick="switchTab('notes')">その他</button>
   </div>
 
@@ -2953,18 +2953,18 @@
   </div>
 
   <!-- ===== 紙谷 ===== -->
-  <div id="tab-kamiya" class="tab-content">
+  <div id="tab-kamitani" class="tab-content">
     <div class="sub-tabs">
-      <button class="sub-tab-btn active" onclick="switchSubTab('kamiya','score')">点数推移</button>
-      <button class="sub-tab-btn" onclick="switchSubTab('kamiya','detail')">採点詳細</button>
-      <button class="sub-tab-btn" onclick="switchSubTab('kamiya','range')">範囲別スコア</button>
-      <button class="sub-tab-btn" onclick="switchSubTab('kamiya','actions')">所感・アクション</button>
+      <button class="sub-tab-btn active" onclick="switchSubTab('kamitani','score')">点数推移</button>
+      <button class="sub-tab-btn" onclick="switchSubTab('kamitani','detail')">採点詳細</button>
+      <button class="sub-tab-btn" onclick="switchSubTab('kamitani','range')">範囲別スコア</button>
+      <button class="sub-tab-btn" onclick="switchSubTab('kamitani','actions')">所感・アクション</button>
     </div>
 
     <!-- 点数推移 -->
-    <div id="kamiya-score" class="sub-tab-content active">
+    <div id="kamitani-score" class="sub-tab-content active">
       <h3>合計点推移（21点満点 合格：18点）</h3>
-      <div class="chart-wrap" style="max-width:100%;height:350px"><canvas id="chartKamiya"></canvas></div>
+      <div class="chart-wrap" style="max-width:100%;height:350px"><canvas id="chartKamitani"></canvas></div>
       <h3>項目別 週平均推移</h3>
       <table class="eval-table">
         <thead><tr><th>評価項目（平均）</th><th>W1</th><th>W2</th><th>W3</th><th>W4</th><th>W5</th><th>W6</th><th>W7</th><th>W8</th><th>W9</th><th>W10</th><th>判定</th><th>コメント抽出</th></tr></thead>
@@ -2983,21 +2983,21 @@
     </div>
 
     <!-- 採点詳細 -->
-    <div id="kamiya-detail" class="sub-tab-content">
+    <div id="kamitani-detail" class="sub-tab-content">
       <h3>週別 採点詳細</h3>
       <div class="week-tabs">
-        <button class="week-tab-btn active" onclick="switchMemberDetailWeek('kamiya',1)">W1</button>
-        <button class="week-tab-btn" onclick="switchMemberDetailWeek('kamiya',2)">W2</button>
-        <button class="week-tab-btn" onclick="switchMemberDetailWeek('kamiya',3)">W3</button>
-        <button class="week-tab-btn" onclick="switchMemberDetailWeek('kamiya',4)">W4</button>
-        <button class="week-tab-btn" onclick="switchMemberDetailWeek('kamiya',5)">W5</button>
-        <button class="week-tab-btn" onclick="switchMemberDetailWeek('kamiya',6)">W6</button>
-        <button class="week-tab-btn" onclick="switchMemberDetailWeek('kamiya',7)">W7</button>
-        <button class="week-tab-btn" onclick="switchMemberDetailWeek('kamiya',8)">W8</button>
-        <button class="week-tab-btn" onclick="switchMemberDetailWeek('kamiya',9)">W9</button>
-        <button class="week-tab-btn" onclick="switchMemberDetailWeek('kamiya',10)">W10</button>
+        <button class="week-tab-btn active" onclick="switchMemberDetailWeek('kamitani',1)">W1</button>
+        <button class="week-tab-btn" onclick="switchMemberDetailWeek('kamitani',2)">W2</button>
+        <button class="week-tab-btn" onclick="switchMemberDetailWeek('kamitani',3)">W3</button>
+        <button class="week-tab-btn" onclick="switchMemberDetailWeek('kamitani',4)">W4</button>
+        <button class="week-tab-btn" onclick="switchMemberDetailWeek('kamitani',5)">W5</button>
+        <button class="week-tab-btn" onclick="switchMemberDetailWeek('kamitani',6)">W6</button>
+        <button class="week-tab-btn" onclick="switchMemberDetailWeek('kamitani',7)">W7</button>
+        <button class="week-tab-btn" onclick="switchMemberDetailWeek('kamitani',8)">W8</button>
+        <button class="week-tab-btn" onclick="switchMemberDetailWeek('kamitani',9)">W9</button>
+        <button class="week-tab-btn" onclick="switchMemberDetailWeek('kamitani',10)">W10</button>
       </div>
-      <div id="kamiya-detail-w1" class="week-panel active">
+      <div id="kamitani-detail-w1" class="week-panel active">
         <div class="score-bar"><span class="label">Week1 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
         <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
         <table class="item-avg-table">
@@ -3013,7 +3013,7 @@
           </tbody>
         </table>
       </div>
-      <div id="kamiya-detail-w2" class="week-panel">
+      <div id="kamitani-detail-w2" class="week-panel">
         <div class="score-bar"><span class="label">Week2 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
         <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
         <table class="item-avg-table">
@@ -3029,7 +3029,7 @@
           </tbody>
         </table>
       </div>
-      <div id="kamiya-detail-w3" class="week-panel">
+      <div id="kamitani-detail-w3" class="week-panel">
         <div class="score-bar"><span class="label">Week3 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
         <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
         <table class="item-avg-table">
@@ -3045,7 +3045,7 @@
           </tbody>
         </table>
       </div>
-      <div id="kamiya-detail-w4" class="week-panel">
+      <div id="kamitani-detail-w4" class="week-panel">
         <div class="score-bar"><span class="label">Week4 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
         <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
         <table class="item-avg-table">
@@ -3061,7 +3061,7 @@
           </tbody>
         </table>
       </div>
-      <div id="kamiya-detail-w5" class="week-panel">
+      <div id="kamitani-detail-w5" class="week-panel">
         <div class="score-bar"><span class="label">Week5 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
         <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
         <table class="item-avg-table">
@@ -3077,7 +3077,7 @@
           </tbody>
         </table>
       </div>
-      <div id="kamiya-detail-w6" class="week-panel">
+      <div id="kamitani-detail-w6" class="week-panel">
         <div class="score-bar"><span class="label">Week6 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
         <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
         <table class="item-avg-table">
@@ -3093,7 +3093,7 @@
           </tbody>
         </table>
       </div>
-      <div id="kamiya-detail-w7" class="week-panel">
+      <div id="kamitani-detail-w7" class="week-panel">
         <div class="score-bar"><span class="label">Week7 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
         <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
         <table class="item-avg-table">
@@ -3109,7 +3109,7 @@
           </tbody>
         </table>
       </div>
-      <div id="kamiya-detail-w8" class="week-panel">
+      <div id="kamitani-detail-w8" class="week-panel">
         <div class="score-bar"><span class="label">Week8 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
         <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
         <table class="item-avg-table">
@@ -3125,7 +3125,7 @@
           </tbody>
         </table>
       </div>
-      <div id="kamiya-detail-w9" class="week-panel">
+      <div id="kamitani-detail-w9" class="week-panel">
         <div class="score-bar"><span class="label">Week9 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
         <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
         <table class="item-avg-table">
@@ -3141,7 +3141,7 @@
           </tbody>
         </table>
       </div>
-      <div id="kamiya-detail-w10" class="week-panel">
+      <div id="kamitani-detail-w10" class="week-panel">
         <div class="score-bar"><span class="label">Week10 合計:</span><span class="value" style="color:var(--sub)">— / 21</span><span class="label" style="margin-left:1rem">セッション数:</span><span class="value">—</span></div>
         <p class="scorers">採点者: <strong>—</strong><br><span style="font-size:.75rem;color:var(--sub)">手書き: —<br>実装: —</span></p>
         <table class="item-avg-table">
@@ -3160,21 +3160,21 @@
     </div>
 
     <!-- 範囲別スコア -->
-    <div id="kamiya-range" class="sub-tab-content">
+    <div id="kamitani-range" class="sub-tab-content">
       <h3>範囲別 練習回数（模擬講義マラソン）</h3>
       <div class="week-tabs">
-        <button class="week-tab-btn active" onclick="switchMemberRangeWeek('kamiya',1)">W1</button>
-        <button class="week-tab-btn" onclick="switchMemberRangeWeek('kamiya',2)">W2</button>
-        <button class="week-tab-btn" onclick="switchMemberRangeWeek('kamiya',3)">W3</button>
-        <button class="week-tab-btn" onclick="switchMemberRangeWeek('kamiya',4)">W4</button>
-        <button class="week-tab-btn" onclick="switchMemberRangeWeek('kamiya',5)">W5</button>
-        <button class="week-tab-btn" onclick="switchMemberRangeWeek('kamiya',6)">W6</button>
-        <button class="week-tab-btn" onclick="switchMemberRangeWeek('kamiya',7)">W7</button>
-        <button class="week-tab-btn" onclick="switchMemberRangeWeek('kamiya',8)">W8</button>
-        <button class="week-tab-btn" onclick="switchMemberRangeWeek('kamiya',9)">W9</button>
-        <button class="week-tab-btn" onclick="switchMemberRangeWeek('kamiya',10)">W10</button>
+        <button class="week-tab-btn active" onclick="switchMemberRangeWeek('kamitani',1)">W1</button>
+        <button class="week-tab-btn" onclick="switchMemberRangeWeek('kamitani',2)">W2</button>
+        <button class="week-tab-btn" onclick="switchMemberRangeWeek('kamitani',3)">W3</button>
+        <button class="week-tab-btn" onclick="switchMemberRangeWeek('kamitani',4)">W4</button>
+        <button class="week-tab-btn" onclick="switchMemberRangeWeek('kamitani',5)">W5</button>
+        <button class="week-tab-btn" onclick="switchMemberRangeWeek('kamitani',6)">W6</button>
+        <button class="week-tab-btn" onclick="switchMemberRangeWeek('kamitani',7)">W7</button>
+        <button class="week-tab-btn" onclick="switchMemberRangeWeek('kamitani',8)">W8</button>
+        <button class="week-tab-btn" onclick="switchMemberRangeWeek('kamitani',9)">W9</button>
+        <button class="week-tab-btn" onclick="switchMemberRangeWeek('kamitani',10)">W10</button>
       </div>
-      <div id="kamiya-range-w1" class="week-panel active">
+      <div id="kamitani-range-w1" class="week-panel active">
         <div style="overflow-x:auto">
         <table class="eval-table" style="font-size:.75rem;min-width:500px">
           <thead><tr><th style="width:120px">章</th><th style="width:160px">節</th><th style="text-align:center;width:55px">手書き（回数）</th><th style="text-align:center;width:55px">実装（回数）</th></tr></thead>
@@ -3209,7 +3209,7 @@
         </table>
         </div>
       </div>
-      <div id="kamiya-range-w2" class="week-panel">
+      <div id="kamitani-range-w2" class="week-panel">
         <div style="overflow-x:auto">
         <table class="eval-table" style="font-size:.75rem;min-width:500px">
           <thead><tr><th style="width:120px">章</th><th style="width:160px">節</th><th style="text-align:center;width:55px">手書き（回数）</th><th style="text-align:center;width:55px">実装（回数）</th></tr></thead>
@@ -3244,7 +3244,7 @@
         </table>
         </div>
       </div>
-      <div id="kamiya-range-w3" class="week-panel">
+      <div id="kamitani-range-w3" class="week-panel">
         <div style="overflow-x:auto">
         <table class="eval-table" style="font-size:.75rem;min-width:500px">
           <thead><tr><th style="width:120px">章</th><th style="width:160px">節</th><th style="text-align:center;width:55px">手書き（回数）</th><th style="text-align:center;width:55px">実装（回数）</th></tr></thead>
@@ -3279,7 +3279,7 @@
         </table>
         </div>
       </div>
-      <div id="kamiya-range-w4" class="week-panel">
+      <div id="kamitani-range-w4" class="week-panel">
         <div style="overflow-x:auto">
         <table class="eval-table" style="font-size:.75rem;min-width:500px">
           <thead><tr><th style="width:120px">章</th><th style="width:160px">節</th><th style="text-align:center;width:55px">手書き（回数）</th><th style="text-align:center;width:55px">実装（回数）</th></tr></thead>
@@ -3314,7 +3314,7 @@
         </table>
         </div>
       </div>
-      <div id="kamiya-range-w5" class="week-panel">
+      <div id="kamitani-range-w5" class="week-panel">
         <div style="overflow-x:auto">
         <table class="eval-table" style="font-size:.75rem;min-width:500px">
           <thead><tr><th style="width:120px">章</th><th style="width:160px">節</th><th style="text-align:center;width:55px">手書き（回数）</th><th style="text-align:center;width:55px">実装（回数）</th></tr></thead>
@@ -3349,7 +3349,7 @@
         </table>
         </div>
       </div>
-      <div id="kamiya-range-w6" class="week-panel">
+      <div id="kamitani-range-w6" class="week-panel">
         <div style="overflow-x:auto">
         <table class="eval-table" style="font-size:.75rem;min-width:500px">
           <thead><tr><th style="width:120px">章</th><th style="width:160px">節</th><th style="text-align:center;width:55px">手書き（回数）</th><th style="text-align:center;width:55px">実装（回数）</th></tr></thead>
@@ -3384,7 +3384,7 @@
         </table>
         </div>
       </div>
-      <div id="kamiya-range-w7" class="week-panel">
+      <div id="kamitani-range-w7" class="week-panel">
         <div style="overflow-x:auto">
         <table class="eval-table" style="font-size:.75rem;min-width:500px">
           <thead><tr><th style="width:120px">章</th><th style="width:160px">節</th><th style="text-align:center;width:55px">手書き（回数）</th><th style="text-align:center;width:55px">実装（回数）</th></tr></thead>
@@ -3419,7 +3419,7 @@
         </table>
         </div>
       </div>
-      <div id="kamiya-range-w8" class="week-panel">
+      <div id="kamitani-range-w8" class="week-panel">
         <div style="overflow-x:auto">
         <table class="eval-table" style="font-size:.75rem;min-width:500px">
           <thead><tr><th style="width:120px">章</th><th style="width:160px">節</th><th style="text-align:center;width:55px">手書き（回数）</th><th style="text-align:center;width:55px">実装（回数）</th></tr></thead>
@@ -3454,7 +3454,7 @@
         </table>
         </div>
       </div>
-      <div id="kamiya-range-w9" class="week-panel">
+      <div id="kamitani-range-w9" class="week-panel">
         <div style="overflow-x:auto">
         <table class="eval-table" style="font-size:.75rem;min-width:500px">
           <thead><tr><th style="width:120px">章</th><th style="width:160px">節</th><th style="text-align:center;width:55px">手書き（回数）</th><th style="text-align:center;width:55px">実装（回数）</th></tr></thead>
@@ -3489,7 +3489,7 @@
         </table>
         </div>
       </div>
-      <div id="kamiya-range-w10" class="week-panel">
+      <div id="kamitani-range-w10" class="week-panel">
         <div style="overflow-x:auto">
         <table class="eval-table" style="font-size:.75rem;min-width:500px">
           <thead><tr><th style="width:120px">章</th><th style="width:160px">節</th><th style="text-align:center;width:55px">手書き（回数）</th><th style="text-align:center;width:55px">実装（回数）</th></tr></thead>
@@ -3527,21 +3527,21 @@
     </div>
 
     <!-- 所感・アクション -->
-    <div id="kamiya-actions" class="sub-tab-content">
+    <div id="kamitani-actions" class="sub-tab-content">
       <h3>所感・アクション</h3>
       <div class="week-tabs">
-        <button class="week-tab-btn active" onclick="switchMemberActionsWeek('kamiya',1)">W1</button>
-        <button class="week-tab-btn" onclick="switchMemberActionsWeek('kamiya',2)">W2</button>
-        <button class="week-tab-btn" onclick="switchMemberActionsWeek('kamiya',3)">W3</button>
-        <button class="week-tab-btn" onclick="switchMemberActionsWeek('kamiya',4)">W4</button>
-        <button class="week-tab-btn" onclick="switchMemberActionsWeek('kamiya',5)">W5</button>
-        <button class="week-tab-btn" onclick="switchMemberActionsWeek('kamiya',6)">W6</button>
-        <button class="week-tab-btn" onclick="switchMemberActionsWeek('kamiya',7)">W7</button>
-        <button class="week-tab-btn" onclick="switchMemberActionsWeek('kamiya',8)">W8</button>
-        <button class="week-tab-btn" onclick="switchMemberActionsWeek('kamiya',9)">W9</button>
-        <button class="week-tab-btn" onclick="switchMemberActionsWeek('kamiya',10)">W10</button>
+        <button class="week-tab-btn active" onclick="switchMemberActionsWeek('kamitani',1)">W1</button>
+        <button class="week-tab-btn" onclick="switchMemberActionsWeek('kamitani',2)">W2</button>
+        <button class="week-tab-btn" onclick="switchMemberActionsWeek('kamitani',3)">W3</button>
+        <button class="week-tab-btn" onclick="switchMemberActionsWeek('kamitani',4)">W4</button>
+        <button class="week-tab-btn" onclick="switchMemberActionsWeek('kamitani',5)">W5</button>
+        <button class="week-tab-btn" onclick="switchMemberActionsWeek('kamitani',6)">W6</button>
+        <button class="week-tab-btn" onclick="switchMemberActionsWeek('kamitani',7)">W7</button>
+        <button class="week-tab-btn" onclick="switchMemberActionsWeek('kamitani',8)">W8</button>
+        <button class="week-tab-btn" onclick="switchMemberActionsWeek('kamitani',9)">W9</button>
+        <button class="week-tab-btn" onclick="switchMemberActionsWeek('kamitani',10)">W10</button>
       </div>
-      <div id="kamiya-actions-w1" class="week-panel active">
+      <div id="kamitani-actions-w1" class="week-panel active">
         <h4>今週の所感</h4>
         <div class="scorers">
           <span><strong>育成進捗：</strong>砂金×荻野連携中。砂金は4/4に有給明け、スケジュール確認中。荻野は1on1招待の連絡を紙谷さんにする予定。</span>
@@ -3558,7 +3558,7 @@
           <dt>PMG</dt><dd>模擬講義スケジュール全体像の確定フォロー</dd>
         </dl>
       </div>
-      <div id="kamiya-actions-w2" class="week-panel">
+      <div id="kamitani-actions-w2" class="week-panel">
         <h4>今週の所感</h4>
         <div class="scorers">
           <span><strong>模擬講義:</strong> 4/9砂金と初回模擬講義→9点。元教員のハキハキした喋りと笑顔が好印象。知識もバッチリで質疑応答安定。伸びしろ: 結論ファースト・簡潔に話すこと</span>
@@ -3572,49 +3572,49 @@
           <dt>PMG</dt><dd>アサイン可否を本人に確認する（木下）。1ヶ月模擬講義 4/23(木)仮</dd>
         </dl>
       </div>
-      <div id="kamiya-actions-w3" class="week-panel">
+      <div id="kamitani-actions-w3" class="week-panel">
         <h4>今週の所感</h4>
         <div class="scorers"><span>データなし</span></div>
         <h4>ネクストアクション</h4>
         <dl class="next-actions"><dt>—</dt><dd>データなし</dd></dl>
       </div>
-      <div id="kamiya-actions-w4" class="week-panel">
+      <div id="kamitani-actions-w4" class="week-panel">
         <h4>今週の所感</h4>
         <div class="scorers"><span>データなし</span></div>
         <h4>ネクストアクション</h4>
         <dl class="next-actions"><dt>—</dt><dd>データなし</dd></dl>
       </div>
-      <div id="kamiya-actions-w5" class="week-panel">
+      <div id="kamitani-actions-w5" class="week-panel">
         <h4>今週の所感</h4>
         <div class="scorers"><span>データなし</span></div>
         <h4>ネクストアクション</h4>
         <dl class="next-actions"><dt>—</dt><dd>データなし</dd></dl>
       </div>
-      <div id="kamiya-actions-w6" class="week-panel">
+      <div id="kamitani-actions-w6" class="week-panel">
         <h4>今週の所感</h4>
         <div class="scorers"><span>データなし</span></div>
         <h4>ネクストアクション</h4>
         <dl class="next-actions"><dt>—</dt><dd>データなし</dd></dl>
       </div>
-      <div id="kamiya-actions-w7" class="week-panel">
+      <div id="kamitani-actions-w7" class="week-panel">
         <h4>今週の所感</h4>
         <div class="scorers"><span>データなし</span></div>
         <h4>ネクストアクション</h4>
         <dl class="next-actions"><dt>—</dt><dd>データなし</dd></dl>
       </div>
-      <div id="kamiya-actions-w8" class="week-panel">
+      <div id="kamitani-actions-w8" class="week-panel">
         <h4>今週の所感</h4>
         <div class="scorers"><span>データなし</span></div>
         <h4>ネクストアクション</h4>
         <dl class="next-actions"><dt>—</dt><dd>データなし</dd></dl>
       </div>
-      <div id="kamiya-actions-w9" class="week-panel">
+      <div id="kamitani-actions-w9" class="week-panel">
         <h4>今週の所感</h4>
         <div class="scorers"><span>データなし</span></div>
         <h4>ネクストアクション</h4>
         <dl class="next-actions"><dt>—</dt><dd>データなし</dd></dl>
       </div>
-      <div id="kamiya-actions-w10" class="week-panel">
+      <div id="kamitani-actions-w10" class="week-panel">
         <h4>今週の所感</h4>
         <div class="scorers"><span>データなし</span></div>
         <h4>ネクストアクション</h4>
@@ -3680,7 +3680,7 @@ window.addEventListener('DOMContentLoaded',function(){
     {label:'1ヶ月目標(15)',data:target,borderColor:'#d69e2e',borderDash:[4,4],pointRadius:0,borderWidth:1},
     {label:'合格ライン(18)',data:pass,borderColor:'#e53e3e',borderDash:[6,3],pointRadius:0,borderWidth:1.5}
   ]};
-  ['Yamamoto','Ueda','Tange','Suginaka','Kamiya'].forEach(function(name){
+  ['Yamamoto','Ueda','Tange','Suginaka','Kamitani'].forEach(function(name){
     var el=document.getElementById('chart'+name);
     if(el) new Chart(el,{type:'line',data:JSON.parse(JSON.stringify(emptyData)),options:emptyOpts});
   });
