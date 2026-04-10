@@ -133,22 +133,146 @@
     <!-- Summary W2 (active) -->
     <div id="summary-w2" class="week-panel active">
       <h3>ステータス一覧（W2: 4/7-4/11）</h3>
-      <table class="summary-table">
-        <thead><tr><th>名前</th><th>模擬初回</th><th>点数</th><th>ステータス</th><th>要点</th></tr></thead>
-        <tbody>
-          <tr><td>山本 和樹</td><td>4/8 黒岩</td><td><strong>11</strong>/21</td><td><span class="status-card status-good">問題なし</span></td><td>初回11点で5名中トップ・高水準。完璧主義→インプット速度注意。目標12→14点</td></tr>
-          <tr><td>上田 正和</td><td>4/8 吉田</td><td><strong>7</strong>/21</td><td><span class="status-card status-ok">やや注意</span></td><td>信頼0点(キカバディ画面映り込み等)・思いやり0点。実装でテンパり。手書きは良い</td></tr>
-          <tr><td>丹下 知彦</td><td>4/10 歳森</td><td><strong>8</strong>/21</td><td><span class="status-card status-ok">やや注意</span></td><td>進め方/信頼/インタラ/思いやり全て2点と講師力の素地あり。質問・知識が0点で要強化</td></tr>
-          <tr><td>杉中 綾子</td><td>4/10 浦本</td><td><strong>7</strong>/21</td><td><span class="status-card status-ok">やや注意</span></td><td>全項目1点で均等。結論ファースト・板書改善・知識強化が課題。質問10問中4問正答</td></tr>
-          <tr><td>紙谷 航希</td><td>4/8荻野,4/9砂金</td><td><strong>9</strong>/21 x2</td><td><span class="status-card status-good">問題なし</span></td><td>2回とも9点で初回として高水準。結論ファースト・実装インタラクティブ強化。目標14点</td></tr>
-        </tbody>
-      </table>
+
+      <!-- メンバーカード -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:.75rem;margin:.75rem 0">
+        <!-- 山本 -->
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.85rem;border-left:4px solid #805ad5">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem">
+            <strong style="font-size:.9rem">山本 和樹</strong>
+            <span class="status-card status-good">問題なし</span>
+          </div>
+          <div style="display:flex;gap:1rem;margin-bottom:.5rem">
+            <div style="text-align:center;background:#f7fafc;border-radius:6px;padding:.35rem .7rem"><div style="font-size:1.3rem;font-weight:800;color:#805ad5">11</div><div style="font-size:.65rem;color:var(--sub)">/21点</div></div>
+            <div style="font-size:.78rem;line-height:1.5">
+              <div>採点: <strong>黒岩</strong>（4/8）</div>
+              <div>目標: <strong>14点</strong>（定例決定）</div>
+              <div style="color:var(--good)">5名中トップ・初回として高水準</div>
+            </div>
+          </div>
+          <div style="font-size:.75rem;color:var(--sub);border-top:1px solid var(--border);padding-top:.4rem">
+            <div><strong style="color:var(--good)">強み:</strong> 信頼2・思いやり2・知識各2。塾講師経験で基本の振る舞いOK</div>
+            <div><strong style="color:var(--warn)">課題:</strong> 完璧主義でインプット速度懸念。実装に不安(モニター不足)。講義がやや大学教授的</div>
+            <div><strong>3W:</strong> 黒岩5日連続登壇→沖廣体制。4/15木下1on1。目標12点</div>
+          </div>
+        </div>
+        <!-- 紙谷 -->
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.85rem;border-left:4px solid #e53e3e">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem">
+            <strong style="font-size:.9rem">紙谷 航希</strong>
+            <span class="status-card status-good">問題なし</span>
+          </div>
+          <div style="display:flex;gap:1rem;margin-bottom:.5rem">
+            <div style="text-align:center;background:#f7fafc;border-radius:6px;padding:.35rem .7rem"><div style="font-size:1.3rem;font-weight:800;color:#e53e3e">9</div><div style="font-size:.65rem;color:var(--sub)">/21点 x2</div></div>
+            <div style="font-size:.78rem;line-height:1.5">
+              <div>採点: <strong>荻野</strong>(4/8) <strong>砂金</strong>(4/9)</div>
+              <div>目標: <strong>14点</strong>（本人12→上方修正）</div>
+              <div style="color:var(--good)">2回とも9点・初回として高水準</div>
+            </div>
+          </div>
+          <div style="font-size:.75rem;color:var(--sub);border-top:1px solid var(--border);padding-top:.4rem">
+            <div><strong style="color:var(--good)">強み:</strong> 信頼2・知識質問2。ハキハキした話し方と笑顔。元教員で質疑応答安定</div>
+            <div><strong style="color:var(--warn)">課題:</strong> 結論ファースト・簡潔さ・手書き丁寧さ・実装インタラクティブ不足</div>
+            <div><strong>3W:</strong> 模擬3回、12点目指す。オフライン稼働・出張可否を確認中</div>
+          </div>
+        </div>
+        <!-- 丹下 -->
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.85rem;border-left:4px solid #d69e2e">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem">
+            <strong style="font-size:.9rem">丹下 知彦</strong>
+            <span class="status-card status-ok">やや注意</span>
+          </div>
+          <div style="display:flex;gap:1rem;margin-bottom:.5rem">
+            <div style="text-align:center;background:#f7fafc;border-radius:6px;padding:.35rem .7rem"><div style="font-size:1.3rem;font-weight:800;color:#d69e2e">8</div><div style="font-size:.65rem;color:var(--sub)">/12点*</div></div>
+            <div style="font-size:.78rem;line-height:1.5">
+              <div>採点: <strong>歳森</strong>（4/10）*知識3項目未実施</div>
+              <div>目標: <strong>14点</strong>（定例決定）</div>
+              <div style="color:var(--warn)">不安傾向あり・家庭事情配慮要</div>
+            </div>
+          </div>
+          <div style="font-size:.75rem;color:var(--sub);border-top:1px solid var(--border);padding-top:.4rem">
+            <div><strong style="color:var(--good)">強み:</strong> 進め方/信頼/インタラ/思いやり全て2点。説明上手で練習量も十分。ML1周以上インプット済</div>
+            <div><strong style="color:var(--warn)">課題:</strong> 自己評価が低く不安発言多い。家庭事情(娘の入院・通院)。20分ルール理解不足。ツール不慣れ</div>
+            <div><strong style="color:var(--bad)">要配慮:</strong> 家庭ファースト。報連相があれば稼働調整。三宅のオフライン頻度が高く1on1確保が構造的課題</div>
+          </div>
+        </div>
+        <!-- 上田 -->
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.85rem;border-left:4px solid #3182ce">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem">
+            <strong style="font-size:.9rem">上田 正和</strong>
+            <span class="status-card status-ok">やや注意</span>
+          </div>
+          <div style="display:flex;gap:1rem;margin-bottom:.5rem">
+            <div style="text-align:center;background:#f7fafc;border-radius:6px;padding:.35rem .7rem"><div style="font-size:1.3rem;font-weight:800;color:#3182ce">7</div><div style="font-size:.65rem;color:var(--sub)">/21点</div></div>
+            <div style="font-size:.78rem;line-height:1.5">
+              <div>採点: <strong>吉田</strong>（4/8）</div>
+              <div>目標: <strong>14点</strong>（定例決定）</div>
+              <div style="color:var(--warn)">信頼0・思いやり0が要改善</div>
+            </div>
+          </div>
+          <div style="font-size:.75rem;color:var(--sub);border-top:1px solid var(--border);padding-top:.4rem">
+            <div><strong style="color:var(--good)">強み:</strong> 教員7年の経験で間の取り方・投げかけが上手。数式リテラシー高い。FBを前向きに受容</div>
+            <div><strong style="color:var(--warn)">課題:</strong> 言葉遣いフランク(法人研修で問題の可能性)。実装でテンパると負の感情がダダ漏れ。キカバディ画面映り込み</div>
+            <div><strong>3W:</strong> 模擬3回(目標12-14点)。行動宣言初稿。オンラインランチ誘い。プライド高い→指摘は慎重に</div>
+          </div>
+        </div>
+        <!-- 杉中 -->
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.85rem;border-left:4px solid #38a169">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem">
+            <strong style="font-size:.9rem">杉中 綾子</strong>
+            <span class="status-card status-ok">やや注意</span>
+          </div>
+          <div style="display:flex;gap:1rem;margin-bottom:.5rem">
+            <div style="text-align:center;background:#f7fafc;border-radius:6px;padding:.35rem .7rem"><div style="font-size:1.3rem;font-weight:800;color:#38a169">7</div><div style="font-size:.65rem;color:var(--sub)">/21点</div></div>
+            <div style="font-size:.78rem;line-height:1.5">
+              <div>採点: <strong>浦本</strong>（4/10）</div>
+              <div>目標: <strong>11点</strong>（来週中に2桁）</div>
+              <div style="color:var(--warn)">全項目1点で均等。空回り傾向</div>
+            </div>
+          </div>
+          <div style="font-size:.75rem;color:var(--sub);border-top:1px solid var(--border);padding-top:.4rem">
+            <div><strong style="color:var(--good)">強み:</strong> 行動宣言が非常に良好。同期内で最もコミュニケーション積極的。生成AI活用でインプット</div>
+            <div><strong style="color:var(--warn)">課題:</strong> 「できる」ラインを自分で下げすぎる。思い込み激しい。実装苦手意識。質問10問中4問正答</div>
+            <div><strong>3W:</strong> 模擬4回で苦手意識払拭。4/23行動宣言模擬→4/28本番。DS志向あり→ML基礎しっかり</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 全体の定性情報 -->
+      <h3>W2 定例総括（4/10）</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.75rem;margin:.5rem 0">
+        <div style="background:#f0fff4;border-left:3px solid var(--good);padding:.65rem .85rem;border-radius:0 6px 6px 0">
+          <div style="font-size:.72rem;font-weight:600;color:var(--good);margin-bottom:.2rem">GOOD</div>
+          <div style="font-size:.8rem">
+            <div>入社2週間で全5名が模擬講義を開始。全体的に順調</div>
+            <div>山本11点・紙谷9点は初回として高水準</div>
+            <div>全員FBを前向きに受容する姿勢がある</div>
+          </div>
+        </div>
+        <div style="background:#fffff0;border-left:3px solid var(--warn);padding:.65rem .85rem;border-radius:0 6px 6px 0">
+          <div style="font-size:.72rem;font-weight:600;color:var(--warn);margin-bottom:.2rem">WATCH</div>
+          <div style="font-size:.8rem">
+            <div>不安傾向の同期間波及リスク（丹下→山本・杉中に影響の可能性）</div>
+            <div>公務員・教育畑出身者の視座が閉じがち→ランチ等で視野拡大</div>
+            <div>浦本と杉崎で杉中の見え方に差→メンター間の認識すり合わせ</div>
+          </div>
+        </div>
+        <div style="background:#ebf8ff;border-left:3px solid var(--accent);padding:.65rem .85rem;border-radius:0 6px 6px 0">
+          <div style="font-size:.72rem;font-weight:600;color:var(--accent);margin-bottom:.2rem">DECISION</div>
+          <div style="font-size:.8rem">
+            <div>目標点数: <strong>全員14点で統一</strong>（ストレッチ目標）</div>
+            <div>Zoom運用: ホストキー方式+クラウド録画への変更検討中→来週FB</div>
+            <div>模擬講義20分ルール: 途中で切る。章全体をやる必要なし</div>
+          </div>
+        </div>
+      </div>
+
       <h4>W2 キーポイント</h4>
       <div class="note-box"><ul style="padding-left:1.25rem">
         <li>全5名が模擬講義を開始。山本11点・紙谷9点は初回として高水準</li>
         <li>朝会(4/9): TTPアプローチ（まずマスタースライド完コピ）を全員にFB</li>
-        <li>丹下: 三宅のオフライン登壇頻度が高く、1on1確保が課題。歳森との連携強化で補完</li>
-        <li>初回スコア: 山本11 > 紙谷9(2回とも) > 丹下8 > 上田7 = 杉中7。目標は全員14点に統一</li>
+        <li>丹下: 家庭事情(娘の入院)で不安傾向の背景あり。家庭ファーストで対応</li>
+        <li>初回スコア: 山本11 > 紙谷9(2回とも) > 丹下8 > 上田7 = 杉中7</li>
       </ul></div>
     </div>
 
