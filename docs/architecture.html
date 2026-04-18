@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>週次レポート アーキテクチャ</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', sans-serif; background: #f5f6f8; color: #1a1a2e; font-size: 14px; line-height: 1.7; }
+  .page { max-width: 1000px; margin: 0 auto; padding: 40px 24px 80px; }
+
+  .header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: white; border-radius: 16px; padding: 32px 40px; margin-bottom: 32px;
+  }
+  .header h1 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+  .header .sub { font-size: 13px; color: #94a3b8; }
+
+  .section { background: white; border-radius: 14px; margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); overflow: hidden; }
+  .section-header { padding: 18px 28px; border-bottom: 1px solid #f0f2f5; }
+  .section-header h2 { font-size: 17px; font-weight: 700; }
+  .section-header p { font-size: 13px; color: #64748b; margin-top: 4px; }
+  .section-body { padding: 24px 28px; }
+
+  /* データフロー図 */
+  .flow-container { display: flex; flex-direction: column; gap: 0; align-items: center; margin: 20px 0; }
+  .flow-row { display: flex; gap: 16px; align-items: flex-start; justify-content: center; flex-wrap: wrap; }
+  .flow-arrow-down { font-size: 24px; color: #94a3b8; margin: 8px 0; }
+
+  .source-card {
+    width: 200px; border-radius: 10px; padding: 14px 16px; text-align: center;
+    border: 2px solid; font-size: 12px;
+  }
+  .source-card .icon { font-size: 24px; margin-bottom: 6px; }
+  .source-card .name { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+  .source-card .desc { font-size: 11px; color: #64748b; line-height: 1.4; }
+
+  .src-pcs { border-color: #16a34a; background: #f0fdf4; }
+  .src-pcs .name { color: #16a34a; }
+  .src-slack { border-color: #7c3aed; background: #f5f3ff; }
+  .src-slack .name { color: #7c3aed; }
+  .src-notion { border-color: #1e293b; background: #f8fafc; }
+  .src-notion .name { color: #1e293b; }
+  .src-local { border-color: #2563eb; background: #eff6ff; }
+  .src-local .name { color: #2563eb; }
+
+  .process-card {
+    width: 320px; border-radius: 10px; padding: 16px 20px; text-align: center;
+    background: #1e293b; color: white;
+  }
+  .process-card .name { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+  .process-card .desc { font-size: 12px; color: #94a3b8; line-height: 1.5; }
+  .process-card .tag {
+    display: inline-block; font-size: 10px; font-weight: 600;
+    padding: 2px 10px; border-radius: 10px; margin-top: 8px;
+    background: rgba(255,255,255,0.15); color: #e2e8f0;
+  }
+
+  .output-card {
+    width: 280px; border-radius: 10px; padding: 16px 20px; text-align: center;
+    border: 2px solid #f59e0b; background: #fffbeb;
+  }
+  .output-card .name { font-size: 15px; font-weight: 700; color: #92400e; margin-bottom: 6px; }
+  .output-card .desc { font-size: 12px; color: #a16207; line-height: 1.5; }
+
+  .deploy-card {
+    width: 280px; border-radius: 10px; padding: 16px 20px; text-align: center;
+    border: 2px solid #2563eb; background: #eff6ff;
+  }
+  .deploy-card .name { font-size: 15px; font-weight: 700; color: #1e40af; margin-bottom: 6px; }
+  .deploy-card .desc { font-size: 12px; color: #1e3a8a; line-height: 1.5; }
+
+  /* タブ構成 */
+  .tab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+  .tab-card {
+    background: #f8fafc; border-radius: 8px; padding: 12px 16px;
+    border-left: 3px solid #2563eb;
+  }
+  .tab-card .tab-name { font-size: 13px; font-weight: 700; color: #1e293b; margin-bottom: 4px; }
+  .tab-card .tab-desc { font-size: 11px; color: #64748b; line-height: 1.4; }
+
+  /* 注意事項 */
+  .note-box {
+    background: #fffbeb; border: 1px solid #fef08a; border-radius: 10px;
+    padding: 14px 18px; margin-top: 16px;
+  }
+  .note-box .note-label { font-size: 11px; font-weight: 700; color: #854d0e; margin-bottom: 4px; }
+  .note-box p { font-size: 12.5px; color: #a16207; line-height: 1.6; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 12px 0; }
+  th { background: #f8fafc; padding: 8px 12px; text-align: left; font-weight: 700; color: #475569; border-bottom: 2px solid #e2e8f0; font-size: 12px; }
+  td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9; color: #334155; vertical-align: top; }
+
+  .step-list { list-style: none; counter-reset: step; margin: 12px 0; }
+  .step-list li {
+    counter-increment: step; position: relative; padding: 8px 0 8px 36px;
+    font-size: 13px; color: #334155; border-bottom: 1px solid #f1f5f9;
+  }
+  .step-list li:last-child { border-bottom: none; }
+  .step-list li::before {
+    content: counter(step); position: absolute; left: 0; top: 8px;
+    width: 22px; height: 22px; border-radius: 50%; background: #2563eb; color: white;
+    font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <h1>正社員育成 週次レポート アーキテクチャ</h1>
+    <div class="sub">データの収集元、処理フロー、HTML の構成を一枚にまとめたもの</div>
+  </div>
+
+  <!-- ========== 1. データフロー全体像 ========== -->
+  <div class="section">
+    <div class="section-header">
+      <h2>1. データフロー全体像</h2>
+      <p>4つのデータソースから情報を収集し、Claude Code が HTML を生成、GitHub Pages で公開</p>
+    </div>
+    <div class="section-body">
+      <div class="flow-container">
+
+        <!-- データソース -->
+        <div class="flow-row">
+          <div class="source-card src-pcs">
+            <div class="icon">📊</div>
+            <div class="name">PCS（採点シート）</div>
+            <div class="desc">Google Sheets → CSV エクスポート → Google Drive 同期<br>模擬講義の7項目採点 + Good/More コメント</div>
+          </div>
+          <div class="source-card src-slack">
+            <div class="icon">💬</div>
+            <div class="name">Slack</div>
+            <div class="desc">育成連携スレッド<br>メンバー相談スレッド<br>エルダー/メンターの日次報告</div>
+          </div>
+          <div class="source-card src-notion">
+            <div class="icon">📝</div>
+            <div class="name">Notion</div>
+            <div class="desc">定例議事録<br>行動宣言・目標設定<br>Zoom 運用メモ</div>
+          </div>
+          <div class="source-card src-local">
+            <div class="icon">📁</div>
+            <div class="name">ローカル管理ファイル</div>
+            <div class="desc">~/pmg/employee_development/<br>dashboard.md、members/ 個人ファイル<br>performance/ スコア推移</div>
+          </div>
+        </div>
+
+        <div class="flow-arrow-down">▼</div>
+
+        <!-- 処理 -->
+        <div class="flow-row">
+          <div class="process-card">
+            <div class="name">Claude Code（/training-report スキル）</div>
+            <div class="desc">
+              PCS の CSV をパースして点数・コメントを抽出<br>
+              Slack/Notion から MCP 経由で当週の情報を取得<br>
+              既存 HTML に差分を反映（4箇所チェックリスト）<br>
+              チャート JS データ、ステータステーブル、採点詳細を更新
+            </div>
+            <div class="tag">毎週金曜 育成定例前に実行</div>
+          </div>
+        </div>
+
+        <div class="flow-arrow-down">▼</div>
+
+        <!-- 成果物 -->
+        <div class="flow-row">
+          <div class="output-card">
+            <div class="name">HTML レポート</div>
+            <div class="desc">
+              docs/weekly/2026-04-11.html<br>
+              単一 HTML ファイル（JS チャート内蔵）<br>
+              タブ切り替えで5名 × 4セクション
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-arrow-down">▼</div>
+
+        <!-- デプロイ -->
+        <div class="flow-row">
+          <div class="deploy-card">
+            <div class="name">GitHub Pages</div>
+            <div class="desc">
+              git push → 自動デプロイ<br>
+              yutakinoshita-kikagaku.github.io/pmg-employee-reports/
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== 2. データソース詳細 ========== -->
+  <div class="section">
+    <div class="section-header">
+      <h2>2. データソース詳細</h2>
+    </div>
+    <div class="section-body">
+      <table>
+        <thead>
+          <tr><th>ソース</th><th>取得方法</th><th>取得内容</th><th>更新頻度</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>PCS CSV</strong></td>
+            <td>Google Drive for Desktop 同期<br>個別採点シート CSV を直接パース</td>
+            <td>7項目の点数（各3点満点、合計21点）<br>Good/More コメント（項目別）<br>質問10問の結果（○/△/☓）<br>模擬授業の範囲（手書き/実装）</td>
+            <td>模擬講義の都度</td>
+          </tr>
+          <tr>
+            <td><strong>Slack</strong></td>
+            <td>MCP（slack_read_thread）</td>
+            <td>エルダー/メンターの観察コメント<br>メンバーの相談内容<br>行動宣言の進捗</td>
+            <td>日次</td>
+          </tr>
+          <tr>
+            <td><strong>Notion</strong></td>
+            <td>MCP（notion-search / notion-fetch）</td>
+            <td>定例議事録の決定事項<br>行動宣言テキスト<br>育成フェーズの進捗</td>
+            <td>定例ごと</td>
+          </tr>
+          <tr>
+            <td><strong>ローカル管理</strong></td>
+            <td>~/pmg/employee_development/</td>
+            <td>dashboard.md（全員ステータス一覧）<br>members/ 個人詳細<br>performance/ スコア推移データ</td>
+            <td>週次で Claude Code が更新</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note-box">
+        <div class="note-label">PCS CSV の注意点</div>
+        <p>Summary.csv は数式が #DIV/0! で壊れるため使用不可。個別採点シート（{日付}_{採点者名}.csv）を直接パースしている。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== 3. HTML レポートの構成 ========== -->
+  <div class="section">
+    <div class="section-header">
+      <h2>3. HTML レポートの構成</h2>
+      <p>単一 HTML ファイル内にタブ切り替え UI で全情報を格納</p>
+    </div>
+    <div class="section-body">
+
+      <div style="font-size: 13px; font-weight: 700; color: #1e293b; margin-bottom: 10px;">トップレベルタブ（メンバー別）</div>
+      <div style="display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap;">
+        <span style="padding: 4px 14px; background: #1e293b; color: white; border-radius: 6px; font-size: 12px; font-weight: 600;">サマリ</span>
+        <span style="padding: 4px 14px; background: #f1f5f9; border-radius: 6px; font-size: 12px; font-weight: 600;">山本</span>
+        <span style="padding: 4px 14px; background: #f1f5f9; border-radius: 6px; font-size: 12px; font-weight: 600;">紙谷</span>
+        <span style="padding: 4px 14px; background: #f1f5f9; border-radius: 6px; font-size: 12px; font-weight: 600;">丹下</span>
+        <span style="padding: 4px 14px; background: #f1f5f9; border-radius: 6px; font-size: 12px; font-weight: 600;">上田</span>
+        <span style="padding: 4px 14px; background: #f1f5f9; border-radius: 6px; font-size: 12px; font-weight: 600;">杉中</span>
+      </div>
+
+      <div style="font-size: 13px; font-weight: 700; color: #1e293b; margin-bottom: 10px;">サマリタブの中身</div>
+      <div class="tab-grid">
+        <div class="tab-card">
+          <div class="tab-name">全員推移グラフ</div>
+          <div class="tab-desc">Chart.js の折れ線グラフ。5名の合計点推移を週別に表示</div>
+        </div>
+        <div class="tab-card">
+          <div class="tab-name">ステータス一覧テーブル</div>
+          <div class="tab-desc">全員の現在ステータス（問題なし/要フォロー）、アクション、来週の目標点</div>
+        </div>
+        <div class="tab-card">
+          <div class="tab-name">DECISION / RISK</div>
+          <div class="tab-desc">定例での決定事項、リスク・懸念事項</div>
+        </div>
+        <div class="tab-card">
+          <div class="tab-name">週別サブタブ（W1, W2...）</div>
+          <div class="tab-desc">週ごとの詳細スナップショット</div>
+        </div>
+      </div>
+
+      <div style="font-size: 13px; font-weight: 700; color: #1e293b; margin: 16px 0 10px;">個人タブの中身（4セクション）</div>
+      <div class="tab-grid">
+        <div class="tab-card">
+          <div class="tab-name">採点詳細</div>
+          <div class="tab-desc">合計点バー、採点者、範囲、7項目テーブル（点数/Good/More）。強み・改善FB</div>
+        </div>
+        <div class="tab-card">
+          <div class="tab-name">点数推移テーブル</div>
+          <div class="tab-desc">7項目の週別平均推移。色分けで傾向を可視化</div>
+        </div>
+        <div class="tab-card">
+          <div class="tab-name">範囲別スコア</div>
+          <div class="tab-desc">手書き/実装ごとの練習回数、スコア推移</div>
+        </div>
+        <div class="tab-card">
+          <div class="tab-name">行動・メンタル</div>
+          <div class="tab-desc">Slack/Notion から抽出した行動宣言、メンタル状況、エルダー/メンター観察</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== 4. レポート作成フロー ========== -->
+  <div class="section">
+    <div class="section-header">
+      <h2>4. レポート作成フロー（毎週金曜）</h2>
+    </div>
+    <div class="section-body">
+      <ol class="step-list">
+        <li>PCS CSV を Google Drive から読み込み。個別採点シートから点数・コメントを抽出</li>
+        <li>Slack の育成連携スレッド・メンバー相談スレッドから当週の投稿を取得（MCP 経由）</li>
+        <li>Notion から定例議事録・行動宣言の更新を取得（MCP 経由）</li>
+        <li>既存 HTML に差分を反映（4箇所チェックリスト: サマリ / 点数推移 / 採点詳細 / 範囲別）</li>
+        <li>デフォルト表示タブを当該週に切り替え</li>
+        <li>ローカルで表示確認</li>
+        <li>git commit + push → GitHub Pages に自動デプロイ</li>
+      </ol>
+
+      <div class="note-box">
+        <div class="note-label">更新チェックリスト（4箇所必須）</div>
+        <p>
+          ① サマリタブ: 折れ線グラフ JS データ + ステータステーブル<br>
+          ② 点数推移テーブル: 項目別週平均推移の該当週セル<br>
+          ③ 採点詳細タブ: score-bar + 項目テーブル（点数/Good/More）<br>
+          ④ 範囲別スコアタブ: 該当週の範囲・回数・色分け
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== 5. 技術スタック ========== -->
+  <div class="section">
+    <div class="section-header">
+      <h2>5. 技術スタック</h2>
+    </div>
+    <div class="section-body">
+      <table>
+        <thead>
+          <tr><th>コンポーネント</th><th>技術</th><th>役割</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>レポート本体</td><td>単一 HTML + CSS + JavaScript</td><td>タブ UI、レスポンシブ、印刷対応</td></tr>
+          <tr><td>グラフ描画</td><td>Chart.js（CDN）</td><td>折れ線グラフ（点数推移）</td></tr>
+          <tr><td>データ収集</td><td>Claude Code + MCP（Slack/Notion）</td><td>自動データ取得・パース</td></tr>
+          <tr><td>HTML 生成・更新</td><td>Claude Code（/training-report スキル）</td><td>差分反映、整合性チェック</td></tr>
+          <tr><td>ホスティング</td><td>GitHub Pages</td><td>git push で自動デプロイ</td></tr>
+          <tr><td>PCS データ同期</td><td>Google Sheets → CSV → Google Drive for Desktop</td><td>採点データの自動同期</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

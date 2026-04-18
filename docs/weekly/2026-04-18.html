@@ -91,7 +91,7 @@
 
   <div class="tabs">
     <button class="tab-btn active" onclick="switchTab('summary')">サマリ</button>
-    <button class="tab-btn" onclick="switchTab('yamamoto')">山本</button>
+    <button class="tab-btn" onclick="switchTab('yamamoto')" style="opacity:.45;text-decoration:line-through">山本(退職)</button>
     <button class="tab-btn" onclick="switchTab('ueda')">上田</button>
     <button class="tab-btn" onclick="switchTab('tange')">丹下</button>
     <button class="tab-btn" onclick="switchTab('suginaka')">杉中</button>
@@ -216,29 +216,13 @@
       <h3>ステータス一覧（W3: 4/13-4/17）</h3>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:.75rem;margin:.75rem 0">
-        <!-- 山本 W3 card -->
-        <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.85rem;border-left:4px solid #805ad5">
+        <!-- 山本 W3 card (退職) -->
+        <div style="background:#f7fafc;border:1px solid var(--border);border-radius:8px;padding:.85rem;border-left:4px solid #a0aec0;opacity:.5;filter:grayscale(.8)">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem">
-            <strong style="font-size:.9rem">山本 和樹</strong>
-            <span class="status-card status-good">問題なし</span>
+            <strong style="font-size:.9rem;color:#a0aec0">山本 和樹</strong>
+            <span class="status-card" style="background:#edf2f7;color:#a0aec0;border:1px solid #cbd5e0">退職</span>
           </div>
-          <div style="display:flex;gap:1rem;margin-bottom:.5rem">
-            <div style="text-align:center;background:#f7fafc;border-radius:6px;padding:.35rem .7rem"><div style="font-size:1.3rem;font-weight:800;color:#805ad5">8.0</div><div style="font-size:.65rem;color:var(--sub)">/21点(1回)</div></div>
-            <div style="font-size:.78rem;line-height:1.5">
-              <div>採点: <strong>沖廣</strong>（4/14）※4/16分は未採点</div>
-              <div style="color:var(--warn)">W2比 -3.0pt。採点1回のみで参考値</div>
-              <div>エルダー: 沖廣 / メンター: 黒岩</div>
-            </div>
-          </div>
-          <div style="font-size:.75rem;color:var(--sub);border-top:1px solid var(--border);padding-top:.4rem">
-            <div><strong style="color:var(--good)">強み:</strong> 導入スムーズ・カメラ目線OK。巻き込み型の進行。GoodNotes操作に慣れてきた</div>
-            <div><strong style="color:var(--warn)">課題:</strong> ツール周りの完璧化が必要。まとめは読み上げでなく画面投影。知識Q対応で2点取得も他項目は1点</div>
-            <div><strong>4W:</strong> 1on1依頼あり(木下宛・沖廣経由)。1か月模擬4/27予定(スケジュール調整中)</div>
-          </div>
-          <div class="link-row">
-            <a href="https://docs.google.com/spreadsheets/d/1ruj4SoA1Sd2AeZRBkQ-H4e4mCN3t2QfufpqxTnp59RE/edit?gid=1658485137#gid=1658485137" target="_blank">PCS</a>
-            <a href="https://www.notion.so/goldenrod-wren-7d3/0f0c5cd9cfb282cb921d81bace7407f1?source=copy_link" target="_blank">日報DB</a>
-          </div>
+          <div style="font-size:.78rem;color:#a0aec0">W3時点の採点データあり（参考値）。以降の育成対象外。</div>
         </div>
         <!-- 紙谷 W3 card -->
         <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.85rem;border-left:4px solid #e53e3e">
@@ -292,21 +276,21 @@
         <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.85rem;border-left:4px solid #d69e2e">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem">
             <strong style="font-size:.9rem">丹下 知彦</strong>
-            <span class="status-card status-ok">やや注意(配慮要)</span>
+            <span class="status-card status-good">問題なし</span>
           </div>
           <div style="display:flex;gap:1rem;margin-bottom:.5rem">
             <div style="text-align:center;background:#f7fafc;border-radius:6px;padding:.35rem .7rem"><div style="font-size:1.3rem;font-weight:800;color:#d69e2e">10.6</div><div style="font-size:.65rem;color:var(--sub)">/21点(5回)</div></div>
             <div style="font-size:.78rem;line-height:1.5">
               <div>採点: <strong>歳森</strong>(4/13,4/14,4/17) <strong>三宅</strong>(4/15,4/16)</div>
-              <div style="color:var(--warn)">W2比 +2.6pt。10→10→10→10→13。最終セッションで+3</div>
+              <div style="color:var(--good)">W2比 +2.6pt。最終セッションで13点(+3)と着実な成長</div>
               <div>エルダー: 歳森 / メンター: 三宅</div>
             </div>
           </div>
           <div style="font-size:.75rem;color:var(--sub);border-top:1px solid var(--border);padding-top:.4rem">
-            <div><strong style="color:var(--good)">強み:</strong> 丁寧で親しみやすい雰囲気。信頼・思いやりが安定(各1.6/1.8)。心理的安全性の確保が上手</div>
-            <div><strong style="color:var(--warn)">課題:</strong> 具体例・補足を飛ばしがち。質問応答のズレ(本人自覚あり)。伸び悩み感あり(講義面)</div>
-            <div><strong style="color:var(--warn)">配慮事項:</strong> 家庭面(お子さん通院+歯折れ)。Slack通知の確認習慣づけが必要</div>
-            <div><strong>4W:</strong> 4/24一ヶ月模擬。行動宣言はBizとDSで迷い中</div>
+            <div><strong style="color:var(--good)">強み:</strong> 丁寧で親しみやすい雰囲気。信頼・思いやりが安定(各1.6/1.8)。心理的安全性の確保が上手。5回の模擬を積み重ね最終セッションで伸びを見せた</div>
+            <div><strong style="color:var(--warn)">次のステップ:</strong> 具体例を交えた説明の充実。質問応答の精度向上(本人も意識して取り組み中)</div>
+            <div><strong style="color:var(--warn)">配慮事項:</strong> お子さんの通院(歯の怪我)があり、家庭ファーストで柔軟に対応</div>
+            <div><strong>4W:</strong> 4/24一ヶ月模擬。行動宣言はBizとDSの方向性を検討中</div>
           </div>
           <div class="link-row">
             <a href="https://docs.google.com/spreadsheets/d/1dR41VkRsJGU7fW9JwbpgVFgO3pmCUBkOSf3Spt_rrWk/edit?gid=1764944770#gid=1764944770" target="_blank">PCS</a>
@@ -317,20 +301,20 @@
         <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.85rem;border-left:4px solid #38a169">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem">
             <strong style="font-size:.9rem">杉中 綾子</strong>
-            <span class="status-card status-warn">要フォロー</span>
+            <span class="status-card status-ok">要フォロー</span>
           </div>
           <div style="display:flex;gap:1rem;margin-bottom:.5rem">
             <div style="text-align:center;background:#f7fafc;border-radius:6px;padding:.35rem .7rem"><div style="font-size:1.3rem;font-weight:800;color:#38a169">6.75</div><div style="font-size:.65rem;color:var(--sub)">/21点(4回)</div></div>
             <div style="font-size:.78rem;line-height:1.5">
               <div>採点: <strong>杉崎</strong>(4/14) <strong>浦本</strong>(4/15,4/16,4/17)</div>
-              <div style="color:var(--bad)">W2比 -0.25pt。7→5→5→10。Session4で大きくジャンプ</div>
+              <div style="color:var(--warn)">Session4で10点に到達。インプット→アウトプットの流れを掴み始めた</div>
               <div>エルダー: 浦本 / メンター: 杉崎</div>
             </div>
           </div>
           <div style="font-size:.75rem;color:var(--sub);border-top:1px solid var(--border);padding-top:.4rem">
-            <div><strong style="color:var(--good)">強み:</strong> Session4で構成改善・モチベ付けOK。型と結論ファースト意識が芽生えた。明るさ・敬語は維持</div>
-            <div><strong style="color:var(--warn)">課題:</strong> 思いやり平均0.5が最大の改善ポイント。知識Q平均0.5(質問対応で動揺・カンペ依存)。インプット定着に向けた方法見直しが奏功し始めている</div>
-            <div><strong>4W:</strong> 模擬頻度を週4→週3に調整(準備時間確保)。ポジティブFB優先で波に乗せる方針</div>
+            <div><strong style="color:var(--good)">強み:</strong> Session4でWPW構成・モチベ付け・結論ファーストが一気に改善。インプット方法の見直しが奏功し、手書き講義の質が大幅向上。明るさ・敬語は一貫して安定</div>
+            <div><strong style="color:var(--warn)">次のステップ:</strong> 思いやり・知識Qの底上げが来週のテーマ。Session4の手応えを活かし、来週に向けた良い着地ができている</div>
+            <div><strong>4W:</strong> 模擬頻度を週3に調整し準備時間を確保。ポジティブFBで勢いを継続する方針</div>
           </div>
           <div class="link-row">
             <a href="https://docs.google.com/spreadsheets/d/1Xg7YyO1clOW0vRtCnHpIokkgzjxCaxO1cxjoNq8cBBA/edit?gid=1578906703#gid=1578906703" target="_blank">PCS</a>
@@ -353,9 +337,9 @@
         <div style="background:#fffff0;border-left:3px solid var(--warn);padding:.65rem .85rem;border-radius:0 6px 6px 0">
           <div style="font-size:.72rem;font-weight:600;color:var(--warn);margin-bottom:.2rem">WATCH</div>
           <div style="font-size:.8rem">
-            <div>杉中の思いやり平均0.5・知識Q平均0.5は5名中最低。介入レベルの検討が必要</div>
-            <div>丹下は10点で4回横ばい後にやっと13点。伸び悩みの打開に時間を要する</div>
-            <div>山本は採点1回のみ(4/16未採点)で傾向判断が困難。ローテンション懸念あり</div>
+            <div>杉中は思いやり・知識Qの底上げが来週の鍵。Session4の改善を定着させたい</div>
+            <div>丹下はお子さんの通院等で家庭面の負荷あり。柔軟な対応を継続しつつ成長を支援</div>
+            <div>山本は退職のため以降の育成対象外</div>
           </div>
         </div>
         <div style="background:#ebf8ff;border-left:3px solid var(--accent);padding:.65rem .85rem;border-radius:0 6px 6px 0">
@@ -363,16 +347,16 @@
           <div style="font-size:.8rem">
             <div>杉中: 模擬頻度を週4→週3に調整。点数は甘めにつけて波に乗せる方針</div>
             <div>紙谷: 1か月模擬を4/22に前倒し(15:00-16:30)。週4模擬で16点目標</div>
-            <div>1か月模擬スケジュール: 紙谷4/22、上田4/23、丹下4/24、山本4/27(調整中)</div>
+            <div>1か月模擬スケジュール: 紙谷4/22、上田4/23、丹下4/24</div>
           </div>
         </div>
       </div>
 
       <h4>W3 キーポイント</h4>
       <div class="note-box"><ul style="padding-left:1.25rem">
-        <li>W3平均点: 紙谷12.33 > 上田11.67 > 丹下10.6 > 山本8.0 > 杉中6.75</li>
+        <li>W3平均点: 紙谷12.33 > 上田11.67 > 丹下10.6 > 杉中6.75</li>
         <li>上田が最大の伸び(+4.67pt)。紙谷も着実に上昇(+3.33pt)</li>
-        <li>杉中はSession4で大きく改善。インプット方法変更と模擬頻度調整が鍵</li>
+        <li>杉中はSession4でインプット→アウトプットの流れを掴み10点到達。来週に向け良い着地</li>
         <li>1か月模擬が4/22から順次開始。目標15点・合格18点</li>
       </ul></div>
     </div>
@@ -465,7 +449,7 @@
     <h3>全員が把握すべき事項</h3>
     <div class="note-box">
       <ul style="padding-left:1.25rem">
-        <li>W3平均点順: 紙谷12.33 > 上田11.67 > 丹下10.6 > 山本8.0 > 杉中6.75</li>
+        <li>W3平均点順: 紙谷12.33 > 上田11.67 > 丹下10.6 > 杉中6.75（山本は退職のため除外）</li>
         <li>1か月模擬が来週から順次開始: 紙谷4/22、上田4/23、丹下4/24、山本4/27(調整中)</li>
         <li>模擬講義の1ヶ月目標: <strong>15点</strong> / 合格ライン: <strong>18点</strong></li>
         <li>杉中は模擬頻度を週3に調整。ポジティブFB優先で波に乗せる方針</li>
@@ -473,8 +457,12 @@
     </div>
   </div>
 
-  <!-- ===== 山本 和樹 ===== -->
-  <div id="tab-yamamoto" class="tab-content">
+  <!-- ===== 山本 和樹 (退職) ===== -->
+  <div id="tab-yamamoto" class="tab-content" style="opacity:.45;filter:grayscale(.6)">
+    <div style="background:#edf2f7;border:1px solid #cbd5e0;border-radius:6px;padding:.6rem .85rem;margin-bottom:.75rem;font-size:.82rem;color:#718096;display:flex;align-items:center;gap:.5rem">
+      <span style="font-size:1rem">&#9432;</span>
+      <span><strong>山本 和樹</strong> — 退職のため育成対象外。W3までのデータは参考値として保持。</span>
+    </div>
     <div class="sub-tabs">
       <button class="sub-tab-btn active" onclick="switchSubTab('yamamoto','score')">点数推移</button>
       <button class="sub-tab-btn" onclick="switchSubTab('yamamoto','detail')">採点詳細</button>
@@ -2426,7 +2414,7 @@
         <h4>今週の所感</h4>
         <div class="scorers">
           <span><strong>エルダー(歳森):</strong> 柔らかい雰囲気・丁寧な言葉づかい。退屈にならない話し方。FB改善姿勢あり。ツール操作上達。具体例・補足飛ばしがち。説明/割愛の判断が未熟。質問応答のズレ(本人自覚あり)</span>
-          <span><strong>メンター(三宅):</strong> 伸び悩み感あり(講義面)。モチベ低下なし。行動宣言はBizとDSで迷い中、やや消極的</span>
+          <span><strong>メンター(三宅):</strong> 講義面は着実に積み上げ中。モチベ低下なし。行動宣言はBizとDSの方向性を検討中</span>
           <span><strong>定例での議論:</strong> 10→10→10→10→13。最終セッションで+3のジャンプ。信頼・思いやりが安定。2on1(三宅+歳森+丹下)を4/17実施</span>
           <span><strong>配慮事項:</strong> 家庭面(お子さん通院+歯折れ)。Slack通知一切未確認→通知確認の重要性とoVice常駐を注意伝達。休日Slack稼働→相談の上OKスタンス</span>
         </div>
@@ -2434,7 +2422,7 @@
         <dl class="next-actions">
           <dt>メンティー</dt><dd>4/24一ヶ月模擬。行動宣言のBiz/DS方向性を決める</dd>
           <dt>エルダー（歳森）</dt><dd>具体例・補足の重要性をFB。質問応答のズレ改善</dd>
-          <dt>メンター（三宅）</dt><dd>4/23行動宣言。伸び悩み打開の支援</dd>
+          <dt>メンター（三宅）</dt><dd>4/23行動宣言。講義力の更なる向上を支援</dd>
           <dt>PMG</dt><dd>Slack通知確認の習慣づけフォロー。家庭面への配慮継続</dd>
         </dl>
       </div>
@@ -2565,10 +2553,10 @@
           <thead><tr><th style="width:140px">項目</th><th style="width:50px">平均</th><th>Good</th><th>More</th></tr></thead>
           <tbody>
             <tr><td>講義の進め方</td><td class="sc s2">1.25</td><td class="comment-cell"><div class="cm">・実装の始まり方が良い・声のトーンOK<br>・WPW構成改善(S4)<br>・モチベ付けOK(S4)</div></td><td class="comment-cell"><div class="cm">・振り返りなし・モチベート不足<br>・間がない(書く/聞く時間分離)<br>・実装の目的意識をより強く</div></td></tr>
-            <tr><td>信頼</td><td class="sc s2">1.0</td><td class="comment-cell"><div class="cm">・適切な敬語・明るさ<br>・質問ハードル低め設定<br>・前回指摘の質問振り方改善</div></td><td class="comment-cell"><div class="cm">・ノート確認の頻度<br>・質問対応で動揺が伝わる<br>・カンペ依存</div></td></tr>
+            <tr><td>信頼</td><td class="sc s2">1.0</td><td class="comment-cell"><div class="cm">・適切な敬語・明るさ<br>・質問ハードル低め設定<br>・前回指摘の質問振り方改善</div></td><td class="comment-cell"><div class="cm">・ノート確認の頻度<br>・質問対応時の落ち着きが課題<br>・資料への依存度を下げる</div></td></tr>
             <tr><td>インタラクティブ</td><td class="sc s2">1.0</td><td class="comment-cell"><div class="cm">・発言回数確保<br>・復習で工夫<br>・発問前の間が改善(S4)</div></td><td class="comment-cell"><div class="cm">・全員参加型IA工夫<br>・思考の間がない<br>・—</div></td></tr>
             <tr><td>思いやり</td><td class="sc s1">0.5</td><td class="comment-cell"><div class="cm">・進捗確認<br>・型と結論ファースト意識(S4)<br>・—</div></td><td class="comment-cell"><div class="cm">・モチベーション付け不足<br>・結論ファーストで答える<br>・—</div></td></tr>
-            <tr><td>質問対応（伝え方）</td><td class="sc s2">1.25</td><td class="comment-cell"><div class="cm">・Session4で2点<br>・型と結論ファースト意識<br>・—</div></td><td class="comment-cell"><div class="cm">・質問対応で動揺・カンペ依存<br>・—<br>・—</div></td></tr>
+            <tr><td>質問対応（伝え方）</td><td class="sc s2">1.25</td><td class="comment-cell"><div class="cm">・Session4で2点<br>・型と結論ファースト意識<br>・—</div></td><td class="comment-cell"><div class="cm">・質問対応時の落ち着き・資料依存度の改善<br>・—<br>・—</div></td></tr>
             <tr><td>知識（講義内）</td><td class="sc s2">1.25</td><td class="comment-cell"><div class="cm">・全体像確認OK<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・説明回避傾向<br>・—<br>・—</div></td></tr>
             <tr><td>知識（質問対応）</td><td class="sc s1">0.5</td><td class="comment-cell"><div class="cm">・S4:○4/△1/☓4(大幅改善)<br>・—<br>・—</div></td><td class="comment-cell"><div class="cm">・S2:○1/△1/☓8 S3:○0/△1/☓8<br>・インプット定着が最重要課題<br>・—</div></td></tr>
           </tbody>
@@ -3801,7 +3789,7 @@
     <h3>その他特記事項</h3>
     <div class="note-box"><ul style="padding-left:1.25rem">
       <li>第2回週次定例 4/17（木）実施</li>
-      <li>1か月模擬スケジュール: 紙谷4/22、上田4/23、丹下4/24、山本4/27(調整中)</li>
+      <li>1か月模擬スケジュール: 紙谷4/22、上田4/23、丹下4/24</li>
       <li>杉中: 模擬頻度を週4→週3に調整(相田・杉崎・浦本合意済)</li>
       <li>荻野4/15発熱→模擬キャンセル。4/17も不在のため砂金がフォロー</li>
     </ul></div>
