@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>週次育成レポート（2605）— 2026-05-22</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <style>
+    :root{--bg:#f8f9fa;--card:#fff;--border:#e2e8f0;--text:#1a202c;--sub:#718096;--accent:#3182ce;--accent-light:#ebf8ff;--good:#38a169;--warn:#d69e2e;--bad:#e53e3e}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans",sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+    .container{max-width:1100px;margin:0 auto;padding:1.25rem}
+    a{color:var(--accent)} h1{font-size:1.35rem;margin-bottom:.2rem}
+    .meta{color:var(--sub);font-size:.82rem;margin-bottom:1rem}
+    .back{display:inline-block;margin-bottom:1rem;color:var(--accent);text-decoration:none;font-size:.82rem}
+
+    .tabs{display:flex;gap:2px;border-bottom:2px solid var(--accent);flex-wrap:wrap}
+    .tab-btn{padding:.5rem .9rem;background:#e2e8f0;border:none;border-radius:6px 6px 0 0;cursor:pointer;font-size:.82rem;font-weight:500;color:var(--sub);transition:all .15s}
+    .tab-btn:hover{background:#cbd5e0} .tab-btn.active{background:var(--accent);color:#fff}
+    .tab-content{display:none;background:var(--card);border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px;padding:1.25rem}
+    .tab-content.active{display:block}
+
+    .sub-tabs{display:flex;gap:2px;margin-bottom:1rem}
+    .sub-tab-btn{padding:.3rem .7rem;background:#edf2f7;border:none;border-radius:4px;cursor:pointer;font-size:.78rem;color:var(--sub);transition:all .12s}
+    .sub-tab-btn:hover{background:#e2e8f0} .sub-tab-btn.active{background:var(--accent);color:#fff}
+    .sub-tab-content{display:none} .sub-tab-content.active{display:block}
+
+    .week-tabs{display:flex;gap:2px;margin:.5rem 0}
+    .week-tab-btn{padding:.25rem .6rem;background:#f7fafc;border:1px solid var(--border);border-radius:4px;cursor:pointer;font-size:.75rem;color:var(--sub)}
+    .week-tab-btn:hover{background:#edf2f7} .week-tab-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .week-panel{display:none} .week-panel.active{display:block}
+
+    h3{font-size:.9rem;color:var(--accent);margin:1rem 0 .4rem;padding-bottom:.2rem;border-bottom:1px solid var(--border)} h3:first-child{margin-top:0}
+    h4{font-size:.82rem;color:var(--sub);margin:.5rem 0 .2rem}
+
+    .chart-wrap{max-width:100%;margin:.5rem 0 1rem;background:#f7fafc;border-radius:6px;border:1px solid var(--border);padding:.75rem}
+
+    .summary-table{width:100%;border-collapse:collapse;margin-bottom:1.25rem;font-size:.85rem}
+    .summary-table th{background:var(--accent);color:#fff;padding:.45rem .65rem;text-align:left;font-weight:500}
+    .summary-table td{padding:.45rem .65rem;border-bottom:1px solid var(--border);background:var(--card)}
+
+    .eval-table{width:100%;border-collapse:collapse;font-size:.8rem;margin:.5rem 0}
+    .eval-table th{background:#edf2f7;padding:.3rem .5rem;text-align:left;font-weight:500}
+    .eval-table td{padding:.3rem .5rem;border-bottom:1px solid var(--border)}
+    .eval-table .sc{text-align:center;font-weight:700;width:42px}
+    .s3{color:var(--good);background:#f0fff4} .s2{color:#b7791f;background:#fffff0} .s1{color:var(--bad);background:#fff5f5} .s0{color:#a0aec0}
+
+    .status-card{display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .7rem;border-radius:20px;font-size:.78rem;font-weight:600;margin:.15rem}
+    .status-good{background:#f0fff4;color:var(--good);border:1px solid #c6f6d5}
+    .status-warn{background:#fff5f5;color:var(--bad);border:1px solid #fed7d7}
+    .status-ok{background:#fffff0;color:var(--warn);border:1px solid #fefcbf}
+
+    .score-bar{display:flex;align-items:center;gap:1rem;background:var(--accent-light);padding:.4rem .8rem;border-radius:6px;font-size:.83rem;margin:.4rem 0;flex-wrap:wrap}
+    .score-bar .label{color:var(--sub)} .score-bar .value{font-weight:700;color:var(--accent)}
+
+    .item-avg-table{width:100%;border-collapse:collapse;font-size:.8rem;margin:.5rem 0;table-layout:fixed}
+    .item-avg-table th{background:#edf2f7;padding:.3rem .5rem;text-align:left;font-weight:500}
+    .item-avg-table th:nth-child(1){width:140px} .item-avg-table th:nth-child(2){width:50px} .item-avg-table th:nth-child(3),.item-avg-table th:nth-child(4){width:calc((100% - 190px)/2)}
+    .item-avg-table td{padding:.3rem .5rem;border-bottom:1px solid var(--border);vertical-align:top}
+    .item-avg-table .sc{text-align:center;font-weight:700;width:50px}
+    .item-avg-table tr{height:4rem}
+    .item-avg-table .comment-cell{font-size:.78rem;height:3.2rem;overflow:hidden;line-height:1.4;max-width:280px}
+
+    .comment-block{margin:.6rem 0}
+    .comment-item{background:#f7fafc;border-left:3px solid var(--border);padding:.4rem .65rem;margin:.3rem 0;border-radius:0 5px 5px 0;font-size:.82rem}
+    .comment-item.good-border{border-left-color:var(--good)} .comment-item.more-border{border-left-color:var(--warn)}
+    .comment-label{font-size:.72rem;font-weight:600;text-transform:uppercase;margin-bottom:.1rem}
+    .comment-label.good{color:var(--good)} .comment-label.more{color:var(--warn)}
+
+    .insight{margin:.2rem 0;padding-left:1rem;position:relative;font-size:.83rem} .insight::before{content:"•";position:absolute;left:0;color:var(--accent)}
+    .issue-box{background:#fffbeb;border-left:3px solid var(--warn);padding:.5rem .75rem;margin:.4rem 0;border-radius:0 6px 6px 0;font-size:.83rem}
+    .next-actions{margin:.4rem 0} .next-actions dt{font-weight:600;font-size:.76rem;color:var(--sub);margin-top:.3rem} .next-actions dd{margin-left:1rem;font-size:.83rem}
+    .note-box{background:#f0fff4;border-left:3px solid var(--good);padding:.5rem .75rem;margin:.75rem 0;border-radius:0 6px 6px 0;font-size:.83rem}
+    .footer{margin-top:1.25rem;padding-top:.6rem;border-top:1px solid var(--border);color:var(--sub);font-size:.72rem}
+    .cm{font-size:.76rem;line-height:1.45;height:3.2rem;overflow:hidden}
+    .new-score{background:#e6fffa !important;font-weight:800}
+    .empty-state{text-align:center;padding:2rem;color:var(--sub);font-size:.9rem}
+  </style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../../index.html">&larr; レポート一覧</a>
+  <h1>週次育成レポート（2605コホート）</h1>
+  <p class="meta">2026-05-22（W3）&nbsp;|&nbsp;入社3週目&nbsp;|&nbsp;ML インプット・模擬講義開始&nbsp;|&nbsp;メンバー: 蝦名 真理子・吉田 康平</p>
+
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('summary')">サマリ</button>
+    <button class="tab-btn" onclick="switchTab('ebina')">蝦名</button>
+    <button class="tab-btn" onclick="switchTab('yoshida')">吉田</button>
+    <button class="tab-btn" onclick="switchTab('notes')">その他</button>
+  </div>
+
+  <!-- ===== サマリ ===== -->
+  <div id="tab-summary" class="tab-content active">
+    <h3>全員の点数推移</h3>
+    <div class="chart-wrap" style="max-width:100%;height:320px"><canvas id="chartAll"></canvas></div>
+
+    <div class="week-tabs">
+      <button class="week-tab-btn" onclick="switchSummaryWeek(1)">W1</button>
+      <button class="week-tab-btn" onclick="switchSummaryWeek(2)">W2</button>
+      <button class="week-tab-btn active" onclick="switchSummaryWeek(3)">W3</button>
+      <button class="week-tab-btn" onclick="switchSummaryWeek(4)">W4</button>
+      <button class="week-tab-btn" onclick="switchSummaryWeek(5)">W5</button>
+      <button class="week-tab-btn" onclick="switchSummaryWeek(6)">W6</button>
+      <button class="week-tab-btn" onclick="switchSummaryWeek(7)">W7</button>
+      <button class="week-tab-btn" onclick="switchSummaryWeek(8)">W8</button>
+      <button class="week-tab-btn" onclick="switchSummaryWeek(9)">W9</button>
+      <button class="week-tab-btn" onclick="switchSummaryWeek(10)">W10</button>
+    </div>
+
+    <!-- Summary W1 -->
+    <div id="summary-w1" class="week-panel">
+      <h3>ステータス一覧（W1: 全社オンボーディング）</h3>
+      <table class="summary-table">
+        <thead><tr><th>名前</th><th>点数</th><th>前回比</th><th>ステータス</th><th>要点</th></tr></thead>
+        <tbody>
+          <tr><td>蝦名 真理子</td><td>—</td><td>—</td><td><span class="status-card status-good">問題なし</span></td><td>全社オンボーディング中</td></tr>
+          <tr><td>吉田 康平</td><td>—</td><td>—</td><td><span class="status-card status-good">問題なし</span></td><td>全社オンボーディング中</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Summary W2 -->
+    <div id="summary-w2" class="week-panel">
+      <h3>ステータス一覧（W2: 全社オンボーディング）</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:.75rem;margin:.75rem 0">
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.85rem;border-left:4px solid #805ad5">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem">
+            <strong style="font-size:.9rem">蝦名 真理子</strong>
+            <span class="status-card status-ok">やや注意</span>
+          </div>
+          <div style="font-size:.78rem;line-height:1.6">
+            <div>エルダー: 歳森 / メンター: 村上</div>
+            <div style="color:var(--warn)">W1 Day3 体調不良で全社オンボ欠席</div>
+            <div>歳森が Notion メモページ（模擬講義計画含む）を共有済み</div>
+          </div>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.85rem;border-left:4px solid #3182ce">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem">
+            <strong style="font-size:.9rem">吉田 康平</strong>
+            <span class="status-card status-good">問題なし</span>
+          </div>
+          <div style="font-size:.78rem;line-height:1.6">
+            <div>エルダー: 浦本 / メンター: 沖廣</div>
+            <div>模擬講義体制確定: 週3 浦本、週1 沖廣（90分枠）</div>
+            <div>行動宣言 6/1、1ヶ月模擬 6/2 仮押さえ済</div>
+          </div>
+        </div>
+      </div>
+      <h4>W2 キーポイント</h4>
+      <div class="note-box">
+        <ul style="padding-left:1.25rem">
+          <li>両メンバーとも全社オンボーディング期間（W1-W2）</li>
+          <li>蝦名さん: 体調不良で Day3 欠席。体調回復後の状況フォロー要</li>
+          <li>吉田さん: 模擬講義・行動宣言・定例の体制が確定。スムーズなスタートが見込める</li>
+          <li>初回定例は 5/15（金）、浦本担当</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Summary W3 -->
+    <div id="summary-w3" class="week-panel active">
+      <h3>ステータス一覧（W3: ML インプット・模擬講義開始）</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:.75rem;margin:.75rem 0">
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.85rem;border-left:4px solid #805ad5">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem">
+            <strong style="font-size:.9rem">蝦名 真理子</strong>
+            <span class="status-card status-good">順調</span>
+          </div>
+          <div style="font-size:.78rem;line-height:1.6">
+            <div><strong>10 pt</strong>（初回）| 1 セッション | 採点: 歳森</div>
+            <div>教員経験を活かした話し方が高評価。型の習得が次のステップ</div>
+            <div>エルダー所見: すぐに 15pt に到達しそうなポテンシャル</div>
+          </div>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.85rem;border-left:4px solid #3182ce">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem">
+            <strong style="font-size:.9rem">吉田 康平</strong>
+            <span class="status-card status-good">順調</span>
+          </div>
+          <div style="font-size:.78rem;line-height:1.6">
+            <div><strong>最終 11 pt</strong>（初回 8pt → +3）| 2 セッション | 採点: 浦本</div>
+            <div>FB の打ち返し能力が非常に高い。初回→2回目で大幅改善</div>
+            <div>行動宣言タッチポイント① 実施済み（5/14）</div>
+          </div>
+        </div>
+      </div>
+      <h4>W3 キーポイント</h4>
+      <div class="note-box">
+        <ul style="padding-left:1.25rem">
+          <li>両メンバーとも模擬講義を開始。初回としては良好なスタート</li>
+          <li>吉田さん: AI 採点 → 対面模擬講義のサイクルが確立。早期登壇テスト合格を視野に</li>
+          <li>蝦名さん: 講師としてのスキルセットのポテンシャルが高い。インプット範囲の拡大と型の習得がポイント</li>
+          <li>蝦名さんの行動宣言日程仮設定が急務（吉田さん側は 6/1 確定済み）</li>
+          <li>初回定例（5/15）実施済み — 次回 5/22 は沖廣担当</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Summary W4-W10 (placeholder) -->
+    <div id="summary-w4" class="week-panel"><div class="empty-state">W4 データ未取得</div></div>
+    <div id="summary-w5" class="week-panel"><div class="empty-state">W5 データ未取得</div></div>
+    <div id="summary-w6" class="week-panel"><div class="empty-state">W6 データ未取得</div></div>
+    <div id="summary-w7" class="week-panel"><div class="empty-state">W7 データ未取得</div></div>
+    <div id="summary-w8" class="week-panel"><div class="empty-state">W8 データ未取得</div></div>
+    <div id="summary-w9" class="week-panel"><div class="empty-state">W9 データ未取得</div></div>
+    <div id="summary-w10" class="week-panel"><div class="empty-state">W10 データ未取得</div></div>
+  </div>
+
+  <!-- ===== 蝦名 真理子 ===== -->
+  <div id="tab-ebina" class="tab-content">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+      <div><strong style="font-size:1rem">蝦名 真理子</strong><span style="color:var(--sub);font-size:.8rem;margin-left:.5rem">エルダー: 歳森 / メンター: 村上</span></div>
+    </div>
+
+    <div class="sub-tabs">
+      <button class="sub-tab-btn active" onclick="switchSubTab('ebina','detail')">点数推移</button>
+      <button class="sub-tab-btn" onclick="switchSubTab('ebina','range')">範囲別スコア</button>
+      <button class="sub-tab-btn" onclick="switchSubTab('ebina','actions')">所感・アクション</button>
+    </div>
+
+    <!-- 点数推移 -->
+    <div id="ebina-detail" class="sub-tab-content active">
+      <h3>点数推移（合計）</h3>
+      <div class="chart-wrap" style="max-width:100%;height:280px"><canvas id="chartEbina"></canvas></div>
+
+      <h3>項目別 週平均推移</h3>
+      <table class="eval-table">
+        <thead><tr><th>項目</th><th>W1</th><th>W2</th><th>W3</th><th>W4</th><th>W5</th><th>W6</th><th>W7</th><th>W8</th><th>W9</th><th>W10</th></tr></thead>
+        <tbody>
+          <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s1 new-score">1</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+          <tr><td>信頼</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s1 new-score">1</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+          <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s1 new-score">1</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+          <tr><td>思いやり</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s2 new-score">2</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+          <tr><td>質問対応</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s1 new-score">1</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+          <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s2 new-score">2</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+          <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s2 new-score">2</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+          <tr style="font-weight:700;background:#f7fafc"><td>合計</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s1 new-score">10</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+        </tbody>
+      </table>
+
+      <h3>採点詳細</h3>
+      <div class="week-tabs">
+        <button class="week-tab-btn" onclick="switchMemberDetailWeek('ebina',1)">W1</button>
+        <button class="week-tab-btn" onclick="switchMemberDetailWeek('ebina',2)">W2</button>
+        <button class="week-tab-btn active" onclick="switchMemberDetailWeek('ebina',3)">W3</button>
+        <button class="week-tab-btn" onclick="switchMemberDetailWeek('ebina',4)">W4</button>
+        <button class="week-tab-btn" onclick="switchMemberDetailWeek('ebina',5)">W5</button>
+        <button class="week-tab-btn" onclick="switchMemberDetailWeek('ebina',6)">W6</button>
+        <button class="week-tab-btn" onclick="switchMemberDetailWeek('ebina',7)">W7</button>
+        <button class="week-tab-btn" onclick="switchMemberDetailWeek('ebina',8)">W8</button>
+        <button class="week-tab-btn" onclick="switchMemberDetailWeek('ebina',9)">W9</button>
+        <button class="week-tab-btn" onclick="switchMemberDetailWeek('ebina',10)">W10</button>
+      </div>
+      <div id="ebina-detail-w1" class="week-panel"><div class="empty-state">W1 全社オンボーディング（採点なし）</div></div>
+      <div id="ebina-detail-w2" class="week-panel"><div class="empty-state">W2 全社オンボーディング（採点なし）</div></div>
+      <div id="ebina-detail-w3" class="week-panel active">
+        <div class="score-bar">
+          <span class="label">合計:</span><span class="value">10 pt</span>
+          <span class="label">セッション:</span><span class="value">1 回</span>
+          <span class="label">採点者:</span><span class="value">歳森</span>
+          <span class="label">範囲:</span><span class="value">手書き: 回帰の基礎 / 実装: データセットの準備</span>
+        </div>
+        <table class="item-avg-table">
+          <thead><tr><th>項目</th><th>平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s1">1</td><td class="comment-cell cm">・今後の流れを紹介しながら進行。<br>・実装冒頭で「覚えなくてよい」と濃淡をつけるのがよい。</td><td class="comment-cell cm">・持ち帰ってほしいポイントの強調。<br>・休憩明けの復習→実装確認の流れを意識する。</td></tr>
+            <tr><td>信頼</td><td class="sc s1">1</td><td class="comment-cell cm">・進行が丁寧で見通しが立てやすい。<br>・ハキハキしていて聞きやすく声もよい。<br>・目線も適切。</td><td class="comment-cell cm">・受講生のマイクミュート管理。<br>・一時停止や共有停止の活用。<br>・実装パートでの自信構築が次のステップ。</td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s1">1</td><td class="comment-cell cm">・受講者に呼びかけながら進められている。<br>・置いてきぼりにしている印象がない。</td><td class="comment-cell cm">・リアクションマークの使い方を指定する。<br>・発問は繰り返す。<br>・発問のタイミングを明確にする。</td></tr>
+            <tr><td>思いやり</td><td class="sc s2">2</td><td class="comment-cell cm">・喋り・記述のペースがちょうどよい。<br>・文字の大きさ適切。<br>・Fuwari やスクリーンブラシも活用できている。</td><td class="comment-cell cm">・書いたものを消さず次ページへ。<br>・ノートブックのタブ削減と予測オフ。</td></tr>
+            <tr><td>質問対応</td><td class="sc s1">1</td><td class="comment-cell cm">・基本的に返答が明瞭でよい。</td><td class="comment-cell cm">・基本的な型（感謝→復唱→結論→確認）を意識する。<br>・持ち帰りの手法をマスターする。</td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s2">2</td><td class="comment-cell cm">・説明箇所では大きく違和感なし。</td><td class="comment-cell cm">・実装の基礎（インスタンス化等）の理解を深める。</td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s2">2</td><td class="comment-cell cm">・5 問中 4 問正解（80%）。</td><td class="comment-cell cm">・分類と回帰の違いの説明を整理する。</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="ebina-detail-w4" class="week-panel"><div class="empty-state">W4 データ未取得</div></div>
+      <div id="ebina-detail-w5" class="week-panel"><div class="empty-state">W5 データ未取得</div></div>
+      <div id="ebina-detail-w6" class="week-panel"><div class="empty-state">W6 データ未取得</div></div>
+      <div id="ebina-detail-w7" class="week-panel"><div class="empty-state">W7 データ未取得</div></div>
+      <div id="ebina-detail-w8" class="week-panel"><div class="empty-state">W8 データ未取得</div></div>
+      <div id="ebina-detail-w9" class="week-panel"><div class="empty-state">W9 データ未取得</div></div>
+      <div id="ebina-detail-w10" class="week-panel"><div class="empty-state">W10 データ未取得</div></div>
+    </div>
+
+    <!-- 範囲別スコア -->
+    <div id="ebina-range" class="sub-tab-content">
+      <h3>範囲別スコア</h3>
+      <div class="week-tabs">
+        <button class="week-tab-btn" onclick="switchMemberRangeWeek('ebina',1)">W1</button>
+        <button class="week-tab-btn" onclick="switchMemberRangeWeek('ebina',2)">W2</button>
+        <button class="week-tab-btn active" onclick="switchMemberRangeWeek('ebina',3)">W3</button>
+        <button class="week-tab-btn" onclick="switchMemberRangeWeek('ebina',4)">W4</button>
+        <button class="week-tab-btn" onclick="switchMemberRangeWeek('ebina',5)">W5</button>
+        <button class="week-tab-btn" onclick="switchMemberRangeWeek('ebina',6)">W6</button>
+        <button class="week-tab-btn" onclick="switchMemberRangeWeek('ebina',7)">W7</button>
+        <button class="week-tab-btn" onclick="switchMemberRangeWeek('ebina',8)">W8</button>
+        <button class="week-tab-btn" onclick="switchMemberRangeWeek('ebina',9)">W9</button>
+        <button class="week-tab-btn" onclick="switchMemberRangeWeek('ebina',10)">W10</button>
+      </div>
+      <div id="ebina-range-w1" class="week-panel"><div class="empty-state">W1 全社オンボーディング（採点なし）</div></div>
+      <div id="ebina-range-w2" class="week-panel"><div class="empty-state">W2 全社オンボーディング（採点なし）</div></div>
+      <div id="ebina-range-w3" class="week-panel active">
+        <h4>模擬講義実施範囲（W3 時点）</h4>
+        <table class="eval-table">
+          <thead><tr><th>章</th><th>節</th><th>手書き録画</th><th>手書き模擬1</th><th>実装録画</th><th>実装模擬1</th></tr></thead>
+          <tbody>
+            <tr><td>—</td><td>自己紹介</td><td class="sc s3">済</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+            <tr style="background:#e6fffa"><td>回帰1</td><td>重回帰分析</td><td class="sc s3">済</td><td class="sc s3">済</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
+            <tr><td>回帰1</td><td>データセットの準備〜実装</td><td class="sc s3">済</td><td class="sc s0">—</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
+            <tr><td>回帰1</td><td>過学習</td><td class="sc s3">済</td><td class="sc s0">—</td><td class="sc s3">済</td><td class="sc s0">—</td></tr>
+            <tr><td>回帰1</td><td>Ridge・Lasso</td><td class="sc s3">済</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+            <tr><td>前処理</td><td>標準化</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s3">済</td><td class="sc s0">—</td></tr>
+          </tbody>
+        </table>
+        <div class="note-box">
+          <strong>W3 模擬講義:</strong> 1 回実施（5/14, 歳森採点）。範囲: 回帰の基礎（手書き）+ データセットの準備（実装）。<br>
+          エルダー所見: 1 回にかける時間が長くなりがち。回数を回して一周させることを優先したい。
+        </div>
+      </div>
+      <div id="ebina-range-w4" class="week-panel"><div class="empty-state">W4 データ未取得</div></div>
+      <div id="ebina-range-w5" class="week-panel"><div class="empty-state">W5 データ未取得</div></div>
+      <div id="ebina-range-w6" class="week-panel"><div class="empty-state">W6 データ未取得</div></div>
+      <div id="ebina-range-w7" class="week-panel"><div class="empty-state">W7 データ未取得</div></div>
+      <div id="ebina-range-w8" class="week-panel"><div class="empty-state">W8 データ未取得</div></div>
+      <div id="ebina-range-w9" class="week-panel"><div class="empty-state">W9 データ未取得</div></div>
+      <div id="ebina-range-w10" class="week-panel"><div class="empty-state">W10 データ未取得</div></div>
+    </div>
+
+    <!-- 所感・アクション -->
+    <div id="ebina-actions" class="sub-tab-content">
+      <h3>所感・アクション</h3>
+      <div class="week-tabs">
+        <button class="week-tab-btn" onclick="switchMemberActionsWeek('ebina',1)">W1</button>
+        <button class="week-tab-btn" onclick="switchMemberActionsWeek('ebina',2)">W2</button>
+        <button class="week-tab-btn active" onclick="switchMemberActionsWeek('ebina',3)">W3</button>
+        <button class="week-tab-btn" onclick="switchMemberActionsWeek('ebina',4)">W4</button>
+        <button class="week-tab-btn" onclick="switchMemberActionsWeek('ebina',5)">W5</button>
+        <button class="week-tab-btn" onclick="switchMemberActionsWeek('ebina',6)">W6</button>
+        <button class="week-tab-btn" onclick="switchMemberActionsWeek('ebina',7)">W7</button>
+        <button class="week-tab-btn" onclick="switchMemberActionsWeek('ebina',8)">W8</button>
+        <button class="week-tab-btn" onclick="switchMemberActionsWeek('ebina',9)">W9</button>
+        <button class="week-tab-btn" onclick="switchMemberActionsWeek('ebina',10)">W10</button>
+      </div>
+      <div id="ebina-actions-w1" class="week-panel"><div class="empty-state">W1 全社オンボーディング</div></div>
+      <div id="ebina-actions-w2" class="week-panel">
+        <h4>育成連携スレッド情報（W1-W2）</h4>
+        <div class="issue-box">W1 Day3（5/8）体調不良で全社オンボーディング欠席。篠原さんが西川さん含め DM 済。体調回復後のフォロー状況を確認する。</div>
+        <div class="insight">歳森（エルダー）が Notion メモページを村上（メンター）と共有済み。模擬講義計画も掲載。</div>
+        <h4>次週に向けて</h4>
+        <dl class="next-actions">
+          <dt>エルダー（歳森）</dt><dd>W2 のオンボ進捗確認。体調フォロー。</dd>
+          <dt>メンター（村上）</dt><dd>朝会で様子確認。メンタルケア。</dd>
+          <dt>PMG</dt><dd>W3 の ML インプット・模擬講義初回の準備確認。</dd>
+        </dl>
+      </div>
+      <div id="ebina-actions-w3" class="week-panel active">
+        <h4>エルダー所感（歳森）— 講師力・技術・模擬講義</h4>
+        <div class="comment-block">
+          <div class="comment-item good-border"><div class="comment-label good">Good</div>
+            ・教員経験からか、基本的に話すのが上手。<br>
+            ・説明が上手＋明るい雰囲気＋ユーモアで講師スキルセットのポテンシャルが高い。<br>
+            ・型が身に着けられればすぐに 15pt に到達しそう。
+          </div>
+          <div class="comment-item more-border"><div class="comment-label more">More</div>
+            ・型（W-P-W 構成、質問対応の型）がまだ身についていない。<br>
+            ・実装パートでの自信構築が次のステップ。<br>
+            ・丁寧にインプットするタイプで進行ペースに注意。1 回にかける時間を短くし回数を回すことを優先したい。
+          </div>
+        </div>
+
+        <h4>メンター所感（村上）— マインド・適応・行動宣言</h4>
+        <div class="comment-block">
+          <div class="comment-item good-border"><div class="comment-label good">Good</div>
+            ・言語化能力が素晴らしい。自身の解釈をしっかりと言葉にした上で対話や質問ができる。<br>
+            ・全社会や部門定例の内容を確実に吸収している。<br>
+            ・価値を出したいという意識の表れ自体は非常に大切。
+          </div>
+          <div class="comment-item more-border"><div class="comment-label more">More</div>
+            ・自信をつけることが次のステップ。過剰にプレッシャーをかけすぎている印象あり。<br>
+            ・研修期間は「昨日の自分を上回れたか」にフォーカスしてもよいのでは。<br>
+            ・公教育バックグラウンドで興味がスクール寄り。事業部・部門理解を踏まえ方向性は慎重に決めたい。
+          </div>
+        </div>
+
+        <h4>改善すべき箇所</h4>
+        <div class="issue-box">GW で冒頭が削られていることを考慮すると、模擬講義のペースは早くはない。現状だと 1 ヶ月模擬講義の範囲は 2 日目の途中になりそう。AI 採点を活用して模擬講義の回数を確保する方向で調整。</div>
+        <div class="issue-box">行動宣言の日程仮設定が急務。吉田さん側はすでに設定済みで焦りあり。登壇の関係もあり小林さん・駿さんの空きが非常に少ない。</div>
+
+        <h4>ネクストアクション</h4>
+        <dl class="next-actions">
+          <dt>メンティー（蝦名）</dt><dd>模擬講義の回数を増やす（AI 採点も活用）。行動宣言に向けた部門理解の進行。</dd>
+          <dt>エルダー（歳森）</dt><dd>行動宣言の日程仮設定。AI 採点→模擬講義フローの確立。</dd>
+          <dt>メンター（村上）</dt><dd>来週の目標点をすり合わせ。メンタルケア継続。</dd>
+          <dt>PMG</dt><dd>行動宣言スケジュールの調整支援。</dd>
+          <dt>部門人事</dt><dd>—</dd>
+        </dl>
+      </div>
+      <div id="ebina-actions-w4" class="week-panel"><div class="empty-state">W4 所感・アクション未取得</div></div>
+      <div id="ebina-actions-w5" class="week-panel"><div class="empty-state">W5 所感・アクション未取得</div></div>
+      <div id="ebina-actions-w6" class="week-panel"><div class="empty-state">W6 所感・アクション未取得</div></div>
+      <div id="ebina-actions-w7" class="week-panel"><div class="empty-state">W7 所感・アクション未取得</div></div>
+      <div id="ebina-actions-w8" class="week-panel"><div class="empty-state">W8 所感・アクション未取得</div></div>
+      <div id="ebina-actions-w9" class="week-panel"><div class="empty-state">W9 所感・アクション未取得</div></div>
+      <div id="ebina-actions-w10" class="week-panel"><div class="empty-state">W10 所感・アクション未取得</div></div>
+    </div>
+  </div>
+
+  <!-- ===== 吉田 康平 ===== -->
+  <div id="tab-yoshida" class="tab-content">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+      <div><strong style="font-size:1rem">吉田 康平</strong><span style="color:var(--sub);font-size:.8rem;margin-left:.5rem">エルダー: 浦本 / メンター: 沖廣</span></div>
+    </div>
+
+    <div class="sub-tabs">
+      <button class="sub-tab-btn active" onclick="switchSubTab('yoshida','detail')">点数推移</button>
+      <button class="sub-tab-btn" onclick="switchSubTab('yoshida','range')">範囲別スコア</button>
+      <button class="sub-tab-btn" onclick="switchSubTab('yoshida','actions')">所感・アクション</button>
+    </div>
+
+    <!-- 点数推移 -->
+    <div id="yoshida-detail" class="sub-tab-content active">
+      <h3>点数推移（合計）</h3>
+      <div class="chart-wrap" style="max-width:100%;height:280px"><canvas id="chartYoshida"></canvas></div>
+
+      <h3>項目別 週平均推移</h3>
+      <table class="eval-table">
+        <thead><tr><th>項目</th><th>W1</th><th>W2</th><th>W3</th><th>W4</th><th>W5</th><th>W6</th><th>W7</th><th>W8</th><th>W9</th><th>W10</th></tr></thead>
+        <tbody>
+          <tr><td>講義の進め方</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s1 new-score">1.5</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+          <tr><td>信頼</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s1 new-score">1.0</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+          <tr><td>インタラクティブ</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s1 new-score">1.0</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+          <tr><td>思いやり</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s1 new-score">1.5</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+          <tr><td>質問対応</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s2 new-score">2.0</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+          <tr><td>知識（講義内）</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s1 new-score">1.5</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+          <tr><td>知識（質問対応）</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s1 new-score">1.0</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+          <tr style="font-weight:700;background:#f7fafc"><td>合計</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s1 new-score">9.5</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+        </tbody>
+      </table>
+
+      <h3>採点詳細</h3>
+      <div class="week-tabs">
+        <button class="week-tab-btn" onclick="switchMemberDetailWeek('yoshida',1)">W1</button>
+        <button class="week-tab-btn" onclick="switchMemberDetailWeek('yoshida',2)">W2</button>
+        <button class="week-tab-btn active" onclick="switchMemberDetailWeek('yoshida',3)">W3</button>
+        <button class="week-tab-btn" onclick="switchMemberDetailWeek('yoshida',4)">W4</button>
+        <button class="week-tab-btn" onclick="switchMemberDetailWeek('yoshida',5)">W5</button>
+        <button class="week-tab-btn" onclick="switchMemberDetailWeek('yoshida',6)">W6</button>
+        <button class="week-tab-btn" onclick="switchMemberDetailWeek('yoshida',7)">W7</button>
+        <button class="week-tab-btn" onclick="switchMemberDetailWeek('yoshida',8)">W8</button>
+        <button class="week-tab-btn" onclick="switchMemberDetailWeek('yoshida',9)">W9</button>
+        <button class="week-tab-btn" onclick="switchMemberDetailWeek('yoshida',10)">W10</button>
+      </div>
+      <div id="yoshida-detail-w1" class="week-panel"><div class="empty-state">W1 全社オンボーディング（採点なし）</div></div>
+      <div id="yoshida-detail-w2" class="week-panel"><div class="empty-state">W2 全社オンボーディング（採点なし）</div></div>
+      <div id="yoshida-detail-w3" class="week-panel active">
+        <div class="score-bar" style="margin-bottom:.2rem">
+          <span class="label">1回目（5/13）:</span><span class="value">8 pt</span>
+          <span class="label">採点者:</span><span class="value">浦本</span>
+          <span class="label">範囲:</span><span class="value">重回帰分析</span>
+        </div>
+        <div class="score-bar">
+          <span class="label">2回目（5/14）:</span><span class="value">11 pt（+3）</span>
+          <span class="label">採点者:</span><span class="value">浦本</span>
+          <span class="label">範囲:</span><span class="value">データセットの準備〜実装</span>
+        </div>
+        <table class="item-avg-table">
+          <thead><tr><th>項目</th><th>平均</th><th>Good</th><th>More</th></tr></thead>
+          <tbody>
+            <tr><td>講義の進め方</td><td class="sc s1">1.5</td><td class="comment-cell cm">・具体例や言い換えを使い伝える工夫がある。<br>・受講生に実務を想像させる働きかけができている。<br>・まとめもしっかりできている。</td><td class="comment-cell cm">・最初の Whole で復習→内容→モチベ付を意識する。<br>・最後の Whole で重要点を再強調する。</td></tr>
+            <tr><td>信頼</td><td class="sc s1">1.0</td><td class="comment-cell cm">・明るい雰囲気で丁寧な言葉遣い。<br>・エラーがあっても落ち着いて進行できている。</td><td class="comment-cell cm">・手書きの練習が必要。丁寧に見える板書を心がける。<br>・フィラーワードの改善。<br>・画面共有時の環境整備が必要。</td></tr>
+            <tr><td>インタラクティブ</td><td class="sc s1">1.0</td><td class="comment-cell cm">・チャットワークを早い段階で組み込めている。<br>・受講生とラリーしながら進められている。</td><td class="comment-cell cm">・手書きパートのインタラクティブを増やす。<br>・ミュート管理の声がけをセットにする。<br>・進度確認は消えない絵文字を使用する。</td></tr>
+            <tr><td>思いやり</td><td class="sc s1">1.5</td><td class="comment-cell cm">・ポインターの視覚的活用ができている。<br>・受講生の疑問を先出しで質問できている。<br>・Fuwari を活用した説明ができている。</td><td class="comment-cell cm">・指示語を避け具体的に伝える。<br>・書く時間/聞く時間を明示する。<br>・手書きは 1 ページ全体が見える形を保つ。</td></tr>
+            <tr><td>質問対応</td><td class="sc s2">2.0</td><td class="comment-cell cm">・感謝 OK。復唱 OK。結論ファースト OK。<br>・前回 FB の打ち返しが完璧。</td><td class="comment-cell cm">・共感を意識するとより自然に。<br>・持ち帰り時の信頼を下げない言い方を工夫する。</td></tr>
+            <tr><td>知識（講義内）</td><td class="sc s1">1.5</td><td class="comment-cell cm">・基本的な講義内容は正確。<br>・コードの中身にも触れられている。<br>・読み込んだデータの中身もしっかり確認。</td><td class="comment-cell cm">・コードの中身を詳しく伝える。<br>・= は右辺から説明する。<br>・今後につながる部分を強調し動画一周を目指す。</td></tr>
+            <tr><td>知識（質問対応）</td><td class="sc s1">1.0</td><td class="comment-cell cm">・1回目: 5問中4問正解。<br>・2回目: 3問正解、持ち帰り対応 OK。</td><td class="comment-cell cm">・データセット分割やデフォルト引数の知識を整理する。<br>・持ち帰りの仕方を定型化する。</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="yoshida-detail-w4" class="week-panel"><div class="empty-state">W4 データ未取得</div></div>
+      <div id="yoshida-detail-w5" class="week-panel"><div class="empty-state">W5 データ未取得</div></div>
+      <div id="yoshida-detail-w6" class="week-panel"><div class="empty-state">W6 データ未取得</div></div>
+      <div id="yoshida-detail-w7" class="week-panel"><div class="empty-state">W7 データ未取得</div></div>
+      <div id="yoshida-detail-w8" class="week-panel"><div class="empty-state">W8 データ未取得</div></div>
+      <div id="yoshida-detail-w9" class="week-panel"><div class="empty-state">W9 データ未取得</div></div>
+      <div id="yoshida-detail-w10" class="week-panel"><div class="empty-state">W10 データ未取得</div></div>
+    </div>
+
+    <!-- 範囲別スコア -->
+    <div id="yoshida-range" class="sub-tab-content">
+      <h3>範囲別スコア</h3>
+      <div class="week-tabs">
+        <button class="week-tab-btn" onclick="switchMemberRangeWeek('yoshida',1)">W1</button>
+        <button class="week-tab-btn" onclick="switchMemberRangeWeek('yoshida',2)">W2</button>
+        <button class="week-tab-btn active" onclick="switchMemberRangeWeek('yoshida',3)">W3</button>
+        <button class="week-tab-btn" onclick="switchMemberRangeWeek('yoshida',4)">W4</button>
+        <button class="week-tab-btn" onclick="switchMemberRangeWeek('yoshida',5)">W5</button>
+        <button class="week-tab-btn" onclick="switchMemberRangeWeek('yoshida',6)">W6</button>
+        <button class="week-tab-btn" onclick="switchMemberRangeWeek('yoshida',7)">W7</button>
+        <button class="week-tab-btn" onclick="switchMemberRangeWeek('yoshida',8)">W8</button>
+        <button class="week-tab-btn" onclick="switchMemberRangeWeek('yoshida',9)">W9</button>
+        <button class="week-tab-btn" onclick="switchMemberRangeWeek('yoshida',10)">W10</button>
+      </div>
+      <div id="yoshida-range-w1" class="week-panel"><div class="empty-state">W1 全社オンボーディング（採点なし）</div></div>
+      <div id="yoshida-range-w2" class="week-panel"><div class="empty-state">W2 全社オンボーディング（採点なし）</div></div>
+      <div id="yoshida-range-w3" class="week-panel active">
+        <h4>模擬講義実施範囲（W3 時点）</h4>
+        <table class="eval-table">
+          <thead><tr><th>章</th><th>節</th><th>手書き模擬1</th><th>実装模擬1</th></tr></thead>
+          <tbody>
+            <tr style="background:#e6fffa"><td>回帰1</td><td>重回帰分析</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
+            <tr style="background:#e6fffa"><td>回帰1</td><td>データセットの準備〜実装</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
+            <tr><td>回帰1</td><td>過学習</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+            <tr><td>回帰1</td><td>Ridge・Lasso</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
+          </tbody>
+        </table>
+        <div class="note-box">
+          <strong>W3 模擬講義:</strong> 2 回実施（5/13, 5/14 いずれも浦本採点）。AI 採点→対面模擬講義のサイクルが確立。<br>
+          エルダー所見: FB の打ち返し能力が相当高い。内容面のインプットもコードの中身までしっかりできている。早期登壇テスト合格を目指そう！
+        </div>
+      </div>
+      <div id="yoshida-range-w4" class="week-panel"><div class="empty-state">W4 データ未取得</div></div>
+      <div id="yoshida-range-w5" class="week-panel"><div class="empty-state">W5 データ未取得</div></div>
+      <div id="yoshida-range-w6" class="week-panel"><div class="empty-state">W6 データ未取得</div></div>
+      <div id="yoshida-range-w7" class="week-panel"><div class="empty-state">W7 データ未取得</div></div>
+      <div id="yoshida-range-w8" class="week-panel"><div class="empty-state">W8 データ未取得</div></div>
+      <div id="yoshida-range-w9" class="week-panel"><div class="empty-state">W9 データ未取得</div></div>
+      <div id="yoshida-range-w10" class="week-panel"><div class="empty-state">W10 データ未取得</div></div>
+    </div>
+
+    <!-- 所感・アクション -->
+    <div id="yoshida-actions" class="sub-tab-content">
+      <h3>所感・アクション</h3>
+      <div class="week-tabs">
+        <button class="week-tab-btn" onclick="switchMemberActionsWeek('yoshida',1)">W1</button>
+        <button class="week-tab-btn" onclick="switchMemberActionsWeek('yoshida',2)">W2</button>
+        <button class="week-tab-btn active" onclick="switchMemberActionsWeek('yoshida',3)">W3</button>
+        <button class="week-tab-btn" onclick="switchMemberActionsWeek('yoshida',4)">W4</button>
+        <button class="week-tab-btn" onclick="switchMemberActionsWeek('yoshida',5)">W5</button>
+        <button class="week-tab-btn" onclick="switchMemberActionsWeek('yoshida',6)">W6</button>
+        <button class="week-tab-btn" onclick="switchMemberActionsWeek('yoshida',7)">W7</button>
+        <button class="week-tab-btn" onclick="switchMemberActionsWeek('yoshida',8)">W8</button>
+        <button class="week-tab-btn" onclick="switchMemberActionsWeek('yoshida',9)">W9</button>
+        <button class="week-tab-btn" onclick="switchMemberActionsWeek('yoshida',10)">W10</button>
+      </div>
+      <div id="yoshida-actions-w1" class="week-panel"><div class="empty-state">W1 全社オンボーディング</div></div>
+      <div id="yoshida-actions-w2" class="week-panel">
+        <h4>育成連携スレッド情報（W1-W2）</h4>
+        <div class="insight">模擬講義体制が確定: 週3 浦本、週1 沖廣（90分枠）。1日は基本沖廣 1on1（30-60分、行動宣言に合わせて）。</div>
+        <div class="insight">行動宣言: 6/1（月）仮押さえ（沖廣担当）</div>
+        <div class="insight">1ヶ月模擬講義: 6/2（火）仮押さえ（浦本担当）</div>
+        <div class="insight">育成定例ローテーション: 5/15浦本→5/22沖廣→5/29浦本→6/5浦本→6/12両名登壇→6/19浦本</div>
+        <h4>次週に向けて</h4>
+        <dl class="next-actions">
+          <dt>エルダー（浦本）</dt><dd>W2 のオンボ進捗確認。W3 からの模擬講義準備。</dd>
+          <dt>メンター（沖廣）</dt><dd>1on1 開始に向けた準備。行動宣言の方向性検討。</dd>
+          <dt>PMG</dt><dd>W3 の ML インプット・模擬講義初回の準備確認。</dd>
+        </dl>
+      </div>
+      <div id="yoshida-actions-w3" class="week-panel active">
+        <h4>エルダー所感（浦本）— 講師力・技術・模擬講義</h4>
+        <div class="comment-block">
+          <div class="comment-item good-border"><div class="comment-label good">Good</div>
+            ・伝え方や思いやりへの意識がある。<br>
+            ・インプット→ AI 採点→対面模擬講義のサイクルが確立できている。<br>
+            ・FB の打ち返し能力が相当高い。前回 FB 内容の打ち返しは完璧。
+          </div>
+          <div class="comment-item more-border"><div class="comment-label more">More</div>
+            ・講義内の内容面のインプット（理解して説明できるようになる）。<br>
+            ・手書きの練習。丁寧に見える板書を心がける。<br>
+            ・行動宣言の方が時間がかかりそう。来週以降は模擬講義数を調整しそちらに時間を使う方向性も検討。
+          </div>
+        </div>
+
+        <h4>メンター所感（沖廣）— マインド・適応・行動宣言</h4>
+        <div class="comment-block">
+          <div class="comment-item good-border"><div class="comment-label good">Good</div>
+            ・特に体調・モチベーションの問題なし。順調。<br>
+            ・2 ヶ月間は登壇テスト合格という明確な目標があり、やりやすさを感じている。<br>
+            ・営業経験に基づく「営業力」「営業視点」が強み。案件の文脈を俯瞰して理解する能力がある。
+          </div>
+          <div class="comment-item more-border"><div class="comment-label more">More</div>
+            ・行動宣言タッチポイント①（5/14）実施済み。5/21 までに「全社・部門向け行動宣言（叩き台）」を作成。<br>
+            ・社内メンバーへのオンラインランチを打診予定（候補: 有吉、四方田、野田、浜島、杉崎 他）。
+          </div>
+        </div>
+
+        <h4>行動宣言に向けた方向性</h4>
+        <div class="note-box">
+          <strong>目標:</strong> PJM として最前線で動く。営業〜登壇〜PBL まで一気通貫で関与し売上向上に注力。<br>
+          <strong>新規チャレンジ:</strong> エンタープライズだけでなく SMB 市場の開拓や基盤作り、プリセールス的な動きにも挑戦したい。<br>
+          <strong>関心:</strong> DS 領域よりも Biz チームに強い関心。
+        </div>
+
+        <h4>育成上の論点</h4>
+        <div class="issue-box">インプット→ AI 採点→対面模擬講義のサイクルでしばらく進める方針。</div>
+
+        <h4>ネクストアクション</h4>
+        <dl class="next-actions">
+          <dt>メンティー（吉田）</dt><dd>来週の模擬講義予約。インプットを進める。行動宣言叩き台を 5/21 までに作成。</dd>
+          <dt>エルダー（浦本）</dt><dd>来週の模擬講義日程決定。</dd>
+          <dt>メンター（沖廣）</dt><dd>行動宣言タッチポイント② 5/21（木）。全社・部門の方向性を固める。</dd>
+          <dt>PMG</dt><dd>—</dd>
+          <dt>部門人事</dt><dd>—</dd>
+        </dl>
+      </div>
+      <div id="yoshida-actions-w4" class="week-panel"><div class="empty-state">W4 所感・アクション未取得</div></div>
+      <div id="yoshida-actions-w5" class="week-panel"><div class="empty-state">W5 所感・アクション未取得</div></div>
+      <div id="yoshida-actions-w6" class="week-panel"><div class="empty-state">W6 所感・アクション未取得</div></div>
+      <div id="yoshida-actions-w7" class="week-panel"><div class="empty-state">W7 所感・アクション未取得</div></div>
+      <div id="yoshida-actions-w8" class="week-panel"><div class="empty-state">W8 所感・アクション未取得</div></div>
+      <div id="yoshida-actions-w9" class="week-panel"><div class="empty-state">W9 所感・アクション未取得</div></div>
+      <div id="yoshida-actions-w10" class="week-panel"><div class="empty-state">W10 所感・アクション未取得</div></div>
+    </div>
+  </div>
+
+  <!-- ===== その他 ===== -->
+  <div id="tab-notes" class="tab-content">
+    <h3>備考</h3>
+    <div class="note-box">
+      W1-W2 は全社オンボーディング期間のためスコアデータなし。W3 より模擬講義を開始。
+    </div>
+    <h3>レポート改善ログ</h3>
+    <div style="font-size:.83rem;margin:.5rem 0">
+      <div class="insight">W3: 評価項目名を PCS 準拠に修正（明瞭度→講義の進め方、比喩表現→質問対応 等）</div>
+      <div class="insight">W3: W2 レポートの W3 タブボタンバグ（W2 が 2 つ表示される問題）を修正</div>
+      <div class="insight">W3: GAS exporter が 2605 メンバーに対して未起動だったため手動トリガーで CSV 取得。今後の自動化要確認</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>生成: 2026-05-18 | 2605コホート（2026年5月入社）| <a href="https://github.com/YutaKinoshita-Kikagaku/pmg-employee-reports">GitHub</a></p>
+  </div>
+</div>
+
+<script>
+function switchTab(id){document.querySelectorAll('.tab-content').forEach(e=>e.classList.remove('active'));document.querySelectorAll('.tabs>.tab-btn').forEach(e=>e.classList.remove('active'));document.getElementById('tab-'+id).classList.add('active');event.target.classList.add('active')}
+function switchSubTab(m,s){var p=document.getElementById('tab-'+m);p.querySelectorAll('.sub-tab-content').forEach(e=>e.classList.remove('active'));p.querySelectorAll('.sub-tab-btn').forEach(e=>e.classList.remove('active'));document.getElementById(m+'-'+s).classList.add('active');event.target.classList.add('active')}
+function switchSummaryWeek(w){var p=document.getElementById('tab-summary');p.querySelectorAll('.week-panel').forEach(e=>e.classList.remove('active'));p.querySelectorAll('.week-tab-btn').forEach(e=>e.classList.remove('active'));document.getElementById('summary-w'+w).classList.add('active');event.target.classList.add('active')}
+function switchMemberDetailWeek(m,w){var p=document.getElementById(m+'-detail');p.querySelectorAll('.week-panel').forEach(function(e){e.classList.remove('active')});p.querySelectorAll('.week-tab-btn').forEach(function(e){e.classList.remove('active')});document.getElementById(m+'-detail-w'+w).classList.add('active');event.target.classList.add('active')}
+function switchMemberRangeWeek(m,w){var p=document.getElementById(m+'-range');p.querySelectorAll('.week-panel').forEach(function(e){e.classList.remove('active')});p.querySelectorAll('.week-tab-btn').forEach(function(e){e.classList.remove('active')});document.getElementById(m+'-range-w'+w).classList.add('active');event.target.classList.add('active')}
+function switchMemberActionsWeek(m,w){var p=document.getElementById(m+'-actions');p.querySelectorAll('.week-panel').forEach(function(e){e.classList.remove('active')});p.querySelectorAll('.week-tab-btn').forEach(function(e){e.classList.remove('active')});document.getElementById(m+'-actions-w'+w).classList.add('active');event.target.classList.add('active')}
+
+window.addEventListener('DOMContentLoaded',function(){
+  var weeks=['W1','W2','W3','W4','W5','W6','W7','W8','W9','W10'];
+  var pass=Array(10).fill(18);
+  var target=Array(10).fill(15);
+  var emptyOpts={responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:11}}}},scales:{y:{min:0,max:21,ticks:{stepSize:3},grid:{color:'rgba(0,0,0,.08)'}},x:{grid:{display:false}}}};
+
+  // 蝦名 個別チャート
+  var elEbina=document.getElementById('chartEbina');
+  if(elEbina){new Chart(elEbina,{type:'line',data:{labels:weeks,datasets:[
+    {label:'合計点',data:[null,null,10,null,null,null,null,null,null,null],borderColor:'#805ad5',backgroundColor:'rgba(128,90,213,.12)',fill:true,tension:.3,pointRadius:5,pointBackgroundColor:'#805ad5'},
+    {label:'1ヶ月目標(15)',data:target,borderColor:'#d69e2e',borderDash:[4,4],pointRadius:0,borderWidth:1},
+    {label:'合格ライン(18)',data:pass,borderColor:'#e53e3e',borderDash:[6,3],pointRadius:0,borderWidth:1.5}
+  ]},options:emptyOpts})}
+
+  // 吉田 個別チャート
+  var elYoshida=document.getElementById('chartYoshida');
+  if(elYoshida){new Chart(elYoshida,{type:'line',data:{labels:weeks,datasets:[
+    {label:'合計点',data:[null,null,9.5,null,null,null,null,null,null,null],borderColor:'#3182ce',backgroundColor:'rgba(49,130,206,.12)',fill:true,tension:.3,pointRadius:5,pointBackgroundColor:'#3182ce'},
+    {label:'1ヶ月目標(15)',data:target,borderColor:'#d69e2e',borderDash:[4,4],pointRadius:0,borderWidth:1},
+    {label:'合格ライン(18)',data:pass,borderColor:'#e53e3e',borderDash:[6,3],pointRadius:0,borderWidth:1.5}
+  ]},options:emptyOpts})}
+
+  // 全員チャート
+  var allChart=document.getElementById('chartAll');
+  if(allChart){new Chart(allChart,{type:'line',data:{labels:weeks,datasets:[
+    {label:'蝦名',data:[null,null,10,null,null,null,null,null,null,null],borderColor:'#805ad5',tension:.3,pointRadius:5,pointBackgroundColor:'#805ad5'},
+    {label:'吉田',data:[null,null,9.5,null,null,null,null,null,null,null],borderColor:'#3182ce',tension:.3,pointRadius:5,pointBackgroundColor:'#3182ce'},
+    {label:'1ヶ月目標(15)',data:target,borderColor:'#d69e2e',borderDash:[4,4],pointRadius:0,borderWidth:1},
+    {label:'合格ライン(18)',data:pass,borderColor:'#e53e3e',borderDash:[6,3],pointRadius:0,borderWidth:1.5}
+  ]},options:emptyOpts})}
+});
+</script>
+</body>
+</html>
