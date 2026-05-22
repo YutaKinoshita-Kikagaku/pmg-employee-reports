@@ -21,7 +21,14 @@
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
     .container { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
     h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
-    .subtitle { color: var(--text-sub); margin-bottom: 2rem; }
+    .subtitle { color: var(--text-sub); margin-bottom: 1.5rem; }
+    .cohort-tabs { display: flex; gap: 2px; border-bottom: 2px solid var(--accent); margin-bottom: 1.5rem; }
+    .cohort-tab { padding: 0.5rem 1rem; background: #e2e8f0; border: none; border-radius: 6px 6px 0 0; cursor: pointer; font-size: 0.9rem; font-weight: 500; color: var(--text-sub); transition: all 0.15s; }
+    .cohort-tab:hover { background: #cbd5e0; }
+    .cohort-tab.active { background: var(--accent); color: #fff; }
+    .cohort-panel { display: none; }
+    .cohort-panel.active { display: block; }
+    .cohort-meta { color: var(--text-sub); font-size: 0.85rem; margin-bottom: 1rem; }
     .report-list { display: flex; flex-direction: column; gap: 0.75rem; }
     .report-link { display: block; padding: 1rem 1.25rem; background: var(--card); border: 1px solid var(--border); border-radius: 8px; text-decoration: none; color: var(--text); transition: border-color 0.15s, box-shadow 0.15s; }
     .report-link:hover { border-color: var(--accent); box-shadow: 0 2px 8px rgba(49,130,206,0.1); }
@@ -32,37 +39,72 @@
 <body>
   <div class="container">
     <h1>正社員育成レポート</h1>
-    <p class="subtitle">PMG — 2026年4月入社（5名）</p>
-    <div class="report-list">
-      <a class="report-link" href="weekly/2026-05-22.html">
-        <span class="date">2026-05-22</span>
-        <span class="label">W8 — 入社8週目（第8回定例）</span>
-      </a>
-      <a class="report-link" href="weekly/2026-05-16.html">
-        <span class="date">2026-05-16</span>
-        <span class="label">W7 — 入社7週目（第7回定例）</span>
-      </a>
-      <a class="report-link" href="weekly/2026-05-09.html">
-        <span class="date">2026-05-09</span>
-        <span class="label">W6 — 入社6週目（第6回定例）</span>
-      </a>
-      <a class="report-link" href="weekly/2026-05-01.html">
-        <span class="date">2026-05-01</span>
-        <span class="label">W4/W5 — 入社5週目（第4回定例）</span>
-      </a>
-      <a class="report-link" href="weekly/2026-04-18.html">
-        <span class="date">2026-04-18</span>
-        <span class="label">W3 — 入社3週目（第2回定例）</span>
-      </a>
-      <a class="report-link" href="weekly/2026-04-11.html">
-        <span class="date">2026-04-11</span>
-        <span class="label">W2 — 入社2週目（初回定例）</span>
-      </a>
-      <a class="report-link" href="weekly/2026-04-01.html">
-        <span class="date">2026-04-01</span>
-        <span class="label">入社初日（テスト版）</span>
-      </a>
+    <p class="subtitle">PMG — 育成チーム</p>
+
+    <div class="cohort-tabs">
+      <!-- newest cohort first -->
+      <button class="cohort-tab active" onclick="switchCohort('2605')">2605（5月入社）</button>
+      <button class="cohort-tab" onclick="switchCohort('2604')">2604（4月入社）</button>
+    </div>
+
+    <!-- ===== 2605 コホート ===== -->
+    <div id="cohort-2605" class="cohort-panel active">
+      <p class="cohort-meta">2026年5月入社（2名）— 蝦名 真理子・吉田 康平</p>
+      <div class="report-list">
+        <a class="report-link" href="weekly/2605/2026-05-22.html">
+          <span class="date">2026-05-22</span>
+          <span class="label">W3 — 入社3週目（ML インプット・模擬講義開始）</span>
+        </a>
+        <a class="report-link" href="weekly/2605/2026-05-16.html">
+          <span class="date">2026-05-16</span>
+          <span class="label">W2 — 入社2週目（全社オンボーディング）</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ===== 2604 コホート ===== -->
+    <div id="cohort-2604" class="cohort-panel">
+      <p class="cohort-meta">2026年4月入社（5名）— 上谷 煌輝・神谷 煌輝・杉中 綾子・野田 元輝・吉原 卓也</p>
+      <div class="report-list">
+        <a class="report-link" href="weekly/2026-05-22.html">
+          <span class="date">2026-05-22</span>
+          <span class="label">W8 — 入社8週目（第8回定例）</span>
+        </a>
+        <a class="report-link" href="weekly/2026-05-16.html">
+          <span class="date">2026-05-16</span>
+          <span class="label">W7 — 入社7週目（第7回定例）</span>
+        </a>
+        <a class="report-link" href="weekly/2026-05-09.html">
+          <span class="date">2026-05-09</span>
+          <span class="label">W6 — 入社6週目（第6回定例）</span>
+        </a>
+        <a class="report-link" href="weekly/2026-05-01.html">
+          <span class="date">2026-05-01</span>
+          <span class="label">W4/W5 — 入社5週目（第4回定例）</span>
+        </a>
+        <a class="report-link" href="weekly/2026-04-18.html">
+          <span class="date">2026-04-18</span>
+          <span class="label">W3 — 入社3週目（第2回定例）</span>
+        </a>
+        <a class="report-link" href="weekly/2026-04-11.html">
+          <span class="date">2026-04-11</span>
+          <span class="label">W2 — 入社2週目（初回定例）</span>
+        </a>
+        <a class="report-link" href="weekly/2026-04-01.html">
+          <span class="date">2026-04-01</span>
+          <span class="label">入社初日（テスト版）</span>
+        </a>
+      </div>
     </div>
   </div>
+
+  <script>
+    function switchCohort(id) {
+      document.querySelectorAll('.cohort-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.cohort-tab').forEach(t => t.classList.remove('active'));
+      document.getElementById('cohort-' + id).classList.add('active');
+      document.querySelector('[onclick="switchCohort(\'' + id + '\')"]').classList.add('active');
+    }
+  </script>
 </body>
 </html>
