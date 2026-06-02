@@ -66,6 +66,9 @@
     .cm{font-size:.76rem;line-height:1.45;height:3.2rem;overflow:hidden}
     .new-score{background:#e6fffa !important;font-weight:800}
     .empty-state{text-align:center;padding:2rem;color:var(--sub);font-size:.9rem}
+    .pass-banner{background:linear-gradient(90deg,#fef3c7 0%,#fde68a 100%);border:2px solid #d97706;border-radius:8px;padding:.8rem 1rem;margin:.75rem 0;font-size:.88rem;color:#78350f;display:flex;align-items:center;gap:.6rem}
+    .pass-banner .icon{font-size:1.4rem}
+    .pass-banner strong{color:#78350f}
   </style>
 </head>
 <body>
@@ -180,6 +183,7 @@
     </div>
     <!-- Summary W5 -->
     <div id="summary-w5" class="week-panel active">
+      <div class="pass-banner"><span class="icon">🎯</span><div><strong>合格ライン到達:</strong> 吉田 康平さん 2026-05-29 の模擬講義で <strong>18pt</strong> を獲得。1 か月目から登壇テスト合格水準に到達。<br>6/15 の週で登壇テスト受験を予定。</div></div>
       <h3>ステータス一覧（W5: 分類範囲消化・行動宣言確定・1ヶ月模擬講義準備）</h3>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:.75rem;margin:.75rem 0">
         <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.85rem;border-left:4px solid #805ad5">
@@ -407,52 +411,360 @@
 
     <!-- 範囲別スコア -->
     <div id="ebina-range" class="sub-tab-content">
-      <h3>範囲別スコア</h3>
+      <h3>範囲別 練習回数（模擬講義マラソン）</h3>
       <div class="week-tabs">
         <button class="week-tab-btn" onclick="switchMemberRangeWeek('ebina',1)">W1</button><button class="week-tab-btn" onclick="switchMemberRangeWeek('ebina',2)">W2</button><button class="week-tab-btn" onclick="switchMemberRangeWeek('ebina',3)">W3</button><button class="week-tab-btn" onclick="switchMemberRangeWeek('ebina',4)">W4</button><button class="week-tab-btn active" onclick="switchMemberRangeWeek('ebina',5)">W5</button><button class="week-tab-btn" onclick="switchMemberRangeWeek('ebina',6)">W6</button><button class="week-tab-btn" onclick="switchMemberRangeWeek('ebina',7)">W7</button><button class="week-tab-btn" onclick="switchMemberRangeWeek('ebina',8)">W8</button><button class="week-tab-btn" onclick="switchMemberRangeWeek('ebina',9)">W9</button><button class="week-tab-btn" onclick="switchMemberRangeWeek('ebina',10)">W10</button>
       </div>
-      <div id="ebina-range-w1" class="week-panel"><div class="empty-state">W1 全社オンボーディング（採点なし）</div></div>
-      <div id="ebina-range-w2" class="week-panel"><div class="empty-state">W2 全社オンボーディング（採点なし）</div></div>
+      <div id="ebina-range-w1" class="week-panel">
+        <div style="overflow-x:auto">
+        <table class="eval-table" style="font-size:.75rem;min-width:500px">
+          <thead><tr><th style="width:120px">章</th><th style="width:200px">節</th><th style="text-align:center;width:75px">手書き（回数）</th><th style="text-align:center;width:75px">実装（回数）</th></tr></thead>
+          <tbody>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
+            <tr><td></td><td>重回帰分析</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>データセットの準備〜実装</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>過学習</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
+            <tr><td></td><td>標準化</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">データの前処理（応用）</td></tr>
+            <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>外れ値除去</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 分類</td></tr>
+            <tr><td></td><td>ロジスティック回帰</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>決定木</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>SVM（ForBiz）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>ランダムフォレスト</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">評価指標</td></tr>
+            <tr><td></td><td>Accuracy等</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>不均衡データ</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">性能改善</td></tr>
+            <tr><td></td><td>データの分割</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td></tr>
+            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師なし学習</td></tr>
+            <tr><td></td><td>主成分分析</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>クラスタリング</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+      <div id="ebina-range-w2" class="week-panel">
+        <div style="overflow-x:auto">
+        <table class="eval-table" style="font-size:.75rem;min-width:500px">
+          <thead><tr><th style="width:120px">章</th><th style="width:200px">節</th><th style="text-align:center;width:75px">手書き（回数）</th><th style="text-align:center;width:75px">実装（回数）</th></tr></thead>
+          <tbody>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
+            <tr><td></td><td>重回帰分析</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>データセットの準備〜実装</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>過学習</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
+            <tr><td></td><td>標準化</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">データの前処理（応用）</td></tr>
+            <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>外れ値除去</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 分類</td></tr>
+            <tr><td></td><td>ロジスティック回帰</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>決定木</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>SVM（ForBiz）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>ランダムフォレスト</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">評価指標</td></tr>
+            <tr><td></td><td>Accuracy等</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>不均衡データ</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">性能改善</td></tr>
+            <tr><td></td><td>データの分割</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td></tr>
+            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師なし学習</td></tr>
+            <tr><td></td><td>主成分分析</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>クラスタリング</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
       <div id="ebina-range-w3" class="week-panel">
-        <h4>模擬講義実施範囲（W3 時点）</h4>
-        <table class="eval-table"><thead><tr><th>章</th><th>節</th><th>手書き録画</th><th>手書き模擬1</th><th>実装録画</th><th>実装模擬1</th></tr></thead><tbody>
-          <tr><td>—</td><td>自己紹介</td><td class="sc s3">済</td><td class="sc s0">—</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
-          <tr style="background:#e6fffa"><td>回帰1</td><td>回帰の基礎（手書き）</td><td class="sc s3">済</td><td class="sc s3">済</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
-          <tr style="background:#e6fffa"><td>回帰1</td><td>データセットの準備〜実装</td><td class="sc s3">済</td><td class="sc s0">—</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-        </tbody></table>
-        <div class="note-box"><strong>W3 模擬講義:</strong> 1 回実施（5/14 歳森採点 10pt）。範囲: 回帰の基礎 / データセットの準備。<br>初回模擬で型ベースの安定スタート。</div>
+        <div style="overflow-x:auto">
+        <table class="eval-table" style="font-size:.75rem;min-width:500px">
+          <thead><tr><th style="width:120px">章</th><th style="width:200px">節</th><th style="text-align:center;width:75px">手書き（回数）</th><th style="text-align:center;width:75px">実装（回数）</th></tr></thead>
+          <tbody>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
+            <tr><td></td><td>重回帰分析</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>データセットの準備〜実装</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td></tr>
+            <tr><td></td><td>過学習</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
+            <tr><td></td><td>標準化</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">データの前処理（応用）</td></tr>
+            <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>外れ値除去</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 分類</td></tr>
+            <tr><td></td><td>ロジスティック回帰</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>決定木</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>SVM（ForBiz）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>ランダムフォレスト</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">評価指標</td></tr>
+            <tr><td></td><td>Accuracy等</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>不均衡データ</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">性能改善</td></tr>
+            <tr><td></td><td>データの分割</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td></tr>
+            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師なし学習</td></tr>
+            <tr><td></td><td>主成分分析</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>クラスタリング</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+          </tbody>
+        </table>
+        </div>
       </div>
       <div id="ebina-range-w4" class="week-panel">
-        <h4>模擬講義実施範囲（W4 累積）</h4>
-        <table class="eval-table"><thead><tr><th>章</th><th>節</th><th>手書き録画</th><th>手書き模擬1</th><th>実装録画</th><th>実装模擬1</th></tr></thead><tbody>
-          <tr style="background:#e6fffa"><td>回帰1</td><td>回帰の基礎</td><td class="sc s3">済</td><td class="sc s3">済</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
-          <tr style="background:#e6fffa"><td>回帰1</td><td>データセットの準備〜実装</td><td class="sc s3">済</td><td class="sc s3">済</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-          <tr style="background:#e6fffa"><td>回帰1</td><td>過学習</td><td class="sc s3">済</td><td class="sc s3">済</td><td class="sc s3">済</td><td class="sc s0">—</td></tr>
-          <tr style="background:#e6fffa"><td>前処理</td><td>欠損値・カテゴリカル変数</td><td class="sc s3">済</td><td class="sc s3">済</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-          <tr style="background:#e6fffa"><td>前処理</td><td>外れ値除去</td><td class="sc s3">済</td><td class="sc s0">—</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-        </tbody></table>
-        <div class="note-box"><strong>W4 模擬講義:</strong> 3 回実施（5/19, 5/20 歳森 / 5/22 村上）。範囲: 過学習〜外れ値除去。<br>信頼が S2:2→S3:3 と急成長（5/20）。村上メンター初採点 10pt。質問対応の型と冗長さの改善が継続課題。</div>
+        <div style="overflow-x:auto">
+        <table class="eval-table" style="font-size:.75rem;min-width:500px">
+          <thead><tr><th style="width:120px">章</th><th style="width:200px">節</th><th style="text-align:center;width:75px">手書き（回数）</th><th style="text-align:center;width:75px">実装（回数）</th></tr></thead>
+          <tbody>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
+            <tr><td></td><td>重回帰分析</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>データセットの準備〜実装</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>過学習</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td></tr>
+            <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
+            <tr><td></td><td>標準化</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td></tr>
+            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">データの前処理（応用）</td></tr>
+            <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>外れ値除去</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 分類</td></tr>
+            <tr><td></td><td>ロジスティック回帰</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>決定木</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>SVM（ForBiz）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>ランダムフォレスト</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">評価指標</td></tr>
+            <tr><td></td><td>Accuracy等</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>不均衡データ</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">性能改善</td></tr>
+            <tr><td></td><td>データの分割</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td></tr>
+            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師なし学習</td></tr>
+            <tr><td></td><td>主成分分析</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>クラスタリング</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+          </tbody>
+        </table>
+        </div>
       </div>
       <div id="ebina-range-w5" class="week-panel active">
-        <h4>模擬講義実施範囲（W5 累積）</h4>
-        <table class="eval-table"><thead><tr><th>章</th><th>節</th><th>手書き録画</th><th>手書き模擬1</th><th>実装録画</th><th>実装模擬1</th></tr></thead><tbody>
-          <tr><td>回帰1</td><td>回帰の基礎</td><td class="sc s3">済</td><td class="sc s3">済</td><td class="sc s0">—</td><td class="sc s0">—</td></tr>
-          <tr><td>回帰1</td><td>データセットの準備〜実装</td><td class="sc s3">済</td><td class="sc s3">済</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-          <tr><td>回帰1</td><td>過学習</td><td class="sc s3">済</td><td class="sc s3">済</td><td class="sc s3">済</td><td class="sc s0">—</td></tr>
-          <tr><td>前処理</td><td>欠損値・カテゴリカル変数</td><td class="sc s3">済</td><td class="sc s3">済</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-          <tr><td>前処理</td><td>外れ値除去</td><td class="sc s3">済</td><td class="sc s0">—</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-          <tr style="background:#e6fffa"><td>分類</td><td>ロジスティック回帰</td><td class="sc s3">済</td><td class="sc s3">済</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-          <tr style="background:#e6fffa"><td>分類</td><td>決定木</td><td class="sc s3">済</td><td class="sc s3">済</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-          <tr style="background:#e6fffa"><td>分類</td><td>アンサンブル（RF・XGBoost）</td><td class="sc s3">済</td><td class="sc s3">済</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-          <tr style="background:#e6fffa"><td>評価指標</td><td>Accuracy・Precision・Recall・F1score</td><td class="sc s3">済</td><td class="sc s3">済</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-        </tbody></table>
-        <div class="note-box"><strong>W5 模擬講義:</strong> 4 回実施（歳森3回+村上1回）。範囲: 分類範囲（ロジ・決定木・アンサンブル）+ 評価指標を一巡。<br>知識（講義内）は 3pt 連続到達。型は安定。喋りすぎ・冗長さ・信頼を下げる発言（「説明が下手でした」等）が次のステップ。</div>
+        <div style="overflow-x:auto">
+        <table class="eval-table" style="font-size:.75rem;min-width:500px">
+          <thead><tr><th style="width:120px">章</th><th style="width:200px">節</th><th style="text-align:center;width:75px">手書き（回数）</th><th style="text-align:center;width:75px">実装（回数）</th></tr></thead>
+          <tbody>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
+            <tr><td></td><td>重回帰分析</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>データセットの準備〜実装</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>過学習</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
+            <tr><td></td><td>標準化</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">データの前処理（応用）</td></tr>
+            <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>外れ値除去</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 分類</td></tr>
+            <tr><td></td><td>ロジスティック回帰</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td></tr>
+            <tr><td></td><td>決定木</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td></tr>
+            <tr><td></td><td>SVM（ForBiz）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>ランダムフォレスト</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">評価指標</td></tr>
+            <tr><td></td><td>Accuracy等</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td></tr>
+            <tr><td></td><td>不均衡データ</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">性能改善</td></tr>
+            <tr><td></td><td>データの分割</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td></tr>
+            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師なし学習</td></tr>
+            <tr><td></td><td>主成分分析</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>クラスタリング</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+          </tbody>
+        </table>
+        </div>
       </div>
-      <div id="ebina-range-w6" class="week-panel"><div class="empty-state">W6 データ未取得</div></div>
-      <div id="ebina-range-w7" class="week-panel"><div class="empty-state">W7 データ未取得</div></div>
-      <div id="ebina-range-w8" class="week-panel"><div class="empty-state">W8 データ未取得</div></div>
-      <div id="ebina-range-w9" class="week-panel"><div class="empty-state">W9 データ未取得</div></div>
-      <div id="ebina-range-w10" class="week-panel"><div class="empty-state">W10 データ未取得</div></div>
+      <div id="ebina-range-w6" class="week-panel">
+        <div style="overflow-x:auto">
+        <table class="eval-table" style="font-size:.75rem;min-width:500px">
+          <thead><tr><th style="width:120px">章</th><th style="width:200px">節</th><th style="text-align:center;width:75px">手書き（回数）</th><th style="text-align:center;width:75px">実装（回数）</th></tr></thead>
+          <tbody>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
+            <tr><td></td><td>重回帰分析</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>データセットの準備〜実装</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>過学習</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
+            <tr><td></td><td>標準化</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">データの前処理（応用）</td></tr>
+            <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>外れ値除去</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 分類</td></tr>
+            <tr><td></td><td>ロジスティック回帰</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>決定木</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>SVM（ForBiz）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>ランダムフォレスト</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">評価指標</td></tr>
+            <tr><td></td><td>Accuracy等</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>不均衡データ</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">性能改善</td></tr>
+            <tr><td></td><td>データの分割</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td></tr>
+            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師なし学習</td></tr>
+            <tr><td></td><td>主成分分析</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>クラスタリング</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+      <div id="ebina-range-w7" class="week-panel">
+        <div style="overflow-x:auto">
+        <table class="eval-table" style="font-size:.75rem;min-width:500px">
+          <thead><tr><th style="width:120px">章</th><th style="width:200px">節</th><th style="text-align:center;width:75px">手書き（回数）</th><th style="text-align:center;width:75px">実装（回数）</th></tr></thead>
+          <tbody>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
+            <tr><td></td><td>重回帰分析</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>データセットの準備〜実装</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>過学習</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
+            <tr><td></td><td>標準化</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">データの前処理（応用）</td></tr>
+            <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>外れ値除去</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 分類</td></tr>
+            <tr><td></td><td>ロジスティック回帰</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>決定木</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>SVM（ForBiz）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>ランダムフォレスト</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">評価指標</td></tr>
+            <tr><td></td><td>Accuracy等</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>不均衡データ</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">性能改善</td></tr>
+            <tr><td></td><td>データの分割</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td></tr>
+            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師なし学習</td></tr>
+            <tr><td></td><td>主成分分析</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>クラスタリング</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+      <div id="ebina-range-w8" class="week-panel">
+        <div style="overflow-x:auto">
+        <table class="eval-table" style="font-size:.75rem;min-width:500px">
+          <thead><tr><th style="width:120px">章</th><th style="width:200px">節</th><th style="text-align:center;width:75px">手書き（回数）</th><th style="text-align:center;width:75px">実装（回数）</th></tr></thead>
+          <tbody>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
+            <tr><td></td><td>重回帰分析</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>データセットの準備〜実装</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>過学習</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
+            <tr><td></td><td>標準化</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">データの前処理（応用）</td></tr>
+            <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>外れ値除去</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 分類</td></tr>
+            <tr><td></td><td>ロジスティック回帰</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>決定木</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>SVM（ForBiz）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>ランダムフォレスト</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">評価指標</td></tr>
+            <tr><td></td><td>Accuracy等</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>不均衡データ</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">性能改善</td></tr>
+            <tr><td></td><td>データの分割</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td></tr>
+            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師なし学習</td></tr>
+            <tr><td></td><td>主成分分析</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>クラスタリング</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+      <div id="ebina-range-w9" class="week-panel">
+        <div style="overflow-x:auto">
+        <table class="eval-table" style="font-size:.75rem;min-width:500px">
+          <thead><tr><th style="width:120px">章</th><th style="width:200px">節</th><th style="text-align:center;width:75px">手書き（回数）</th><th style="text-align:center;width:75px">実装（回数）</th></tr></thead>
+          <tbody>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
+            <tr><td></td><td>重回帰分析</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>データセットの準備〜実装</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>過学習</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
+            <tr><td></td><td>標準化</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">データの前処理（応用）</td></tr>
+            <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>外れ値除去</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 分類</td></tr>
+            <tr><td></td><td>ロジスティック回帰</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>決定木</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>SVM（ForBiz）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>ランダムフォレスト</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">評価指標</td></tr>
+            <tr><td></td><td>Accuracy等</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>不均衡データ</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">性能改善</td></tr>
+            <tr><td></td><td>データの分割</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td></tr>
+            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師なし学習</td></tr>
+            <tr><td></td><td>主成分分析</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>クラスタリング</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+      <div id="ebina-range-w10" class="week-panel">
+        <div style="overflow-x:auto">
+        <table class="eval-table" style="font-size:.75rem;min-width:500px">
+          <thead><tr><th style="width:120px">章</th><th style="width:200px">節</th><th style="text-align:center;width:75px">手書き（回数）</th><th style="text-align:center;width:75px">実装（回数）</th></tr></thead>
+          <tbody>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
+            <tr><td></td><td>重回帰分析</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>データセットの準備〜実装</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>過学習</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
+            <tr><td></td><td>標準化</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">データの前処理（応用）</td></tr>
+            <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>外れ値除去</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 分類</td></tr>
+            <tr><td></td><td>ロジスティック回帰</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>決定木</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>SVM（ForBiz）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>ランダムフォレスト</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">評価指標</td></tr>
+            <tr><td></td><td>Accuracy等</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>不均衡データ</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">性能改善</td></tr>
+            <tr><td></td><td>データの分割</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td></tr>
+            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師なし学習</td></tr>
+            <tr><td></td><td>主成分分析</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>クラスタリング</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
     </div>
 
     <!-- 所感・アクション -->
@@ -673,6 +985,7 @@
         <p class="scorers">採点者: <strong>浦本（5/18, 5/19, 5/20）、沖廣（5/21）</strong><br><span style="font-size:.75rem;color:var(--sub)">S1: 過学習（13pt）<br>S2: Ridge回帰/Lasso回帰, 標準化（10pt）<br>S3: Label Encoding/One-hot Encoding（12pt）<br>S4: 外れ値除去（12pt）</span></p>
       </div>
       <div id="yoshida-detail-w5" class="week-panel active">
+        <div class="pass-banner"><span class="icon">🎯</span><div><strong>W5 で合格ライン（18pt）到達。</strong> 5/29 評価指標セッションで全 7 項目中 5 項目が 2pt 以上、知識（講義内・QA）と質問対応・思いやりは 3pt 満点。早期登壇テスト合格を視野に 6/15 の週受験を予定。</div></div>
         <h4 style="margin-top:.5rem;color:var(--accent)">Session 1 — 5/26 浦本（ロジスティック回帰）</h4>
         <div class="score-bar"><span class="label">合計:</span><span class="value">14 / 21</span><span class="label" style="margin-left:1rem">Questions:</span><span class="value">10問中6正解（+3△）</span></div>
         <table class="item-avg-table"><thead><tr><th style="width:140px">項目</th><th style="width:50px">点数</th><th>Good</th><th>More</th></tr></thead><tbody>
@@ -734,55 +1047,360 @@
 
     <!-- 範囲別スコア -->
     <div id="yoshida-range" class="sub-tab-content">
-      <h3>範囲別スコア</h3>
+      <h3>範囲別 練習回数（模擬講義マラソン）</h3>
       <div class="week-tabs">
         <button class="week-tab-btn" onclick="switchMemberRangeWeek('yoshida',1)">W1</button><button class="week-tab-btn" onclick="switchMemberRangeWeek('yoshida',2)">W2</button><button class="week-tab-btn" onclick="switchMemberRangeWeek('yoshida',3)">W3</button><button class="week-tab-btn" onclick="switchMemberRangeWeek('yoshida',4)">W4</button><button class="week-tab-btn active" onclick="switchMemberRangeWeek('yoshida',5)">W5</button><button class="week-tab-btn" onclick="switchMemberRangeWeek('yoshida',6)">W6</button><button class="week-tab-btn" onclick="switchMemberRangeWeek('yoshida',7)">W7</button><button class="week-tab-btn" onclick="switchMemberRangeWeek('yoshida',8)">W8</button><button class="week-tab-btn" onclick="switchMemberRangeWeek('yoshida',9)">W9</button><button class="week-tab-btn" onclick="switchMemberRangeWeek('yoshida',10)">W10</button>
       </div>
-      <div id="yoshida-range-w1" class="week-panel"><div class="empty-state">W1 全社オンボーディング（採点なし）</div></div>
-      <div id="yoshida-range-w2" class="week-panel"><div class="empty-state">W2 全社オンボーディング（採点なし）</div></div>
+      <div id="yoshida-range-w1" class="week-panel">
+        <div style="overflow-x:auto">
+        <table class="eval-table" style="font-size:.75rem;min-width:500px">
+          <thead><tr><th style="width:120px">章</th><th style="width:200px">節</th><th style="text-align:center;width:75px">手書き（回数）</th><th style="text-align:center;width:75px">実装（回数）</th></tr></thead>
+          <tbody>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
+            <tr><td></td><td>重回帰分析</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>データセットの準備〜実装</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>過学習</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
+            <tr><td></td><td>標準化</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">データの前処理（応用）</td></tr>
+            <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>外れ値除去</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 分類</td></tr>
+            <tr><td></td><td>ロジスティック回帰</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>決定木</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>SVM（ForBiz）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>ランダムフォレスト</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">評価指標</td></tr>
+            <tr><td></td><td>Accuracy等</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>不均衡データ</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">性能改善</td></tr>
+            <tr><td></td><td>データの分割</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td></tr>
+            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師なし学習</td></tr>
+            <tr><td></td><td>主成分分析</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>クラスタリング</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+      <div id="yoshida-range-w2" class="week-panel">
+        <div style="overflow-x:auto">
+        <table class="eval-table" style="font-size:.75rem;min-width:500px">
+          <thead><tr><th style="width:120px">章</th><th style="width:200px">節</th><th style="text-align:center;width:75px">手書き（回数）</th><th style="text-align:center;width:75px">実装（回数）</th></tr></thead>
+          <tbody>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
+            <tr><td></td><td>重回帰分析</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>データセットの準備〜実装</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>過学習</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
+            <tr><td></td><td>標準化</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">データの前処理（応用）</td></tr>
+            <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>外れ値除去</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 分類</td></tr>
+            <tr><td></td><td>ロジスティック回帰</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>決定木</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>SVM（ForBiz）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>ランダムフォレスト</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">評価指標</td></tr>
+            <tr><td></td><td>Accuracy等</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>不均衡データ</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">性能改善</td></tr>
+            <tr><td></td><td>データの分割</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td></tr>
+            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師なし学習</td></tr>
+            <tr><td></td><td>主成分分析</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>クラスタリング</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
       <div id="yoshida-range-w3" class="week-panel">
-        <h4>模擬講義実施範囲（W3 時点）</h4>
-        <table class="eval-table"><thead><tr><th>章</th><th>節</th><th>手書き模擬1</th><th>実装模擬1</th></tr></thead><tbody>
-          <tr style="background:#e6fffa"><td>回帰1</td><td>重回帰分析</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-          <tr style="background:#e6fffa"><td>回帰1</td><td>データセットの準備〜実装</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-        </tbody></table>
-        <div class="note-box"><strong>W3 模擬講義:</strong> 2 回実施（浦本採点）。範囲: 重回帰分析 / データセットの準備〜実装。<br>初回 8pt → 翌日 11pt と +3pt の伸び。FB の打ち返し能力の高さが特徴。</div>
+        <div style="overflow-x:auto">
+        <table class="eval-table" style="font-size:.75rem;min-width:500px">
+          <thead><tr><th style="width:120px">章</th><th style="width:200px">節</th><th style="text-align:center;width:75px">手書き（回数）</th><th style="text-align:center;width:75px">実装（回数）</th></tr></thead>
+          <tbody>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
+            <tr><td></td><td>重回帰分析</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td></tr>
+            <tr><td></td><td>データセットの準備〜実装</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td></tr>
+            <tr><td></td><td>過学習</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
+            <tr><td></td><td>標準化</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">データの前処理（応用）</td></tr>
+            <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>外れ値除去</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 分類</td></tr>
+            <tr><td></td><td>ロジスティック回帰</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>決定木</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>SVM（ForBiz）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>ランダムフォレスト</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">評価指標</td></tr>
+            <tr><td></td><td>Accuracy等</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>不均衡データ</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">性能改善</td></tr>
+            <tr><td></td><td>データの分割</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td></tr>
+            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師なし学習</td></tr>
+            <tr><td></td><td>主成分分析</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>クラスタリング</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+          </tbody>
+        </table>
+        </div>
       </div>
       <div id="yoshida-range-w4" class="week-panel">
-        <h4>模擬講義実施範囲（W4 累積）</h4>
-        <table class="eval-table"><thead><tr><th>章</th><th>節</th><th>手書き模擬1</th><th>実装模擬1</th></tr></thead><tbody>
-          <tr style="background:#e6fffa"><td>回帰1</td><td>重回帰分析</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-          <tr style="background:#e6fffa"><td>回帰1</td><td>データセットの準備〜実装</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-          <tr style="background:#e6fffa"><td>回帰1</td><td>過学習</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-          <tr style="background:#e6fffa"><td>回帰1</td><td>Ridge回帰/Lasso回帰</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-          <tr style="background:#e6fffa"><td>前処理</td><td>標準化</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-          <tr style="background:#e6fffa"><td>前処理</td><td>Label Encoding/One-hot Encoding</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-          <tr style="background:#e6fffa"><td>前処理</td><td>外れ値除去</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-        </tbody></table>
-        <div class="note-box"><strong>W4 模擬講義:</strong> 4 回実施（浦本3回+沖廣1回）。範囲: 過学習〜外れ値除去（前処理を一巡）。<br>思いやり 3pt（S2 5/19）、質問対応 3pt（S3 5/20）、知識（講義内）3pt（S4 5/21）と複数項目で 3pt 到達。</div>
+        <div style="overflow-x:auto">
+        <table class="eval-table" style="font-size:.75rem;min-width:500px">
+          <thead><tr><th style="width:120px">章</th><th style="width:200px">節</th><th style="text-align:center;width:75px">手書き（回数）</th><th style="text-align:center;width:75px">実装（回数）</th></tr></thead>
+          <tbody>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
+            <tr><td></td><td>重回帰分析</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>データセットの準備〜実装</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>過学習</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td></tr>
+            <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
+            <tr><td></td><td>標準化</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td></tr>
+            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">データの前処理（応用）</td></tr>
+            <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>外れ値除去</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 分類</td></tr>
+            <tr><td></td><td>ロジスティック回帰</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>決定木</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>SVM（ForBiz）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>ランダムフォレスト</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">評価指標</td></tr>
+            <tr><td></td><td>Accuracy等</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>不均衡データ</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">性能改善</td></tr>
+            <tr><td></td><td>データの分割</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td></tr>
+            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師なし学習</td></tr>
+            <tr><td></td><td>主成分分析</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>クラスタリング</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+          </tbody>
+        </table>
+        </div>
       </div>
       <div id="yoshida-range-w5" class="week-panel active">
-        <h4>模擬講義実施範囲（W5 累積）</h4>
-        <table class="eval-table"><thead><tr><th>章</th><th>節</th><th>手書き模擬1</th><th>実装模擬1</th></tr></thead><tbody>
-          <tr><td>回帰1</td><td>重回帰分析</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-          <tr><td>回帰1</td><td>データセットの準備〜実装</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-          <tr><td>回帰1</td><td>過学習</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-          <tr><td>回帰1</td><td>Ridge回帰/Lasso回帰</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-          <tr><td>前処理</td><td>標準化</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-          <tr><td>前処理</td><td>Label Encoding/One-hot Encoding</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-          <tr><td>前処理</td><td>外れ値除去</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-          <tr style="background:#e6fffa"><td>分類</td><td>ロジスティック回帰</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-          <tr style="background:#e6fffa"><td>分類</td><td>決定木</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-          <tr style="background:#e6fffa"><td>分類</td><td>ランダムフォレスト・XGBoost</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-          <tr style="background:#e6fffa"><td>評価指標</td><td>Accuracy・Precision・Recall・F1score</td><td class="sc s3">済</td><td class="sc s3">済</td></tr>
-        </tbody></table>
-        <div class="note-box"><strong>W5 模擬講義:</strong> 4 回実施（浦本3回+沖廣1回）。範囲: 分類範囲（ロジ・決定木・アンサンブル）+ 評価指標を一巡。<br><strong>5/29 で 18pt = 合格ライン到達</strong>。質問対応 2.75pt、信頼 2.5pt、知識（QA）2.5pt と複数項目で高水準。早期登壇テスト視野。</div>
+        <div style="overflow-x:auto">
+        <table class="eval-table" style="font-size:.75rem;min-width:500px">
+          <thead><tr><th style="width:120px">章</th><th style="width:200px">節</th><th style="text-align:center;width:75px">手書き（回数）</th><th style="text-align:center;width:75px">実装（回数）</th></tr></thead>
+          <tbody>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
+            <tr><td></td><td>重回帰分析</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>データセットの準備〜実装</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>過学習</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
+            <tr><td></td><td>標準化</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">データの前処理（応用）</td></tr>
+            <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>外れ値除去</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 分類</td></tr>
+            <tr><td></td><td>ロジスティック回帰</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td></tr>
+            <tr><td></td><td>決定木</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td></tr>
+            <tr><td></td><td>SVM（ForBiz）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>ランダムフォレスト</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">評価指標</td></tr>
+            <tr><td></td><td>Accuracy等</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td><td class="sc" style="background:#e6fffa;color:var(--good);font-weight:800">1回</td></tr>
+            <tr><td></td><td>不均衡データ</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">性能改善</td></tr>
+            <tr><td></td><td>データの分割</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td></tr>
+            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師なし学習</td></tr>
+            <tr><td></td><td>主成分分析</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>クラスタリング</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+          </tbody>
+        </table>
+        </div>
       </div>
-      <div id="yoshida-range-w6" class="week-panel"><div class="empty-state">W6 データ未取得</div></div>
-      <div id="yoshida-range-w7" class="week-panel"><div class="empty-state">W7 データ未取得</div></div>
-      <div id="yoshida-range-w8" class="week-panel"><div class="empty-state">W8 データ未取得</div></div>
-      <div id="yoshida-range-w9" class="week-panel"><div class="empty-state">W9 データ未取得</div></div>
-      <div id="yoshida-range-w10" class="week-panel"><div class="empty-state">W10 データ未取得</div></div>
+      <div id="yoshida-range-w6" class="week-panel">
+        <div style="overflow-x:auto">
+        <table class="eval-table" style="font-size:.75rem;min-width:500px">
+          <thead><tr><th style="width:120px">章</th><th style="width:200px">節</th><th style="text-align:center;width:75px">手書き（回数）</th><th style="text-align:center;width:75px">実装（回数）</th></tr></thead>
+          <tbody>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
+            <tr><td></td><td>重回帰分析</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>データセットの準備〜実装</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>過学習</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
+            <tr><td></td><td>標準化</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">データの前処理（応用）</td></tr>
+            <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>外れ値除去</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 分類</td></tr>
+            <tr><td></td><td>ロジスティック回帰</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>決定木</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>SVM（ForBiz）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>ランダムフォレスト</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">評価指標</td></tr>
+            <tr><td></td><td>Accuracy等</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>不均衡データ</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">性能改善</td></tr>
+            <tr><td></td><td>データの分割</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td></tr>
+            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師なし学習</td></tr>
+            <tr><td></td><td>主成分分析</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>クラスタリング</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+      <div id="yoshida-range-w7" class="week-panel">
+        <div style="overflow-x:auto">
+        <table class="eval-table" style="font-size:.75rem;min-width:500px">
+          <thead><tr><th style="width:120px">章</th><th style="width:200px">節</th><th style="text-align:center;width:75px">手書き（回数）</th><th style="text-align:center;width:75px">実装（回数）</th></tr></thead>
+          <tbody>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
+            <tr><td></td><td>重回帰分析</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>データセットの準備〜実装</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>過学習</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
+            <tr><td></td><td>標準化</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">データの前処理（応用）</td></tr>
+            <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>外れ値除去</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 分類</td></tr>
+            <tr><td></td><td>ロジスティック回帰</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>決定木</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>SVM（ForBiz）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>ランダムフォレスト</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">評価指標</td></tr>
+            <tr><td></td><td>Accuracy等</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>不均衡データ</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">性能改善</td></tr>
+            <tr><td></td><td>データの分割</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td></tr>
+            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師なし学習</td></tr>
+            <tr><td></td><td>主成分分析</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>クラスタリング</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+      <div id="yoshida-range-w8" class="week-panel">
+        <div style="overflow-x:auto">
+        <table class="eval-table" style="font-size:.75rem;min-width:500px">
+          <thead><tr><th style="width:120px">章</th><th style="width:200px">節</th><th style="text-align:center;width:75px">手書き（回数）</th><th style="text-align:center;width:75px">実装（回数）</th></tr></thead>
+          <tbody>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
+            <tr><td></td><td>重回帰分析</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>データセットの準備〜実装</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>過学習</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
+            <tr><td></td><td>標準化</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">データの前処理（応用）</td></tr>
+            <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>外れ値除去</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 分類</td></tr>
+            <tr><td></td><td>ロジスティック回帰</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>決定木</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>SVM（ForBiz）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>ランダムフォレスト</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">評価指標</td></tr>
+            <tr><td></td><td>Accuracy等</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>不均衡データ</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">性能改善</td></tr>
+            <tr><td></td><td>データの分割</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td></tr>
+            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師なし学習</td></tr>
+            <tr><td></td><td>主成分分析</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>クラスタリング</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+      <div id="yoshida-range-w9" class="week-panel">
+        <div style="overflow-x:auto">
+        <table class="eval-table" style="font-size:.75rem;min-width:500px">
+          <thead><tr><th style="width:120px">章</th><th style="width:200px">節</th><th style="text-align:center;width:75px">手書き（回数）</th><th style="text-align:center;width:75px">実装（回数）</th></tr></thead>
+          <tbody>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
+            <tr><td></td><td>重回帰分析</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>データセットの準備〜実装</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>過学習</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
+            <tr><td></td><td>標準化</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">データの前処理（応用）</td></tr>
+            <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>外れ値除去</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 分類</td></tr>
+            <tr><td></td><td>ロジスティック回帰</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>決定木</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>SVM（ForBiz）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>ランダムフォレスト</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">評価指標</td></tr>
+            <tr><td></td><td>Accuracy等</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>不均衡データ</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">性能改善</td></tr>
+            <tr><td></td><td>データの分割</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td></tr>
+            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師なし学習</td></tr>
+            <tr><td></td><td>主成分分析</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>クラスタリング</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+      <div id="yoshida-range-w10" class="week-panel">
+        <div style="overflow-x:auto">
+        <table class="eval-table" style="font-size:.75rem;min-width:500px">
+          <thead><tr><th style="width:120px">章</th><th style="width:200px">節</th><th style="text-align:center;width:75px">手書き（回数）</th><th style="text-align:center;width:75px">実装（回数）</th></tr></thead>
+          <tbody>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 回帰1</td></tr>
+            <tr><td></td><td>重回帰分析</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>データセットの準備〜実装</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>過学習</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>Ridge回帰・Lasso回帰</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">前処理 基礎</td></tr>
+            <tr><td></td><td>標準化</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>欠損値</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>エンコーディング（Label/One-hot）</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">データの前処理（応用）</td></tr>
+            <tr><td></td><td>特徴量エンジニアリング</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>外れ値除去</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師あり学習 分類</td></tr>
+            <tr><td></td><td>ロジスティック回帰</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>決定木</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>SVM（ForBiz）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>ランダムフォレスト</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">評価指標</td></tr>
+            <tr><td></td><td>Accuracy等</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td><td class="sc" style="background:#f0fff4;color:var(--good);font-weight:600">1回</td></tr>
+            <tr><td></td><td>不均衡データ</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">性能改善</td></tr>
+            <tr><td></td><td>データの分割</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="background:#e2e8f0;color:#a0aec0">—</td></tr>
+            <tr><td></td><td>ハイパーパラメータチューニング（グリッド/ランダム/ベイズ）</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr style="background:#f7fafc;font-weight:600"><td colspan="4">教師なし学習</td></tr>
+            <tr><td></td><td>主成分分析</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+            <tr><td></td><td>クラスタリング</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td><td class="sc" style="color:var(--bad);font-weight:600">0回</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
     </div>
 
     <!-- 所感・アクション -->
